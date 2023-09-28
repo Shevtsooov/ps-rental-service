@@ -1,0 +1,47 @@
+@import "../../styles/utils/mixins.scss";
+@import "../../styles/utils/colors.scss";
+
+.slider {
+  height: 550px;
+
+  // padding: 0 20px;
+  background-color: #5c0a5c;
+
+  display: flex;
+  justify-content: space-between;
+
+  @include onMobile {
+    justify-content: space-between;
+  }
+
+  // @include mediumDesktop {
+  //   // padding: 0 60px;
+  // }
+
+  &__poster {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+  
+
+    // @include onMobile {
+    //   order: 2;
+    // }
+  }
+
+  // &__navigation {
+  //   display: flex;
+  //   @include onMobile {
+  //     order: 1;
+  //   }
+  // }
+
+  // &__login {
+  //   display: flex;
+
+  //   @include onMobile {
+  //     order: 3;
+  //   }
+  // }
+}

@@ -13,6 +13,9 @@
     justify-content: space-between;
   }
 
+  @include mediumDesktop {
+    padding: 0 60px;
+  }
   &__logo {
     display: flex;
     @include onMobile {

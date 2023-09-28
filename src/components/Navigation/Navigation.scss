@@ -11,15 +11,16 @@
 
   &__list {
     display: flex;
+    gap: 30px;
   }
 
   &__item {
-    margin-right: 20px;
   }
 
   &__link {
-    margin-left: 10px;
-
+    display: block;
+    line-height: 60px;
+    user-select: none;
     text-decoration: none;
     color: #000000;
   }

@@ -1,0 +1,37 @@
+@import "../../styles/utils/mixins.scss";
+
+.header {
+  height: 60px;
+
+  padding: 0 20px;
+  background-color: #ececec;
+
+  display: flex;
+  justify-content: space-between;
+
+  @include onMobile {
+    justify-content: space-between;
+  }
+
+  &__logo {
+    display: flex;
+    @include onMobile {
+      order: 2;
+    }
+  }
+
+  &__navigation {
+    display: flex;
+    @include onMobile {
+      order: 1;
+    }
+  }
+
+  &__login {
+    display: flex;
+
+    @include onMobile {
+      order: 3;
+    }
+  }
+}

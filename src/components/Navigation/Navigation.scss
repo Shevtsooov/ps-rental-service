@@ -1,0 +1,25 @@
+@import "../../styles/utils/mixins.scss";
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include onMobile {
+    display: none;
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+  }
+
+  &__link {
+    margin-left: 10px;
+
+    text-decoration: none;
+    color: #000000;
+  }
+}

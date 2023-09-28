@@ -2,11 +2,18 @@
 import cn from 'classnames';
 
 import './MobileNavigation.scss';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 export const MobileNavigation = () => {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
+
+  useEffect(() => {
+    return () => {
+      setIsMenuOpened(false);
+    }
+  }, [])
+  
   return (
     <nav className="mobileNav">
       <button
@@ -30,7 +37,8 @@ export const MobileNavigation = () => {
             <li>
               <NavLink
                 className="mobileNav__link"
-                to="home"
+                to="/home"
+                onClick={() => setIsMenuOpened(p => !p)}
               >
                 <div className="mobileNav__link_text">
                   <span className="mobileNav__link--icon mobileNav__link--home"></span>
@@ -46,7 +54,8 @@ export const MobileNavigation = () => {
 
               <NavLink
                 className="mobileNav__link"
-                to="home"
+                to="/games"
+                onClick={() => setIsMenuOpened(p => !p)}
               >
                 <div className="mobileNav__link_text">
                   <span className="mobileNav__link--icon mobileNav__link--games"></span>
@@ -60,7 +69,8 @@ export const MobileNavigation = () => {
             <li>
               <NavLink
                 className="mobileNav__link"
-                to="home"
+                to="/plans"
+                onClick={() => setIsMenuOpened(p => !p)}
               >
                 <div className="mobileNav__link_text">
                   <span className="mobileNav__link--icon mobileNav__link--plans"></span>
@@ -75,7 +85,8 @@ export const MobileNavigation = () => {
             <li>
               <NavLink
                 className="mobileNav__link"
-                to="home"
+                to="/agreement"
+                onClick={() => setIsMenuOpened(p => !p)}
               >
                 <div className="mobileNav__link_text">
                   <span className="mobileNav__link--icon mobileNav__link--agreement"></span>
@@ -90,7 +101,8 @@ export const MobileNavigation = () => {
             <li>
               <NavLink
                 className="mobileNav__link"
-                to="home"
+                to="/about-ps5"
+                onClick={() => setIsMenuOpened(p => !p)}
               >
                 <div className="mobileNav__link_text">
                   <span className="mobileNav__link--icon mobileNav__link--about_ps5"></span>
@@ -104,7 +116,8 @@ export const MobileNavigation = () => {
             <li>
               <NavLink
                 className="mobileNav__link"
-                to="home"
+                to="/login"
+                onClick={() => setIsMenuOpened(p => !p)}
               >
                 <div className="mobileNav__link_text">
                   <span className="mobileNav__link--icon mobileNav__link--login"></span>

@@ -34,13 +34,13 @@
     position: absolute;
     top: 60px;
     left: 0;
+    display: flex;
+
     width: 100%;
     height: calc(100vh - 60px);
 
     padding: 60px 20px;
 
-    display: flex;
-    // justify-content: center;
     background-color: #ececec;
   }
 
@@ -54,6 +54,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     font-size: 20px;
 
     margin-bottom: 34px;
@@ -63,11 +64,12 @@
     }
 
     &--icon {
-      display: inline-block;
-      background-repeat: no-repeat;
       width: 30px;
       height: 30px;
+
       background-size: cover;
+      background-repeat: no-repeat;
+
       margin-right: 35px;
     }
 
@@ -91,12 +93,12 @@
     }
 
     &--arrow {
-      display: inline-block;
-      background-repeat: no-repeat;
       width: 15px;
       height: 15px;
-      background-size: cover;
+
       background-image: url('../../assets/icons/arrow-right.svg');
+      background-size: cover;
+      background-repeat: no-repeat;
     }
   }
 }

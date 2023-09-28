@@ -12,9 +12,9 @@ export const Navigation = () => {
           className={({ isActive }) => cn(
             'nav__link', { 'is-active': isActive },
           )}
-          to="questions"
+          to="home"
         >
-          Сторінка 1
+         Головна
         </NavLink>
       </li>
 
@@ -23,9 +23,42 @@ export const Navigation = () => {
           className={({ isActive }) => cn(
             'nav__link', { 'is-active': isActive },
           )}
-          to="new-question"
+          to="games"
         >
-          Сторінка 2
+          Ігри
+        </NavLink>
+      </li>
+
+      <li className="nav__item">
+        <NavLink
+          className={({ isActive }) => cn(
+            'nav__link', { 'is-active': isActive },
+          )}
+          to="plans"
+        >
+          Тарифи і доставка
+        </NavLink>
+      </li>
+
+      <li className="nav__item">
+        <NavLink
+          className={({ isActive }) => cn(
+            'nav__link', { 'is-active': isActive },
+          )}
+          to="agreement"
+        >
+          Умови договору
+        </NavLink>
+      </li>
+
+      <li className="nav__item">
+        <NavLink
+          className={({ isActive }) => cn(
+            'nav__link', { 'is-active': isActive },
+          )}
+          to="about-ps5"
+        >
+          Про PS5
         </NavLink>
       </li>
     </ul>

@@ -13,6 +13,12 @@ export const MobileNavigation = () => {
       setIsMenuOpened(false);
     }
   }, [])
+
+  useEffect(() => {
+    if (isMenuOpened) {
+      document.body.style.overflow = 'hidden'
+    }
+  }, [isMenuOpened])
   
   return (
     <nav className="mobileNav">

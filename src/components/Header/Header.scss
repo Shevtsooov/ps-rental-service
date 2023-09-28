@@ -1,10 +1,11 @@
 @import "../../styles/utils/mixins.scss";
+@import "../../styles/utils/colors.scss";
 
 .header {
   height: 60px;
 
   padding: 0 20px;
-  background-color: #ececec;
+  background-color: $main-grey;
 
   display: flex;
   justify-content: space-between;

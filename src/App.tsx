@@ -11,6 +11,7 @@ import { Agreement } from './pages/Agreement/Agreement';
 import { AboutPS5 } from './pages/AboutPS5/AboutPS5';
 import { PageNotFound } from './pages/NotFoundPage/NotFoundPage';
 import { LoginPage } from './pages/LoginPage/LoginPage';
+import { Footer } from './components/Footer/Footer';
 
 export const App: React.FC = () => {
 
@@ -28,6 +29,8 @@ export const App: React.FC = () => {
         <Route path="login" element={<LoginPage />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
+
+      <Footer />
     </>  
   );
 }

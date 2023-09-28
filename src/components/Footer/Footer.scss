@@ -1,0 +1,55 @@
+@import "../../styles/utils/mixins.scss";
+@import "../../styles/utils/colors.scss";
+
+.footer {
+  padding: 20px 20px 40px;
+  background-color: $main-blue-hv;
+
+  @include mediumDesktop {
+    padding: 25px 50px 45px;
+  }
+
+  &__logo {
+    display: block;
+    height: 85px;
+
+    margin-bottom: 20px;
+
+    @include onMobile {
+      height: 55px;
+    }
+  }
+
+  &__links {
+    padding: 20px 10px;
+    border-top: 1px solid $main-grey;
+    border-bottom: 1px solid $main-grey;
+  }
+
+  &__item {
+    margin-bottom: 10px;
+
+    &_link {
+      color: #fff;
+
+      &:hover {
+        color: $main-grey;
+      }
+    }
+  }
+
+  // &__navigation {
+  //   display: flex;
+  //   @include onMobile {
+  //     order: 1;
+  //   }
+  // }
+
+  // &__login {
+  //   display: flex;
+
+  //   @include onMobile {
+  //     order: 3;
+  //   }
+  // }
+}

@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import './Login.scss';
 
 export const Login: React.FC = () => {
@@ -7,7 +8,9 @@ export const Login: React.FC = () => {
       <button 
         className="login__button"
       >
-        Увійти
+        <NavLink to="login" className="login__button_text">
+          Увійти
+        </NavLink>
       </button>
     </div>
   );

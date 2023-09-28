@@ -1,7 +1,13 @@
+@import "../../styles/utils/mixins.scss";
+
 .logo {
 
   &__img {
     width: 60px;
     padding-top: 5px;
+
+    @include onMobile {
+      margin-left: 25px;
+    }
   }
 }

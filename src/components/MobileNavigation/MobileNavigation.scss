@@ -19,6 +19,7 @@
     width: 35px;
     height: 25px;
     border: 0;
+
     background-image: url('../../assets/icons/burger_menu-closed.svg');
     background-repeat: no-repeat;
 
@@ -43,6 +44,7 @@
     height: calc(100vh - 60px);
 
     padding: 60px 20px;
+    
 
     background-color: $main-grey;
   }

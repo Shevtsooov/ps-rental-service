@@ -2,46 +2,68 @@
 @import "../../styles/utils/colors.scss";
 
 .slider {
-  height: 550px;
-
-  // padding: 0 20px;
-  background-color: #5c0a5c;
-
-  display: flex;
-  justify-content: space-between;
-
-  @include onMobile {
-    justify-content: space-between;
-  }
-
-  // @include mediumDesktop {
-  //   // padding: 0 60px;
-  // }
-
-  &__poster {
-    display: block;
-    width: 100%;
-    object-fit: cover;
-    object-position: center 30%;
+  width: 100%;
   
+  &__poster {
+    position: relative;
+    display: block;
+    height: 550px;
+    // width: 100%;
 
-    // @include onMobile {
-    //   order: 2;
-    // }
+    opacity: 1;
+
+    &-hidden {
+      // opacity: 0;
+      display: none;
+    }
+
+    &_image {
+      height: 100%;
+      width: 100%;
+      object-position: center 40%;
+      object-fit: cover;
+    }
+
+    &_info {
+      position: absolute;
+      bottom: 0;
+      min-height: 200px;
+      width: 100%;
+
+      padding: 60px 20px 20px;
+      background: linear-gradient(360deg, #262626, transparent)
+    }
+
+    &_heading {
+      margin-bottom: 10px;
+      color: #fff;
+      font-size: 24px;
+    }
+
+    &_description {
+      color: #fff;
+      font-size: 14px;
+      max-width: 300px;
+
+      margin-bottom: 15px;
+    }
+
+    &_button {
+      border: 0;
+      width: 100px;
+      padding: 5px 10px;
+
+      border-radius: 30px;
+      font-size: 18px;
+      color: #fff;
+      background-color: unset;
+      border: 1px solid #fff;
+
+      &:hover {
+        color: #000;
+        background-color: #fff;
+
+      }
+    }
   }
-
-  // &__navigation {
-  //   display: flex;
-  //   @include onMobile {
-  //     order: 1;
-  //   }
-  // }
-
-  // &__login {
-  //   display: flex;
-
-  //   @include onMobile {
-  //     order: 3;
-  //   }
-  // }
 }

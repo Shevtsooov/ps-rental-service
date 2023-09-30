@@ -37,6 +37,8 @@
     left: 0;
     display: flex;
 
+    z-index: 999;
+
     width: 100%;
     height: calc(100vh - 60px);
 

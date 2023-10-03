@@ -13,7 +13,7 @@ export const Sorting: React.FC = () => {
         // onClick={handleListDisplay}
       >
         <p className='sorting__select--default'>
-          Категорії
+          За популярністю
           {/* {filteredCategory} */}
         </p>
       </div>

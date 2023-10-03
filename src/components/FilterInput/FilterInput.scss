@@ -1,0 +1,39 @@
+@import "../../styles/utils/mixins.scss";
+@import "../../styles/utils/colors.scss";
+
+.filterInput {
+  position: relative;
+  margin-bottom: 10px;
+
+  &__field {
+    width: 100%;
+    
+    padding: 10px;
+
+    font-size: 16px;
+    
+    border: 1px solid $secondary-grey;
+
+    outline: none;
+  }
+  
+  &__clear {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    width: 20px;
+    height: 20px;
+
+    border-radius: 30px;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+
+    background-color: $main-blue;
+
+    &:hover {
+      background-color: $main-blue-hv;
+    }
+  }
+}

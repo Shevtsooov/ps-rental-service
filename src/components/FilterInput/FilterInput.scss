@@ -2,8 +2,14 @@
 @import "../../styles/utils/colors.scss";
 
 .filterInput {
+  width: 100%;
   position: relative;
   margin-bottom: 10px;
+  flex-shrink: 0;
+
+  // @include mediumDesktop {
+  //   width: 50%;
+  // }
 
   &__field {
     width: 100%;
@@ -12,6 +18,7 @@
 
     font-size: 16px;
     
+    color: $secondary-grey;
     border: 1px solid $secondary-grey;
 
     outline: none;

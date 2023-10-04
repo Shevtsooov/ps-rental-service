@@ -2,5 +2,12 @@
 @import "../../styles/utils/colors.scss";
 
 .filter {
- margin-bottom: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  
+  user-select: none;
+
+  margin-bottom: 24px;
 }

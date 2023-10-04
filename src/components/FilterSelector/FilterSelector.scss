@@ -1,0 +1,102 @@
+@import "../../styles/utils/mixins.scss";
+@import "../../styles/utils/colors.scss";
+
+.filterSelector {
+  width: 49%;
+
+  padding: 10px;
+  text-align: center;
+
+  color: $secondary-grey;
+  font-size: 16px;
+
+  border: 1px solid $secondary-grey;
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+
+    width: 100%;
+    height: calc(100vh - 60px);
+
+    padding: 20px;
+    
+    background-color: $main-grey;
+  }
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+
+    margin-bottom: 25px;
+  }
+
+  &__button {
+    width: 25px;
+    height: 25px;
+    border: 0;
+
+    cursor: pointer;
+    
+    background-color: unset;
+
+    background-image: url('../../assets/icons/burger_menu-open.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__filterBlock {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-bottom: 25px;
+
+    &_heading {
+      width: 100%;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    &_item {
+      font-size: 16px;
+      background-color: #fff;
+      border: 1px solid $secondary-grey;
+      padding: 5px 10px;
+
+      &--active {
+        background-color: $main-blue;
+        color: #fff;
+        border: 1px solid $main-blue;
+      }
+    }
+
+  }
+  
+  &__actions {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+
+    margin-top: 20px;
+  
+    &_button {
+      border: 0;
+      border-radius: 30px;
+      background-color: $main-blue;
+      padding: 10px 15px;
+      color: #fff;
+      font-size: 16px;
+
+      &--clear {
+        background-color: #fff;
+        color: #ff5e5e;
+        border: 1px solid #ff5e5e;
+      }
+    }
+  }
+}

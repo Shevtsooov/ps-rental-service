@@ -6,40 +6,40 @@ import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 export const MobileNavigation = () => {
-  const [isMenuOpened, setIsMenuOpened] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     return () => {
-      setIsMenuOpened(false);
+      setIsMenuOpen(false);
     }
   }, [])
 
   useEffect(() => {
-    if (isMenuOpened) {
+    if (isMenuOpen) {
       document.body.style.overflow = 'hidden';
 
       return;
     }
 
     document.body.style.overflow = 'auto'
-  }, [isMenuOpened])
+  }, [isMenuOpen])
   
   return (
     <nav className="mobileNav">
       <button
         className={cn(
           'mobileNav__burger', { 
-            'mobileNav__burger--active': isMenuOpened
+            'mobileNav__burger--active': isMenuOpen
           },
         )}
-        onClick={() => setIsMenuOpened(p => !p)}
+        onClick={() => setIsMenuOpen(p => !p)}
       >
       </button>
-      {isMenuOpened && (
+      {isMenuOpen && (
         <div
         className={cn(
           'mobileNav__box', { 
-            'mobileNav__box--active': isMenuOpened
+            'mobileNav__box--active': isMenuOpen
           },
         )}
       >
@@ -48,7 +48,7 @@ export const MobileNavigation = () => {
               <NavLink
                 className="mobileNav__link"
                 to="/home"
-                onClick={() => setIsMenuOpened(p => !p)}
+                onClick={() => setIsMenuOpen(p => !p)}
               >
                 <div className="mobileNav__link_text">
                   <span className="mobileNav__link--icon mobileNav__link--home"></span>
@@ -65,7 +65,7 @@ export const MobileNavigation = () => {
               <NavLink
                 className="mobileNav__link"
                 to="/games"
-                onClick={() => setIsMenuOpened(p => !p)}
+                onClick={() => setIsMenuOpen(p => !p)}
               >
                 <div className="mobileNav__link_text">
                   <span className="mobileNav__link--icon mobileNav__link--games"></span>
@@ -80,7 +80,7 @@ export const MobileNavigation = () => {
               <NavLink
                 className="mobileNav__link"
                 to="/plans"
-                onClick={() => setIsMenuOpened(p => !p)}
+                onClick={() => setIsMenuOpen(p => !p)}
               >
                 <div className="mobileNav__link_text">
                   <span className="mobileNav__link--icon mobileNav__link--plans"></span>
@@ -96,7 +96,7 @@ export const MobileNavigation = () => {
               <NavLink
                 className="mobileNav__link"
                 to="/agreement"
-                onClick={() => setIsMenuOpened(p => !p)}
+                onClick={() => setIsMenuOpen(p => !p)}
               >
                 <div className="mobileNav__link_text">
                   <span className="mobileNav__link--icon mobileNav__link--agreement"></span>
@@ -112,7 +112,7 @@ export const MobileNavigation = () => {
               <NavLink
                 className="mobileNav__link"
                 to="/about-ps5"
-                onClick={() => setIsMenuOpened(p => !p)}
+                onClick={() => setIsMenuOpen(p => !p)}
               >
                 <div className="mobileNav__link_text">
                   <span className="mobileNav__link--icon mobileNav__link--about_ps5"></span>
@@ -127,7 +127,7 @@ export const MobileNavigation = () => {
               <NavLink
                 className="mobileNav__link"
                 to="/login"
-                onClick={() => setIsMenuOpened(p => !p)}
+                onClick={() => setIsMenuOpen(p => !p)}
               >
                 <div className="mobileNav__link_text">
                   <span className="mobileNav__link--icon mobileNav__link--login"></span>

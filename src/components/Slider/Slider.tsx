@@ -49,6 +49,7 @@ export const Slider: React.FC = () => {
               : 'slider__poster-hidden'}`
           }
           style={{ background: `${poster.bgColor}`}}
+          key={poster.title}
         >
           <img
             className="slider__poster_image"

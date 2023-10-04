@@ -60,13 +60,15 @@
       font-size: 16px;
       color: #fff;
       background-color: $main-blue;
+      border: 1px solid $main-blue;
 
       margin-bottom: 15px;
 
-      &:hover {
-        background-color: $main-blue-hv;
-    }
-    
+      &--added {
+        background: #fff;
+        color: $main-blue;
+        border: 1px solid $main-blue;
+      }
     }
 
     &_heart {

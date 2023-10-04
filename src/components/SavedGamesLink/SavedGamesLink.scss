@@ -1,2 +1,9 @@
 @import "../../styles/utils/mixins.scss";
 @import "../../styles/utils/colors.scss";
+
+.savedGamesLink {
+
+  &__img {
+    width: 30px;
+  }
+}

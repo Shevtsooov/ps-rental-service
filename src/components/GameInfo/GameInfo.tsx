@@ -1,22 +1,38 @@
-import { useState } from 'react';
 import './GameInfo.scss';
 import cn from 'classnames';
-
-interface Game {
-  title: string,
-  icon: string,
-
-  price: number,
-  discountedPrice?: number | null,
-  popularity: number,
-};
+import { useAppDispatch, useAppSelector } from '../../Redux/store';
+import { filterSavedGames, setSavedGames } from '../../Redux/Slices/savedGames.slice';
+import { Game } from '../../types/Game';
+import { filterShoppingCartGames, setShoppingCartGames } from '../../Redux/Slices/shoppingCartGames.slice';
 
 type Props = {
   game: Game,
 }
 
 export const GameInfo: React.FC<Props> = ({ game }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const savedGames = useAppSelector(state => state.savedGames.value);
+  const shoppingCartGames = useAppSelector(state => state.shoppingCartGames.value);
+  const dispatch = useAppDispatch();
+
+  const handleSaveGame = (game: Game) => {
+    if (savedGames.includes(game)) {
+      dispatch(filterSavedGames(game.id));
+      console.log('includes')
+      return;
+    }
+
+    dispatch(setSavedGames(game));
+  }
+
+  const handleAddToCartGame = (game: Game) => {
+    if (shoppingCartGames.includes(game)) {
+      dispatch(filterShoppingCartGames(game.id));
+
+      return;
+    }
+
+    dispatch(setShoppingCartGames(game));
+  }
 
   return (
     <div className="game">
@@ -35,12 +51,21 @@ export const GameInfo: React.FC<Props> = ({ game }) => {
         )}
       </div>
       <div className="game_buttons">
-        <button className="game_buttons_cart">додати</button>
+        <button 
+          className={cn('game_buttons_cart', {
+            'game_buttons_cart--added': shoppingCartGames.includes(game)
+          })}
+          onClick={() => handleAddToCartGame(game)}
+        >
+          {shoppingCartGames.includes(game)
+          ? 'видалити'
+          : 'додати в кошик'}
+        </button>
         <button
           className={cn('game_buttons_heart', {
-            'game_buttons_heart--active': isOpen
+            'game_buttons_heart--active': savedGames.includes(game)
           })}
-          onClick={() => setIsOpen((prev) => !prev)}
+          onClick={() => handleSaveGame(game)}
         />
       </div>
     </div>

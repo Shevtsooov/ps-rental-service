@@ -8,7 +8,7 @@ export const PopularGames: React.FC = () => {
     .sort((gameA, gameB) => (
       gameB.popularity - gameA.popularity
     ))
-    .slice(0, 8);
+    .slice(0, 6);
 
   return (
     <div className="popularGames">
@@ -18,7 +18,7 @@ export const PopularGames: React.FC = () => {
       </p>
       <div className="popularGames__list">
         {sortedGames.map(game => (
-          <GameInfo game={game} />
+          <GameInfo game={game} key={game.id}/>
         ))}
       </div>
     </div>

@@ -13,7 +13,7 @@ export const Logo: React.FC = () => {
         <img
           className="logo__img"
           src={`${logo}`}
-          alt="Quiz logo"
+          alt="PS logo"
         >
         </img>
       </Link>

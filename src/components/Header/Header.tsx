@@ -1,10 +1,13 @@
+import { SavedGamesLink } from '../SavedGamesLink/SavedGamesLink';
 import { Login } from '../Login/Login';
 import { Logo } from '../Logo/Logo';
 import { MobileNavigation } from '../MobileNavigation/MobileNavigation';
 import { Navigation } from '../Navigation/Navigation';
+import { ShoppingCartLink } from '../ShoppingCartLink/ShoppingCartLink';
 import './Header.scss';
 
 export const Header: React.FC = () => {
+  const user = true;
 
   return (
     <div className="header">
@@ -18,7 +21,15 @@ export const Header: React.FC = () => {
       </div>
 
       <div className='header__login'>
-        <Login />
+
+      {!user && <Login />}
+      
+      {user && (
+        <div className='header__actions'>
+          <SavedGamesLink />
+          <ShoppingCartLink />
+        </div>
+      )}
       </div>
     </div>
   );

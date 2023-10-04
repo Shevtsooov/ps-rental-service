@@ -1,0 +1,90 @@
+@import "../../styles/utils/mixins.scss";
+@import "../../styles/utils/colors.scss";
+
+.shoppingCartList {
+  &__PS {
+
+  }
+
+  &__game {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    
+    &_box {
+      display: flex;
+      gap: 15px;
+    }
+
+
+    &_img {
+      &_icon {
+        width: 100px;
+        height: 100px;
+        border-radius: 10px;
+      }
+    }
+
+    &_info {
+      display: flex;
+      flex-direction: column;
+
+      &_title {
+        font-size: 20px;
+        margin-bottom: 5px;
+      }
+
+      &_price {
+        display: flex;
+        // justify-content: center;
+        // align-items: center;
+        gap: 10px;
+        font-size: 16px;
+        margin-bottom: 10px;
+    
+        &_regularPrice {
+          text-decoration: line-through;
+          color: #dd0000;
+        }
+    
+        &_discountedPrice {
+          color: #24991c;
+          font-size: 20px;
+        }
+      }
+    }
+
+    &_actions {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      gap: 20px;
+
+      &--save {
+        border: 0;
+        border-radius: 30px;
+        height: 25px;
+        width: 25px;
+  
+        background-image: url('../../assets/icons/heart.svg');
+        background-size: 80%;
+        background-repeat: no-repeat;
+        background-position: 3px 4px;
+        // background-color: $main-grey;
+
+        &--active {
+          background-image: url('../../assets/icons/heart-active.svg');
+        }
+      }
+
+      &--clear {
+        border: 0;
+        border-radius: 30px;
+        background-color: $main-grey;
+        color: #000;
+
+        font-size: 18px;
+      }
+    }
+  }
+}

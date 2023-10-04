@@ -19,6 +19,8 @@
   }
   &__logo {
     display: flex;
+    margin-left: 15px;
+    
     @include onMobile {
       order: 2;
     }
@@ -37,5 +39,11 @@
     @include onMobile {
       order: 3;
     }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
   }
 }

@@ -1,0 +1,45 @@
+@import "../../styles/utils/mixins.scss";
+@import "../../styles/utils/colors.scss";
+
+.savedGames {
+  padding: 20px;
+
+  &__title {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  &__amount {
+    color: $secondary-grey;
+    font-size: 14px;
+    margin-top: 5px;
+    margin-bottom: 25px;
+  }
+
+  &__empty_list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 300px;
+    margin-bottom: 40px;
+
+    &_heading {
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+
+    &_button {
+      border: 0;
+      background-color: $main-blue;
+      font-size: 18px;
+      padding: 10px 25px;
+      border-radius: 30px;
+
+      &--link {
+        color: #fff;
+      }
+    }
+  }
+}

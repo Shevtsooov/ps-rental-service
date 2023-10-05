@@ -56,15 +56,15 @@
 
     &_actions {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       justify-content: start;
       gap: 20px;
 
       &--save {
         border: 0;
         border-radius: 30px;
-        height: 25px;
-        width: 25px;
+        height: 30px;
+        width: 30px;
   
         background-image: url('../../assets/icons/heart.svg');
         background-size: 80%;
@@ -78,6 +78,9 @@
       }
 
       &--clear {
+        height: 30px;
+        width: 30px;
+
         border: 0;
         border-radius: 30px;
         background-color: $main-grey;

@@ -22,7 +22,7 @@ export const games = [
     icon: 'fifa24/fifa24.jpg',
 
     price: 150,
-    discountedPrice: 100,
+    discountedPrice: 90,
     popularity: 1,
     id: 3
   },

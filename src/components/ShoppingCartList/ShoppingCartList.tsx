@@ -70,15 +70,15 @@ export const ShoppingCartList: React.FC = () => {
 
           <div className="shoppingCartList__game_actions">
             <button
-              className="shoppingCartList__game_actions--clear"
-              onClick={() => handleAddToCartGame(game)}
-            >X</button>
-            <button
               className={cn('shoppingCartList__game_actions--save', {
                 'shoppingCartList__game_actions--save--active': savedGames.includes(game)
               })}
               onClick={() => handleSaveGame(game)}
             />
+            <button
+              className="shoppingCartList__game_actions--clear"
+              onClick={() => handleAddToCartGame(game)}
+            >X</button>
           </div>
         </div>
       ))}

@@ -42,12 +42,25 @@ export const GameInfo: React.FC<Props> = ({ game }) => {
         className="game_image"
       />
       <h3 className="game_heading">{game.title}</h3>
+     
       <div className="game_price">
-        <p className={cn({
-          'game_price_regularPrice': game.discountedPrice
-        })}>{`${game.price}₴`}</p>
-        {game.discountedPrice && (
-          <p className="game_price_discountedPrice">{`${game.discountedPrice}₴`}</p>
+      {shoppingCartGames.length === 0 || shoppingCartGames[0].id === game.id
+        ? (
+          <p className='game_price_discountedPrice'>Одна гра - безкоштовно</p>
+        )
+        : (
+          <>
+            <p 
+            className={cn({
+              'game_price_regularPrice': game.discountedPrice
+            })}
+            >
+              {`${game.price}₴`}
+            </p>
+            {game.discountedPrice && (
+              <p className="game_price_discountedPrice">{`${game.discountedPrice}₴`}</p>
+            )}
+          </>
         )}
       </div>
       <div className="game_buttons">

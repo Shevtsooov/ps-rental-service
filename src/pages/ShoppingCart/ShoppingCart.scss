@@ -13,32 +13,52 @@
     color: $secondary-grey;
     font-size: 14px;
     margin-top: 5px;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
   }
 
   &__empty_list {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    flex-wrap: wrap;
     align-items: center;
-    height: 300px;
-    margin-bottom: 40px;
+    flex-wrap: wrap;
+    height: 80px;
+
+    margin-bottom: 15px;
 
     &_heading {
-      font-size: 18px;
-      margin-bottom: 25px;
+      font-size: 14px;
+      margin-bottom: 10px;
     }
 
     &_button {
       border: 0;
       background-color: $main-blue;
-      font-size: 18px;
-      padding: 10px 25px;
+      font-size: 12px;
+      padding: 5px 10px;
       border-radius: 30px;
 
       &--link {
         color: #fff;
+      }
+    }
+  }
+
+  &__checkout {
+    display: flex;
+    justify-content: center;
+
+    &_button {
+      border-radius: 30px;
+      padding: 10px 15px;
+      color: #fff;
+      background-color: $main-blue;
+      border: 1px solid $main-blue;
+      margin-bottom: 15px;
+
+      &:hover {
+        background-color: #fff;
+        color: $main-blue;
       }
     }
   }

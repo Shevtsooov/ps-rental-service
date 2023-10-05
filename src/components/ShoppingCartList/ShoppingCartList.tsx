@@ -28,13 +28,10 @@ export const ShoppingCartList: React.FC = () => {
     }
 
     dispatch(setShoppingCartGames(game));
-  }
+  };
 
   return (
     <div className="shoppingCartList">
-      <div className="shoppingCartList__PS">
-
-      </div>
 
       {shoppingCartGames.map(game => (
         <div className="shoppingCartList__game">
@@ -58,11 +55,23 @@ export const ShoppingCartList: React.FC = () => {
               </div>
               
               <div className="shoppingCartList__game_info_price">
-                <p className={cn({
-                  'shoppingCartList__game_info_price_regularPrice': game.discountedPrice
-                })}>{`${game.price}₴`}</p>
-                {game.discountedPrice && (
-                  <p className="shoppingCartList__game_info_price_discountedPrice">{`${game.discountedPrice}₴`}</p>
+              {shoppingCartGames.length === 0 || shoppingCartGames[0].id === game.id
+                ? (
+                  <p className='game_price_discountedPrice'>Одна гра - безкоштовно</p>
+                )
+                : (
+                  <>
+                    <p 
+                    className={cn({
+                      'game_price_regularPrice': game.discountedPrice
+                    })}
+                    >
+                      {`${game.price}₴`}
+                    </p>
+                    {game.discountedPrice && (
+                      <p className="game_price_discountedPrice">{`${game.discountedPrice}₴`}</p>
+                    )}
+                  </>
                 )}
               </div>
             </div>

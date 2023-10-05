@@ -7,7 +7,8 @@ export interface ShoppingCartGamesState {
 }
 
 const initialState: ShoppingCartGamesState = {
-  value: [  {
+  value: [
+    {
     title: 'FIFA 23',
     icon: 'fifa24/fifa24.jpg',
 
@@ -24,7 +25,8 @@ const initialState: ShoppingCartGamesState = {
     discountedPrice: 100,
     popularity: 22,
     id: 33
-  }],
+  }
+],
 }
 
 export const shoppingCartGamesSlice = createSlice({

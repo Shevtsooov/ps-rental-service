@@ -3,6 +3,8 @@ import './ShoppingCart.scss';
 import { useAppSelector } from '../../Redux/store';
 import { Link } from 'react-router-dom';
 import { ShoppingCartList } from '../../components/ShoppingCartList/ShoppingCartList';
+import { PSShoppingCartInfo } from '../../components/PSShoppingCartInfo/PSShoppingCartInfo';
+import { Delivery } from '../../components/Delivery/Delivery';
 
 
 export const ShoppingCart: React.FC = () => {
@@ -10,9 +12,9 @@ export const ShoppingCart: React.FC = () => {
 
   return (
     <div className="shoppingCart">
-      <h1 className='savedGames__title'>Кошик</h1>
+      <h1 className='shoppingCart__title'>Кошик</h1>
       <p
-        className='savedGames__amount'
+        className='shoppingCart__amount'
       >
         {`Кількість ігор: ${
           shoppingCartGames
@@ -24,8 +26,8 @@ export const ShoppingCart: React.FC = () => {
       {shoppingCartGames.length
       ? <ShoppingCartList />
       : (
-        <div className="savedGames__empty_list">
-          <h4 className="savedGames__empty_list_heading">
+        <div className="shoppingCart__empty_list">
+          <h4 className="shoppingCart__empty_list_heading">
             Ти ще не обрав жодної гри
           </h4>
 
@@ -33,16 +35,26 @@ export const ShoppingCart: React.FC = () => {
             Хутчіш додавай:
           </p> */}
 
-          <button className="savedGames__empty_list_button">
+          <button className="shoppingCart__empty_list_button">
             <Link
               to="/games"
-              className="savedGames__empty_list_button--link"
+              className="shoppingCart__empty_list_button--link"
             >
               До списку ігор
             </Link>
           </button>
         </div>
       )}
+
+      <PSShoppingCartInfo />
+      
+      <Delivery />
+
+      <div className="shoppingCart__checkout">
+        <button className="shoppingCart__checkout_button">
+          Оформити прокат
+        </button>
+      </div>
     </div>
   );
 }

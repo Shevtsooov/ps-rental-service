@@ -2,13 +2,15 @@
 @import "../../styles/utils/colors.scss";
 
 .calendar {
+  user-select: none;
+
   width: 300px;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
   background-color: #fff;
-  font-family: Arial, sans-serif;
   margin: 40px auto;
+
   &__header {
     display: flex;
     justify-content: space-between;
@@ -57,6 +59,24 @@
     cursor: pointer;
     transition: background-color 0.2s;
 
+    &--today {
+      position: relative;
+      &:after {
+        position: absolute;
+        content: "";
+        width: 6px;
+        height: 6px;
+        background-color: #e02727;
+        bottom: 2px;
+        left: calc(50% - 3px);
+        border-radius: 30px;
+      }
+    }
+    
+    &--off {
+      background-color: $main-grey;
+    }
+
     &--selected {
       background-color: #0074d9;
       color: #fff;
@@ -65,6 +85,7 @@
     &--empty {
       background-color: #f7f7f7;
     }
+
   }
 }
 

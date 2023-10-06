@@ -1,20 +1,6 @@
 import React, { useState } from 'react';
 import './Calendar.scss';
-
-// const months = {
-//   0: 'Січень',
-//   1: 'Лютий',
-//   2: 'Березень',
-//   3: 'Квітень',
-//   4: 'Травень',
-//   5: 'Червень',
-//   6: 'Липень',
-//   7: 'Серпень',
-//   8: 'Вересень',
-//   9: 'Жовтень',
-//   10: 'Листопад',
-//   11: 'Грудень',
-// };
+import cn from 'classnames';
 
 const months = [
   'Січень',
@@ -36,7 +22,7 @@ export const Calendar: React.FC = () => {
   const [currentMonth, setCurrentMonth] = useState<number>(currentDate.getMonth());
   const [currentYear, setCurrentYear] = useState<number>(currentDate.getFullYear());
 
-  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  // const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [start, setStart] = useState<Date | null>(null);
   const [end, setEnd] = useState<Date | null>(null);
 
@@ -45,6 +31,44 @@ export const Calendar: React.FC = () => {
   // console.log(firstDay.getDay());
 
   const handleDayClick = (date: Date) => {
+
+    if (start && start.getDate() > date.getDate() && end && start.getDate() > end.getDate()) {
+      setStart(date);
+
+      return;
+    }
+
+    if (end && end.getDate() < date.getDate()) {
+      setEnd(date);
+
+      return;
+    }
+
+    if (end && end.getDate() === date.getDate()) {
+      setEnd(null);
+
+      return;
+    }
+
+    if (start && start.getDate() === date.getDate()) {
+      setStart(null);
+
+      return;
+    }
+
+    if (start && end) {
+      setStart(date);
+      setEnd(null);
+
+      return;
+    };
+
+    if (start) {
+      setEnd(date);
+
+      return;
+    };
+
     setStart(date);
   };
 
@@ -74,11 +98,11 @@ export const Calendar: React.FC = () => {
       days.push(
         <div
           key={i}
-          className={`calendar__day ${
-            date.getTime() === selectedDate?.getTime()
-            ? 'calendar__day--selected'
-            : ''
-          }`}
+          className={cn('calendar__day', {
+            'calendar__day--off': date.getDay() === 0 || date.getDay() === 6,
+            'calendar__day--today': date.getDate() === currentDate.getDate(),
+            'calendar__day--selected': date.getTime() === start?.getTime() || date.getTime() === end?.getTime()
+          })}
           onClick={() => handleDayClick(date)}
         >
           {i}
@@ -129,8 +153,8 @@ export const Calendar: React.FC = () => {
         <div className="calendar__day">Ср</div>
         <div className="calendar__day">Чт</div>
         <div className="calendar__day">Пт</div>
-        <div className="calendar__day">Сб</div>
-        <div className="calendar__day">Нд</div>
+        <div className="calendar__day calendar__day--off">Сб</div>
+        <div className="calendar__day calendar__day--off">Нд</div>
       </div>
 
       <div className="calendar__grid">

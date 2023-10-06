@@ -40,21 +40,27 @@ export const Calendar: React.FC = () => {
   const [start, setStart] = useState<Date | null>(null);
   const [end, setEnd] = useState<Date | null>(null);
 
+
+  // console.log(typeof firstDay);
+  // console.log(firstDay.getDay());
+
   const handleDayClick = (date: Date) => {
-    setSelectedDate(date);
+    setStart(date);
   };
 
   // Function to generate days for a given month
   const generateMonthDays = (year: number, month: number) => {
     const daysInMonth = new Date(year, month + 1, 0).getDate();
-    const firstDay = new Date(year, month, 1).getDay();
+    let firstDay = new Date(currentYear, currentMonth, 1).getDay();
     const days = [];
     
     // Map the days of the week, starting from Monday (0 = Monday, 6 = Sunday)
-    const daysOfWeek = [0, 1, 2, 3, 4, 5, 6];
+    const daysOfWeek = [6, 0, 1, 2, 3, 4, 5,];
+
+    console.log(daysOfWeek[firstDay])
   
     // Calculate the index of the first day in the new order
-    const startingIndex = (6 - firstDay) % 7;
+    const startingIndex = daysOfWeek[firstDay];
   
     for (let i = 0; i < startingIndex; i++) {
       days.push(
@@ -107,8 +113,6 @@ export const Calendar: React.FC = () => {
     }
 
     setCurrentMonth(month => month - 1);
-
-    console.log(currentMonth);
   }
 
   return (

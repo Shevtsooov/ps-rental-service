@@ -32,23 +32,36 @@ export const Calendar: React.FC = () => {
 
   const handleDayClick = (date: Date) => {
 
-    if (start && start.getDate() > date.getDate() && end && start.getDate() > end.getDate()) {
-      setStart(date);
+    // if (start && start.getDate() > date.getDate() && end && start.getDate() > end.getDate()) {
+    //   setStart(date);
 
-      return;
-    }
+    //   return;
+    // }
 
-    if (end && end.getDate() < date.getDate()) {
-      setEnd(date);
+    // if (end && end.getDate() < date.getDate()) {
+    //   setEnd(date);
 
-      return;
-    }
+    //   return;
+    // }
 
-    if (end && end.getDate() === date.getDate()) {
-      setEnd(null);
+    // if (end && end.getDate() === date.getDate()) {
+    //   setEnd(null);
 
-      return;
-    }
+    //   return;
+    // }
+
+    // if (start && start.getDate() === date.getDate()) {
+    //   setStart(null);
+
+    //   return;
+    // }
+
+    // if (start && end) {
+    //   setStart(date);
+    //   setEnd(null);
+
+    //   return;
+    // };
 
     if (start && start.getDate() === date.getDate()) {
       setStart(null);
@@ -56,18 +69,17 @@ export const Calendar: React.FC = () => {
       return;
     }
 
-    if (start && end) {
+    if (start && start.getDate() > date.getDate()) {
       setStart(date);
-      setEnd(null);
 
       return;
     };
 
-    if (start) {
+    if (start && start.getDate() < date.getDate()) {
       setEnd(date);
 
       return;
-    };
+    }
 
     setStart(date);
   };
@@ -101,7 +113,7 @@ export const Calendar: React.FC = () => {
           className={cn('calendar__day', {
             'calendar__day--off': date.getDay() === 0 || date.getDay() === 6,
             'calendar__day--today': date.getDate() === currentDate.getDate(),
-            'calendar__day--selected': date.getTime() === start?.getTime() || date.getTime() === end?.getTime()
+            'calendar__day--selected': date.getTime() === start?.getTime() || date.getTime() === end?.getTime() || (start && end && date.getTime() > start?.getTime() && date.getTime() < end?.getTime())
           })}
           onClick={() => handleDayClick(date)}
         >

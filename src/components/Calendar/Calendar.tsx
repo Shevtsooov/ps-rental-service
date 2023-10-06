@@ -63,8 +63,9 @@ export const Calendar: React.FC = () => {
     //   return;
     // };
 
-    if (start && start.getDate() === date.getDate()) {
-      setStart(null);
+    if (start && end) {
+      setStart(date);
+      setEnd(null);
 
       return;
     }

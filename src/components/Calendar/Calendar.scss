@@ -1,0 +1,70 @@
+@import "../../styles/utils/mixins.scss";
+@import "../../styles/utils/colors.scss";
+
+.calendar {
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+  margin: 40px auto;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #0074d9;
+    color: #fff;
+
+    button {
+      background: none;
+      border: none;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 18px;
+    }
+  }
+
+  &__days {
+    display: flex;
+    background-color: #f7f7f7;
+    font-weight: bold;
+
+    .calendar__day {
+      flex: 1;
+      text-align: center;
+      padding: 5px;
+      border: 1px solid #ccc;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    padding: 5px;
+  }
+
+  &__day {
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    &--selected {
+      background-color: #0074d9;
+      color: #fff;
+    }
+
+    &--empty {
+      background-color: #f7f7f7;
+    }
+  }
+}
+

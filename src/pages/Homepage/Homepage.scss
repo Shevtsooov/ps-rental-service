@@ -1,2 +1,10 @@
 @import "../../styles/utils/mixins.scss";
 @import "../../styles/utils/colors.scss";
+
+.homepage {
+  &__cal {
+    padding: 40px;
+    width: 500px;
+    margin: 0 auto;
+  }
+}

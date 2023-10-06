@@ -8,24 +8,24 @@ export interface ShoppingCartGamesState {
 
 const initialState: ShoppingCartGamesState = {
   value: [
-    {
-    title: 'FIFA 23',
-    icon: 'fifa24/fifa24.jpg',
+  //   {
+  //   title: 'FIFA 23',
+  //   icon: 'fifa24/fifa24.jpg',
 
-    price: 200,
-    // discountedPrice: 100,
-    popularity: 3,
-    id: 32
-  },
-  {
-    title: 'FIFA 24',
-    icon: 'fifa24/fifa24.jpg',
+  //   price: 200,
+  //   // discountedPrice: 100,
+  //   popularity: 3,
+  //   id: 32
+  // },
+  // {
+  //   title: 'FIFA 24',
+  //   icon: 'fifa24/fifa24.jpg',
 
-    price: 150,
-    discountedPrice: 100,
-    popularity: 22,
-    id: 33
-  }
+  //   price: 150,
+  //   discountedPrice: 100,
+  //   popularity: 22,
+  //   id: 33
+  // }
 ],
 }
 

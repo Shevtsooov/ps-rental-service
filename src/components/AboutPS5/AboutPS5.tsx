@@ -9,7 +9,7 @@ export const AboutPS5: React.FC = () => {
         // controls
         muted
         src={`${ps5_main}`}
-        autoPlay={true}
+        // autoPlay={true}
         loop={true}
         className="aboutPS5__video"
       >

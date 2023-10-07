@@ -80,6 +80,11 @@
     &--selected {
       background-color: #0074d9;
       color: #fff;
+
+      &_between {
+        background-color: #93cdff;
+        color: #fff;
+      }
     }
 
     &--empty {

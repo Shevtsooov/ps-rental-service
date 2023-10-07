@@ -22,53 +22,24 @@ export const Calendar: React.FC = () => {
   const [currentMonth, setCurrentMonth] = useState<number>(currentDate.getMonth());
   const [currentYear, setCurrentYear] = useState<number>(currentDate.getFullYear());
 
-  // const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [start, setStart] = useState<Date | null>(null);
   const [end, setEnd] = useState<Date | null>(null);
-
-
-  // console.log(typeof firstDay);
-  // console.log(firstDay.getDay());
+  const [bookedPeriod, setBookedPeriod] = useState<Date[] | []>([]);
 
   const handleDayClick = (date: Date) => {
-
-    // if (start && start.getDate() > date.getDate() && end && start.getDate() > end.getDate()) {
-    //   setStart(date);
-
-    //   return;
-    // }
-
-    // if (end && end.getDate() < date.getDate()) {
-    //   setEnd(date);
-
-    //   return;
-    // }
-
-    // if (end && end.getDate() === date.getDate()) {
-    //   setEnd(null);
-
-    //   return;
-    // }
-
-    // if (start && start.getDate() === date.getDate()) {
-    //   setStart(null);
-
-    //   return;
-    // }
-
-    // if (start && end) {
-    //   setStart(date);
-    //   setEnd(null);
-
-    //   return;
-    // };
-
     if (start && end) {
       setStart(date);
+      setBookedPeriod([]);
       setEnd(null);
 
       return;
     }
+
+    if (start && (start.getMonth() < date.getMonth() || start.getFullYear() < date.getFullYear())) {
+      setEnd(date);
+
+      return;
+    };
 
     if (start && start.getDate() > date.getDate()) {
       setStart(date);
@@ -83,7 +54,31 @@ export const Calendar: React.FC = () => {
     }
 
     setStart(date);
+    setBookedPeriod([]);
   };
+
+  const generateBookedPeriod = () => {
+    if (start && !end) {
+      setBookedPeriod(state => [...state, start]);
+      setStart(null);
+
+      return;
+    }
+
+    if (start && end) {
+      // Calculate the number of days between start and end (inclusive)
+      const startTime = start.getTime();
+      const endTime = end.getTime();
+      
+      for (let time = startTime; time <= endTime; time += 24 * 60 * 60 * 1000) {
+        const date = new Date(time);
+        setBookedPeriod(state => [...state, date]);
+      }
+    }
+
+    setStart(null);
+    setEnd(null);
+  }
 
   // Function to generate days for a given month
   const generateMonthDays = (year: number, month: number) => {
@@ -93,12 +88,10 @@ export const Calendar: React.FC = () => {
     
     // Map the days of the week, starting from Monday (0 = Monday, 6 = Sunday)
     const daysOfWeek = [6, 0, 1, 2, 3, 4, 5,];
-
-    console.log(daysOfWeek[firstDay])
   
     // Calculate the index of the first day in the new order
     const startingIndex = daysOfWeek[firstDay];
-  
+
     for (let i = 0; i < startingIndex; i++) {
       days.push(
       <div key={`empty-${i}`} className="calendar__day calendar__day--empty">
@@ -108,13 +101,25 @@ export const Calendar: React.FC = () => {
   
     for (let i = 1; i <= daysInMonth; i++) {
       const date = new Date(year, month, i);
+
+      const isDayOff = date.getDay() === 0 || date.getDay() === 6;
+
+      const isToday = date.getDate() === currentDate.getDate()
+      && date.getMonth() === currentDate.getMonth()
+      && date.getFullYear() === currentDate.getFullYear();
+
+      const IsStartEndSelected = date.getTime() === start?.getTime() || date.getTime() === end?.getTime();
+
+      const includedSelectedDays = (start && end && date.getTime() > start?.getTime() && date.getTime() < end?.getTime())
+
       days.push(
         <div
           key={i}
           className={cn('calendar__day', {
-            'calendar__day--off': date.getDay() === 0 || date.getDay() === 6,
-            'calendar__day--today': date.getDate() === currentDate.getDate(),
-            'calendar__day--selected': date.getTime() === start?.getTime() || date.getTime() === end?.getTime() || (start && end && date.getTime() > start?.getTime() && date.getTime() < end?.getTime())
+            'calendar__day--off': isDayOff,
+            'calendar__day--today': isToday,
+            'calendar__day--selected': IsStartEndSelected,
+            'calendar__day--selected_between': includedSelectedDays
           })}
           onClick={() => handleDayClick(date)}
         >
@@ -152,6 +157,20 @@ export const Calendar: React.FC = () => {
     setCurrentMonth(month => month - 1);
   }
 
+  console.log('start - ', start?.getDate());
+  console.log('end - ', end?.getDate());
+  console.log('period - ', bookedPeriod);
+
+  let amountOfDays = 'доба';
+
+  if (bookedPeriod.length > 1) {
+    amountOfDays = 'доби';
+  }
+
+  if (bookedPeriod.length > 4) {
+    amountOfDays = 'діб';
+  }
+
   return (
     <div className="calendar">
       <header className="calendar__header">
@@ -173,6 +192,21 @@ export const Calendar: React.FC = () => {
       <div className="calendar__grid">
         {generateMonthDays(currentYear, currentMonth)}
       </div>
+      <button onClick={generateBookedPeriod}>click</button>
+      <hr />
+      {bookedPeriod.length > 1 && (
+        <p>{`${bookedPeriod[0].toDateString()} - ${bookedPeriod[bookedPeriod.length - 1].toDateString()}`}</p>
+      )}
+      <hr />
+      <ul>
+        {bookedPeriod.map(day => (
+          <li key={day.toDateString()}>{day.toDateString()}</li>
+        ))}
+      </ul>
+      <hr />
+      {bookedPeriod.length > 0 && (
+        <p>{`${bookedPeriod.length} ${amountOfDays}`}</p>
+      )}
     </div>
   );
 };

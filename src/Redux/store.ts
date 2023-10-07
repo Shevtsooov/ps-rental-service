@@ -3,12 +3,16 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import { queryReducer } from './Slices/query.slice';
 import { savedGamesReducer } from './Slices/savedGames.slice';
 import { shoppingCartGamesReducer } from './Slices/shoppingCartGames.slice';
+import { bookedDaysReducer } from './Slices/bookedDays.slice';
+import { selectedDaysReducer } from './Slices/selectedDays.slice';
 
 export const store = configureStore({
   reducer: {
     query: queryReducer,
     savedGames: savedGamesReducer,
     shoppingCartGames: shoppingCartGamesReducer,
+    bookedDays: bookedDaysReducer,
+    selectedDays: selectedDaysReducer,
     // [QuestionsApi.reducerPath]: QuestionsApi.reducer,
   },
   // middleware: (getDefaultMiddleware) => (

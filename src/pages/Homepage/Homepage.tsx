@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Homepage.scss';
 import { Slider } from '../../components/Slider/Slider';
 // import { BookPS } from '../../components/BookPS/BookPS';
 import { PopularGames } from '../../components/PopularGames/PopularGames';
 import { AboutPS5 } from '../../components/AboutPS5/AboutPS5';
 import { Calendar } from '../../components/Calendar/Calendar';
+import { Loader } from '../../components/Loader/Loader';
 
 export const Homepage: React.FC = () => {
 

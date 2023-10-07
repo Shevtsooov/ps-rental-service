@@ -78,17 +78,24 @@
     }
 
     &--selected {
-      background-color: #0074d9;
+      background-color: $main-blue-hv;
       color: #fff;
 
       &_between {
-        background-color: #93cdff;
+        background-color: $main-blue;
         color: #fff;
       }
     }
 
     &--empty {
       background-color: #f7f7f7;
+    }
+
+    &--disabled {
+      background-color: #dbd9d9;
+      color: #6e6e6e;
+      pointer-events:none;
+
     }
 
   }

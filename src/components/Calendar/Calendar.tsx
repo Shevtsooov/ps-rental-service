@@ -47,7 +47,7 @@ export const Calendar: React.FC = () => {
   });
 
   const monthLookUpLimit = useAppSelector(state => state.monthLookUpLimit.value);
-  // const bookedDays = useAppSelector(state => state.bookedDays.value);
+  const bookedDays = useAppSelector(state => state.bookedDays.value);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -249,8 +249,8 @@ const handleDayClick = (date: Date) => {
     daysInLS.push(new Date(selectedDays[i]));
   }
 
-  const firstDay = new Date(selectedDays[0]);
-  const lastDay = new Date(selectedDays[selectedDays.length - 1]);
+  const firstDay = new Date(bookedDays[0]);
+  const lastDay = new Date(bookedDays[bookedDays.length - 1]);
 
   console.log('lastDay - ',lastDay.getDate());
 
@@ -284,19 +284,6 @@ const handleDayClick = (date: Date) => {
           {`${firstDay.getDate()} ${monthsSelected[firstDay.getMonth()]} - ${lastDay.getDate()} ${monthsSelected[lastDay.getMonth()]}`}
         </p>
       )}
-      
-      <hr />
-
-      <ul>
-        {/* {booked?.map(day => (
-          const date = new Date(day);
-
-          <li key={date.toDateString()}>
-            {date.toDateString()}
-            {`${date.getDate()} ${monthsSelected[date.getMonth()]}`}
-            </li>
-        ))} */}
-      </ul>
 
       <hr />
 

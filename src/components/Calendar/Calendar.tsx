@@ -1,12 +1,13 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import cn from 'classnames';
-import { useAppDispatch } from '../../Redux/store';
+import { useAppDispatch, useAppSelector } from '../../Redux/store';
 import {
   resetBookedDays,
   setBookedDays,
 } from '../../Redux/Slices/bookedDays.slice';
 import { months, monthsSelected } from '../../helpers/CorrectDateNames';
 import './Calendar.scss';
+import { decreaseMonthLookUpLimit, increaseMonthLookUpLimit } from '../../Redux/Slices/monthLookUpLimit';
 
 export const Calendar: React.FC = () => {
   const [currentDate] = useState<Date>(new Date());
@@ -45,6 +46,7 @@ export const Calendar: React.FC = () => {
     return '';
   });
 
+  const monthLookUpLimit = useAppSelector(state => state.monthLookUpLimit.value);
   // const bookedDays = useAppSelector(state => state.bookedDays.value);
   const dispatch = useAppDispatch();
 
@@ -57,6 +59,7 @@ export const Calendar: React.FC = () => {
 
 const handleDayClick = (date: Date) => {
   const startDate = new Date(selectedStart);
+  console.log('diff - ',  date.getTime() - startDate.getTime());
 
   if (startDate && selectedEnd) {
     setSelectedStart(date.toDateString());
@@ -71,11 +74,19 @@ const handleDayClick = (date: Date) => {
     return;
   }
 
-  if (selectedStart && startDate < date) {
+  if (startDate && 1123200000 < date.getTime() - startDate.getTime()) {
+    setSelectedStart(date.toDateString());
+
+    return;
+  }
+
+  if (startDate && startDate < date) {
     setSelectedEnd(date.toDateString());
 
     return;
   }
+
+  
 
   setSelectedStart(date.toDateString());
 };
@@ -189,20 +200,27 @@ const handleDayClick = (date: Date) => {
   };
 
   const handleNextMonth = () => {
+    if (monthLookUpLimit === 2) {
+      return;
+    }
+
     if (currentMonth === 11) {
       setCurrentMonth(0);
       setCurrentYear(currentYear => currentYear + 1);
+      dispatch(increaseMonthLookUpLimit());
 
       return;
     }
 
     setCurrentMonth(month => month + 1);
+    dispatch(increaseMonthLookUpLimit());
   };
 
   const handlePreviousMonth = () => {
     if (currentYear !== currentDate.getFullYear() && currentMonth === 0) {
       setCurrentYear(currentYear => currentYear - 1);
       setCurrentMonth(11);
+      dispatch(decreaseMonthLookUpLimit());
 
       return;
     }
@@ -212,6 +230,7 @@ const handleDayClick = (date: Date) => {
     }
 
     setCurrentMonth(month => month - 1);
+    dispatch(decreaseMonthLookUpLimit());
   }
 
   let amountOfDays = 'доба';

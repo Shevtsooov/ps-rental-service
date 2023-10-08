@@ -10,8 +10,25 @@
     &__calendar {
       width: 90%;
       position: absolute;
-      top: 70%;
-      left: 0;
+      top: 80%;
+      left: 5%;
+
+      display: flex;
+      justify-content: center;
+
+      background-color: #238df7;
+
+      &_button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+
+        border-radius: 30px;
+        border: 0;
+
+        width: 20px;
+        height: 20px;
+      }
 
       // background-color: #fff;
     }
@@ -51,6 +68,8 @@
           background-color: $main-grey;
           padding: 5px 5px;
           border-radius: 30px;
+          cursor: pointer;
+          user-select: none;
         }
 
         &_days {

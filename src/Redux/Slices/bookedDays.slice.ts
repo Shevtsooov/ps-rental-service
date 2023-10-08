@@ -25,7 +25,7 @@ export const bookedDaysSlice = createSlice({
         value: state.value.filter((Day) => Day !== action.payload),
       };
     },
-    resetBookedDayss: (state) => {
+    resetBookedDays: (state) => {
       state.value = []
     },
   },
@@ -34,6 +34,6 @@ export const bookedDaysSlice = createSlice({
 export const {
   setBookedDays,
   filterBookedDays,
-  resetBookedDayss,
+  resetBookedDays,
 } = bookedDaysSlice.actions;
 export const bookedDaysReducer = bookedDaysSlice.reducer;

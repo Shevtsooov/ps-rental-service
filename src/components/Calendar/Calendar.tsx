@@ -1,89 +1,57 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import './Calendar.scss';
 import cn from 'classnames';
-import { useAppDispatch, useAppSelector } from '../../Redux/store';
-import { resetSelectedDays, setSelectedDays } from '../../Redux/Slices/selectedDays.slice';
-import { setBookedDays } from '../../Redux/Slices/bookedDays.slice';
-
-const months = [
-  'Січень',
-  'Лютий',
-  'Березень',
-  'Квітень',
-  'Травень',
-  'Червень',
-  'Липень',
-  'Серпень',
-  'Вересень',
-  'Жовтень',
-   'Листопад',
-   'Грудень',
-];
-const monthsSelected = [
-  'cічня',
-  'лютого',
-  'березня',
-  'квітня',
-  'травня',
-  'червня',
-  'липня',
-  'серпень',
-  'вересня',
-  'жовтня',
-  'листопада',
-  'грудня',
-];
+import { useAppDispatch } from '../../Redux/store';
+import {
+  resetBookedDays,
+  setBookedDays,
+} from '../../Redux/Slices/bookedDays.slice';
+import { months, monthsSelected } from '../../helpers/CorrectDateNames';
+import './Calendar.scss';
 
 export const Calendar: React.FC = () => {
-  const [currentDate, setCurrentDate] = useState<Date>(new Date());
+  const [currentDate] = useState<Date>(new Date());
   const [currentMonth, setCurrentMonth] = useState<number>(currentDate.getMonth());
   const [currentYear, setCurrentYear] = useState<number>(currentDate.getFullYear());
 
-  // const [start, setStart] = useState<Date | null>(null);
-  // const [end, setEnd] = useState<Date | null>(null);
-  // const [selectedDays, setSelectedDays] = useState<Date[]>([]);
-  // const [bookedDays, setBookedDays] = useState<Date[]>([]);
-
   const [selectedDays, setSelectedDays] = useState<string[]>(() => {
-    const storedDays = localStorage.getItem('storedDays');
+    const storedDays = sessionStorage.getItem('storedDays');
     const parsedDays = storedDays ? JSON.parse(storedDays) : [];
     
     if (parsedDays.length > 0) {
       return parsedDays;
     }
     
-    return []; // Default to an empty array if no data is in localStorage.
+    return [];
   });
 
   const [selectedStart, setSelectedStart] = useState<string>(() => {
-    const storedStart = localStorage.getItem('storedStart');
+    const storedStart = sessionStorage.getItem('storedStart');
     const parsedStart = storedStart ? JSON.parse(storedStart) : '';
     
     if (parsedStart.length > 0) {
       return parsedStart;
     }
     
-    return ''; // Default to an empty array if no data is in localStorage.
+    return '';
   });
   const [selectedEnd, setSelectedEnd] = useState<string>(() => {
-    const storedEnd = localStorage.getItem('storedEnd');
+    const storedEnd = sessionStorage.getItem('storedEnd');
     const parsedEnd = storedEnd ? JSON.parse(storedEnd) : '';
     
     if (parsedEnd.length > 0) {
       return parsedEnd;
     }
     
-    return ''; // Default to an empty array if no data is in localStorage.
+    return '';
   });
 
-  // const selectedDays = useAppSelector(state => state.selectedDays.value);
-  const bookedDays = useAppSelector(state => state.bookedDays.value);
+  // const bookedDays = useAppSelector(state => state.bookedDays.value);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    localStorage.setItem("storedDays", JSON.stringify(selectedDays));
-    localStorage.setItem("storedStart", JSON.stringify(selectedStart));
-    localStorage.setItem("storedEnd", JSON.stringify(selectedEnd));
+    sessionStorage.setItem("storedDays", JSON.stringify(selectedDays));
+    sessionStorage.setItem("storedStart", JSON.stringify(selectedStart));
+    sessionStorage.setItem("storedEnd", JSON.stringify(selectedEnd));
   }, [selectedStart, selectedEnd, selectedDays]);
 
 
@@ -93,30 +61,30 @@ const handleDayClick = (date: Date) => {
   if (startDate && selectedEnd) {
     setSelectedStart(date.toDateString());
     setSelectedEnd('');
-    // setSelectedDays([date.toDateString()]); // Update selectedDays with a single date
+
     return;
   }
 
   if (startDate && startDate > date) {
     setSelectedStart(date.toDateString());
-    // setSelectedDays([date.toDateString()]); // Update selectedDays with a single date
+
     return;
   }
 
   if (selectedStart && startDate < date) {
     setSelectedEnd(date.toDateString());
-    // const selectedDates = getDatesBetween(start, date);
-    // setSelectedDays(selectedDates); // Update selectedDays with a range of dates
+
     return;
   }
 
   setSelectedStart(date.toDateString());
-  // setSelectedDays([date.toDateString()]); // Update selectedDays with a single date
 };
+
 
   const generateSelectedDays = useCallback(() => {
     // dispatch(resetSelectedDays());
     setSelectedDays([]);
+    dispatch(resetBookedDays());
   
     if (selectedStart && selectedEnd) {
       // Calculate the number of days between start and end (inclusive)
@@ -125,14 +93,15 @@ const handleDayClick = (date: Date) => {
   
       for (let time = startTime; time <= endTime; time += 24 * 60 * 60 * 1000) {
         const date = new Date(time);
-        // dispatch(setSelectedDays(date));
-        setSelectedDays(days => [...days, date.toDateString()])
+
+        setSelectedDays(days => [...days, date.toDateString()]);
+        dispatch(setBookedDays(date.toDateString()));
       }
     } else if (selectedStart) {
-      // dispatch(setSelectedDays([start]));
       setSelectedDays([selectedStart]);
+      dispatch(setBookedDays(selectedStart))
     }
-  }, [selectedStart, selectedEnd]);
+  }, [selectedStart, selectedEnd, dispatch]);
   
   useEffect(() => {
     if (selectedStart || selectedEnd) {
@@ -160,6 +129,8 @@ const handleDayClick = (date: Date) => {
   // Function to generate days for a given month
   const generateMonthDays = (year: number, month: number) => {
     const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+    console.log('daysInMonth - ',daysInMonth);
     let firstDay = new Date(currentYear, currentMonth, 1).getDay();
     const days = [];
     
@@ -194,7 +165,7 @@ const handleDayClick = (date: Date) => {
       && date.getMonth() === currentDate.getMonth()
       && date.getFullYear() === currentDate.getFullYear();
 
-      const isBooked = bookedDays && bookedDays.some(item => item.getTime() === date.getTime());
+      // const isBooked = bookedDays && bookedDays.some(item => item.getTime() === date.getTime());
 
       days.push(
         <div
@@ -204,7 +175,8 @@ const handleDayClick = (date: Date) => {
             'calendar__day--today': isToday,
             'calendar__day--selected': IsStartEndSelected,
             'calendar__day--selected_between': includedSelectedDays,
-            'calendar__day--disabled': isDisabled || isBooked
+            'calendar__day--disabled': isDisabled 
+            // || isBooked
           })}
           onClick={() => handleDayClick(date)}
         >
@@ -242,38 +214,26 @@ const handleDayClick = (date: Date) => {
     setCurrentMonth(month => month - 1);
   }
 
-  // console.log('start - ', start?.getDate());
-  // console.log('end - ', end?.getDate());
-  // console.log('selectedDays - ', selectedDays);
-  // console.log('selectedDays in LS - ', selectedDays[0]);
-  // console.log('selectedDays in LS - ', typeof selectedDays[0]);
-  // console.log('selectedDays in LS - ', JSON.parse(selectedDays[0]));
+  let amountOfDays = 'доба';
 
-  // console.log('bookedDays - ', bookedDays);
+  if (selectedDays.length > 1) {
+    amountOfDays = 'доби';
+  }
 
-  // let amountOfDays = 'доба';
+  if (selectedDays.length > 4) {
+    amountOfDays = 'діб';
+  }
 
-  // if (selectedDays.length > 1) {
-  //   amountOfDays = 'доби';
-  // }
+  const daysInLS = [];
 
-  // if (selectedDays.length > 4) {
-  //   amountOfDays = 'діб';
-  // }
+  for (let i = 0; i > selectedDays.length; i++) {
+    daysInLS.push(new Date(selectedDays[i]));
+  }
 
-  // const daysInLS = [];
+  const firstDay = new Date(selectedDays[0]);
+  const lastDay = new Date(selectedDays[selectedDays.length - 1]);
 
-  // for (let i = 0; i > selectedDays.length; i++) {
-  //   daysInLS.push(new Date(selectedDays[i]));
-  // }
-
-  // const today = new Date();
-  // const todayString = today.toDateString();
-  // const todayRev = new Date(todayString);
-  
-  // console.log(today);
-  // console.log(todayString);
-  // console.log(todayRev);
+  console.log('lastDay - ',lastDay.getDate());
 
   return (
     <div className="calendar">
@@ -300,28 +260,30 @@ const handleDayClick = (date: Date) => {
       {/* <button onClick={handleBookDays}>click</button> */}
       <hr />
 
-      {/* {selectedDays?.length > 1 && (
+      {selectedDays?.length > 1 && (
         <p>
-          {`${selectedDays[0].getDate()} ${monthsSelected[selectedDays[0].getMonth()]} - ${selectedDays[selectedDays.length - 1].getDate()} ${monthsSelected[selectedDays[selectedDays.length - 1].getMonth()]}`}
+          {`${firstDay.getDate()} ${monthsSelected[firstDay.getMonth()]} - ${lastDay.getDate()} ${monthsSelected[lastDay.getMonth()]}`}
         </p>
       )}
       
       <hr />
 
       <ul>
-        {selectedDays?.map(day => (
-          <li key={day.toDateString()}>
-            {day.toDateString()}
-            {`${day.getDate()} ${monthsSelected[day.getMonth()]}`}
+        {/* {booked?.map(day => (
+          const date = new Date(day);
+
+          <li key={date.toDateString()}>
+            {date.toDateString()}
+            {`${date.getDate()} ${monthsSelected[date.getMonth()]}`}
             </li>
-        ))}
+        ))} */}
       </ul>
 
       <hr />
 
       {selectedDays?.length > 0 && (
         <p>{`${selectedDays.length} ${amountOfDays}`}</p>
-      )} */}
+      )}
       
     </div>
   );

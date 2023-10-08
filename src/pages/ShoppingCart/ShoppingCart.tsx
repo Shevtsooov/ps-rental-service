@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './ShoppingCart.scss';
 import { useAppSelector } from '../../Redux/store';
 import { Link } from 'react-router-dom';
@@ -55,6 +55,7 @@ export const ShoppingCart: React.FC = () => {
           Оформити прокат
         </button>
       </div>
+    
     </div>
   );
 }

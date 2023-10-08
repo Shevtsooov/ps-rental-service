@@ -2,90 +2,53 @@ import './PSShoppingCartInfo.scss';
 import Playstation from '../../assets/images/ps-shopping-cart.png'
 import { useEffect, useState } from 'react';
 import { Calendar } from '../Calendar/Calendar';
-import { render } from 'react-dom';
-
-const monthsSelected = [
-  'cічня',
-  'лютого',
-  'березня',
-  'квітня',
-  'травня',
-  'червня',
-  'липня',
-  'серпень',
-  'вересня',
-  'жовтня',
-  'листопада',
-  'грудня',
-];
-
-const daysOfWeek = [
-  'Нд',
-  'Пн',
-  'Вт',
-  'Ср',
-  'Чт',
-  'Пт',
-  'Сб',
-]
+import React from 'react';
+import { useAppSelector } from '../../Redux/store';
+import { daysOfWeek, monthsSelected } from '../../helpers/CorrectDateNames';
 
 export const PSShoppingCartInfo: React.FC = () => {
   const [isCalendarShown, setIsCalendarShown] = useState(false);
   const [selectedDays, setSelectedDays] = useState<string[]>(() => {
-    const storedDays = localStorage.getItem('storedDays');
+    const storedDays = sessionStorage.getItem('storedDays');
     const parsedDays = storedDays ? JSON.parse(storedDays) : [];
-
+    
     if (parsedDays.length > 0) {
       return parsedDays;
     }
-
-    return []; // Default to an empty array if no data is in localStorage.
+    
+    return [];
   });
 
+  const bookedDays = useAppSelector(state => state.bookedDays.value);
+
+  const toggleCalendar = () => {
+    setIsCalendarShown(state => !state);
+  };
+
   useEffect(() => {
-    // Define a function to handle changes in localStorage
-    const handleStorageChange = (e: StorageEvent) => {
-      if (e.key === 'storedDays') {
-        // Update the state with the new data from localStorage
-        setSelectedDays(JSON.parse(e.newValue || '[]'));
-      }
-    };
+    sessionStorage.setItem("storedDays", JSON.stringify(selectedDays));
+  }, [selectedDays]);
 
-    // Add an event listener to listen for storage changes
-    window.addEventListener('storage', handleStorageChange);
-
-    return () => {
-      // Remove the event listener when the component unmounts
-      window.removeEventListener('storage', handleStorageChange);
-    };
-  }, []); // This effect runs once during component initialization
-
-  // for (let i = 0; i < selectedDays.length; i++) {
-  //  selectedPeriod.push(new Date(selectedDays[i]))
-  // }
-
-  const firstDay = new Date(selectedDays[0]);
-  const lastDay = new Date(selectedDays[selectedDays.length - 1]);
-
-  const days = 1;
+  const firstDay = new Date(bookedDays[0]);
+  const lastDay = new Date(bookedDays[bookedDays.length - 1]);
 
   let psPricing = 450;
 
-  if (days > 2) {
+  if (bookedDays.length > 2) {
     psPricing = 350; 
   }
 
-  if (days > 6) {
+  if (bookedDays.length > 6) {
     psPricing = 300; 
   }
 
    let amountOfDays = 'доба';
 
-  if (selectedDays.length > 1) {
+  if (bookedDays.length > 1) {
     amountOfDays = 'доби';
   }
 
-  if (selectedDays.length > 4) {
+  if (bookedDays.length > 4) {
     amountOfDays = 'діб';
   }
 
@@ -94,6 +57,10 @@ export const PSShoppingCartInfo: React.FC = () => {
 
         {isCalendarShown && (
           <div className="psShoppingCartInfo__calendar">
+            <button
+              className="psShoppingCartInfo__calendar_button"
+              onClick={toggleCalendar}
+            >X</button>
             <Calendar />
           </div>
         )}
@@ -116,31 +83,37 @@ export const PSShoppingCartInfo: React.FC = () => {
           </p>
 
           <div className="psShoppingCartInfo__info_booking">
-            {/* <p 
+          {bookedDays.length === 0 && (
+            <p 
               className="psShoppingCartInfo__info_booking_period"
+              onClick={toggleCalendar}
             >
-              1 жовтня(пт) - 3 жовтня(нд)
-            </p> */}
-            {selectedDays?.length > 1 && (
+              Обрати дати
+            </p>)}
+            {bookedDays?.length > 1 && (
               <p 
                 className="psShoppingCartInfo__info_booking_period"
-                onClick={() => setIsCalendarShown(prev => !prev)}
+                onClick={toggleCalendar}
               >
                 {`${firstDay.getDate()} ${monthsSelected[firstDay.getMonth()]} (${daysOfWeek[firstDay.getDay()]}) - ${lastDay.getDate()} ${monthsSelected[lastDay.getMonth()]} (${daysOfWeek[lastDay.getDay()]})`}
               </p>
             )}
-            {selectedDays?.length === 1 && (
-              <p className="psShoppingCartInfo__info_booking_period">
+            {bookedDays?.length === 1 && (
+              <p
+                className="psShoppingCartInfo__info_booking_period"
+                onClick={toggleCalendar}
+              >
                 {`${firstDay.getDate()} ${monthsSelected[firstDay.getMonth()]}`}
               </p>
             )}
+             {bookedDays?.length > 0 && (
             <p 
               className="psShoppingCartInfo__info_booking_days"
             >
-              {`${selectedDays.length} ${amountOfDays}`}
-            </p>
+              {`${bookedDays.length} ${amountOfDays}`}
+            </p>)}
           </div>
         </div>
       </div>
   );
-}
+};

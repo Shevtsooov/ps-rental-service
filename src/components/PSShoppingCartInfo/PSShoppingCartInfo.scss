@@ -2,9 +2,19 @@
 @import "../../styles/utils/colors.scss";
 
 .psShoppingCartInfo {
+  position: relative;
     display: flex;
     gap: 15px;
     margin-bottom: 15px;
+
+    &__calendar {
+      width: 90%;
+      position: absolute;
+      top: 70%;
+      left: 0;
+
+      // background-color: #fff;
+    }
     
     &__img {
       &_icon {

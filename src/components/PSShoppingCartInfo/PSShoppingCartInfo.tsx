@@ -1,6 +1,8 @@
 import './PSShoppingCartInfo.scss';
 import Playstation from '../../assets/images/ps-shopping-cart.png'
 import { useEffect, useState } from 'react';
+import { Calendar } from '../Calendar/Calendar';
+import { render } from 'react-dom';
 
 const monthsSelected = [
   'cічня',
@@ -28,29 +30,42 @@ const daysOfWeek = [
 ]
 
 export const PSShoppingCartInfo: React.FC = () => {
+  const [isCalendarShown, setIsCalendarShown] = useState(false);
   const [selectedDays, setSelectedDays] = useState<string[]>(() => {
     const storedDays = localStorage.getItem('storedDays');
     const parsedDays = storedDays ? JSON.parse(storedDays) : [];
-    
+
     if (parsedDays.length > 0) {
       return parsedDays;
     }
-    
+
     return []; // Default to an empty array if no data is in localStorage.
   });
 
-  const selectedPeriod = [];
-
-  for (let i = 0; i < selectedDays.length; i++) {
-   selectedPeriod.push(new Date(selectedDays[i]))
-  }
-
-  const firstDay = selectedPeriod[0];
-  const lastDay = selectedPeriod[selectedPeriod.length - 1];
-
   useEffect(() => {
-    localStorage.setItem("storedDays", JSON.stringify(selectedDays));
-  }, [selectedDays]);
+    // Define a function to handle changes in localStorage
+    const handleStorageChange = (e: StorageEvent) => {
+      if (e.key === 'storedDays') {
+        // Update the state with the new data from localStorage
+        setSelectedDays(JSON.parse(e.newValue || '[]'));
+      }
+    };
+
+    // Add an event listener to listen for storage changes
+    window.addEventListener('storage', handleStorageChange);
+
+    return () => {
+      // Remove the event listener when the component unmounts
+      window.removeEventListener('storage', handleStorageChange);
+    };
+  }, []); // This effect runs once during component initialization
+
+  // for (let i = 0; i < selectedDays.length; i++) {
+  //  selectedPeriod.push(new Date(selectedDays[i]))
+  // }
+
+  const firstDay = new Date(selectedDays[0]);
+  const lastDay = new Date(selectedDays[selectedDays.length - 1]);
 
   const days = 1;
 
@@ -66,16 +81,22 @@ export const PSShoppingCartInfo: React.FC = () => {
 
    let amountOfDays = 'доба';
 
-  if (selectedPeriod.length > 1) {
+  if (selectedDays.length > 1) {
     amountOfDays = 'доби';
   }
 
-  if (selectedPeriod.length > 4) {
+  if (selectedDays.length > 4) {
     amountOfDays = 'діб';
   }
 
   return (
       <div className="psShoppingCartInfo">
+
+        {isCalendarShown && (
+          <div className="psShoppingCartInfo__calendar">
+            <Calendar />
+          </div>
+        )}
 
         <div className="psShoppingCartInfo__img">
           <img
@@ -100,22 +121,23 @@ export const PSShoppingCartInfo: React.FC = () => {
             >
               1 жовтня(пт) - 3 жовтня(нд)
             </p> */}
-            {selectedPeriod?.length > 1 && (
+            {selectedDays?.length > 1 && (
               <p 
                 className="psShoppingCartInfo__info_booking_period"
+                onClick={() => setIsCalendarShown(prev => !prev)}
               >
-                {`${firstDay.getDate()} ${monthsSelected[firstDay.getMonth()]} (${daysOfWeek[firstDay.getDay()]}) - ${selectedPeriod[selectedPeriod.length - 1].getDate()} ${monthsSelected[selectedPeriod[selectedPeriod.length - 1].getMonth()]} (${daysOfWeek[lastDay.getDay()]})`}
+                {`${firstDay.getDate()} ${monthsSelected[firstDay.getMonth()]} (${daysOfWeek[firstDay.getDay()]}) - ${lastDay.getDate()} ${monthsSelected[lastDay.getMonth()]} (${daysOfWeek[lastDay.getDay()]})`}
               </p>
             )}
-            {selectedPeriod?.length == 1 && (
+            {selectedDays?.length === 1 && (
               <p className="psShoppingCartInfo__info_booking_period">
-                {`${selectedPeriod[0].getDate()} ${monthsSelected[selectedPeriod[0].getMonth()]}`}
+                {`${firstDay.getDate()} ${monthsSelected[firstDay.getMonth()]}`}
               </p>
             )}
             <p 
               className="psShoppingCartInfo__info_booking_days"
             >
-              {`${selectedPeriod.length} ${amountOfDays}`}
+              {`${selectedDays.length} ${amountOfDays}`}
             </p>
           </div>
         </div>

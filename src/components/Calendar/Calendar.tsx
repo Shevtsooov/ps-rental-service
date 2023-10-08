@@ -39,8 +39,8 @@ export const Calendar: React.FC = () => {
   const [currentMonth, setCurrentMonth] = useState<number>(currentDate.getMonth());
   const [currentYear, setCurrentYear] = useState<number>(currentDate.getFullYear());
 
-  const [start, setStart] = useState<Date | null>(null);
-  const [end, setEnd] = useState<Date | null>(null);
+  // const [start, setStart] = useState<Date | null>(null);
+  // const [end, setEnd] = useState<Date | null>(null);
   // const [selectedDays, setSelectedDays] = useState<Date[]>([]);
   // const [bookedDays, setBookedDays] = useState<Date[]>([]);
 
@@ -55,82 +55,107 @@ export const Calendar: React.FC = () => {
     return []; // Default to an empty array if no data is in localStorage.
   });
 
+  const [selectedStart, setSelectedStart] = useState<string>(() => {
+    const storedStart = localStorage.getItem('storedStart');
+    const parsedStart = storedStart ? JSON.parse(storedStart) : '';
+    
+    if (parsedStart.length > 0) {
+      return parsedStart;
+    }
+    
+    return ''; // Default to an empty array if no data is in localStorage.
+  });
+  const [selectedEnd, setSelectedEnd] = useState<string>(() => {
+    const storedEnd = localStorage.getItem('storedEnd');
+    const parsedEnd = storedEnd ? JSON.parse(storedEnd) : '';
+    
+    if (parsedEnd.length > 0) {
+      return parsedEnd;
+    }
+    
+    return ''; // Default to an empty array if no data is in localStorage.
+  });
+
   // const selectedDays = useAppSelector(state => state.selectedDays.value);
   const bookedDays = useAppSelector(state => state.bookedDays.value);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
     localStorage.setItem("storedDays", JSON.stringify(selectedDays));
-  }, [selectedDays]);
+    localStorage.setItem("storedStart", JSON.stringify(selectedStart));
+    localStorage.setItem("storedEnd", JSON.stringify(selectedEnd));
+  }, [selectedStart, selectedEnd, selectedDays]);
 
 
 const handleDayClick = (date: Date) => {
-  if (start && end) {
-    setStart(date);
-    setEnd(null);
-    setSelectedDays([date.toDateString()]); // Update selectedDays with a single date
+  const startDate = new Date(selectedStart);
+
+  if (startDate && selectedEnd) {
+    setSelectedStart(date.toDateString());
+    setSelectedEnd('');
+    // setSelectedDays([date.toDateString()]); // Update selectedDays with a single date
     return;
   }
 
-  if (start && start > date) {
-    setStart(date);
-    setSelectedDays([date.toDateString()]); // Update selectedDays with a single date
+  if (startDate && startDate > date) {
+    setSelectedStart(date.toDateString());
+    // setSelectedDays([date.toDateString()]); // Update selectedDays with a single date
     return;
   }
 
-  if (start && start < date) {
-    setEnd(date);
+  if (selectedStart && startDate < date) {
+    setSelectedEnd(date.toDateString());
     // const selectedDates = getDatesBetween(start, date);
     // setSelectedDays(selectedDates); // Update selectedDays with a range of dates
     return;
   }
 
-  setStart(date);
-  setSelectedDays([date.toDateString()]); // Update selectedDays with a single date
+  setSelectedStart(date.toDateString());
+  // setSelectedDays([date.toDateString()]); // Update selectedDays with a single date
 };
 
   const generateSelectedDays = useCallback(() => {
     // dispatch(resetSelectedDays());
     setSelectedDays([]);
   
-    if (start && end) {
+    if (selectedStart && selectedEnd) {
       // Calculate the number of days between start and end (inclusive)
-      const startTime = start.getTime();
-      const endTime = end.getTime();
+      const startTime = new Date(selectedStart).getTime();
+      const endTime = new Date(selectedEnd).getTime();
   
       for (let time = startTime; time <= endTime; time += 24 * 60 * 60 * 1000) {
         const date = new Date(time);
         // dispatch(setSelectedDays(date));
         setSelectedDays(days => [...days, date.toDateString()])
       }
-    } else if (start) {
+    } else if (selectedStart) {
       // dispatch(setSelectedDays([start]));
-      setSelectedDays([start.toDateString()]);
+      setSelectedDays([selectedStart]);
     }
-  }, [start, end]);
+  }, [selectedStart, selectedEnd]);
   
   useEffect(() => {
-    if (start || end) {
+    if (selectedStart || selectedEnd) {
       generateSelectedDays();
     }
-  }, [start, end, generateSelectedDays]);
+  }, [selectedStart, selectedEnd, generateSelectedDays]);
 
-  const handleBookDays = () => {
-    const isOverBooking = bookedDays.some(bDay => (
-      selectedDays.includes(bDay.toDateString())
-      ));
+  // const handleBookDays = () => {
+  //   const isOverBooking = bookedDays.some(bDay => (
+  //     selectedDays.includes(bDay.toDateString())
+  //     ));
 
-      console.log(isOverBooking);
+  //     console.log(isOverBooking);
 
-    if (isOverBooking) {
-      alert('overbooking');
+  //   if (isOverBooking) {
+  //     alert('overbooking');
 
-      return;
-    }
+  //     return;
+  //   }
 
-    dispatch(setBookedDays(selectedDays));
-    setStart(null);
-  }
+  //   dispatch(setBookedDays(selectedDays));
+  //   setSelectedStart('');
+  // }
 
   // Function to generate days for a given month
   const generateMonthDays = (year: number, month: number) => {
@@ -150,6 +175,9 @@ const handleDayClick = (date: Date) => {
     }
   
     for (let i = 1; i <= daysInMonth; i++) {
+
+      const startDate = new Date(selectedStart);
+      const endDate = new Date(selectedEnd);
       const date = new Date(year, month, i);
 
       const isDayOff = date.getDay() === 0 || date.getDay() === 6;
@@ -158,9 +186,9 @@ const handleDayClick = (date: Date) => {
       && date.getMonth() === currentDate.getMonth()
       && date.getFullYear() === currentDate.getFullYear();
 
-      const IsStartEndSelected = date.getTime() === start?.getTime() || date.getTime() === end?.getTime();
+      const IsStartEndSelected = date.getTime() === startDate?.getTime() || date.getTime() === endDate?.getTime();
 
-      const includedSelectedDays = (start && end && date.getTime() > start?.getTime() && date.getTime() < end?.getTime());
+      const includedSelectedDays = (startDate && endDate && date.getTime() > startDate?.getTime() && date.getTime() < endDate?.getTime());
 
       const isDisabled = date.getDate() < currentDate.getDate()
       && date.getMonth() === currentDate.getMonth()
@@ -223,21 +251,21 @@ const handleDayClick = (date: Date) => {
 
   // console.log('bookedDays - ', bookedDays);
 
-  let amountOfDays = 'доба';
+  // let amountOfDays = 'доба';
 
-  if (selectedDays.length > 1) {
-    amountOfDays = 'доби';
-  }
+  // if (selectedDays.length > 1) {
+  //   amountOfDays = 'доби';
+  // }
 
-  if (selectedDays.length > 4) {
-    amountOfDays = 'діб';
-  }
+  // if (selectedDays.length > 4) {
+  //   amountOfDays = 'діб';
+  // }
 
-  const daysInLS = [];
+  // const daysInLS = [];
 
-  for (let i = 0; i > selectedDays.length; i++) {
-    daysInLS.push(new Date(selectedDays[i]));
-  }
+  // for (let i = 0; i > selectedDays.length; i++) {
+  //   daysInLS.push(new Date(selectedDays[i]));
+  // }
 
   // const today = new Date();
   // const todayString = today.toDateString();
@@ -269,7 +297,7 @@ const handleDayClick = (date: Date) => {
         {generateMonthDays(currentYear, currentMonth)}
       </div>
 
-      <button onClick={handleBookDays}>click</button>
+      {/* <button onClick={handleBookDays}>click</button> */}
       <hr />
 
       {/* {selectedDays?.length > 1 && (

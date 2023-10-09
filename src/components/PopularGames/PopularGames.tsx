@@ -1,6 +1,8 @@
 import './PopularGames.scss';
 import { GameInfo } from '../GameInfo/GameInfo';
-import { games } from '../../data/games';
+// import { games } from '../../data/games';
+
+import games from '../../data/games.json'
 
 export const PopularGames: React.FC = () => {
 
@@ -18,7 +20,7 @@ export const PopularGames: React.FC = () => {
       </p>
       <div className="popularGames__list">
         {sortedGames.map(game => (
-          <GameInfo game={game} key={game.id}/>
+          <GameInfo game={game} key={game.gameId}/>
         ))}
       </div>
     </div>

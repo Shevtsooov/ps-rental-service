@@ -1,9 +1,10 @@
 import React from 'react';
 import './GamesListPage.scss';
-import { games } from '../../data/games';
+// import { games } from '../../data/games';
 import { Filter } from '../../components/Filter/Filter';
 import { GameList } from '../../components/GameList/GameList';
 
+import games from '../../data/games.json';
 
 export const GamesListPage: React.FC = () => {
 

@@ -23,7 +23,7 @@ export const savedGamesSlice = createSlice({
     filterSavedGames: (state, action) => {
       return {
         // ...state,
-        value: state.value.filter((game) => game.id !== action.payload),
+        value: state.value.filter((game) => game.gameId !== action.payload),
       };
     },
     resetSavedGamess: (state) => {

@@ -1,9 +1,17 @@
 export interface Game {
   title: string,
   icon: string,
-
+  gameId: string,
+  poster: string,
+  description: string,
+  videoReview: string,
+  videoGameplay: string,
   price: number,
-  discountedPrice?: number | null,
+  discountedPrice: string | null,
+  category: string[],
+  players: string,
+  disclaimers: string[],
+  releasedOn: string,
+  isAvailable: boolean,
   popularity: number,
-  id: number,
 };

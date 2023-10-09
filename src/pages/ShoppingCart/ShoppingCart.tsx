@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './ShoppingCart.scss';
-import { useAppDispatch, useAppSelector } from '../../Redux/store';
+import { useAppSelector } from '../../Redux/store';
 import { Link } from 'react-router-dom';
 import { ShoppingCartList } from '../../components/ShoppingCartList/ShoppingCartList';
 import { PSShoppingCartInfo } from '../../components/PSShoppingCartInfo/PSShoppingCartInfo';

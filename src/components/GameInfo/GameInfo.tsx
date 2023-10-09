@@ -2,8 +2,8 @@ import './GameInfo.scss';
 import cn from 'classnames';
 import { useAppDispatch, useAppSelector } from '../../Redux/store';
 import { filterSavedGames, setSavedGames } from '../../Redux/Slices/savedGames.slice';
-import { Game } from '../../types/Game';
 import { filterShoppingCartGames, setShoppingCartGames } from '../../Redux/Slices/shoppingCartGames.slice';
+import { Game } from '../../types/Game';
 
 type Props = {
   game: Game,
@@ -16,7 +16,7 @@ export const GameInfo: React.FC<Props> = ({ game }) => {
 
   const handleSaveGame = (game: Game) => {
     if (savedGames.includes(game)) {
-      dispatch(filterSavedGames(game.id));
+      dispatch(filterSavedGames(game.gameId));
       console.log('includes')
       return;
     }
@@ -26,7 +26,7 @@ export const GameInfo: React.FC<Props> = ({ game }) => {
 
   const handleAddToCartGame = (game: Game) => {
     if (shoppingCartGames.includes(game)) {
-      dispatch(filterShoppingCartGames(game.id));
+      dispatch(filterShoppingCartGames(game.gameId));
 
       return;
     }
@@ -44,7 +44,7 @@ export const GameInfo: React.FC<Props> = ({ game }) => {
       <h3 className="game_heading">{game.title}</h3>
      
       <div className="game_price">
-      {shoppingCartGames.length === 0 || shoppingCartGames[0].id === game.id
+      {shoppingCartGames.length === 0 || shoppingCartGames[0].gameId === game.gameId
         ? (
           <p className='game_price_discountedPrice'>Одна гра - безкоштовно</p>
         )

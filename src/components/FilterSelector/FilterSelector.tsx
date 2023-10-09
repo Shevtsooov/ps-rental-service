@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import cn from 'classnames';
 import './FilterSelector.scss';
 
@@ -45,7 +45,6 @@ export const FilterSelector: React.FC = () => {
     'Для нього та для неї',
     'Для компанії',
     'Граю один',
-    // 'Граю один',
   ];
 
   const categories = [

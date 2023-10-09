@@ -2,17 +2,34 @@
 import cn from 'classnames';
 
 import './MobileNavigation.scss';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 export const MobileNavigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navBoxRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     return () => {
       setIsMenuOpen(false);
     }
   }, [])
+
+  const handleClickOutside: EventListener = (event) => {
+    const targetNode = event.target as Node;
+
+    if (navBoxRef.current && !navBoxRef.current.contains(targetNode)) {
+      setIsMenuOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -25,7 +42,7 @@ export const MobileNavigation = () => {
   }, [isMenuOpen])
   
   return (
-    <nav className="mobileNav">
+    <nav className="mobileNav" ref={navBoxRef}>
       <button
         className={cn(
           'mobileNav__burger', { 
@@ -42,6 +59,7 @@ export const MobileNavigation = () => {
             'mobileNav__box--active': isMenuOpen
           },
         )}
+        
       >
           <ul className="mobileNav__list">
             <li>

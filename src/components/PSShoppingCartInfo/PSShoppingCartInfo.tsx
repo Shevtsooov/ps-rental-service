@@ -95,13 +95,16 @@ export const PSShoppingCartInfo: React.FC = () => {
           </p>
 
           <div className="psShoppingCartInfo__info_booking">
-          {bookedDays.length === 0 && (
-            <p 
-              className="psShoppingCartInfo__info_booking_period"
-              onClick={toggleCalendar}
-            >
-              Обрати дати
-            </p>)}
+
+            {bookedDays.length === 0 && (
+              <p 
+                className="psShoppingCartInfo__info_booking_period"
+                onClick={toggleCalendar}
+              >
+                Обрати дати
+              </p>
+            )}
+
             {bookedDays?.length > 1 && (
               <p 
                 className="psShoppingCartInfo__info_booking_period"
@@ -110,6 +113,7 @@ export const PSShoppingCartInfo: React.FC = () => {
                 {`${firstDay.getDate()} ${monthsSelected[firstDay.getMonth()]} (${daysOfWeek[firstDay.getDay()]}) - ${lastDay.getDate()} ${monthsSelected[lastDay.getMonth()]} (${daysOfWeek[lastDay.getDay()]})`}
               </p>
             )}
+
             {bookedDays?.length === 1 && (
               <p
                 className="psShoppingCartInfo__info_booking_period"
@@ -118,12 +122,14 @@ export const PSShoppingCartInfo: React.FC = () => {
                 {`${firstDay.getDate()} ${monthsSelected[firstDay.getMonth()]}`}
               </p>
             )}
-             {bookedDays?.length > 0 && (
-            <p 
-              className="psShoppingCartInfo__info_booking_days"
-            >
-              {`${bookedDays.length} ${amountOfDays}`}
-            </p>)}
+
+            {bookedDays?.length > 0 && (
+              <p 
+                className="psShoppingCartInfo__info_booking_days"
+              >
+                {`${bookedDays.length} ${amountOfDays}`}
+              </p>
+            )}
           </div>
         </div>
       </div>

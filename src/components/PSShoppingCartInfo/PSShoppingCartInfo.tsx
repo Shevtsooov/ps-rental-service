@@ -38,7 +38,6 @@ export const PSShoppingCartInfo: React.FC = () => {
     selectedDays.map(day => (
       dispatch(setBookedDays(day))
     ))
-      console.log('bookedDays - ', bookedDays);
   }, []);
 
   const handleClickOutside: EventListener = (event) => {
@@ -60,14 +59,14 @@ export const PSShoppingCartInfo: React.FC = () => {
   const firstDay = new Date(bookedDays[0]);
   const lastDay = new Date(bookedDays[bookedDays.length - 1]);
 
-  let psPricing = 450;
+  let psPrice = 450;
 
   if (bookedDays.length > 2) {
-    psPricing = 350; 
+    psPrice = 350; 
   }
 
   if (bookedDays.length > 6) {
-    psPricing = 300; 
+    psPrice = 300; 
   }
 
    let amountOfDays = 'доба';
@@ -104,7 +103,7 @@ export const PSShoppingCartInfo: React.FC = () => {
           </h5>
         
           <p className="psShoppingCartInfo__info_price">
-            {`${psPricing}₴/доба`}
+            {`${psPrice}₴/доба`}
           </p>
 
           <div className="psShoppingCartInfo__info_booking">

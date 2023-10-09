@@ -1,6 +1,6 @@
 import './PSShoppingCartInfo.scss';
 import Playstation from '../../assets/images/ps-shopping-cart.png'
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Calendar } from '../Calendar/Calendar';
 import React from 'react';
 import { useAppDispatch, useAppSelector } from '../../Redux/store';
@@ -9,6 +9,7 @@ import { resetBookedDays, setBookedDays } from '../../Redux/Slices/bookedDays.sl
 
 export const PSShoppingCartInfo: React.FC = () => {
   const [isCalendarShown, setIsCalendarShown] = useState(false);
+  const calendarRef = useRef<HTMLDivElement>(null);
   const [selectedDays, setSelectedDays] = useState<string[]>(() => {
     const storedDays = sessionStorage.getItem('storedDays');
     const parsedDays = storedDays ? JSON.parse(storedDays) : [];
@@ -40,6 +41,22 @@ export const PSShoppingCartInfo: React.FC = () => {
       console.log('bookedDays - ', bookedDays);
   }, []);
 
+  const handleClickOutside: EventListener = (event) => {
+    const targetNode = event.target as Node;
+
+    if (calendarRef.current && !calendarRef.current.contains(targetNode)) {
+      setIsCalendarShown(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
+
   const firstDay = new Date(bookedDays[0]);
   const lastDay = new Date(bookedDays[bookedDays.length - 1]);
 
@@ -65,14 +82,10 @@ export const PSShoppingCartInfo: React.FC = () => {
 
 
   return (
-      <div className="psShoppingCartInfo">
+      <div className="psShoppingCartInfo" ref={calendarRef}>
 
         {isCalendarShown && (
           <div className="psShoppingCartInfo__calendar">
-            <button
-              className="psShoppingCartInfo__calendar_button"
-              onClick={toggleCalendar}
-            >X</button>
             <Calendar />
           </div>
         )}
@@ -91,7 +104,7 @@ export const PSShoppingCartInfo: React.FC = () => {
           </h5>
         
           <p className="psShoppingCartInfo__info_price">
-            {`${psPricing}₴ за добу`}
+            {`${psPricing}₴/доба`}
           </p>
 
           <div className="psShoppingCartInfo__info_booking">

@@ -272,7 +272,7 @@ const handleDayClick = (date: Date) => {
       </div>
 
       {/* <button onClick={handleBookDays}>click</button> */}
-      <hr />
+      {/* <hr />
 
       {selectedDays?.length > 1 && (
         <p>
@@ -284,7 +284,7 @@ const handleDayClick = (date: Date) => {
 
       {selectedDays?.length > 0 && (
         <p>{`${selectedDays.length} ${amountOfDays}`}</p>
-      )}
+      )} */}
       
     </div>
   );

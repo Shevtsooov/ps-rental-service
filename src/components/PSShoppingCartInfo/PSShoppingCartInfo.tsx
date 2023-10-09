@@ -9,7 +9,6 @@ import { resetBookedDays, setBookedDays } from '../../Redux/Slices/bookedDays.sl
 
 export const PSShoppingCartInfo: React.FC = () => {
   const [isCalendarShown, setIsCalendarShown] = useState(false);
-  const calendarRef = useRef<HTMLDivElement>(null);
   const [selectedDays, setSelectedDays] = useState<string[]>(() => {
     const storedDays = sessionStorage.getItem('storedDays');
     const parsedDays = storedDays ? JSON.parse(storedDays) : [];
@@ -40,22 +39,6 @@ export const PSShoppingCartInfo: React.FC = () => {
     ))
   }, []);
 
-  const handleClickOutside: EventListener = (event) => {
-    const targetNode = event.target as Node;
-
-    if (calendarRef.current && !calendarRef.current.contains(targetNode)) {
-      setIsCalendarShown(false);
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener('click', handleClickOutside);
-
-    return () => {
-      document.removeEventListener('click', handleClickOutside);
-    };
-  }, []);
-
   const firstDay = new Date(bookedDays[0]);
   const lastDay = new Date(bookedDays[bookedDays.length - 1]);
 
@@ -81,7 +64,14 @@ export const PSShoppingCartInfo: React.FC = () => {
 
 
   return (
-      <div className="psShoppingCartInfo" ref={calendarRef}>
+      <div className="psShoppingCartInfo">
+
+        {isCalendarShown && (
+          <div
+            className="psShoppingCartInfo__modal_bg"
+            onClick={toggleCalendar}
+          />
+        )}
 
         {isCalendarShown && (
           <div className="psShoppingCartInfo__calendar">

@@ -38,7 +38,7 @@ export const GameInfo: React.FC<Props> = ({ game }) => {
     <div className="game">
       <img
         src={`./images/games/${game.icon}`}
-        alt="2"
+        alt={`${game.title} - logo`}
         className="game_image"
       />
       <h3 className="game_heading">{game.title}</h3>

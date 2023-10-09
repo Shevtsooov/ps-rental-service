@@ -4,6 +4,7 @@ import { Slider } from '../../components/Slider/Slider';
 import { BookPS } from '../../components/BookPS/BookPS';
 import { PopularGames } from '../../components/PopularGames/PopularGames';
 import { AboutPS5 } from '../../components/AboutPS5/AboutPS5';
+import games from '../../data/games.json'
 
 export const Homepage: React.FC = () => {
 
@@ -11,6 +12,13 @@ export const Homepage: React.FC = () => {
     <div className="homepage">
       <Slider />
 
+        <div>
+          <ul>
+            {games.map(game => (
+              <li>{`type nul > ${game.gameId}.jpg`}</li>
+            ))}
+          </ul>
+        </div>
       <BookPS />
 
       <PopularGames />

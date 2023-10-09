@@ -5,7 +5,7 @@ export interface IsCalendarShownState {
 }
 
 const initialState: IsCalendarShownState = {
-  value: true,
+  value: false,
 }
 
 export const isCalendarShownSlice = createSlice({

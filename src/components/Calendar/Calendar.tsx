@@ -59,7 +59,6 @@ export const Calendar: React.FC = () => {
 
 const handleDayClick = (date: Date) => {
   const startDate = new Date(selectedStart);
-  console.log('diff - ',  date.getTime() - startDate.getTime());
 
   if (startDate && selectedEnd) {
     setSelectedStart(date.toDateString());
@@ -140,8 +139,6 @@ const handleDayClick = (date: Date) => {
   // Function to generate days for a given month
   const generateMonthDays = (year: number, month: number) => {
     const daysInMonth = new Date(year, month + 1, 0).getDate();
-
-    console.log('daysInMonth - ',daysInMonth);
     let firstDay = new Date(currentYear, currentMonth, 1).getDay();
     const days = [];
     
@@ -251,8 +248,6 @@ const handleDayClick = (date: Date) => {
 
   const firstDay = new Date(bookedDays[0]);
   const lastDay = new Date(bookedDays[bookedDays.length - 1]);
-
-  console.log('lastDay - ',lastDay.getDate());
 
   return (
     <div className="calendar">

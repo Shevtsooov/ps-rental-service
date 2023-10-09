@@ -3,8 +3,9 @@ import Playstation from '../../assets/images/ps-shopping-cart.png'
 import { useEffect, useState } from 'react';
 import { Calendar } from '../Calendar/Calendar';
 import React from 'react';
-import { useAppSelector } from '../../Redux/store';
+import { useAppDispatch, useAppSelector } from '../../Redux/store';
 import { daysOfWeek, monthsSelected } from '../../helpers/CorrectDateNames';
+import { resetBookedDays, setBookedDays } from '../../Redux/Slices/bookedDays.slice';
 
 export const PSShoppingCartInfo: React.FC = () => {
   const [isCalendarShown, setIsCalendarShown] = useState(false);
@@ -20,7 +21,8 @@ export const PSShoppingCartInfo: React.FC = () => {
   });
 
   const bookedDays = useAppSelector(state => state.bookedDays.value);
-
+  const dispatch = useAppDispatch();
+  
   const toggleCalendar = () => {
     setIsCalendarShown(state => !state);
   };
@@ -28,6 +30,15 @@ export const PSShoppingCartInfo: React.FC = () => {
   useEffect(() => {
     sessionStorage.setItem("storedDays", JSON.stringify(selectedDays));
   }, [selectedDays]);
+
+  useEffect(() => {
+    dispatch(resetBookedDays());
+
+    selectedDays.map(day => (
+      dispatch(setBookedDays(day))
+    ))
+      console.log('bookedDays - ', bookedDays);
+  }, []);
 
   const firstDay = new Date(bookedDays[0]);
   const lastDay = new Date(bookedDays[bookedDays.length - 1]);
@@ -51,6 +62,7 @@ export const PSShoppingCartInfo: React.FC = () => {
   if (bookedDays.length > 4) {
     amountOfDays = 'діб';
   }
+
 
   return (
       <div className="psShoppingCartInfo">

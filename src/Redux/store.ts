@@ -6,6 +6,7 @@ import { shoppingCartGamesReducer } from './Slices/shoppingCartGames.slice';
 import { bookedDaysReducer } from './Slices/bookedDays.slice';
 import { selectedDaysReducer } from './Slices/selectedDays.slice';
 import { monthLookUpLimitReducer } from './Slices/monthLookUpLimit';
+import { isCalendarShownReducer } from './Slices/isCalendarShown.slice';
 
 export const store = configureStore({
   reducer: {
@@ -15,6 +16,7 @@ export const store = configureStore({
     bookedDays: bookedDaysReducer,
     selectedDays: selectedDaysReducer,
     monthLookUpLimit: monthLookUpLimitReducer,
+    isCalendarShown: isCalendarShownReducer,
     // [QuestionsApi.reducerPath]: QuestionsApi.reducer,
   },
   // middleware: (getDefaultMiddleware) => (

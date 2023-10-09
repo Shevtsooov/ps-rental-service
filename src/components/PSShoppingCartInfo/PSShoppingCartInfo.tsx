@@ -6,9 +6,10 @@ import React from 'react';
 import { useAppDispatch, useAppSelector } from '../../Redux/store';
 import { daysOfWeek, monthsSelected } from '../../helpers/CorrectDateNames';
 import { resetBookedDays, setBookedDays } from '../../Redux/Slices/bookedDays.slice';
+import { toggleCalendar } from '../../Redux/Slices/isCalendarShown.slice';
 
 export const PSShoppingCartInfo: React.FC = () => {
-  const [isCalendarShown, setIsCalendarShown] = useState(false);
+  
   const [selectedDays, setSelectedDays] = useState<string[]>(() => {
     const storedDays = sessionStorage.getItem('storedDays');
     const parsedDays = storedDays ? JSON.parse(storedDays) : [];
@@ -20,11 +21,12 @@ export const PSShoppingCartInfo: React.FC = () => {
     return [];
   });
 
+  const isCalendarShown = useAppSelector(state => state.isCalendarShown.value);
   const bookedDays = useAppSelector(state => state.bookedDays.value);
   const dispatch = useAppDispatch();
   
-  const toggleCalendar = () => {
-    setIsCalendarShown(state => !state);
+  const handleToggleCalendar = () => {
+    dispatch(toggleCalendar());
   };
 
   useEffect(() => {
@@ -38,6 +40,16 @@ export const PSShoppingCartInfo: React.FC = () => {
       dispatch(setBookedDays(day))
     ))
   }, []);
+
+  useEffect(() => {
+    if (isCalendarShown) {
+      document.body.style.overflow = 'hidden';
+
+      return;
+    }
+
+    document.body.style.overflow = 'auto'
+  }, [isCalendarShown]);
 
   const firstDay = new Date(bookedDays[0]);
   const lastDay = new Date(bookedDays[bookedDays.length - 1]);
@@ -67,13 +79,6 @@ export const PSShoppingCartInfo: React.FC = () => {
       <div className="psShoppingCartInfo">
 
         {isCalendarShown && (
-          <div
-            className="psShoppingCartInfo__modal_bg"
-            onClick={toggleCalendar}
-          />
-        )}
-
-        {isCalendarShown && (
           <div className="psShoppingCartInfo__calendar">
             <Calendar />
           </div>
@@ -101,7 +106,7 @@ export const PSShoppingCartInfo: React.FC = () => {
             {bookedDays.length === 0 && (
               <p 
                 className="psShoppingCartInfo__info_booking_period"
-                onClick={toggleCalendar}
+                onClick={handleToggleCalendar}
               >
                 Обрати дати
               </p>
@@ -110,7 +115,7 @@ export const PSShoppingCartInfo: React.FC = () => {
             {bookedDays?.length > 1 && (
               <p 
                 className="psShoppingCartInfo__info_booking_period"
-                onClick={toggleCalendar}
+                onClick={handleToggleCalendar}
               >
                 {`${firstDay.getDate()} ${monthsSelected[firstDay.getMonth()]} (${daysOfWeek[firstDay.getDay()]}) - ${lastDay.getDate()} ${monthsSelected[lastDay.getMonth()]} (${daysOfWeek[lastDay.getDay()]})`}
               </p>
@@ -119,7 +124,7 @@ export const PSShoppingCartInfo: React.FC = () => {
             {bookedDays?.length === 1 && (
               <p
                 className="psShoppingCartInfo__info_booking_period"
-                onClick={toggleCalendar}
+                onClick={handleToggleCalendar}
               >
                 {`${firstDay.getDate()} ${monthsSelected[firstDay.getMonth()]}`}
               </p>

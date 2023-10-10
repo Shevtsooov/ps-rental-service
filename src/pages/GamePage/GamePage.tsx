@@ -39,18 +39,21 @@ export const GamePage: React.FC = () => {
       <div className="game_page__info">
         <p>{`${game?.description}`}</p>
       </div>
-
-      <div className="game_page__disclaimers">
-        <h4 className="game_page__disclaimers_title">Настанови та застереження:</h4>
-        {game?.disclaimers.map(disclaimer => (
-          <p
-            className="game_page__disclaimers_item"
-            key={disclaimer}
-          >
-            {`* ${disclaimer}`}
-          </p>
-        ))}
-      </div>
+      
+      {game?.disclaimers && game.disclaimers.length > 0 && (
+        <div className="game_page__disclaimers">
+          <h4 className="game_page__disclaimers_title">Настанови та застереження:</h4>
+          {game?.disclaimers.map(disclaimer => (
+            <p
+              className="game_page__disclaimers_item"
+              key={disclaimer}
+            >
+              {`* ${disclaimer}`}
+            </p>
+          ))}
+        </div>
+      )}
+      
 
       <div className="game_page__video">
         <div>

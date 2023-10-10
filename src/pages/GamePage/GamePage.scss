@@ -29,38 +29,60 @@
   &__title {
     margin-left: 150px;
     font-size: 24px;
+    margin-bottom: 15px;
   }
 
   &__info {
-    padding: 20px;
+    color: $secondary-grey;
+    font-size: 20px;
+    padding: 25px 20px 20px;
+    margin-bottom: 15px;
   }
 
   &__disclaimers {
     padding: 0 20px 20px;
     
     &_title {
+      color: $main-blue;
       margin-bottom: 10px;
     }
 
     &_item {
+      color: $secondary-grey;
       font-size: 14px;
       margin-bottom: 5px;
     }
   }
 
   &__video {
-    padding: 30px 0;
+    padding: 20px 0 0;
     display: flex;
     flex-direction: column;
     gap: 20px;
     
     width: 100%;
     border: 0;
-    margin-bottom: 25px;
     background-color: #000000;
+
+    &_title {
+      padding: 0 20px;
+      font-size: 18px;
+      color: #fff;
+
+      margin-bottom: 5px;
+    }
+
+    &_description {
+      padding: 0 20px;
+      font-size: 12px;
+      color: #fff;
+      
+      margin-bottom: 10px;
+    }
 
     &_frame {
       height: 212px;
+      margin-bottom: 25px;
     }
   }
 }

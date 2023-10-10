@@ -36,7 +36,12 @@
     color: $secondary-grey;
     font-size: 20px;
     padding: 25px 20px 20px;
-    margin-bottom: 15px;
+  }
+
+  &__release {
+    padding: 0 20px 20px;
+    color: $secondary-grey;
+
   }
 
   &__disclaimers {
@@ -83,6 +88,51 @@
     &_frame {
       height: 212px;
       margin-bottom: 25px;
+    }
+  }
+
+  &_buttons {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    gap: 5px;
+
+    &_cart {
+      width: 150px;
+      border: 0;
+      border-radius: 30px;
+      padding: 5px 10px;
+      font-size: 16px;
+      color: #fff;
+      background-color: $main-blue;
+      border: 1px solid $main-blue;
+      cursor: pointer;
+
+      margin-bottom: 15px;
+
+      &--added {
+        background: #fff;
+        color: $main-blue;
+        border: 1px solid $main-blue;
+      }
+    }
+
+    &_heart {
+      border: 0;
+      border-radius: 30px;
+      height: 30px;
+      width: 30px;
+      cursor: pointer;
+
+      background-image: url('../../assets/icons/heart.svg');
+      background-size: 80%;
+      background-repeat: no-repeat;
+      background-position: 3px 4px;
+      background-color: $main-grey;
+
+      &--active {
+        background-image: url('../../assets/icons/heart-active.svg');
+      }
     }
   }
 }

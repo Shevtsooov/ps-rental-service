@@ -3,6 +3,11 @@ import './GamePage.scss';
 import { useParams } from 'react-router-dom';
 import games from '../../data/games.json'
 import parse from 'html-react-parser';
+import cn from 'classnames';
+import { filterSavedGames, setSavedGames } from '../../Redux/Slices/savedGames.slice';
+import { filterShoppingCartGames, setShoppingCartGames } from '../../Redux/Slices/shoppingCartGames.slice';
+import { useAppSelector, useAppDispatch } from '../../Redux/store';
+import { Game } from '../../types/Game';
 
 export const GamePage: React.FC = () => {
   const { gameIdLink } = useParams();
@@ -13,6 +18,30 @@ export const GamePage: React.FC = () => {
   useEffect(() => {
     topContainer.current?.scrollIntoView({ block: "start" });
     }, []);
+
+  const savedGames = useAppSelector(state => state.savedGames.value);
+  const shoppingCartGames = useAppSelector(state => state.shoppingCartGames.value);
+  const dispatch = useAppDispatch();
+
+  const handleSaveGame = (game: Game) => {
+    if (savedGames.includes(game)) {
+      dispatch(filterSavedGames(game.gameId));
+      console.log('includes')
+      return;
+    }
+
+    dispatch(setSavedGames(game));
+  }
+
+  const handleAddToCartGame = (game: Game) => {
+    if (shoppingCartGames.includes(game)) {
+      dispatch(filterShoppingCartGames(game.gameId));
+
+      return;
+    }
+
+    dispatch(setShoppingCartGames(game));
+  }
   
   const game = games.find(g => g.gameId === gameIdLink);
 
@@ -39,7 +68,32 @@ export const GamePage: React.FC = () => {
       <div className="game_page__info">
         <p>{`${game?.description}`}</p>
       </div>
-      
+
+      <div className="game_page__release">
+        {`Дата релізу: ${game?.releasedOn}`}
+      </div>
+
+      {game && (
+        <div className="game_page_buttons">
+        <button 
+          className={cn('game_page_buttons_cart', {
+            'game_page_buttons_cart--added': shoppingCartGames.includes(game)
+          })}
+          onClick={() => handleAddToCartGame(game)}
+        >
+          {shoppingCartGames.includes(game)
+          ? 'видалити'
+          : 'додати в кошик'}
+        </button>
+        <button
+          className={cn('game_page_buttons_heart', {
+            'game_page_buttons_heart--active': savedGames.includes(game)
+          })}
+          onClick={() => handleSaveGame(game)}
+        />
+      </div>
+      )}
+
       {game?.disclaimers && game.disclaimers.length > 0 && (
         <div className="game_page__disclaimers">
           <h4 className="game_page__disclaimers_title">Настанови та застереження:</h4>

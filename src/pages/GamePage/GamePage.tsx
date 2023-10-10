@@ -59,13 +59,13 @@ export const GamePage: React.FC = () => {
             {videoReviev}
           </div>
         </div>
-        
+
         <div>
           <h4 className="game_page__video_title">
             Геймплей та проходження гри:
           </h4>
           <p className="game_page__video_description">
-            Тут можна ознайомитись з геймплеєм гри або ж підглянути, як саме прохидити той чи інший рівень
+            Тут можна ознайомитись з геймплеєм гри або ж підглянути, як саме проходити той чи інший рівень
           </p>
           <div className="game_page__video_frame">
             {videoGameplay}

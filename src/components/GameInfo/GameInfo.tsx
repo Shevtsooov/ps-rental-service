@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from '../../Redux/store';
 import { filterSavedGames, setSavedGames } from '../../Redux/Slices/savedGames.slice';
 import { filterShoppingCartGames, setShoppingCartGames } from '../../Redux/Slices/shoppingCartGames.slice';
 import { Game } from '../../types/Game';
+import { NavLink } from 'react-router-dom';
 
 type Props = {
   game: Game,
@@ -36,12 +37,19 @@ export const GameInfo: React.FC<Props> = ({ game }) => {
 
   return (
     <div className="game">
-      <img
-        src={`./images/games/${game.icon}`}
-        alt={`${game.title} - logo`}
-        className="game_image"
-      />
-      <h3 className="game_heading">{game.title}</h3>
+      <NavLink to={`/games/${game.gameId}`}>
+        <img
+          src={`./images/games/${game.icon}`}
+          alt={`${game.title} - logo`}
+          className="game_image"
+        />
+      </NavLink>
+      <NavLink
+        className="game_heading"
+        to={`/games/${game.gameId}`}
+      >
+        {game.title}
+      </NavLink>
      
       <div className="game_price">
       {shoppingCartGames.length === 0 || shoppingCartGames[0].gameId === game.gameId

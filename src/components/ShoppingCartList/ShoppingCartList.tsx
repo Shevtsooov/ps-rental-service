@@ -4,6 +4,7 @@ import './ShoppingCartList.scss';
 import { Game } from '../../types/Game';
 import { filterSavedGames, setSavedGames } from '../../Redux/Slices/savedGames.slice';
 import { filterShoppingCartGames, setShoppingCartGames } from '../../Redux/Slices/shoppingCartGames.slice';
+import { NavLink } from 'react-router-dom';
 
 export const ShoppingCartList: React.FC = () => {
   const shoppingCartGames = useAppSelector(state => state.shoppingCartGames.value);
@@ -37,20 +38,22 @@ export const ShoppingCartList: React.FC = () => {
         <div className="shoppingCartList__game">
           <div className="shoppingCartList__game_box">
             <div className="shoppingCartList__game_img">
-              <img
-                src={`./images/games/${game.icon}`}
-                alt={game.title}
-                className="shoppingCartList__game_img_icon"
-              />
+              <NavLink to={`/games/${game.gameId}`}>
+                <img
+                  src={`./images/games/${game.icon}`}
+                  alt={game.title}
+                  className="shoppingCartList__game_img_icon"
+                />
+              </NavLink>
             </div>
 
             <div className="shoppingCartList__game_info">
               <div>
-                <h5 
+                <NavLink to={`/games/${game.gameId}`}
                   className="shoppingCartList__game_info_title"
                 >
                   {game.title}
-                </h5>
+                </NavLink>
 
               </div>
               

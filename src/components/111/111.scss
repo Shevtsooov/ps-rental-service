@@ -1,0 +1,9 @@
+@import "../../styles/utils/mixins.scss";
+@import "../../styles/utils/colors.scss";
+
+.pureComponent {
+  &__text {
+    height: 300px;
+    width: 100%;
+  }
+}

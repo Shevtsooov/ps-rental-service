@@ -14,6 +14,7 @@ import { LoginPage } from './pages/LoginPage/LoginPage';
 import { Footer } from './components/Footer/Footer';
 import { SavedGames } from './pages/SavedGames/SavedGames';
 import { ShoppingCart } from './pages/ShoppingCart/ShoppingCart';
+import { GamePage } from './pages/GamePage/GamePage';
 
 export const App: React.FC = () => {
 
@@ -25,6 +26,7 @@ export const App: React.FC = () => {
         <Route path="home" element={<Homepage />} />
         <Route path="/" element={<Navigate to="home" />} />
         <Route path="games" element={<GamesListPage />} />
+        <Route path="games/:gameIdLink" element={<GamePage />} />
         <Route path="plans" element={<PlansAndDelivery />} />
         <Route path="agreement" element={<Agreement />} />
         <Route path="about-ps5" element={<AboutPS5 />} />

@@ -20,11 +20,14 @@
   }
 
   &_heading {
+    display: block;
     font-size: 20px;
     white-space: nowrap;
+    width: 200px;
     overflow: hidden;
     text-overflow: ellipsis;
     color: #000;
+    margin: 0 auto;
     margin-bottom: 5px;
   }
 

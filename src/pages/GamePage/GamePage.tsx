@@ -74,24 +74,47 @@ export const GamePage: React.FC = () => {
       </div>
 
       {game && (
-        <div className="game_page_buttons">
-        <button 
-          className={cn('game_page_buttons_cart', {
-            'game_page_buttons_cart--added': shoppingCartGames.includes(game)
-          })}
-          onClick={() => handleAddToCartGame(game)}
-        >
-          {shoppingCartGames.includes(game)
-          ? 'видалити'
-          : 'додати в кошик'}
-        </button>
-        <button
-          className={cn('game_page_buttons_heart', {
-            'game_page_buttons_heart--active': savedGames.includes(game)
-          })}
-          onClick={() => handleSaveGame(game)}
-        />
-      </div>
+        <>
+          <div className="game_page__price">
+          {shoppingCartGames.length === 0 || shoppingCartGames[0].gameId === game.gameId
+            ? (
+              <p className='game_page__price_discountedPrice'>Одна гра - безкоштовно</p>
+            )
+            : (
+              <>
+                <p 
+                className={cn({
+                  'game_page__price_regularPrice': game.discountedPrice
+                })}
+                >
+                  {`${game.price}₴`}
+                </p>
+                {game.discountedPrice && (
+                  <p className="game_page__price_discountedPrice">{`${game.discountedPrice}₴`}</p>
+                )}
+              </>
+            )}
+          </div>
+          
+          <div className="game_page_buttons">
+            <button 
+              className={cn('game_page_buttons_cart', {
+                'game_page_buttons_cart--added': shoppingCartGames.includes(game)
+              })}
+              onClick={() => handleAddToCartGame(game)}
+            >
+              {shoppingCartGames.includes(game)
+              ? 'видалити'
+              : 'додати в кошик'}
+            </button>
+            <button
+              className={cn('game_page_buttons_heart', {
+                'game_page_buttons_heart--active': savedGames.includes(game)
+              })}
+              onClick={() => handleSaveGame(game)}
+            />
+          </div>
+        </>
       )}
 
       {game?.disclaimers && game.disclaimers.length > 0 && (

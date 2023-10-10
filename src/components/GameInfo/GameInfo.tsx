@@ -71,6 +71,7 @@ export const GameInfo: React.FC<Props> = ({ game }) => {
           </>
         )}
       </div>
+      
       <div className="game_buttons">
         <button 
           className={cn('game_buttons_cart', {

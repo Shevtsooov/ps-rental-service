@@ -91,6 +91,25 @@
     }
   }
 
+  &__price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    // margin-bottom: 10px;
+
+    &_regularPrice {
+      text-decoration: line-through;
+      color: #dd0000;
+    }
+
+    &_discountedPrice {
+      color: #24991c;
+      font-size: 18px;
+    }
+  }
+
   &_buttons {
     display: flex;
     justify-content: center;

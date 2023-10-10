@@ -15,7 +15,8 @@ export const Homepage: React.FC = () => {
         <div>
           <ul>
             {games.map(game => (
-              <li>{`type nul > ${game.gameId}.jpg`}</li>
+              // <li>{`type nul > ${game.gameId}.jpg`}</li>
+              <img src={`${game.poster}`} alt="" className='aaa'/>
             ))}
           </ul>
         </div>

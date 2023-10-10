@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './GamePage.scss';
 import { useParams } from 'react-router-dom';
 import games from '../../data/games.json'
@@ -7,13 +7,20 @@ import parse from 'html-react-parser';
 export const GamePage: React.FC = () => {
   const { gameIdLink } = useParams();
 
+  // THIS BLOCK ENSURES THE PAGE OPEN FROM THE TOP
+  const topContainer = useRef<null | HTMLDivElement>(null); 
+
+  useEffect(() => {
+    topContainer.current?.scrollIntoView({ block: "start" });
+    }, []);
+  
   const game = games.find(g => g.gameId === gameIdLink);
 
   const videoReviev = parse(`${game?.videoReview}`);
   const videoGameplay = parse(`${game?.videoGameplay}`);
 
   return (
-    <div className="game_page">
+    <div className="game_page" ref={topContainer}>
       <div className="game_page__images">
         <img
           src={`${game?.poster}`}

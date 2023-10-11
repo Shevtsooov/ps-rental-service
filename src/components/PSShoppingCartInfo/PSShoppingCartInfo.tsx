@@ -105,10 +105,10 @@ export const PSShoppingCartInfo: React.FC = () => {
 
             {bookedDays.length === 0 && (
               <p 
-                className="psShoppingCartInfo__info_booking_period"
+                className="psShoppingCartInfo__info_booking_period_choose"
                 onClick={handleToggleCalendar}
               >
-                Обрати дати
+                Оберіть дати
               </p>
             )}
 
@@ -133,6 +133,7 @@ export const PSShoppingCartInfo: React.FC = () => {
             {bookedDays?.length > 0 && (
               <p 
                 className="psShoppingCartInfo__info_booking_days"
+                onClick={handleToggleCalendar}
               >
                 {`${bookedDays.length} ${amountOfDays}`}
               </p>

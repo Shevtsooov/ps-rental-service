@@ -53,13 +53,25 @@
           border-radius: 30px;
           cursor: pointer;
           user-select: none;
+
+          &_choose {
+            background-color: $main-blue;
+            color: #fff;
+            padding: 5px 10px;
+            font-size: 12px;
+            border-radius: 30px;
+            cursor: pointer;
+            user-select: none;
+            cursor: pointer;
+          }
         }
 
         &_days {
           background-color: $main-blue;
           color: #fff;
-          padding: 5px 10px;
+          padding: 5px 5px;
           border-radius: 30px;
+          cursor: pointer;
         }
       }
     }

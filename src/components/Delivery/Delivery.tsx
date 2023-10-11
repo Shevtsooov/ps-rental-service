@@ -31,7 +31,7 @@ export const Delivery: React.FC = () => {
     dispatch(openDelivery());
   }
 
-  const shippingWay = chosenDelivery === 'Доставка'
+  let shippingWay = chosenDelivery === '' || chosenDelivery === 'Доставка'
     ? 'Доставка'
     : 'Самовивіз'
 
@@ -85,17 +85,16 @@ export const Delivery: React.FC = () => {
           </div>
         )}
 
-        {chosenDelivery === 'Доставка'
-          ? (
-            <div className="delivery__img">
-              <img
-                src={`${shipping}`}
-                alt="Доставка"
-                className="delivery__img_icon"
-              />
-            </div>
-          )
-          : (
+        {(chosenDelivery === '' || chosenDelivery === 'Доставка') && (
+          <div className="delivery__img">
+            <img
+              src={`${shipping}`}
+              alt="Доставка"
+              className="delivery__img_icon"
+            />
+          </div>)}
+          
+          {selectedDelivery === 'Самовивіз' && (
             <div className="delivery__img">
               <img
                 src={`${selfPickup}`}

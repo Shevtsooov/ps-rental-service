@@ -104,7 +104,6 @@ export const Delivery: React.FC = () => {
             </div>
           )}
         
-
         <div className="delivery__info">
             <p className="delivery__info_heading">
               {shippingWay}

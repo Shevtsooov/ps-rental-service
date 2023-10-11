@@ -19,8 +19,8 @@ export const PopularGames: React.FC = () => {
         {`ТОП-${sortedGames.length} ігор, які замовляють найчастіше`}
       </p>
       <div className="popularGames__list">
-        {sortedGames.map(game => (
-          <GameInfo game={game} key={game.gameId}/>
+        {sortedGames.map((game, i) => (
+          <GameInfo game={game} key={game.gameId} index={i} />
         ))}
       </div>
     </div>

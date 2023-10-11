@@ -5,6 +5,7 @@
   display: flex;
   gap: 15px;
   margin-bottom: 25px;
+  user-select: none;
 
   &__modal {
     width: 350px;

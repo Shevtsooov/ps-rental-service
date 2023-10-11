@@ -1,6 +1,7 @@
 export interface Game {
   title: string,
   icon: string,
+  iconLink: string,
   gameId: string,
   poster: string,
   description: string,

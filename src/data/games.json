@@ -1780,10 +1780,10 @@
     "videoGameplay": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/ptTSOPdoyI8?si=AOOcwpXVcpxo30m8' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
     "price": 100,
     "discountedPrice": null,
-    "category": ["Спортивні", "Пригоди", "Дитячі"],
+    "category": ["Спортивні", "Дитячі"],
     "players": "1-4",
     "disclaimers": ["Доджбол не є рішенням конфліктів у реальному житті.", "Покращення навичок може знадобитися, але не завжди."],
-    "releasedOn": "",
+    "releasedOn": "5/8/2021",
     "isAvailable": true,
     "popularity": 0
   },

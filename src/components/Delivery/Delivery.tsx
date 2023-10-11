@@ -9,6 +9,7 @@ import { setChosenDelivery } from '../../Redux/Slices/chosenDelivery.slice';
 
 export const Delivery: React.FC = () => {
   const isDeliveryShown = useAppSelector(state => state.isDeliveryShown.value);
+  const chosenDelivery = useAppSelector(state => state.chosenDelivery.value);
   const dispatch = useAppDispatch();
 
   const [selectedDelivery, setSelectedDelivery] = useState<string>(() => {
@@ -30,7 +31,7 @@ export const Delivery: React.FC = () => {
     dispatch(openDelivery());
   }
 
-  const shippingWay = selectedDelivery === 'Доставка'
+  const shippingWay = chosenDelivery === 'Доставка'
     ? 'Доставка'
     : 'Самовивіз'
 
@@ -50,7 +51,7 @@ export const Delivery: React.FC = () => {
 
             <div
               className={cn('delivery__modal_option', {
-                'delivery__modal_option--active': selectedDelivery === 'Доставка'
+                'delivery__modal_option--active': chosenDelivery === 'Доставка'
               })}
               onClick={() => handleChooseDelivery('Доставка')}
             >
@@ -67,7 +68,7 @@ export const Delivery: React.FC = () => {
 
             <div
               className={cn('delivery__modal_option', {
-                'delivery__modal_option--active': selectedDelivery === 'Самовивіз'
+                'delivery__modal_option--active': chosenDelivery === 'Самовивіз'
               })}
               onClick={() => handleChooseDelivery('Самовивіз')}
             >
@@ -84,7 +85,7 @@ export const Delivery: React.FC = () => {
           </div>
         )}
 
-        {selectedDelivery === 'Доставка'
+        {chosenDelivery === 'Доставка'
           ? (
             <div className="delivery__img">
               <img
@@ -107,22 +108,19 @@ export const Delivery: React.FC = () => {
 
         <div className="delivery__info">
             <p className="delivery__info_heading">
-              {selectedDelivery === ''
-                ? shippingWay
-                : 'Доставка'
-              }
+              {shippingWay}
             </p>
 
-            {selectedDelivery === 'Доставка' && (
+            {chosenDelivery === 'Доставка' && (
               <p className="delivery__info_price">100₴</p>
             )}
 
-            {selectedDelivery === 'Самовивіз' && (
+            {chosenDelivery === 'Самовивіз' && (
               <p className="delivery__info_text">
                 Менеджер зв'яжеться з вами після замовлення для уточнення деталей.
               </p>
             )}
-            {selectedDelivery === '' && (
+            {chosenDelivery === '' && (
               <p 
                 className="delivery__info_button"
               >

@@ -61,7 +61,7 @@ export const Delivery: React.FC = () => {
                   className="delivery__modal_icon"
                 />
               <div className="delivery__info">
-                <p className="delivery__info_heading">Доставка</p>
+                <p className="delivery__info_heading">Доставка по Львову</p>
                 <p className="delivery__info_price">100₴</p>
               </div>
             </div>

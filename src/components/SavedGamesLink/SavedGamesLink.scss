@@ -2,8 +2,23 @@
 @import "../../styles/utils/colors.scss";
 
 .savedGamesLink {
-
+  position: relative;
   &__img {
     width: 30px;
+  }
+
+  &__amount {
+    position: absolute;
+    top: 4px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+
+    padding: 3px;
+
+    font-size: 12px;
+    text-align: center;
+
+    color: #fff;
   }
 }

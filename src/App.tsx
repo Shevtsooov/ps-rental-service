@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Navigate, Route, Routes, useLocation, useParams } from 'react-router-dom';
+import React, { useRef } from 'react';
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 
 import './App.scss';
 
@@ -25,18 +25,19 @@ export const App: React.FC = () => {
 
   // THIS CODE SETS isVisible = true WHEN REF IS IN THE VIEWPORT
   const headerRef = useRef<HTMLDivElement | null>(null);
-  const [isVisible, update] = useInViewport(headerRef);
+  const [isVisible] = useInViewport(headerRef);
   
-  const showCartBuble = location.pathname !== '/shopping-cart'
+  const showCartBubble = location.pathname !== '/shopping-cart'
   && shoppingCartGames.length > 0
   && !isVisible;
 
   return (
     <>
       <Header  />
-      <div ref={headerRef}></div>
 
-      {showCartBuble && <ShoppingCartBubble />}
+      <div ref={headerRef} />
+
+      {showCartBubble && <ShoppingCartBubble />}
 
       <Routes>
         <Route path="home" element={<Homepage />} />

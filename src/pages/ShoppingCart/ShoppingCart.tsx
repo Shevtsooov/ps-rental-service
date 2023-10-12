@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './ShoppingCart.scss';
 import { useAppDispatch, useAppSelector } from '../../Redux/store';
 import { Link } from 'react-router-dom';
@@ -16,6 +16,13 @@ export const ShoppingCart: React.FC = () => {
   const isDeliveryShown = useAppSelector(state => state.isDeliveryShown.value);
   const chosenDelivery = useAppSelector(state => state.chosenDelivery.value);
   const dispatch = useAppDispatch();
+
+    // THIS BLOCK ENSURES THE PAGE OPENS FROM THE TOP
+    const topContainer = useRef<null | HTMLDivElement>(null); 
+
+    useEffect(() => {
+      topContainer.current?.scrollIntoView({ block: "start" });
+      }, []);
 
   const [selectedDelivery, setSelectedDelivery] = useState<string>(() => {
     const storedDelivery = sessionStorage.getItem('storedDelivery');
@@ -67,7 +74,7 @@ export const ShoppingCart: React.FC = () => {
   };
 
   return (
-    <div className="shoppingCart">
+    <div className="shoppingCart" ref={topContainer}>
 
         {(isCalendarShown || isDeliveryShown) && (
           <div

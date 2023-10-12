@@ -12,7 +12,7 @@ import { Game } from '../../types/Game';
 export const GamePage: React.FC = () => {
   const { gameIdLink } = useParams();
 
-  // THIS BLOCK ENSURES THE PAGE OPEN FROM THE TOP
+  // THIS BLOCK ENSURES THE PAGE OPENS FROM THE TOP
   const topContainer = useRef<null | HTMLDivElement>(null); 
 
   useEffect(() => {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Navigate, Route, Routes, useLocation, useParams } from 'react-router-dom';
 
 import './App.scss';
@@ -17,19 +17,24 @@ import { ShoppingCart } from './pages/ShoppingCart/ShoppingCart';
 import { GamePage } from './pages/GamePage/GamePage';
 import { ShoppingCartBubble } from './components/ShoppingCartBubble/ShoppingCartBubble';
 import { useAppSelector } from './Redux/store';
+import { useInViewport } from './helpers/useInViewport';
 
 export const App: React.FC = () => {
   const shoppingCartGames = useAppSelector(state => state.shoppingCartGames.value);
   const location = useLocation();
+
+  // THIS CODE SETS isVisible = true WHEN REF IS IN THE VIEWPORT
+  const headerRef = useRef<HTMLDivElement | null>(null);
+  const [isVisible, update] = useInViewport(headerRef);
   
   const showCartBuble = location.pathname !== '/shopping-cart'
-  && shoppingCartGames.length > 0;
-
-  console.log(location.pathname !== '/shopping-cart');
+  && shoppingCartGames.length > 0
+  && !isVisible;
 
   return (
     <>
-      <Header />
+      <Header  />
+      <div ref={headerRef}></div>
 
       {showCartBuble && <ShoppingCartBubble />}
 

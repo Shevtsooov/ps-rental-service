@@ -27,6 +27,16 @@ export const Delivery: React.FC = () => {
     sessionStorage.setItem("storedDelivery", JSON.stringify(selectedDelivery));
   }, [selectedDelivery]);
 
+  useEffect(() => {
+    if (isDeliveryShown) {
+      document.body.style.overflow = 'hidden';
+
+      return;
+    }
+
+    document.body.style.overflow = 'auto'
+  }, [isDeliveryShown])
+
   const handleOpenDelivery = () => {
     dispatch(openDelivery());
   }

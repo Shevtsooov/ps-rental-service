@@ -15,7 +15,7 @@ import { Footer } from './components/Footer/Footer';
 import { SavedGames } from './pages/SavedGames/SavedGames';
 import { ShoppingCart } from './pages/ShoppingCart/ShoppingCart';
 import { GamePage } from './pages/GamePage/GamePage';
-import { ShoppingBuble } from './components/ShoppingBuble/ShoppingBuble';
+import { ShoppingCartBubble } from './components/ShoppingCartBubble/ShoppingCartBubble';
 import { useAppSelector } from './Redux/store';
 
 export const App: React.FC = () => {
@@ -31,7 +31,7 @@ export const App: React.FC = () => {
     <>
       <Header />
 
-      {showCartBuble && <ShoppingBuble />}
+      {showCartBuble && <ShoppingCartBubble />}
 
       <Routes>
         <Route path="home" element={<Homepage />} />

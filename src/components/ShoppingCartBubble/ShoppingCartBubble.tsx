@@ -1,20 +1,20 @@
-import './ShoppingBuble.scss';
+import './ShoppingCartBubble.scss';
 import shoppingCart from '../../assets/icons/shoppingCart-white.svg'
 import { useAppSelector } from '../../Redux/store';
 import { NavLink } from 'react-router-dom';
 
 
-export const ShoppingBuble: React.FC = () => {
+export const ShoppingCartBubble: React.FC = () => {
   const shoppingCartGames = useAppSelector(state => state.shoppingCartGames.value);
   
   return (
-    <NavLink className="shoppingBuble" to='/shopping-cart'>
+    <NavLink className="shoppingCartBubble" to='/shopping-cart'>
       <img
         src={`${shoppingCart}`}
         alt="Кошик"
-        className="shoppingBuble__img"
+        className="shoppingCartBubble__img"
       />
-      <p className="shoppingBuble__amount">
+      <p className="shoppingCartBubble__amount">
         {shoppingCartGames.length}
       </p>
     </NavLink>

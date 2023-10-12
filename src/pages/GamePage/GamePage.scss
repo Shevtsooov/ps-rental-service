@@ -35,14 +35,47 @@
 
   &__info {
     color: $secondary-grey;
-    font-size: 20px;
+    font-size: 16px;
+
     padding: 35px 20px 20px;
-  }
 
-  &__release {
-    padding: 0 20px 20px;
-    color: $secondary-grey;
+    &_title {
+      font-size: 20px;
 
+      margin-bottom: 15px;
+    }
+
+    &_categories {
+      display: flex;
+      gap: 5px;
+
+
+      margin-bottom: 15px;
+      
+      &_item {
+        display: inline;
+
+        padding: 5px 10px;
+        border-radius: 30px;
+        border: 1px solid $main-blue;
+        font-size: 14px;
+        background-color: $main-blue;
+        color: #fff;
+
+        // &:hover {
+        //   background-color: #fff;
+        //   color: $main-blue;
+        // }
+      }
+    }
+
+    &_players {
+      margin-bottom: 15px;
+    }
+
+    &_release {
+      font-size: 16px;
+    }
   }
 
   &__disclaimers {

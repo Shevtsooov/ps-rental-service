@@ -66,11 +66,23 @@ export const GamePage: React.FC = () => {
       </div>
       
       <div className="game_page__info">
-        <p>{`${game?.description}`}</p>
-      </div>
+        <p className="game_page__info_title">{`${game?.description}`}</p>
 
-      <div className="game_page__release">
-        {`Дата релізу: ${game?.releasedOn}`}
+        <ul className="game_page__info_categories">
+          {game?.category.map(cat => (
+            <li className="game_page__info_categories_item">
+              {cat}
+            </li>
+          ))}
+        </ul>
+
+        <p className="game_page__info_players">
+          {`Кількість гравців: ${game?.players}`}
+        </p>
+
+        <p className="game_page__info_release">
+          {`Дата релізу: ${game?.releasedOn}`}
+        </p>
       </div>
 
       {game && (

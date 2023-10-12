@@ -35,7 +35,7 @@ export const ShoppingCartList: React.FC = () => {
     <div className="shoppingCartList">
 
       {shoppingCartGames.map(game => (
-        <div className="shoppingCartList__game">
+        <div className="shoppingCartList__game" key ={game.gameId}>
           <div className="shoppingCartList__game_box">
             <div className="shoppingCartList__game_img">
               <NavLink to={`/games/${game.gameId}`}>

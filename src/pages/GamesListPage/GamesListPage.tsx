@@ -1,6 +1,5 @@
 import React from 'react';
 import './GamesListPage.scss';
-// import { games } from '../../data/games';
 import { Filter } from '../../components/Filter/Filter';
 import { GameList } from '../../components/GameList/GameList';
 

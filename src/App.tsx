@@ -1,5 +1,5 @@
-import React from 'react';
-import { Navigate, Route, Routes } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Navigate, Route, Routes, useLocation, useParams } from 'react-router-dom';
 
 import './App.scss';
 
@@ -15,12 +15,23 @@ import { Footer } from './components/Footer/Footer';
 import { SavedGames } from './pages/SavedGames/SavedGames';
 import { ShoppingCart } from './pages/ShoppingCart/ShoppingCart';
 import { GamePage } from './pages/GamePage/GamePage';
+import { ShoppingBuble } from './components/ShoppingBuble/ShoppingBuble';
+import { useAppSelector } from './Redux/store';
 
 export const App: React.FC = () => {
+  const shoppingCartGames = useAppSelector(state => state.shoppingCartGames.value);
+  const location = useLocation();
+  
+  const showCartBuble = location.pathname !== '/shopping-cart'
+  && shoppingCartGames.length > 0;
+
+  console.log(location.pathname !== '/shopping-cart');
 
   return (
     <>
       <Header />
+
+      {showCartBuble && <ShoppingBuble />}
 
       <Routes>
         <Route path="home" element={<Homepage />} />

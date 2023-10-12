@@ -13,7 +13,7 @@ export const Homepage: React.FC = () => {
     <div className="homepage">
       <Slider />
 
-      <Aaa />
+      {/* <Aaa />
 
         <div>
           <ul>
@@ -22,7 +22,7 @@ export const Homepage: React.FC = () => {
               <img src={`${game.poster}`} alt="" className='aaa'/>
             ))}
           </ul>
-        </div>
+        </div> */}
       <BookPS />
 
       <PopularGames />

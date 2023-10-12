@@ -100,7 +100,7 @@
     "videoGameplay": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/2lc5BW8tEqk?si=bHjKNBTHPIWvkBP0' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
     "price": 100,
     "discountedPrice": null,
-    "category": ["Симулятори", "Пригоди"],
+    "category": ["Симулятори", "Пригоди", "Космос"],
     "players": "1",
     "disclaimers": ["Не вирушайте у космос без відповідної підготовки та космічного костюма.", "Уникайте зіткнення з астероїдами - це боляче."],
     "releasedOn": "15/7/2016",

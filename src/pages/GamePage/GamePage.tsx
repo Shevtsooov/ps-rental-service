@@ -69,9 +69,9 @@ export const GamePage: React.FC = () => {
         <p className="game_page__info_title">{`${game?.description}`}</p>
 
         <ul className="game_page__info_categories">
-          {game?.category.sort().map(cat => (
+          {game?.category.map(category => (
             <li className="game_page__info_categories_item">
-              {cat}
+              {category}
             </li>
           ))}
         </ul>

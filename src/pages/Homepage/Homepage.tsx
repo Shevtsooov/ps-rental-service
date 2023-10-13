@@ -49,7 +49,7 @@ export const Homepage: React.FC = () => {
     <div className="homepage">
       <Slider />
 
-      <Aaa />
+      {/* <Aaa /> */}
 
       {/* <div>
         <ul>

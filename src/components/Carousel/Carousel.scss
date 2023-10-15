@@ -20,6 +20,10 @@
   &__slider {
     display: flex;
     gap: 16px;
+
+    @include onMobile {
+      display: none;
+    }
   }
 
   &__button {

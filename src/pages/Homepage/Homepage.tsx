@@ -6,6 +6,7 @@ import { PopularGames } from '../../components/PopularGames/PopularGames';
 import { AboutPS5 } from '../../components/AboutPS5/AboutPS5';
 import games from '../../data/games.json'
 import { Aaa } from '../../components/111/111';
+import { Carousel } from '../../components/Carousel/Carousel';
 
 export const Homepage: React.FC = () => {
   // let categories: string[] = [];
@@ -49,7 +50,9 @@ export const Homepage: React.FC = () => {
     <div className="homepage">
       <Slider />
 
-      <Aaa />
+      {/* <Carousel title={'Колекція'} /> */}
+      
+      {/* <Aaa /> */}
 
       {/* <div>
         <ul>

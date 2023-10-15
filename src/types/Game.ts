@@ -15,4 +15,5 @@ export interface Game {
   releasedOn: string,
   isAvailable: boolean,
   popularity: number,
+  collection: string
 };

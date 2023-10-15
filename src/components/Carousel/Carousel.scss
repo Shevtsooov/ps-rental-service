@@ -1,0 +1,75 @@
+@import "../../styles/utils/mixins.scss";
+@import "../../styles/utils/colors.scss";
+
+.carousel {
+  padding: 20px 0;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-bottom: 24px;
+  }
+
+  &__title {
+    font-size: 22px;
+    font-weight: 800;
+    color: $secondary-grey;
+  }
+
+  &__slider {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__button {
+    width: 32px;
+    height: 32px;
+    padding: 8px;
+    background-color: transparent;
+    border: 1px solid $secondary-grey;
+
+    &:hover {
+      border-color: $main-grey;
+      cursor: pointer;
+    }
+
+    &:active {
+      transform: translateY(2px);
+      box-shadow: 0px 2px 4px $secondary-grey;
+    }
+  }
+
+  &__button-icon {
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    &--left {
+      background-image: url(../../assets/icons/arrow-right.svg);
+      transform: rotate(180deg);
+    }
+
+    &--right {
+      background-image: url(../../assets/icons/arrow-right.svg);
+    }
+  }
+
+  &__content {
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    margin: 0 20px;
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+  }
+
+  &__scroll-wrapper {
+    display: flex;
+
+    gap: 16px;
+  }
+}

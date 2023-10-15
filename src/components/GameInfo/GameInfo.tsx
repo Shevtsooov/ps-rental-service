@@ -40,7 +40,7 @@ export const GameInfo: React.FC<Props> = ({ game, index }) => {
     <div className="game">
       <NavLink to={`/games/${game.gameId}`}>
         <img
-          src={`./images/games/${game.icon}`}
+          src={`../images/games/${game.icon}`}
           alt={`${game.title} - logo`}
           className="game_image"
         />

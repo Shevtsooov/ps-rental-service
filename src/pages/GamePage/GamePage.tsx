@@ -8,6 +8,7 @@ import { filterSavedGames, setSavedGames } from '../../Redux/Slices/savedGames.s
 import { filterShoppingCartGames, setShoppingCartGames } from '../../Redux/Slices/shoppingCartGames.slice';
 import { useAppSelector, useAppDispatch } from '../../Redux/store';
 import { Game } from '../../types/Game';
+import { Carousel } from '../../components/Carousel/Carousel';
 
 export const GamePage: React.FC = () => {
   const { gameIdLink } = useParams();
@@ -164,6 +165,10 @@ export const GamePage: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {game && game.collection !== "" && (
+        <Carousel title="Колекція" gameId={game.gameId} />
+      )}
     </div>
   );
 }

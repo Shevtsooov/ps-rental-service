@@ -15,7 +15,8 @@
     "disclaimers": ["Ця гра може викликати сильне бажання носити капелюхи.", "Не намагайтеся рятувати світ без свого вірного капелюха!"],
     "releasedOn": "6/12/2017",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Absolver: Downfall",
@@ -33,7 +34,8 @@
     "disclaimers": ["Уникайте боїв у реальному житті."],
     "releasedOn": "29/8/2017",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "ABZÛ",
@@ -51,7 +53,8 @@
     "disclaimers": ["Не занурюйтесь так глибоко в океан у реальному житті.", "Морські черепахи в цій грі навіть кращі, ніж справжні."],
     "releasedOn": "2/8/2016",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "ACE COMBAT 7: SKIES UNKNOWN",
@@ -69,7 +72,8 @@
     "disclaimers": ["Не намагайтеся вирушити в подібну авіаційну пригоду без пілотської ліцензії.", "Грипси для керування літаком не входять у комплект."],
     "releasedOn": "19/2/2019",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Ace of Seafood",
@@ -87,7 +91,8 @@
     "disclaimers": ["Гра може спричинити бажання поїсти суші."],
     "releasedOn": "9/11/2017",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "ADR1FT",
@@ -105,7 +110,8 @@
     "disclaimers": ["Не вирушайте у космос без відповідної підготовки та космічного костюма.", "Уникайте зіткнення з астероїдами - це боляче."],
     "releasedOn": "15/7/2016",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Adventure Time: Pirates of the Enchiridion",
@@ -123,7 +129,8 @@
     "disclaimers": ["Не вступайте в різноманітні пригоди, якщо у вас немає друзів як Фінн і Джейк.", "Пірати іноді мають дуже кумедні скарби."],
     "releasedOn": "20/7/2018",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Age of Wonders: Planetfall",
@@ -141,7 +148,8 @@
     "disclaimers": ["Пам'ятайте, що завоювання планет - це серйозна справа, і не завжди все йде гладко.", "Дипломатія може бути ефективнішою за війну."],
     "releasedOn": "6/8/2019",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Alex Kidd in Miracle World DX",
@@ -159,7 +167,8 @@
     "disclaimers": ["Будьте обережні, гра може викликати ностальгію за дитинством.", "Головоломки можуть здатися вам надто складними, але це не відмазка - продовжуйте грати!"],
     "releasedOn": "22/6/2021",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "ALIENATION",
@@ -177,7 +186,8 @@
     "disclaimers": ["Визволення світу від прибульців може бути важким завданням."],
     "releasedOn": "26/4/2016",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Anodyne",
@@ -195,7 +205,8 @@
     "disclaimers": ["Рольова гра може викликати ностальгію за 16-бітною класикою.", "Головоломки можуть здатися надто складними, але це частина пригоди."],
     "releasedOn": "19/9/2018",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "AO Tennis 2",
@@ -213,7 +224,8 @@
     "disclaimers": [],
     "releasedOn": "9/1/2020",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Aragami",
@@ -231,7 +243,8 @@
     "disclaimers": ["Не намагайтеся стати ніндзя без належного навчання і тіньових здібностей.", "Тіньові бої можуть викликати сильну адреналінову залежність."],
     "releasedOn": "4/10/2016",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Ashen",
@@ -249,7 +262,8 @@
     "disclaimers": ["Подорож до містичного світу може здатися неймовірною і це саме те, що ви шукали.", "Пам'ятайте: світло завжди перемагає темряву."],
     "releasedOn": "13/12/2019",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Assassin's Creed 4 Black Flag",
@@ -267,7 +281,8 @@
     "disclaimers": ["Не відправляйтеся в морську пригоду без піратського досвіду та скарбниці.", "Уникайте зустрічей із справжніми піратами."],
     "releasedOn": "22/11/2013",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Assassin's Creed Chronicles: China",
@@ -285,7 +300,8 @@
     "disclaimers": ["Не вирушайте в місію без відповідної підготовки та арсеналу.", "Династія Мін відома своєю складною історією."],
     "releasedOn": "22/4/2015",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Assassin's Creed Freedom Cry",
@@ -303,7 +319,8 @@
     "disclaimers": ["Навіть для піратів Карибське море може бути небезпечним ."],
     "releasedOn": "19/2/2014",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Assassin's Creed III Remastered",
@@ -321,7 +338,8 @@
     "disclaimers": ["Не забувайте змінювати хід історії у реальному житті!", "Тамплієри завжди мають секретні плани."],
     "releasedOn": "29/3/2019",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Assassin's Creed Odyssey",
@@ -339,7 +357,8 @@
     "disclaimers": ["Боги мають свої плани на вас."],
     "releasedOn": "5/10/2018",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Assassin's Creed Origins",
@@ -357,7 +376,8 @@
     "disclaimers": [],
     "releasedOn": "27/10/2017",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Assassin's Creed Rogue Remastered",
@@ -375,7 +395,8 @@
     "disclaimers": ["Не намагайтеся розгортати війну між асасінами і тамплієрами у реальному житті."],
     "releasedOn": "20/3/2018",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Assassin's Creed Syndicate",
@@ -393,7 +414,8 @@
     "disclaimers": [],
     "releasedOn": "23/10/2015",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Assassin's Creed Unity",
@@ -415,7 +437,8 @@
     ],
     "releasedOn": "14/11/2014",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Assassin’s Creed Chronicles: India",
@@ -433,7 +456,8 @@
     "disclaimers": ["Не вирушайте в місію без відповідної підготовки та арсеналу.", "Династія Могулів може бути великою загрозою для Індії."],
     "releasedOn": "12/1/2016",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Assassin’s Creed Chronicles: Russia",
@@ -451,7 +475,8 @@
     "disclaimers": ["Революція може змінити долю країни."],
     "releasedOn": "9/2/2016",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Assassin’s Creed The Ezio Collection",
@@ -469,7 +494,8 @@
     "disclaimers": ["Не намагайтеся стати асасіном без відповідного навчання та арсеналу.", "Тамплієри завжди мають хитрі плани."],
     "releasedOn": "18/11/2016",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Assetto Corsa Competizione",
@@ -487,7 +513,8 @@
     "disclaimers": ["Не намагайтеся ганяти на реальних гоночних трасах без досвіду та ліцензії.", "Швидкість може викликати адреналінову залежність."],
     "releasedOn": "22/2/2022",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Astebreed",
@@ -505,7 +532,8 @@
     "disclaimers": ["Космічний бій може бути дуже інтенсивним."],
     "releasedOn": "25/6/2015",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "AVICII Invector",
@@ -523,7 +551,8 @@
     "disclaimers": ["Можете спробувати стати професійним діджеєм після цієї гри.", "Музика Авічі може змінити ваше сприйняття світу."],
     "releasedOn": "10/12/2019",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
 
 
@@ -547,7 +576,8 @@
     "disclaimers": ["Спільна гра може призвести до веселощів та крику."],
     "releasedOn": "12/10/2021",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Bad North",
@@ -565,7 +595,8 @@
     "disclaimers": ["Стратегія потребує розумових зусиль."],
     "releasedOn": "28/8/2018",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Bassmaster Fishing PS4 and PS5",
@@ -583,7 +614,8 @@
     "disclaimers": [],
     "releasedOn": "28/10/2021",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Batman: Arkham Knight",
@@ -601,7 +633,8 @@
     "disclaimers": ["Не намагайтеся стати Бетменом без тренувань та гаджетів.", "З цією грою ви точно не навчитесь літати, навіть, якщо ви Бетмен"],
     "releasedOn": "23/6/2015",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Battle Chasers: Nightwar",
@@ -619,7 +652,8 @@
     "disclaimers": [],
     "releasedOn": "3/10/2017",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Bee Simulator",
@@ -637,7 +671,8 @@
     "disclaimers": ["За допомогою цієї гри ви не зможете стати справжньою бджолою."],
     "releasedOn": "14/11/2019",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Ben 10: Power Trip",
@@ -655,7 +690,8 @@
     "disclaimers": ["Порятунок світу - це завжди важко."],
     "releasedOn": "28/9/2022",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Blasphemous",
@@ -673,7 +709,8 @@
     "disclaimers": ["Світ релігії може бути дуже небезпечним."],
     "releasedOn": "10/9/2019",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Bloodborne",
@@ -691,7 +728,8 @@
     "disclaimers": ["Світ Bloodborne може налякати."],
     "releasedOn": "25/3/2015",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Bloodstained: Ritual of the Night",
@@ -709,7 +747,8 @@
     "disclaimers": ["Гра може забрати багато часу."],
     "releasedOn": "18/6/2019",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Bomber Crew",
@@ -727,7 +766,8 @@
     "disclaimers": [],
     "releasedOn": "10/7/2018",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Bound",
@@ -745,7 +785,8 @@
     "disclaimers": ["Мистецтво потребує креативності."],
     "releasedOn": "16/8/2016",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Brawlout",
@@ -763,7 +804,8 @@
     "disclaimers": ["Не намагайтеся влаштовувати бійки на вулиці без захисту.", "Бойові мистецтва вимагають тренувань."],
     "releasedOn": "21/8/2018",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Brothers: a Tale of two Sons",
@@ -781,7 +823,8 @@
     "disclaimers": ["Не намагайтеся перетнути річку на плечах брата.", "Двоє братів можуть зробити багато разом."],
     "releasedOn": "12/8/2015",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Bubsy: The Woolies Strike Back",
@@ -799,7 +842,8 @@
     "disclaimers": ["Злих вовків краще уникати. Та і не злих - теж"],
     "releasedOn": "31/10/2017",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Bugsnax",
@@ -817,7 +861,8 @@
     "disclaimers": ["Не їжте живих комах в реальному житті"],
     "releasedOn": "12/11/2020",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Bus Simulator 21 Next Stop",
@@ -835,7 +880,8 @@
     "disclaimers": ["Перевезення пасажирів потребує відповідальності."],
     "releasedOn": "16/5/2023",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
 
 
@@ -859,7 +905,8 @@
     "disclaimers": ["Не забувайте, що це гра, а не тренажер бойового пілота.", "YНе стріляйте в справжні літаки."],
     "releasedOn": "9/8/2016",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Call of Cthulhu",
@@ -877,7 +924,8 @@
     "disclaimers": ["Уникайте зустрічі з великими, жахливими істотами.", "Досліджуйте світ, але не втрачайте голову."],
     "releasedOn": "30/10/2018",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Call of The Sea",
@@ -895,7 +943,8 @@
     "disclaimers": ["Не забувайте про комарів у тропіках.", "Досліджуйте острів, але не залишайтеся там назавжди."],
     "releasedOn": "11/5/2021",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Car Mechanic Simulator",
@@ -913,7 +962,8 @@
     "disclaimers": ["Не ремонтуйте автомобілі на дорозі.", "Ремонт може бути веселим, але не завжди дешевим."],
     "releasedOn": "25/6/2019",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Carto",
@@ -931,7 +981,8 @@
     "disclaimers": ["Не втрачайте фрагменти у лісі.", "Переставляйте фрагменти, але не заблукайте."],
     "releasedOn": "27/10/2020",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Cartoon Network: Battle Crashers",
@@ -949,7 +1000,8 @@
     "disclaimers": ["Всі ці персонажі - фікція, не використовуйте їх у реальному житті."],
     "releasedOn": "8/11/2016",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Celeste",
@@ -967,7 +1019,8 @@
     "disclaimers": ["Гра може бути важкою, але це робить вас сильнішими."],
     "releasedOn": "25/1/2018",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Chess Ultra",
@@ -985,7 +1038,8 @@
     "disclaimers": ["Гра в шахи може зробити вас мислителем."],
     "releasedOn": "21/6/2017",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Chicken Police – Paint it RED!",
@@ -1003,7 +1057,8 @@
     "disclaimers": ["Не намагайтесь говорити з курьми у реальному світі.", "Розкривайте справи, але не втрачайте пір'я."],
     "releasedOn": "30/3/2022",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Child of Light",
@@ -1021,7 +1076,8 @@
     "disclaimers": ["Перемагайте темряву, але не забувайте про світло."],
     "releasedOn": "30/4/2014",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Children of Morta",
@@ -1039,7 +1095,8 @@
     "disclaimers": ["Не ризикуйте життям ради камінця.", "Бійцівська родина - сильна родина."],
     "releasedOn": "15/10/2019",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Chorus",
@@ -1057,7 +1114,8 @@
     "disclaimers": ["Врятуйте світ, але збережіть свій розум."],
     "releasedOn": "3/12/2021",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Circus Electrique",
@@ -1075,7 +1133,8 @@
     "disclaimers": ["Не намагайтесь створити власний цирк у центрі Лондона.", "Розважайте глядачів, але не руйнуйте місто."],
     "releasedOn": "6/9/2022",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Cities: Skylines - PlayStation4 Edition",
@@ -1093,7 +1152,8 @@
     "disclaimers": ["Будуйте і розвивайте місто, але не забувайте про транспорт."],
     "releasedOn": "15/8/2017",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Cloudpunk",
@@ -1111,7 +1171,8 @@
     "disclaimers": ["Доставляйте товари, але уникайте хмар."],
     "releasedOn": "19/8/2022",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Clouds & Sheep 2",
@@ -1129,7 +1190,8 @@
     "disclaimers": ["Годуйте овець - не залишайте їх голодними."],
     "releasedOn": "21/2/2017",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "CODE VEIN",
@@ -1147,7 +1209,8 @@
     "disclaimers": ["Боротьба зі злом - це справа для вампірів."],
     "releasedOn": "27/9/2019",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Conan Exiles",
@@ -1165,7 +1228,8 @@
     "disclaimers": ["Виживання - це виклик для справжніх воїнів."],
     "releasedOn": "8/5/2018",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Concrete Genie",
@@ -1183,7 +1247,8 @@
     "disclaimers": ["Не малюйте на стінах у місті без дозволу.", "Творіть, але не забувайте про середовище."],
     "releasedOn": "9/10/2019",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "ConnecTank",
@@ -1201,7 +1266,8 @@
     "disclaimers": ["З'єднуйте об'єкти, але не забувайте про ворогів."],
     "releasedOn": "28/9/2021",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "CONTRA: ROGUE CORPS",
@@ -1219,7 +1285,8 @@
     "disclaimers": ["Виживайте разом з друзями, але обережно!"],
     "releasedOn": "26/9/2019",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Control: Ultimate Edition",
@@ -1237,7 +1304,8 @@
     "disclaimers": ["Дізнайтеся більше про контроль, граючи у гру."],
     "releasedOn": "2/2/2021",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Cris Tales",
@@ -1255,7 +1323,8 @@
     "disclaimers": ["Змінюйте світ, але робіть це обережно."],
     "releasedOn": "20/7/2021",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Crysis Remastered",
@@ -1273,7 +1342,8 @@
     "disclaimers": ["Грайте в гру, а не забувайте про живий світ."],
     "releasedOn": "9/10/2020",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Cursed to Golf",
@@ -1291,7 +1361,8 @@
     "disclaimers": [],
     "releasedOn": "18/8/2022",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
 
 
@@ -1317,7 +1388,8 @@
     "disclaimers": ["Роботи, поки що, не придатні для битв у реальному житті.", "Збережіть Токіо, і ми можливо навіть вас не забудемо."],
     "releasedOn": "31/5/2017",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Dandara: Trials of Fear Edition",
@@ -1335,7 +1407,8 @@
     "disclaimers": [],
     "releasedOn": "6/2/2018",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Dangerous Golf",
@@ -1353,7 +1426,8 @@
     "disclaimers": ["Всі поля для гольфу - пастки."],
     "releasedOn": "3/6/2016",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Darksiders Genesis",
@@ -1371,7 +1445,8 @@
     "disclaimers": ["Апокаліпсис - це лише гра, не сприймайте його серйозно.", "Демони в реальному житті не такі вже й слабкі."],
     "releasedOn": "14/2/2020",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Darksiders III",
@@ -1389,7 +1464,8 @@
     "disclaimers": ["Розпоряджатися всесвітом - це не так просто, як здається.", "Гріхи в реальності не такі легкодоступні."],
     "releasedOn": "27/11/2018",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Days Gone",
@@ -1407,7 +1483,8 @@
     "disclaimers": [],
     "releasedOn": "26/4/2019",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "DC League of Super-Pets: The Adventures of Krypto and Ace",
@@ -1425,7 +1502,8 @@
     "disclaimers": ["Супер-собаки не замінюють справжніх супергероїв.", "Використовуйте суперсили супер-собак обережно."],
     "releasedOn": "30/9/2022",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Dead by Daylight",
@@ -1443,7 +1521,8 @@
     "disclaimers": ["Не вірте маніякам-вбивцям у реальному житті."],
     "releasedOn": "12/11/2020",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Dead Cells",
@@ -1461,7 +1540,8 @@
     "disclaimers": ["Не намагайтесь вижити, склавши руки."],
     "releasedOn": "29/6/2023",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "DEAD OR ALIVE 5 Last Round",
@@ -1479,7 +1559,8 @@
     "disclaimers": ["У реальному житті не рекомендується вирішувати конфлікти боєм.", "Перемагати красиво - це мистецтво."],
     "releasedOn": "18/3/2015",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Death end reQuest",
@@ -1497,7 +1578,8 @@
     "disclaimers": ["Ця гра може пошкодити вашу реальність."],
     "releasedOn": "22/2/2019",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Death Squared",
@@ -1515,7 +1597,8 @@
     "disclaimers": ["Роботи в реальності не розуміють гумор.", "Ви можете ризикувати своїми роботами в цій грі."],
     "releasedOn": "14/3/2017",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "DEATH STRANDING",
@@ -1533,7 +1616,8 @@
     "disclaimers": ["Не носіть такий вантаж у реальному житті."],
     "releasedOn": "24/9/2021",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Deliver Us The Moon",
@@ -1551,7 +1635,8 @@
     "disclaimers": ["Космічна одинока подорож - це виклик."],
     "releasedOn": "23/4/2020",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Demon's Souls",
@@ -1569,7 +1654,8 @@
     "disclaimers": ["Справжні демони не рекомендують вам цю гру.", "Беріть щит і меч - вони вам точно знадобляться."],
     "releasedOn": "12/11/2020",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Desperados III",
@@ -1587,7 +1673,8 @@
     "disclaimers": ["Справжні ковбої не розмовляють з іншими гравцями.", "Пригоди в Дикому Заході - це небезпечна справа."],
     "releasedOn": "16/6/2020",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Destiny 2: The Witch Queen",
@@ -1605,7 +1692,8 @@
     "disclaimers": ["Космос не такий красивий, як на екрані.", "Нові вороги - це нові виклики."],
     "releasedOn": "8/12/2020",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Destroy All Humans! 2 - Reprobed",
@@ -1623,7 +1711,8 @@
     "disclaimers": ["Не рекомендується ставити планети на гру в реальному житті.", "Інопланетяни не такі дружелюбні, як у грі."],
     "releasedOn": "30/8/2022",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Destruction AllStars",
@@ -1641,7 +1730,8 @@
     "disclaimers": ["Не намагайтесь перетворити свій автомобіль у зброю.", "Руйнування - це ваша мета і єдина ціль."],
     "releasedOn": "2/2/2021",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Detroit: Become Human",
@@ -1659,7 +1749,8 @@
     "disclaimers": ["Роботи в реальності не виконують ваших команд.", "Майбутнє не таке просте, як здається."],
     "releasedOn": "25/5/2018",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Deus Ex: Mankind Divided",
@@ -1677,7 +1768,8 @@
     "disclaimers": ["Кіборги не такі розумні в реальності.", "Змінювати світ важко, але весело."],
     "releasedOn": "19/10/2016",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Devil May Cry 5 Special Edition",
@@ -1695,7 +1787,8 @@
     "disclaimers": ["Справжня демонічна сила не піддається апгрейду.", "Нові можливості - це нові виклики."],
     "releasedOn": "12/11/2020",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Disaster Report 4: Summer Memories",
@@ -1713,7 +1806,8 @@
     "disclaimers": ["Не намагайтесь виживати в реальних природних катастрофах.", "Виживання - це серйозна справа."],
     "releasedOn": "21/4/2020",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "DISGAEA 5: ALLIANCE OF VENGEANCE",
@@ -1731,7 +1825,8 @@
     "disclaimers": ["Японські ролі - це не для всіх.", "Вчити ворогів - це мистецтво іншого рівня."],
     "releasedOn": "6/8/2018",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Dishonored 2",
@@ -1749,7 +1844,8 @@
     "disclaimers": ["Помста не завжди робить світ кращим.", "Змінювати історію - це велика відповідальність."],
     "releasedOn": "11/11/2016",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Dishonored: Death of the Outsider",
@@ -1767,7 +1863,8 @@
     "disclaimers": ["Боги не завжди вигнанці в реальному житті.", "Вирішити долю - це не легко, але цікаво."],
     "releasedOn": "15/9/2017",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Dodgeball Academia",
@@ -1785,7 +1882,8 @@
     "disclaimers": ["Доджбол не є рішенням конфліктів у реальному житті.", "Покращення навичок може знадобитися, але не завжди."],
     "releasedOn": "5/8/2021",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "DOOM",
@@ -1803,7 +1901,8 @@
     "disclaimers": ["Смертельні демони - це не ваші сусіди в реальному житті.", "Загибель - це серйозна справа."],
     "releasedOn": "13/5/2016",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "DOOM Eternal Standard Edition",
@@ -1821,7 +1920,8 @@
     "disclaimers": ["Смертельні демони не варто запускати в реальному житті.", "Нові місії - це нові виклики."],
     "releasedOn": "29/6/2021",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "DRAGON BALL FIGHTERZ",
@@ -1839,7 +1939,8 @@
     "disclaimers": ["Битви на рингу не є рішенням конфліктів у реальному житті.", "Стати справжнім воїном - це велика відповідальність."],
     "releasedOn": "26/1/2018",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "DRAGON BALL XENOVERSE 2",
@@ -1857,7 +1958,8 @@
     "disclaimers": ["Битви в Dragon Ball не заміняють реальних змагань.", "Всесвіт не включає в себе кульгавих драконів."],
     "releasedOn": "27/10/2016",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "DRAGON BALL Z: KAKAROT",
@@ -1875,7 +1977,8 @@
     "disclaimers": ["Сон Гоку не є вашим сусідом.", "Долати суперника в реальному житті - не завжди добра ідея."],
     "releasedOn": "13/1/2023",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "DRAGON QUEST BUILDERS 2 Standard Edition",
@@ -1893,7 +1996,8 @@
     "disclaimers": ["Будувати світ не так просто, як здається.", "Пригоди не завжди зводяться до будівництва."],
     "releasedOn": "12/7/2019",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "DRAGON QUEST BUILDERS",
@@ -1911,7 +2015,8 @@
     "disclaimers": ["Будувати можна не лише міста, але і долі."],
     "releasedOn": "15/11/2016",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "DRAGON QUEST HEROES",
@@ -1929,7 +2034,8 @@
     "disclaimers": ["Герой це не ваша професія, це стан життя.", "Збирати скарби в реальному житті - це сумнівна ідея."],
     "releasedOn": "16/11/2015",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "DRAGON QUEST HEROES II",
@@ -1947,7 +2053,8 @@
     "disclaimers": ["Герої в реальному житті зустрічаються рідко.", "Епічні битви чекають на вас, але не вулицях міста."],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "DRAGON QUEST XI S: Echoes of an Elusive Age – Definitive Edition",
@@ -1965,7 +2072,8 @@
     "disclaimers": ["Пригоди можуть зачекати, але гроші - ні.", "Ви не герой у реальному житті, але можете почувати себе таким у грі."],
     "releasedOn": "4/12/2020",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Dragon Star Varnir",
@@ -1983,7 +2091,8 @@
     "disclaimers": ["Магія - це не завжди відповідь на всі питання.", "Ви не варнір в реальному житті, тому будьте обережні."],
     "releasedOn": "14/6/2019",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Dreams",
@@ -2001,7 +2110,8 @@
     "disclaimers": ["Уявіть, і це може стати реальністю.", "Мрії не завжди обмежуються ніччю."],
     "releasedOn": "14/2/2020",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "DYNASTY WARRIORS 8 Empires",
@@ -2019,7 +2129,8 @@
     "disclaimers": ["Імператорські битви в реальному житті - погана ідея.", "Ви не стратег динозаврів, але можете таким бути в грі."],
     "releasedOn": "25/3/2015",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "DYNASTY WARRIORS 9",
@@ -2037,7 +2148,8 @@
     "disclaimers": ["Заводьте імперію, але не втрачайтеся в історії.", "Динозаври - це не ваші сусіди, і вони не дуже дружелюбні."],
     "releasedOn": "13/3/2018",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "DYSMANTLE",
@@ -2055,7 +2167,8 @@
     "disclaimers": ["Руйнувати - це просто, але зібрати знову важче.", "Світ виживання не обов'язково є веселощами."],
     "releasedOn": "19/1/2022",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
 
 
@@ -2080,7 +2193,8 @@
     "disclaimers": ["Небо не є межею.", "Орли не гарантовано вилітають у кожному екземплярі."],
     "releasedOn": "24/1/2017",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Earth Defense Force 4.1: The Shadow of New Despair",
@@ -2098,7 +2212,8 @@
     "disclaimers": ["Земля під загрозою, і це не жарт.", "Всесвіт завжди відкритий для неприємних сюрпризів."],
     "releasedOn": "12/2/2016",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "EARTH DEFENSE FORCE 5",
@@ -2116,7 +2231,8 @@
     "disclaimers": ["Земля потребує героїв.", "Інопланетяни можуть бути вашими новими сусідами."],
     "releasedOn": "11/12/2018",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "EARTH DEFENSE FORCE: IRON RAIN",
@@ -2134,7 +2250,8 @@
     "disclaimers": ["Боріться за Землю зі стилізованою графікою.", "Інопланетяни - не завжди найкращі сусіди."],
     "releasedOn": "11/4/2019",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "EARTH DEFENSE FORCE: WORLD BROTHERS",
@@ -2152,7 +2269,8 @@
     "disclaimers": ["Світ єднається проти загрози.", "Навіть інопланетяни мають свої брати."],
     "releasedOn": "27/5/2021",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "El Hijo - A Wild West Tale",
@@ -2170,7 +2288,8 @@
     "disclaimers": ["Дикий Захід не завжди дружелюбний.", "Сміливість хлопчика може врятувати світ."],
     "releasedOn": "25/3/2021",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "ELEX",
@@ -2188,7 +2307,8 @@
     "disclaimers": ["Оберіть свій шлях обережно.", "Наука і магія - дивна комбінація."],
     "releasedOn": "17/10/2017",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "ELEX II",
@@ -2206,7 +2326,8 @@
     "disclaimers": ["Світ змінюється з кожним вашим вчинком.", "Обережно, ваші рішення можуть мати наслідки."],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Embr",
@@ -2224,7 +2345,8 @@
     "disclaimers": ["Рятування вогнем - найкращий спосіб заробити гроші.", "Пожежі можуть бути смішні... або не дуже."],
     "releasedOn": "23/9/2021",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Empire of Sin",
@@ -2242,7 +2364,8 @@
     "disclaimers": ["Світ злочинності - це дійсно брудне місце.", "Виживання - ваша основна мета."],
     "releasedOn": "1/12/2020",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Enter the Gungeon",
@@ -2260,7 +2383,8 @@
     "disclaimers": ["Збирайте скарби і виживайте.", "Підземелья - це завжди весело."],
     "releasedOn": "5/4/2016",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Entwined",
@@ -2278,7 +2402,8 @@
     "disclaimers": ["Кохання - це дивна річ.", "У красі завжди є місце магії."],
     "releasedOn": "10/6/2014",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Erica",
@@ -2296,7 +2421,8 @@
     "disclaimers": ["Таємниці чекають на розкриття.", "Ваші рішення впливають на кінцевий результат."],
     "releasedOn": "19/8/2019",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "EVERSPACE",
@@ -2314,7 +2440,8 @@
     "disclaimers": ["Глибокий космос - це небезпечне місце.", "Плавайте уважно серед зірок."],
     "releasedOn": "22/5/2018",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Everybody’s Golf",
@@ -2332,7 +2459,8 @@
     "disclaimers": ["Гольф - це гра для всіх.", "Навіть гравці можуть змагатися."],
     "releasedOn": "30/8/2017",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Evil Genius 2: World Domination",
@@ -2350,7 +2478,8 @@
     "disclaimers": ["Світове панування - це серйозна справа.", "Генії злочину - не завжди найкращі керівники."],
     "releasedOn": "30/11/2021",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
 
 
@@ -2384,7 +2513,8 @@
     "disclaimers": ["Природа не завжди дружелюбна.", "Постапокаліпсис - це важка справа."],
     "releasedOn": "30/4/2019",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Fallout 4",
@@ -2402,7 +2532,8 @@
     "disclaimers": ["Ядерна війна не робить світ кращим.", "Завжди зберігайте запаси стимуляторів."],
     "releasedOn": "10/11/2015",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Fallout 76",
@@ -2420,7 +2551,8 @@
     "disclaimers": ["Онлайн-світ - це небезпечне місце.", "Рішення гравців можуть змінити хід історії."],
     "releasedOn": "14/11/2018",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "FAR CRY 3: BLOOD DRAGON CLASSIC EDITION",
@@ -2438,7 +2570,8 @@
     "disclaimers": ["Ретро-футуризм - це новий рівень стилю.", "Готуйтеся до кіборгів та багато вибухів."],
     "releasedOn": "16/12/2021",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Far Cry 4",
@@ -2456,7 +2589,8 @@
     "disclaimers": ["Гімалаї - це красиво, але небезпечно.", "Збережіть своє здоров'я та арсенал."],
     "releasedOn": "18/11/2014",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Far Cry 5",
@@ -2474,7 +2608,8 @@
     "disclaimers": ["Культ - це серйозна загроза.", "Збережіть Хоуп Канті."],
     "releasedOn": "27/3/2018",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Far Cry Primal",
@@ -2492,7 +2627,8 @@
     "disclaimers": ["Доісторичні часи - це виживання.", "Друзів із зубами на вас немає."],
     "releasedOn": "23/2/2016",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Far Cry: New Dawn",
@@ -2510,7 +2646,8 @@
     "disclaimers": ["Постапокаліптика - це красиво, але небезпечно.", "Приготуйтесь до зустрічі з несподіваними ворогами."],
     "releasedOn": "15/2/2019",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Far Cry 3: Classic Edition",
@@ -2528,7 +2665,8 @@
     "disclaimers": ["Класика - це завжди актуально.", "Джейсон Броді - справжній герой."],
     "releasedOn": "29/5/2018",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "FAR CRY 6: Standard Edition",
@@ -2546,7 +2684,8 @@
     "disclaimers": ["Відомості не завжди є фактами.", "Піратство - не гра для дітей."],
     "releasedOn": "7/10/2021",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Fast & Furious: Spy Racers Rise of SH1FT3R",
@@ -2564,7 +2703,8 @@
     "disclaimers": ["Швидкість - це все.", "Шпигуни не грають чесно."],
     "releasedOn": "28/1/2022",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "FIA European Truck Racing Championship",
@@ -2582,7 +2722,8 @@
     "disclaimers": ["Вантажівки можуть бути швидкими.", "Соревнования серйозні, як вантажівки."],
     "releasedOn": "1/8/2019",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "FIGHTING EX LAYER (Standard Version)",
@@ -2600,7 +2741,8 @@
     "disclaimers": ["Бої - це мистецтво.", "Перемагайте зі смаком."],
     "releasedOn": "28/6/2018",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "FINAL FANTASY TYPE-0 HD",
@@ -2618,7 +2760,8 @@
     "disclaimers": ["Магія та меч - ваши знаряддя.", "Війна завжди вимагає жертв."],
     "releasedOn": "20/5/2015",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "FINAL FANTASY VII REMAKE INTERGRADE",
@@ -2636,7 +2779,8 @@
     "disclaimers": ["PS5 - це новий рівень геймінгу.", "Відправтеся до Мідгару знову."],
     "releasedOn": "10/6/2021",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "FINAL FANTASY VIII Remastered",
@@ -2654,7 +2798,8 @@
     "disclaimers": ["Фантазія - це ключ до успіху.", "Живіть історією Сквалла та Рінои."],
     "releasedOn": "3/9/2019",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "FINAL FANTASY XII THE ZODIAC AGE",
@@ -2672,7 +2817,8 @@
     "disclaimers": ["Іваліс - це світ див і небезпечний.", "Приготуйтеся до подорожі через магію і війну."],
     "releasedOn": "18/7/2017",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "FINAL FANTASY XV ROYAL EDITION",
@@ -2690,7 +2836,8 @@
     "disclaimers": ["Дружба - це сила.", "Подорожуйте світом, врятувавши Люціс."],
     "releasedOn": "6/3/2018",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "FINAL FANTASY IX Digital Edition",
@@ -2708,7 +2855,8 @@
     "disclaimers": ["Класика - це завжди актуально.", "Зідан - це справжній герой."],
     "releasedOn": "19/9/2017",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "FINAL FANTASY VII",
@@ -2726,7 +2874,8 @@
     "disclaimers": ["Мідгар - це чарівне місто.", "Септор - це ворог, якого варто боятися."],
     "releasedOn": "5/12/2015",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "FINAL FANTASY X/X-2 HD Remaster",
@@ -2744,7 +2893,8 @@
     "disclaimers": ["Класика завжди у тренді.", "Подорожуйте разом із Тідом і Юно."],
     "releasedOn": "15/5/2015",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "FOR HONOR - Standard Edition",
@@ -2762,7 +2912,8 @@
     "disclaimers": ["Честь - це головне.", "Бої завжди вирішують усе."],
     "releasedOn": "27/4/2017",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "For The King",
@@ -2780,7 +2931,8 @@
     "disclaimers": ["Королівство потребує героїв.", "Стратегія - це ключ до перемоги."],
     "releasedOn": "7/5/2019",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Forager",
@@ -2798,7 +2950,8 @@
     "disclaimers": ["Загадки чекають на свого розв'язання.", "Пригоди не за горами."],
     "releasedOn": "30/7/2019",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "FORECLOSED",
@@ -2816,7 +2969,8 @@
     "disclaimers": ["Кіберпанк - це майбутнє.", "Боротьба за права - наш обов'язок."],
     "releasedOn": "12/8/2021",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Friday the 13th: The Game",
@@ -2834,7 +2988,8 @@
     "disclaimers": ["Виживання - це не для слабких.", "Джейсон завжди вас догонить."],
     "releasedOn": "2/6/2017",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Frostpunk: Console Edition",
@@ -2852,7 +3007,8 @@
     "disclaimers": ["Зима наближається.", "Збережіть своє королівство від морозу."],
     "releasedOn": "11/10/2019",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Fury Unleashed",
@@ -2870,7 +3026,8 @@
     "disclaimers": ["Вороги вже чекають!"],
     "releasedOn": "8/5/2020",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
 
 
@@ -2899,7 +3056,8 @@
     "disclaimers": ["Супергеройські пригоди чекають!"],
     "releasedOn": "13/4/2018",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Get Even",
@@ -2917,7 +3075,8 @@
     "disclaimers": ["Загадки і сюжет чекають!", "Подарунок для шанувальників детективних ігор."],
     "releasedOn": "23/6/2017",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Ghost of Tsushima DIRECTOR’S CUT (PlayStation Plus)",
@@ -2935,7 +3094,8 @@
     "disclaimers": ["Почуйте дзен самурая!", "Справжня пригода на плейстейшн."],
     "releasedOn": "20/8/2021",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Ghostrunner",
@@ -2953,7 +3113,8 @@
     "disclaimers": ["Переможіть майбутнє!", "Швидкий екшн чекає."],
     "releasedOn": "28/9/2021",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Ghostwire: Tokyo",
@@ -2971,7 +3132,8 @@
     "disclaimers": ["Таємниці Токіо чекають!", "Боротьба з душами у самому центрі міста."],
     "releasedOn": "25/3/2022",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Giana Sisters: Twisted Dreams – Director’s Cut",
@@ -2989,7 +3151,8 @@
     "disclaimers": ["Пригода з сестрами Гіана!", "Платформери від Giana Sisters."],
     "releasedOn": "10/12/2014",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Gigantosaurus The Game",
@@ -3007,7 +3170,8 @@
     "disclaimers": ["Друзі та динозаври чекають!", "Дитяча гра для маленьких дослідників."],
     "releasedOn": "27/3/2020",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "God of War",
@@ -3025,7 +3189,8 @@
     "disclaimers": ["Стати богом не так легко."],
     "releasedOn": "4/10/2019",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Golf With Your Friends",
@@ -3043,7 +3208,8 @@
     "disclaimers": ["Гольф з друзями!", "Розважайтесь та вигравайте разом."],
     "releasedOn": "2/6/2020",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Goosebumps: The Game",
@@ -3061,7 +3227,8 @@
     "disclaimers": ["Таємниці Токіо чекають!", "Боротьба з душами у самому центрі міста."],
     "releasedOn": "14/10/2015",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Grand Ages: Medieval",
@@ -3079,7 +3246,8 @@
     "disclaimers": ["Побудуйте своє королівство!", "Ведіть його до слави і величі."],
     "releasedOn": "9/10/2015",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Gravity Rush 2",
@@ -3097,7 +3265,8 @@
     "disclaimers": ["Відчуйте силу гравітації!", "Величезне місто чекає на вас."],
     "releasedOn": "20/1/2017",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Gunvolt Chronicles: Luminous Avenger iX",
@@ -3115,7 +3284,8 @@
     "disclaimers": ["Боротьба з кіборгами!", "Захистіть місто від загрози."],
     "releasedOn": "30/9/2019",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
 
 
@@ -3142,7 +3312,8 @@
     "disclaimers": ["Заїжджайте на таємничу планету!", "Готуйтеся до небезпек та загадок."],
     "releasedOn": "3/12/2020",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Hello Neighbor",
@@ -3160,7 +3331,8 @@
     "disclaimers": ["Розкрийте таємниці свого сусіда!", "Не залишайтеся непоміченими."],
     "releasedOn": "27/7/2018",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Hollow Knight: Voidheart Edition",
@@ -3178,7 +3350,8 @@
     "disclaimers": ["Візьміть на себе роль комахи-мисливця!", "Вас чекають неймовірні відкриття та битви."],
     "releasedOn": "25/9/2018",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Horizon Forbidden West",
@@ -3196,7 +3369,8 @@
     "disclaimers": ["Подорожуйте у світі таємниць!", "Готуйтеся до зустрічі з неймовірними створіннями."],
     "releasedOn": "18/2/2022",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Horizon Zero Dawn Complete Edition",
@@ -3214,7 +3388,8 @@
     "disclaimers": ["Відкрийте таємниці далекого майбутнього!", "Боротьба з машинами-хижаками."],
     "releasedOn": "6/12/2017",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Hotel Transylvania: Scary-Tale Adventures",
@@ -3232,7 +3407,8 @@
     "disclaimers": ["Відвідайте готель для монстрів!", "Зустріньте вашу улюблену монстро-сім'ю."],
     "releasedOn": "11/3/2022",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Hotline Miami 2: Wrong Number",
@@ -3250,7 +3426,8 @@
     "disclaimers": ["Божевільний екшн!", "Готуйтеся до безкінечних боїв."],
     "releasedOn": "11/3/2015",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Hotshot Racing",
@@ -3268,7 +3445,8 @@
     "disclaimers": ["Вирушайте на трасу 90-х!", "Шалені гонки чекають на вас."],
     "releasedOn": "13/8/2020",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "How to Survive 2",
@@ -3286,7 +3464,8 @@
     "disclaimers": ["Виживайте в апокаліпсисі разом з друзями!", "Боріться зі злом та збирайте ресурси."],
     "releasedOn": "6/2/2017",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Human: Fall Flat",
@@ -3304,7 +3483,8 @@
     "disclaimers": ["Розв'язуйте головоломки з друзями!", "Керуйте смішними персонажами."],
     "releasedOn": "24/6/2021",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "HUMANITY",
@@ -3322,7 +3502,8 @@
     "disclaimers": ["Досліджуйте абстрактний світ!", "Розв'язуйте магічні головоломки."],
     "releasedOn": "16/5/2023",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Hundred Days - Winemaking Simulator",
@@ -3340,7 +3521,8 @@
     "disclaimers": ["На жаль, скуштувати власного вина не вийде.", "Тара для вина не входить до комплекту"],
     "releasedOn": "17/3/2022",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
 
 
@@ -3367,7 +3549,8 @@
     "disclaimers": ["Станьте шматком хліба!", "Перевтілюйтеся у тост!"],
     "releasedOn": "25/8/2015",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "I Am Dead",
@@ -3385,7 +3568,8 @@
     "disclaimers": ["Розмовляйте з мертвими!", "Збережіть музей від зникнення!"],
     "releasedOn": "9/8/2021",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "I am Setsuna",
@@ -3403,7 +3587,8 @@
     "disclaimers": ["Вирушайте в епічну подорож!", "Боріться зі злом і ворожими монстрами!"],
     "releasedOn": "19/7/2016",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Ice Age: Scrat's Nutty Adventure",
@@ -3421,7 +3606,8 @@
     "disclaimers": ["Допоможіть Scrat знайти жолудь!", "Грайте за найвідомішу білку на планеті!"],
     "releasedOn": "23/9/2022",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Immortals Fenyx Rising",
@@ -3439,7 +3625,8 @@
     "disclaimers": ["Рятуйте грецьких богів!", "Боріться з міфічними чудовиськами!"],
     "releasedOn": "3/12/2020",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Indivisible",
@@ -3457,7 +3644,8 @@
     "disclaimers": ["Збирайте свою команду героїв!", "Подолайте злих сил і монстрів!"],
     "releasedOn": "8/10/2019",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "inFAMOUS Second Son",
@@ -3475,7 +3663,8 @@
     "disclaimers": ["Оберіть свій шлях!", "Володійте суперсилами і змінюйте світ!"],
     "releasedOn": "21/3/2014",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "inFAMOUS First Light",
@@ -3493,7 +3682,8 @@
     "disclaimers": ["Дізнайтеся історію Сінді!", "Переживіть її пригоди і суперсили!"],
     "releasedOn": "27/8/2014",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Infinite Minigolf",
@@ -3511,7 +3701,8 @@
     "disclaimers": ["Створюйте власні поля!", "Грайте в міні-гольф з друзями!"],
     "releasedOn": "25/7/2017",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Inscryption",
@@ -3529,7 +3720,8 @@
     "disclaimers": ["Боріться за виживання в світі карток!", "Розгадайте жахливі головоломки!"],
     "releasedOn": "30/8/2022",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "INSIDE",
@@ -3547,7 +3739,8 @@
     "disclaimers": ["Дізнайтеся таємницю цього світу!", "Виживайте в умовах небезпеки!"],
     "releasedOn": "23/8/2016",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "It Takes Two",
@@ -3565,7 +3758,8 @@
     "disclaimers": ["Грайте разом з дівчиною, іноді їй буде дуже складно!", "Створюйте стратегію для перемоги!", "Будь ласка, тільки не сваріться!"],
     "releasedOn": "26/3/2021",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
 
 
@@ -3587,7 +3781,8 @@
     "disclaimers": ["Досліджуйте незвідані світи!", "Розкривайте секрети космосу!", "Відправтеся в космічну подорож разом з друзями!"],
     "releasedOn": "5/10/2021",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Jotun: Valhalla Edition",
@@ -3605,7 +3800,8 @@
     "disclaimers": ["Завоюйте прихильність богів!", "Переживіть скандинавську міфологію!", "Виживіть в небезпечному світі!"],
     "releasedOn": "9/9/2016",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Journey To The Savage Planet: Employee Of The Month",
@@ -3623,7 +3819,8 @@
     "disclaimers": ["Досліджуйте незвідані уголки планети!", "Вирішуйте неймовірні головоломки!", "Ви - найкращий співробітник місяця!"],
     "releasedOn": "14/2/2023",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Judgment",
@@ -3641,7 +3838,8 @@
     "disclaimers": ["Розслідуйте складні справи!", "Виявляйте правду в місті Камурочо!", "Станьте найкращим детективом!"],
     "releasedOn": "23/4/2021",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "JUMANJI: The Video Game",
@@ -3659,7 +3857,8 @@
     "disclaimers": ["Виживайте в світі Джуманджі!", "Розгадуйте головоломки!", "Боріться з небезпеками разом з друзями!"],
     "releasedOn": "22/10/2021",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Just Cause 4",
@@ -3677,7 +3876,8 @@
     "disclaimers": ["Боріться за свободу!", "Руйнуйте все навколо!", "Станьте героєм руйнівних пригод!"],
     "releasedOn": "7/11/2019",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
  
 
@@ -3704,7 +3904,8 @@
     "disclaimers": ["Врятуйте світ від зловісних духів!", "Розкрийте таємниці загадкового світу!", "Станьте героєм Kena!"],
     "releasedOn": "21/9/2021",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Killing Floor 2",
@@ -3722,7 +3923,8 @@
     "disclaimers": ["Боріться за виживання в апокаліпсисі!", "Знищуйте жахливих монстрів разом з друзями!", "Не ходіть на зустріч з хвилюючими жахами самі!"],
     "releasedOn": "18/11/2016",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "KILLZONE SHADOW FALL",
@@ -3740,7 +3942,8 @@
     "disclaimers": ["Визначте майбутнє на межі двох світів!", "Беріть участь у науково-фантастичному конфлікті!", "Станьте героєм KILLZONE SHADOW FALL!"],
     "releasedOn": "29/11/2013",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "KINGDOM HEARTS HD 1.5 + 2.5 ReMIX",
@@ -3758,7 +3961,8 @@
     "disclaimers": ["Розкрийте історію добра і зла!", "Вируште в захоплюючу рольову подорож!", "Вас чекають неймовірні пригоди в KINGDOM HEARTS!"],
     "releasedOn": "31/3/2017",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": "KINGDOM HEARTS"
   },
   {
     "title": "KINGDOM HEARTS HD 2.8 Final Chapter Prologue",
@@ -3776,7 +3980,8 @@
     "disclaimers": ["Розкрийте останній розділ епічної історії KINGDOM HEARTS!", "Вируште в рольову подорож, яка зачарує вас!", "Станьте героєм KINGDOM HEARTS!"],
     "releasedOn": "24/1/2017",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": "KINGDOM HEARTS"
   },
   {
     "title": "KINGDOM HEARTS III",
@@ -3794,79 +3999,84 @@
     "disclaimers": ["Завершення епічної саги KINGDOM HEARTS!", "Зустріньте улюблених персонажів у неймовірних пригодах!", "Станьте героєм KINGDOM HEARTS III!"],
     "releasedOn": "29/1/2019",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": "KINGDOM HEARTS"
   },
   {
     "title": "KINGDOM HEARTS Melody of Memory",
     "icon": "/kingdom-hearts-melody-of-memory/kingdom-hearts-melody-of-memory.jpg",
-    "iconLink": "",
+    "iconLink": "https://www.geekgeneration.fr/wp-content/uploads/2020/08/Kingdom-Hearts-Melody-of-Memory.jpg",
     "gameId": "kingdom-hearts-melody-of-memory",
-    "poster": "",
+    "poster": "https://www.weareplaystation.fr/api/upload/media/post/0002/68/1ccf81fd20150a4dc2f88a3ee6693c9855d51db9.jpeg",
     "description": "KINGDOM HEARTS Melody of Memory - це ритмічна рольова гра, в якій вирушите в музичну подорож по світу KINGDOM HEARTS.",
-    "videoReview": "",
-    "videoGameplay": "",
+    "videoReview": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/xXnHNbFJi-4?si=TUcc4zdDOGuRqmok' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
+    "videoGameplay": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/CAkXNu8peNQ?si=F5FBPNG1SORNyd9W' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
     "price": 100,
     "discountedPrice": null,
-    "category": ["Рольові", "Музика", "Дитячі"],
+    "category": ["Рольові", "Музика", "Дитячі", "Сімейні"],
     "players": "1-2",
     "disclaimers": ["Вируште в музичну подорож по світу KINGDOM HEARTS!", "Слухайте улюблену музику і грайте!", "Станьте майстром ритму в KINGDOM HEARTS!"],
-    "releasedOn": "",
+    "releasedOn": "13/11/2020",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": "KINGDOM HEARTS"
   },
   {
-    "title": "Kingdom Two Crowns",
+    "title": "Kingdom: Two Crowns",
     "icon": "/kingdom-two-crowns/kingdom-two-crowns.jpg",
-    "iconLink": "",
+    "iconLink": "https://image.api.playstation.com/vulcan/img/rnd/202111/2310/oGhdnk0Tm7BIWGvW5qiPdRDX.jpg",
     "gameId": "kingdom-two-crowns",
-    "poster": "",
+    "poster": "https://static.voidu.com/cdn-cgi/image/format=auto,width=auto,quality=75/images/thumbs/0158429_kingdom-two-crowns.png",
     "description": "Kingdom Two Crowns - це стратегічна гра, де ви збудуєте і розширите своє королівство в небезпечному світі.",
-    "videoReview": "",
-    "videoGameplay": "",
+    "videoReview": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/GnqjjY38anQ?si=UBhkMqZYJYJmc_Z2' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
+    "videoGameplay": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/QZWMMFmVBgY?si=TZa6k_-SFwyHJSWL' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
     "price": 100,
     "discountedPrice": null,
-    "category": ["Стратегії"],
+    "category": ["Стратегії", "Пригоди", "Екшн", "Кооперативні"],
     "players": "1-2",
     "disclaimers": ["Збудуйте і розширте своє королівство!", "Виживайте в небезпечному світі разом з другом!", "Станьте монархом в Kingdom Two Crowns!"],
-    "releasedOn": "",
+    "releasedOn": "11/12/2018",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": "Kingdom:"
   },
   {
     "title": "Kingdom: New Lands",
     "icon": "/kingdom-new-lands/kingdom-new-lands.jpg",
-    "iconLink": "",
+    "iconLink": "https://image.api.playstation.com/vulcan/ap/rnd/202111/1912/it7X1Mtx3bwEWJ2I2Iy4Bq1F.png",
     "gameId": "kingdom-new-lands",
-    "poster": "",
+    "poster": "https://ares.shiftdelete.net/2019/06/19-tl-lik-kingdom-new-lands-kisa-sureligine-ucretsiz.jpg",
     "description": "Kingdom: New Lands - це гра, в якій ви будете керувати королівством та виживати у фантастичному середньовіччі.",
-    "videoReview": "",
-    "videoGameplay": "",
+    "videoReview": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/x170xAiKF1s?si=PVXg8EtIcqvElNfC' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
+    "videoGameplay": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/9h0ZOFfaiRQ?si=tSkU-BYSoN7LPqrV' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
     "price": 100,
     "discountedPrice": null,
-    "category": ["Стратегії"],
+    "category": ["Стратегії", "Пригоди", "Екшн"],
     "players": "1",
     "disclaimers": ["Керуйте королівством у середньовіччі!", "Збудуйте міцність і виживайте!", "Станьте справжнім королем в Kingdom: New Lands!"],
-    "releasedOn": "",
+    "releasedOn": "16/1/2018",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": "Kingdom:"
   },
   {
     "title": "KNACK",
     "icon": "/knack/knack.jpg",
-    "iconLink": "",
+    "iconLink": "https://image.api.playstation.com/vulcan/img/rnd/202011/0522/82QdmxXvA9Vpqro5t8pSTEOR.png",
     "gameId": "knack",
-    "poster": "",
+    "poster": "https://image.api.playstation.com/vulcan/img/rnd/202010/2122/mszuCW0NDVNdUS8ak85JYZBb.png",
     "description": "KNACK - це захоплюючий платформер, де ви гратимете за маленького героя, який може зростати до величезних розмірів.",
-    "videoReview": "",
-    "videoGameplay": "",
+    "videoReview": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/q59tHyhDMkI?si=sb7p_sk0sA0KiVOl' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
+    "videoGameplay": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/-hTVvAT4VAI?si=_Ju5HCw-pUMNXlxy' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
     "price": 100,
     "discountedPrice": null,
-    "category": ["Платформери", "Пригоди"],
+    "category": ["Платформери", "Пригоди", "Екшн"],
     "players": "1-2",
     "disclaimers": ["Станьте маленьким героєм, який може зростати!", "Переживіть захоплюючі пригоди в KNACK!", "Грайте разом з другом у кооперативному режимі!"],
-    "releasedOn": "",
+    "releasedOn": "29/11/2013",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
 
 
@@ -3894,7 +4104,8 @@
     "disclaimers": ["Доставляйте листи та відкривайте таємниці містечка!", "Станьте найкращим листоношею в Lake!", "Розкрийте історії через листи у цій захоплюючій грі!"],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Last Stop",
@@ -3912,7 +4123,8 @@
     "disclaimers": ["Розкрийте секрети та загадки Лондона!", "Захоплюйтесь науково-фантастичним трилером у Last Stop!", "Подорожуйте в часі та просторі у цій захоплюючій грі!"],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Lawn Mowing Simulator",
@@ -3930,7 +4142,8 @@
     "disclaimers": ["Станьте майстром зі стрижки газонів!", "Проведіть час на свіжому повітрі з Lawn Mowing Simulator!", "Досягніть ідеальності у газонокосінні!"],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Lawn Mowing Simulator: Landmark Edition",
@@ -3948,7 +4161,8 @@
     "disclaimers": ["Беріться за нові виклики у газонокосінні!", "Поліпшена версія симулятора газонокосіння з Lawn Mowing Simulator: Landmark Edition!", "Станьте найкращим майстром газонокосіння!"],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Legendary Fishing",
@@ -3966,7 +4180,8 @@
     "disclaimers": ["Вирушайте на полювання на легендарних риб!", "Завойтесь в захопливий світ риболовлі з Legendary Fishing!", "Спробуйте свої сили у спортивній риболовлі!"],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Legends of Ethernal",
@@ -3984,7 +4199,8 @@
     "disclaimers": ["Рятуйте свою родину в магічному світі!", "Станьте справжнім героєм у Legends of Ethernal!", "Долайте всі випробування і станьте легендою!"],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "LEGO Batman 3: Beyond Gotham",
@@ -4002,7 +4218,8 @@
     "disclaimers": ["Вирушайте у космічну пригоду з Бетменом і супергероями!", "Легендарна гра в стилі LEGO - LEGO Batman 3: Beyond Gotham!", "Грайте разом з другом у кооперативному режимі!"],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Life is Strange 2 Complete Season",
@@ -4020,7 +4237,8 @@
     "disclaimers": ["Подорожуйте через Америку з двома братами!", "Відчуйте емоції у Life is Strange 2 Complete Season!", "Ваші вибори впливають на події гри!"],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Life is Strange Complete Season",
@@ -4038,7 +4256,8 @@
     "disclaimers": ["Впливайте на час разом з Макс у цій емоційній грі!", "Досліджуйте та розкривайте таємниці Life is Strange Complete Season!", "Ваші рішення визначають кінцівку гри!"],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Life is Strange: Before the Storm Complete Season",
@@ -4056,7 +4275,8 @@
     "disclaimers": ["Дізнайтеся більше про минуле героїні Макс у преіквелі!", "Емоційна гра-пригода у світі Life is Strange: Before the Storm Complete Season!", "Розкрийте таємниці персонажів та їхні відносини!"],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Life is Strange: True Colors",
@@ -4074,7 +4294,8 @@
     "disclaimers": ["Володійте унікальною здатністю бачити емоції і правду разом з Ельден!", "Досліджуйте та розкривайте таємниці гри у Life is Strange: True Colors!", "Ваші вибори формують історію і кінцівку!"],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Little Big Workshop",
@@ -4092,7 +4313,8 @@
     "disclaimers": ["Створіть свій власний бізнес і заробляйте гроші!", "Управляйте власною фабрикою у Little Big Workshop!", "Розширюйте свій бізнес та досягайте успіху!"],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "LittleBigPlanet 3",
@@ -4110,7 +4332,8 @@
     "disclaimers": ["Створюйте свої власні рівні та персонажів у LittleBigPlanet 3!", "Захопливий світ безмежних можливостей чекає на вас!", "Грайте разом з друзями у кооперативному режимі!"],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Lonely Mountains: Downhill",
@@ -4128,7 +4351,8 @@
     "disclaimers": ["Спустіться з гори на гірському велосипеді!", "Подолайте всі випробування в аркадному симуляторі Lonely Mountains: Downhill!", "Станьте королем гір на своєму велосипеді!"],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Lost Judgment",
@@ -4146,7 +4370,8 @@
     "disclaimers": ["Розкрийте численні таємниці та злочини!", "Станьте адвокатом і справедливим суддею в Lost Judgment!", "Відчуйте справжній дух правосуддя!"],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "LOST SPHEAR",
@@ -4164,7 +4389,8 @@
     "disclaimers": ["Рятуйте світ від зникнення у класичній рольовій грі LOST SPHEAR!", "Досліджуйте магічний світ та беріть участь у захоплюючих боях!", "Поверніть спогади та світ гри в норму!"],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Lost Words: Beyond the Page",
@@ -4182,7 +4408,8 @@
     "disclaimers": ["Дізнайтеся, як слова стають реальністю у Lost Words: Beyond the Page!", "Подорожуйте крізь книгу та розкривайте історію!", "Спілкуйтеся зі словами у цій незвичній грі-пригоді!"],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
 
 
@@ -4212,7 +4439,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Mahjong",
@@ -4234,7 +4462,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Malicious Fallen",
@@ -4256,7 +4485,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Maneater",
@@ -4278,7 +4508,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Marvel's Guardians of the Galaxy",
@@ -4300,7 +4531,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Marvel's Spider-Man: Miles Morales",
@@ -4322,7 +4554,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "MATTERFALL",
@@ -4344,7 +4577,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "MediEvil",
@@ -4366,7 +4600,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Megadimension Neptunia VII",
@@ -4388,7 +4623,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "MELTY BLOOD: TYPE LUMINA",
@@ -4410,7 +4646,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Middle-earth: Shadow of Mordor",
@@ -4432,7 +4669,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Middle-earth: Shadow of War",
@@ -4454,7 +4692,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Midnight Fight Express",
@@ -4476,7 +4715,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "MINIT",
@@ -4498,7 +4738,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Mitsurugi Kamui Hikae",
@@ -4520,7 +4761,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Momodora: Reverie Under the Moonlight",
@@ -4542,7 +4784,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "MONOPOLY PLUS",
@@ -4564,7 +4807,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "MONOPOLY Madness",
@@ -4586,7 +4830,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Monster Boy and the Cursed Kingdom",
@@ -4608,7 +4853,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Monster Jam Steel Titans",
@@ -4630,7 +4876,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Monster Jam Steel Titans 2",
@@ -4652,7 +4899,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Monster Truck Championship",
@@ -4674,7 +4922,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Moonlighter",
@@ -4696,7 +4945,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Mortal Kombat 11",
@@ -4718,7 +4968,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Mortal Shell",
@@ -4740,7 +4991,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Mortal Shell: Enhanced Edition",
@@ -4762,7 +5014,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Moving Out",
@@ -4784,7 +5037,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Moving Out 2",
@@ -4806,7 +5060,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "MudRunner",
@@ -4828,7 +5083,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "MX vs ATV Legends",
@@ -4850,7 +5106,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "My Friend Pedro",
@@ -4872,7 +5129,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "My Friend Peppa Pig",
@@ -4894,7 +5152,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "MY LITTLE PONY: A Maretime Bay Adventure",
@@ -4916,7 +5175,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "My Time at Portia",
@@ -4938,7 +5198,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
 
 
@@ -4971,7 +5232,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "NASCAR Heat 5",
@@ -4993,7 +5255,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Necromunda: Underhive Wars",
@@ -5015,7 +5278,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "NEO: The World Ends with You",
@@ -5037,7 +5301,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "NieR Replicant ver.1.22474487139…",
@@ -5059,7 +5324,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Nights of Azure",
@@ -5081,7 +5347,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Nights of Azure 2: Bride of the New Moon",
@@ -5103,7 +5370,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Nioh",
@@ -5125,7 +5393,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
 
 
@@ -5159,7 +5428,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Observer: System Redux",
@@ -5181,7 +5451,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Oddworld: New 'n' Tasty (PS4)",
@@ -5203,7 +5474,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Oddworld: Soulstorm Enhanced Edition",
@@ -5225,7 +5497,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Odin Sphere Leifthrasir",
@@ -5247,7 +5520,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Omega Quintet",
@@ -5269,7 +5543,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "OMNO",
@@ -5291,7 +5566,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Onee Chanbara Origin",
@@ -5313,7 +5589,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "ONINAKI",
@@ -5335,7 +5612,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Outer Wilds",
@@ -5357,7 +5635,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "OUTRIDERS",
@@ -5379,7 +5658,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Overcooked! 2",
@@ -5401,7 +5681,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Overpass",
@@ -5423,7 +5704,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
 
 
@@ -5456,7 +5738,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "PAW Patrol Mighty Pups Save Adventure Bay",
@@ -5478,7 +5761,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "PAW Patrol The Movie: Adventure City Calls",
@@ -5500,7 +5784,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Paw Patrol: On a Roll!",
@@ -5522,7 +5807,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "PAYDAY 2: CRIMEWAVE EDITION",
@@ -5544,7 +5830,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Pile Up! Box by Box",
@@ -5566,7 +5853,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Pillars of Eternity II: Deadfire - Ultimate Edition",
@@ -5588,7 +5876,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "PJ Masks: Heroes of the Night",
@@ -5610,7 +5899,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Planet Coaster: Console Edition",
@@ -5632,7 +5922,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Portal Knights",
@@ -5654,7 +5945,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Power Rangers: Battle For The Grid",
@@ -5676,7 +5968,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Prey",
@@ -5698,7 +5991,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Prison Architect: PlayStation4 Edition",
@@ -5720,7 +6014,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Pure Hold'em World Poker Championship",
@@ -5742,7 +6037,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Pure Pool",
@@ -5764,7 +6060,8 @@
     ],
     "releasedOn": "30/7/2014",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
 
 
@@ -5798,7 +6095,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Rabbids Invasion: The Interactive TV Show",
@@ -5820,7 +6118,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "RAGE 2",
@@ -5842,7 +6141,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Rain World",
@@ -5864,7 +6164,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Rapala Fishing: Pro Series",
@@ -5886,7 +6187,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Ratchet & Clank: Rift Apart",
@@ -5908,7 +6210,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Rayman Legends",
@@ -5930,7 +6233,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "ReadySet Heroes",
@@ -5952,7 +6256,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Rebel Galaxy",
@@ -5974,7 +6279,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Redout 2",
@@ -5996,7 +6302,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Reel Fishing: Road Trip Adventure",
@@ -6018,7 +6325,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "RESIDENT EVIL 7 biohazard",
@@ -6040,7 +6348,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "RESOGUN",
@@ -6062,7 +6371,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Returnal",
@@ -6084,7 +6394,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Rez Infinite",
@@ -6106,7 +6417,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Riders Republic",
@@ -6128,7 +6440,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Rise of the Tomb Raider: 20 Year Celebration",
@@ -6150,7 +6463,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Risk Urban Assault",
@@ -6172,7 +6486,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Rock of Ages 3: Make & Break",
@@ -6194,7 +6509,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Rogue Legacy 2",
@@ -6216,7 +6532,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Romance of The Three Kingdoms 13",
@@ -6238,7 +6555,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Rune Factory 4 Special",
@@ -6260,7 +6578,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
 
 
@@ -6297,7 +6616,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Saints Row IV: Re-Elected",
@@ -6319,7 +6639,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Sakuna: Of Rice and Ruin",
@@ -6341,7 +6662,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "SAMURAI WARRIORS 5",
@@ -6363,7 +6685,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "SCARLET NEXUS",
@@ -6385,7 +6708,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Scott Pilgrim vs. The World: The Game – Complete Edition",
@@ -6407,7 +6731,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Sea of Stars",
@@ -6429,7 +6754,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Secret Neighbor",
@@ -6451,7 +6777,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Shadow of the Beast",
@@ -6473,7 +6800,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Shadow of the Colossus",
@@ -6495,7 +6823,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Shadow of the Tomb Raider",
@@ -6517,7 +6846,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Shadow Warrior 2",
@@ -6539,7 +6869,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Sid Meier’s Civilization VI",
@@ -6561,7 +6892,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Slay the Spire",
@@ -6583,7 +6915,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Slime Rancher",
@@ -6605,7 +6938,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Sniper Elite 4",
@@ -6627,7 +6961,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Sniper Elite 5",
@@ -6649,7 +6984,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Sniper Ghost Warrior Contracts 2",
@@ -6671,7 +7007,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "SnowRunner",
@@ -6693,7 +7030,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "SOULCALIBUR Ⅵ",
@@ -6715,7 +7053,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Soulstice",
@@ -6737,7 +7076,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Source of Madness",
@@ -6759,7 +7099,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "South Park: The Fractured but Whole",
@@ -6781,7 +7122,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "South Park: The Stick of Truth",
@@ -6803,7 +7145,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Space Crew: Legendary Edition",
@@ -6825,7 +7168,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Space Hulk: Deathwing - Enhanced Edition",
@@ -6847,7 +7191,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Space Junkies",
@@ -6869,7 +7214,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "SpellForce III Reforced",
@@ -6891,7 +7237,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Spirit of the North: Enhanced Edition",
@@ -6913,7 +7260,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Spiritfarer: Farewell Edition",
@@ -6935,7 +7283,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Spitlings",
@@ -6957,7 +7306,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "SpongeBob SquarePants: Battle for Bikini Bottom - Rehydrated",
@@ -6979,7 +7329,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "STAR OCEAN THE DIVINE FORCE",
@@ -7001,7 +7352,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "STAR OCEAN: IAF DIGITAL EDITION",
@@ -7023,7 +7375,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Star Trek: Bridge Crew",
@@ -7045,7 +7398,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Starlink: Battle for Atlas",
@@ -7067,7 +7421,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Stellaris: Console Edition - Standard Edition",
@@ -7089,7 +7444,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "STORY OF SEASONS: Friends of Mineral Town",
@@ -7111,7 +7467,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "STORY OF SEASONS: Pioneers of Olive Town",
@@ -7133,7 +7490,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "STORY OF SEASONS: Pioneers of Olive Town + Expansion Pass Set",
@@ -7155,7 +7513,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Stranded Deep",
@@ -7177,7 +7536,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Street Fighter V",
@@ -7199,7 +7559,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Street Fighter V: Champion Edition",
@@ -7221,7 +7582,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Sundered: Eldritch Edition",
@@ -7243,7 +7605,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Surgeon Simulator: Anniversary Edition",
@@ -7265,7 +7628,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Surviving Mars",
@@ -7287,7 +7651,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
 
 
@@ -7321,7 +7686,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Tails Noir",
@@ -7343,7 +7709,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Tchia )",
@@ -7365,7 +7732,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Tearaway Unfolded",
@@ -7387,7 +7755,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Teenage Mutant Ninja Turtles: Shredder's Revenge",
@@ -7409,7 +7778,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "TEKKEN 7",
@@ -7431,7 +7801,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Telling Lies",
@@ -7453,7 +7824,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Tennis World Tour 2",
@@ -7475,7 +7847,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Tennis World Tour 2 - Complete Edition",
@@ -7497,7 +7870,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Terraria – PlayStation4 Edition",
@@ -7519,7 +7893,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Tetris Effect: Connected",
@@ -7541,7 +7916,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "The Artful Escape",
@@ -7563,7 +7939,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "The Ascent",
@@ -7585,7 +7962,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "The Crew",
@@ -7607,7 +7985,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "The Dark Pictures Anthology: Little Hope",
@@ -7629,7 +8008,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "The Dark Pictures Anthology: Man of Medan",
@@ -7651,7 +8031,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "The Elder Scrolls Online - PS4",
@@ -7673,7 +8054,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "The Elder Scrolls V: Skyrim Special Edition - PS5 & PS4",
@@ -7695,7 +8077,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "The Escapists 2",
@@ -7717,7 +8100,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "The Evil Within",
@@ -7739,7 +8123,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "The Evil Within 2",
@@ -7761,7 +8146,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "The Fisherman - Fishing Planet",
@@ -7783,7 +8169,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "The Forgotten City",
@@ -7805,7 +8192,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "The Gardens Between",
@@ -7827,7 +8215,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "The Last Guardian",
@@ -7849,7 +8238,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "The LEGO Movie Videogame",
@@ -7871,7 +8261,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "The Long Dark",
@@ -7893,7 +8284,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "The Medium",
@@ -7915,7 +8307,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "The Messenger",
@@ -7937,7 +8330,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "The MISSING J.J. Macfield and the Island of Memories",
@@ -7959,7 +8353,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "The Pedestrian",
@@ -7981,7 +8376,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "The Quarry for PS4",
@@ -8003,7 +8399,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "The Quarry for PS5",
@@ -8025,7 +8422,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "The Surge",
@@ -8047,7 +8445,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "The Surge 2",
@@ -8069,7 +8468,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "The Talos Principle: Deluxe Edition",
@@ -8091,7 +8491,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "The Technomancer",
@@ -8113,7 +8514,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "The Wild at Heart",
@@ -8135,7 +8537,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "The Witch and the Hundred Knight: Revival Edition",
@@ -8157,7 +8560,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Thief",
@@ -8179,7 +8583,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "This is the Police",
@@ -8201,7 +8606,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "This Is the Police 2",
@@ -8223,7 +8629,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "This War of Mine: Final Cut",
@@ -8245,7 +8652,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Thomas Was Alone",
@@ -8267,7 +8675,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Thymesia",
@@ -8289,7 +8698,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Tom Clancy's Ghost Recon Breakpoint",
@@ -8311,7 +8721,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Tom Clancy's Rainbow Six Siege",
@@ -8333,7 +8744,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "TOM CLANCY'S THE DIVISION",
@@ -8355,7 +8767,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Tom Clancy's The Division 2",
@@ -8377,7 +8790,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Tom Clancy’s Rainbow Six Extraction",
@@ -8399,7 +8813,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Tomb Raider: Definitive Edition",
@@ -8421,7 +8836,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Totally Reliable Delivery Service",
@@ -8443,7 +8859,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Toukiden 2",
@@ -8465,7 +8882,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "TowerFall Ascension",
@@ -8487,7 +8905,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Townsmen - A Kingdom Rebuilt",
@@ -8509,7 +8928,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Trackmania Turbo",
@@ -8531,7 +8951,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Transference",
@@ -8553,7 +8974,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Trials Fusion",
@@ -8575,7 +8997,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Trials of Mana",
@@ -8597,7 +9020,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Trials of the Blood Dragon",
@@ -8619,7 +9043,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Trials Rising",
@@ -8641,7 +9066,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Tricky Towers",
@@ -8663,7 +9089,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Trine 4: The Nightmare Prince",
@@ -8685,7 +9112,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "TRON RUN/r",
@@ -8707,7 +9135,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Tropico 5",
@@ -8729,7 +9158,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Two Point Hospital: JUMBO Edition",
@@ -8751,7 +9181,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Two Point Hospital",
@@ -8773,7 +9204,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
 
 
@@ -8805,7 +9237,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Uncharted: The Lost Legacy",
@@ -8827,7 +9260,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Undertale",
@@ -8849,7 +9283,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "UNO",
@@ -8871,7 +9306,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Unpacking",
@@ -8893,7 +9329,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Until Dawn",
@@ -8915,7 +9352,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Untitled Goose Game",
@@ -8937,7 +9375,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Unturned",
@@ -8959,7 +9398,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
 
 
@@ -8990,7 +9430,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Vampire: The Masquerade - Coteries of New York",
@@ -9012,7 +9453,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Vampyr",
@@ -9034,7 +9476,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Vikings - Wolves of Midgard",
@@ -9056,7 +9499,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
 
 
@@ -9094,7 +9538,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Warhammer: Chaosbane",
@@ -9116,7 +9561,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Warhammer: Chaosbane Slayer Edition",
@@ -9138,7 +9584,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Warhammer: Vermintide 2",
@@ -9160,7 +9607,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "WARRIORS ALL-STARS",
@@ -9182,7 +9630,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Watch Dogs: Legion",
@@ -9204,7 +9653,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Werewolf: The Apocalypse – Earthblood",
@@ -9226,7 +9676,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Werewolves Within",
@@ -9248,7 +9699,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "West of Dead",
@@ -9270,7 +9722,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "What Remains of Edith Finch",
@@ -9292,7 +9745,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "WHEEL OF FORTUNE",
@@ -9314,7 +9768,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Wild Guns Reloaded",
@@ -9336,7 +9791,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Wolfenstein: The New Order",
@@ -9358,7 +9814,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Wolfenstein: The Old Blood",
@@ -9380,7 +9837,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Wolfenstein: Youngblood",
@@ -9402,7 +9860,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
 
 
@@ -9434,7 +9893,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "WORLD OF FINAL FANTASY",
@@ -9456,7 +9916,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "World War Z",
@@ -9478,7 +9939,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "World War Z: Aftermath",
@@ -9500,7 +9962,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Worms W.M.D",
@@ -9522,7 +9985,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Wreckfest PlayStation5 Version",
@@ -9544,7 +10008,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Wreckfest: Drive Hard. Die Last.",
@@ -9566,7 +10031,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
 
 
@@ -9600,7 +10066,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Yakuza 6: The Song of Life",
@@ -9622,7 +10089,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Yakuza: Like a Dragon",
@@ -9644,7 +10112,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Yet Another Zombie Defense HD",
@@ -9666,7 +10135,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Ys IX: Monstrum Nox",
@@ -9688,7 +10158,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Ys VIII: Lacrimosa of DANA",
@@ -9710,7 +10181,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "ZOMBI",
@@ -9732,7 +10204,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "Zombie Army 4: Dead War",
@@ -9754,7 +10227,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "11-11 Memories Retold",
@@ -9776,7 +10250,8 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   },
   {
     "title": "13 Sentinels: Aegis Rim",
@@ -9798,6 +10273,7 @@
     ],
     "releasedOn": "",
     "isAvailable": true,
-    "popularity": 0
+    "popularity": 0,
+    "collection": ""
   }
 ]

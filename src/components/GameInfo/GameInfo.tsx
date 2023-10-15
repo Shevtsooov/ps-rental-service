@@ -24,7 +24,7 @@ export const GameInfo: React.FC<Props> = ({ game, index }) => {
     }
 
     dispatch(setSavedGames(game));
-  }
+  };
 
   const handleAddToCartGame = (game: Game) => {
     if (shoppingCartGames.includes(game)) {
@@ -34,7 +34,11 @@ export const GameInfo: React.FC<Props> = ({ game, index }) => {
     }
 
     dispatch(setShoppingCartGames(game));
-  }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 60, left: 0, behavior: 'smooth' });
+  };
 
   return (
     <div className="game">
@@ -43,11 +47,13 @@ export const GameInfo: React.FC<Props> = ({ game, index }) => {
           src={`../images/games/${game.icon}`}
           alt={`${game.title} - logo`}
           className="game_image"
+          onClick={scrollToTop}
         />
       </NavLink>
       <NavLink
         className="game_heading"
         to={`/games/${game.gameId}`}
+        onClick={scrollToTop}
       >
         {`${index + 1}. ${game.title}`}
       </NavLink>

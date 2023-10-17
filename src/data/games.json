@@ -1137,12 +1137,12 @@
     "collection": ""
   },
   {
-    "title": "Cities: Skylines - PlayStation4 Edition",
+    "title": "Cities: Skylines",
     "icon": "/cities-skylines/cities-skylines.jpg",
     "iconLink": "",
     "gameId": "cities-skylines",
     "poster": "https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2017/08/analisis-cities-skylines-playstation-4-edition.jpg",
-    "description": "Cities: Skylines - PlayStation4 Edition - будуйте та керуйте власним містом на консолі PlayStation4.",
+    "description": "Cities: Skylines - будуйте та керуйте власним містом на консолі.",
     "videoReview": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/AqzMjzQ9pH4?si=RnqDPLNg9Rv8XQ1g' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
     "videoGameplay": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/bfWWn8M5SHk?si=t8_w9w2GRyp59ina' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
     "price": 100,
@@ -2342,7 +2342,7 @@
     "discountedPrice": null,
     "category": ["Аркади", "Кооперативні"],
     "players": "1-4",
-    "disclaimers": ["Рятування вогнем - найкращий спосіб заробити гроші.", "Пожежі можуть бути смішні... або не дуже."],
+    "disclaimers": ["Порятунок вогнем - найкращий спосіб заробити гроші.", "Пожежі можуть бути смішні... або не дуже."],
     "releasedOn": "23/9/2021",
     "isAvailable": true,
     "popularity": 0,
@@ -4189,7 +4189,7 @@
     "iconLink": "https://image.api.playstation.com/cdn/EP1018/CUSA00579_00/78L4GgasKoFQaHzbizvERB0ZfeCrlFCD.png",
     "gameId": "lego-batman-3-beyond-gotham",
     "poster": "https://cdn.verk.net/images/24/2_184327-1200x675.jpeg",
-    "description": "LEGO Batman 3: Beyond Gotham - це захоплююча гра в стилі LEGO про Бетмена і супергероїв, які вирушають у космос на рятування світу.",
+    "description": "LEGO Batman 3: Beyond Gotham - це захоплююча гра в стилі LEGO про Бетмена і супергероїв, які вирушають у космос на Порятунок світу.",
     "videoReview": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/9XnQXVtyhh8?si=SdJQUXTbV8h1MeIA' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
     "videoGameplay": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/bcb4ZI7ipPQ?si=NVr7ptLVYt-9gCoF' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
     "price": 100,
@@ -5272,7 +5272,7 @@
     "category": ["Рольові", "Екшн"],
     "players": "1",
     "disclaimers": [
-      "Рятування сестри - це ваша мета у грі NieR Replicant!",
+      "Порятунок сестри - це ваша мета у грі NieR Replicant!",
       "Вас чекають емоційні історії і незабутні пригоди у цьому рольовому екшені.",
       "Подаруйте собі неймовірні ігрові враження!"
     ],
@@ -5674,114 +5674,111 @@
   {
     "title": "Paradise Killer",
     "icon": "/paradise-killer/paradise-killer.jpg",
-    "iconLink": "",
+    "iconLink": "https://image.api.playstation.com/vulcan/ap/rnd/202112/0102/xfLf4KRuKBl8xsaM3yFoxQo6.png",
     "gameId": "paradise-killer",
-    "poster": "",
+    "poster": "https://images.squarespace-cdn.com/content/v1/5fb4b2ecf5b4445159228aca/1620249798212-Z9GVWCCN8FVKWKX7550Q/Paradise%252BKiller%252B%252BNEW%252BKey%252BArt%252B1920x1080%252BNo%252BLogo.jpg?format=2500w",
     "description": "Paradise Killer - ця гра перенесе вас на загадковий острів Парадиз, де вам належить розслідувати вбивство богів. Ви - остання надія на розкриття цієї загадки.",
-    "videoReview": "",
-    "videoGameplay": "",
+    "videoReview": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/cBCIk6QFleg?si=Dp5khMIEFfBVDIkQ' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
+    "videoGameplay": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/d_LaXqGtLsk?si=MsB86975WnhNp-t7' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
     "price": 100,
     "discountedPrice": null,
     "category": ["Пригоди", "Детективи"],
     "players": "1",
     "disclaimers": [
-      "Розслідуйте вбивство богів на острові Парадиз у грі Paradise Killer!",
+      "Розслідуйте вбивство богів на острові Парадайз у грі Paradise Killer!",
       "Вас чекає неймовірна пригода та безліч таємниць.",
       "Станьте останньою надією на розкриття цієї загадки!"
     ],
-    "releasedOn": "",
+    "releasedOn": "4/9/2020",
     "isAvailable": true,
     "popularity": 0,
     "collection": ""
   },
   {
-    "title": "PAW Patrol Mighty Pups Save Adventure Bay",
+    "title": "Paw Patrol Mighty Pups Save Adventure Bay",
     "icon": "/paw-patrol-mighty-pups/paw-patrol-mighty-pups.jpg",
-    "iconLink": "",
+    "iconLink": "https://cdn.dekudeals.com/images/b21080bd384b110b14803258c3631b49792ce758/w500.jpg",
     "gameId": "paw-patrol-mighty-pups",
-    "poster": "",
-    "description": "PAW Patrol Mighty Pups Save Adventure Bay - ця гра перенесе вас до світу ПАВ Патруля, де вирушайте в захоплюючі пригоди разом із собаками-героями. Рятування чекає!",
-    "videoReview": "",
-    "videoGameplay": "",
+    "poster": "https://image.api.playstation.com/vulcan/ap/rnd/202207/2713/4cPjJJax9jP6IFu3h73wu0Tp.jpg",
+    "description": "Paw Patrol Mighty Pups Save Adventure Bay - ця гра перенесе вас до світу Paw Patrol, де вирушайте в захоплюючі пригоди разом із собаками-героями. Порятунок чекає!",
+    "videoReview": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/GCM7EPZasYU?si=C4TucfSvsUiB7bgE' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
+    "videoGameplay": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/h3jPWVEEEaY?si=NDb4gy56UUNIEUM2' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
     "price": 100,
     "discountedPrice": null,
-    "category": ["Дитячі", "Пригоди"],
+    "category": ["Дитячі", "Пригоди", "Кооперативні", "Сімейні"],
     "players": "1-2",
     "disclaimers": [
-      "Долучайтеся до собак-героїв у грі PAW Patrol Mighty Pups Save Adventure Bay!",
-      "Вас чекають неймовірні рятувальні пригоди та захоплюючі враження.",
-      "Станьте частиною ПАВ Патруля та рятуйте світ!"
+      "Долучайтеся до собак-героїв у грі Paw Patrol Mighty Pups Save Adventure Bay!",
+      "Вас чекають неймовірні рятувальні пригоди та захоплюючі враження."
     ],
-    "releasedOn": "",
+    "releasedOn": "19/8/2022",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "Paw Patrol"
   },
   {
-    "title": "PAW Patrol The Movie: Adventure City Calls",
+    "title": "Paw Patrol The Movie: Adventure City Calls",
     "icon": "/paw-patrol-movie/paw-patrol-movie.jpg",
-    "iconLink": "",
+    "iconLink": "https://i.ytimg.com/vi/bGXlQTV5O8A/maxresdefault.jpg",
     "gameId": "paw-patrol-movie",
-    "poster": "",
-    "description": "PAW Patrol The Movie: Adventure City Calls - ця гра відправить вас у захоплюючу місію разом із ПАВ Патрулем. Рятування міста в ваших лапках!",
-    "videoReview": "",
-    "videoGameplay": "",
+    "poster": "https://image.api.playstation.com/vulcan/img/rnd/202107/1613/u5EVoR2qTXJa04gzFzWHb3PO.jpg",
+    "description": "Paw Patrol The Movie: Adventure City Calls - ця гра відправить вас у захоплюючу місію разом із Paw Patrol. Порятунок міста в ваших лапках!",
+    "videoReview": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/qLdAcY8orVI?si=tXhBDpYL8EWInnYR' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
+    "videoGameplay": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/Y1eYJdAWJPI?si=Vc64vkrJ9ggifsZu' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
     "price": 100,
     "discountedPrice": null,
-    "category": ["Дитячі", "Пригоди"],
+    "category": ["Дитячі", "Пригоди", "Кооперативні", "Сімейні"],
     "players": "1-2",
     "disclaimers": [
-      "Долучайтеся до ПАВ Патруля у захоплюючій місії у грі PAW Patrol The Movie: Adventure City Calls!",
-      "Рятування міста чекає на вас та ваших друзів.",
-      "Станьте героями та зіграйте разом із ПАВ Патрулем!"
+      "Порятунок міста чекає на вас та ваших друзів.",
+      "Станьте героями та зіграйте разом із Paw Patrol!"
     ],
-    "releasedOn": "",
+    "releasedOn": "19/8/2022",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "Paw Patrol"
   },
   {
     "title": "Paw Patrol: On a Roll!",
     "icon": "/paw-patrol-on-a-roll/paw-patrol-on-a-roll.jpg",
-    "iconLink": "",
+    "iconLink": "https://image.api.playstation.com/cdn/UP3824/CUSA10445_00/p7NCetBTCuOTTRnhCkkE6687wGLCjH6Q.png",
     "gameId": "paw-patrol-on-a-roll",
-    "poster": "",
-    "description": "Paw Patrol: On a Roll! - ця гра перенесе вас до світу ПАВ Патруля, де вирушайте у захоплюючі пригоди разом із собаками-героями. Рятування чекає!",
-    "videoReview": "",
-    "videoGameplay": "",
+    "poster": "https://image.api.playstation.com/cdn/UP3824/CUSA10445_00/SiA0wcGVUHfCe3xdKjs6tTe9w1plk1gL.jpg",
+    "description": "Paw Patrol: On a Roll! - ця гра перенесе вас до світу Paw Patrol, де вирушайте у захоплюючі пригоди разом із собаками-героями. Порятунок чекає!",
+    "videoReview": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/VkROFysQTco?si=0ayNI2psfkilHou0' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
+    "videoGameplay": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/dsHeEq9Nfh0?si=5tsdwXh5peAHY9B9' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
     "price": 100,
     "discountedPrice": null,
-    "category": ["Дитячі", "Пригоди"],
+    "category": ["Дитячі", "Пригоди", "Кооперативні", "Сімейні"],
     "players": "1-2",
     "disclaimers": [
       "Долучайтеся до собак-героїв у грі Paw Patrol: On a Roll!",
-      "Вас чекають неймовірні рятувальні пригоди та захоплюючі враження.",
-      "Станьте частиною ПАВ Патруля та рятуйте світ!"
+      "Вас чекають неймовірні рятувальні пригоди та захоплюючі враження."
     ],
-    "releasedOn": "",
+    "releasedOn": "26/10/2018",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "Paw Patrol"
   },
   {
     "title": "PAYDAY 2: CRIMEWAVE EDITION",
     "icon": "/payday-2/payday-2.jpg",
-    "iconLink": "",
+    "iconLink": "https://image.api.playstation.com/cdn/EP4040/CUSA01761_00/bAKCnWJLq7Aw3UtogWLVz3is7mfXO2pt.png",
     "gameId": "payday-2",
-    "poster": "",
-    "description": "PAYDAY 2: CRIMEWAVE EDITION - ця гра відправить вас у світ гучних пограбувань та злочинної діяльності. Сплануйте ідеальний злочин і виборіться з нього цілим і невпійманим.",
-    "videoReview": "",
-    "videoGameplay": "",
+    "poster": "https://www.dexerto.com/cdn-cgi/image/width=3840,quality=75,format=auto/https://editors.dexerto.com/wp-content/uploads/2023/07/07/Payday-3-heists.jpg",
+    "description": "PAYDAY 2: CRIMEWAVE EDITION - ця гра відправить вас у світ гучних пограбувань та злочинної діяльності. Сплануйте ідеальний злочин і виберіться з нього цілим і невпійманим.",
+    "videoReview": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/oNcJFpblzxA?si=igwq6eabA0xmpTgs' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
+    "videoGameplay": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/IUe2g2gYvys?si=RecCp-TSN2JszFie' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
     "price": 100,
     "discountedPrice": null,
-    "category": ["Екшн", "Шутери"],
+    "category": ["Екшн", "Шутери", "Аркади"],
     "players": "1-4",
     "disclaimers": [
       "Готуйтеся до найгучніших пограбувань у грі PAYDAY 2: CRIMEWAVE EDITION!",
-      "Сплануйте злочин та виборіться з нього цілими та невпійманими.",
+      "Сплануйте злочин та виберіться з нього цілими та невпійманими.",
       "Станьте справжнім злодієм у цій захоплюючій грі!"
     ],
-    "releasedOn": "",
+    "releasedOn": "12/6/2015",
     "isAvailable": true,
     "popularity": 0,
     "collection": ""
@@ -5789,22 +5786,22 @@
   {
     "title": "Pile Up! Box by Box",
     "icon": "/pile-up/pile-up.jpg",
-    "iconLink": "",
+    "iconLink": "https://image.api.playstation.com/vulcan/ap/rnd/202107/3007/UGiQi1Y1N2a5JSNyHwsMa3G9.png",
     "gameId": "pile-up",
-    "poster": "",
+    "poster": "https://image.api.playstation.com/vulcan/ap/rnd/202107/3007/pDT6gXV30JHdUfpziUSw70aU.jpg",
     "description": "Pile Up! Box by Box - ця гра покличе вас у світ пригод разом із живими коробками. Рухайтеся, співпрацюйте та розв'язуйте головоломки для досягнення своєї мети.",
-    "videoReview": "",
-    "videoGameplay": "",
+    "videoReview": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/gMaPp1hJks4?si=B7vWawk3kQfoxgqV' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
+    "videoGameplay": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/XT6oANOcbm4?si=8r1Z2FGPmyiXJsCv' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
     "price": 100,
     "discountedPrice": null,
-    "category": ["Пригоди", "Головоломки"],
+    "category": ["Пригоди", "Головоломки", "Дитячі"],
     "players": "1-4",
     "disclaimers": [
       "Рухайтеся разом із живими коробками у грі Pile Up! Box by Box!",
       "Співпрацюйте та розв'язуйте головоломки для досягнення своєї мети.",
       "Зробіть світ кращим, коробка за коробкою!"
     ],
-    "releasedOn": "",
+    "releasedOn": "17/8/2021",
     "isAvailable": true,
     "popularity": 0,
     "collection": ""
@@ -5812,12 +5809,12 @@
   {
     "title": "Pillars of Eternity II: Deadfire - Ultimate Edition",
     "icon": "/pillars-of-eternity-2/pillars-of-eternity-2.jpg",
-    "iconLink": "",
+    "iconLink": "https://image.api.playstation.com/vulcan/img/cfn/11307PKdGN9rppCT6RrB65u5S-SYMy-g1qARqritKmH9tLN0JejyH_9wMg_fy1pSJuU-PAzBzI-qYw2l94HLYIgIY1wVYDkP.png",
     "gameId": "pillars-of-eternity-2",
-    "poster": "",
+    "poster": "https://gertlushgaming.co.uk/wp-content/uploads/2020/02/Pillars-of-Eternity-II-Deadfire-Ultimate-Edition-4.jpg",
     "description": "Pillars of Eternity II: Deadfire - Ultimate Edition - ця гра перенесе вас у світ фантастичних пригод і битв. Створіть свого героя та вирушайте в подорож!",
-    "videoReview": "",
-    "videoGameplay": "",
+    "videoReview": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/IaO7oboQGJg?si=8vdr27yl_zZNf87_' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
+    "videoGameplay": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/nR1VC4Wise0?si=FAqELftV3WO2XJir' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
     "price": 100,
     "discountedPrice": null,
     "category": ["Рольові", "Пригоди"],
@@ -5827,7 +5824,7 @@
       "Вас чекають неймовірні битви та враження.",
       "Завоюйте світ та зробіть його своїм!"
     ],
-    "releasedOn": "",
+    "releasedOn": "28/1/2020",
     "isAvailable": true,
     "popularity": 0,
     "collection": ""
@@ -5835,22 +5832,22 @@
   {
     "title": "PJ Masks: Heroes of the Night",
     "icon": "/pj-masks/pj-masks.jpg",
-    "iconLink": "",
+    "iconLink": "https://image.api.playstation.com/vulcan/ap/rnd/202108/1013/fY6BE04w9Ly5OS1aG3eaVCnN.jpg",
     "gameId": "pj-masks",
-    "poster": "",
+    "poster": "https://i0.wp.com/www.thexboxhub.com/wp-content/uploads/2021/10/image-12-scaled.jpeg?fit=2560%2C1440&ssl=1",
     "description": "PJ Masks: Heroes of the Night - ця гра перенесе вас до світу Героїв Нічних Піжам. Долучайтеся до героїв у захоплюючих пригодах та рятувальних місіях.",
-    "videoReview": "",
-    "videoGameplay": "",
+    "videoReview": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/TQxoHLT3B8c?si=js-Iiz14L4gGFtpf' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
+    "videoGameplay": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/8ASBp38BtDQ?si=zSOOB1w3mnKcf-l7' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
     "price": 100,
     "discountedPrice": null,
-    "category": ["Дитячі", "Пригоди"],
+    "category": ["Дитячі", "Пригоди", "Сімейні"],
     "players": "1-2",
     "disclaimers": [
       "Долучайтеся до Героїв Нічних Піжам у захоплюючих пригодах у грі PJ Masks: Heroes of the Night!",
       "Рятувальні місії та неймовірні пригоди чекають на вас.",
       "Станьте героями та рятуйте світ!"
     ],
-    "releasedOn": "",
+    "releasedOn": "21/1/2022",
     "isAvailable": true,
     "popularity": 0,
     "collection": ""
@@ -5858,22 +5855,21 @@
   {
     "title": "Planet Coaster: Console Edition",
     "icon": "/planet-coaster/planet-coaster.jpg",
-    "iconLink": "",
+    "iconLink": "https://image.api.playstation.com/vulcan/ap/rnd/202010/0810/rYsmXPGMzydvAIc56jTrhDMr.jpg",
     "gameId": "planet-coaster",
-    "poster": "",
+    "poster": "https://as02.epimg.net/meristation/imagenes/2020/10/15/videos/1602778893_582172_1602778976_noticia_normal.jpg",
     "description": "Planet Coaster: Console Edition - ця гра дозволить вам створювати та управляти власним парком розваг. Забезпечте розваги для всієї родини!",
-    "videoReview": "",
-    "videoGameplay": "",
+    "videoReview": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/pFutjmJ84GA?si=EZrxIcl_65OrCGhT' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
+    "videoGameplay": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/bu_uSuOVkxg?si=AEv4vtq7WNzA5iLn' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
     "price": 100,
     "discountedPrice": null,
-    "category": ["Симулятори"],
+    "category": ["Симулятори", "Стратегії", "Дитячі"],
     "players": "1",
     "disclaimers": [
       "Створюйте найкращий амуземент парк у грі Planet Coaster: Console Edition!",
-      "Забезпечте розвагу для всієї родини та гостей вашого парку.",
-      "Зробіть світ кращим, розважаючи одну атракцію за іншою!"
+      "Забезпечте розваги для всієї родини та гостей вашого парку."
     ],
-    "releasedOn": "",
+    "releasedOn": "12/11/2020",
     "isAvailable": true,
     "popularity": 0,
     "collection": ""
@@ -5881,22 +5877,22 @@
   {
     "title": "Portal Knights",
     "icon": "/portal-knights/portal-knights.jpg",
-    "iconLink": "",
+    "iconLink": "https://image.api.playstation.com/cdn/EP4040/CUSA06287_00/VPkJ7kj97W08cXYBvIS4mWIN7SAJwVHEzqEL6Mkyrs1epOysOV8KS1yIhmMQEFME.png",
     "gameId": "portal-knights",
-    "poster": "",
+    "poster": "https://portalknights.com/wp-content/uploads/2016/02/Community-Blog-Welcome-to-Portal-Knights.jpg",
     "description": "Portal Knights - ця гра відправить вас у фантастичний світ, де вам належить будувати, битися і досліджувати. Виберіть свій шлях до перемоги!",
-    "videoReview": "",
-    "videoGameplay": "",
+    "videoReview": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/i6inQnXEQwg?si=pTxfsQDfUhm3sa5j' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
+    "videoGameplay": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/uk8-8W4snZQ?si=lu71kVN8gp4fBFwK' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
     "price": 100,
     "discountedPrice": null,
-    "category": ["Пригоди"],
+    "category": ["Пригоди", "Дитячі", "Екшн"],
     "players": "1-4",
     "disclaimers": [
       "Відправляйтесь у фантастичний світ та будуйте свій шлях до перемоги у грі Portal Knights!",
       "Битви, дослідження та безліч можливостей чекають на вас.",
       "Станьте справжнім лицарем порталів!"
     ],
-    "releasedOn": "",
+    "releasedOn": "5/6/2017",
     "isAvailable": true,
     "popularity": 0,
     "collection": ""
@@ -5904,22 +5900,21 @@
   {
     "title": "Power Rangers: Battle For The Grid",
     "icon": "/power-rangers/power-rangers.jpg",
-    "iconLink": "",
+    "iconLink": "https://image.api.playstation.com/vulcan/ap/rnd/202006/0317/d09PbLdjuUvk3o2kWoy9lMGx.png",
     "gameId": "power-rangers",
-    "poster": "",
-    "description": "Power Rangers: Battle For The Grid - ця гра дозволить вам зіграти за своїх улюблених Могутніх Рейнджерів і приєднатися до бою. Готуйтеся до акції!",
-    "videoReview": "",
-    "videoGameplay": "",
+    "poster": "https://assets1.ignimgs.com/2019/01/17/power-rangers-blogroll-1547755726662.png",
+    "description": "Power Rangers: Battle For The Grid - ця гра дозволить вам зіграти за своїх улюблених Могутніх Рейнджерів і приєднатися до бою.",
+    "videoReview": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/Em453eibLuc?si=uP4o6Iqv0BkQbSIS' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
+    "videoGameplay": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/tNt1SyycNrY?si=ONo91BJHgEyIopu_' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
     "price": 100,
     "discountedPrice": null,
-    "category": ["Екшн", "Бійки"],
+    "category": ["Екшн", "Бійки", "Дитячі"],
     "players": "1-2",
     "disclaimers": [
       "Зіграйте за своїх улюблених Могутніх Рейнджерів і приєднайтесь до бою у грі Power Rangers: Battle For The Grid!",
-      "Акція, битви та величезний вибір Рейнджерів чекають на вас.",
       "Зробіть світ безпечним разом із своїми героями!"
     ],
-    "releasedOn": "",
+    "releasedOn": "3/4/2019",
     "isAvailable": true,
     "popularity": 0,
     "collection": ""
@@ -5927,45 +5922,45 @@
   {
     "title": "Prey",
     "icon": "/prey/prey.jpg",
-    "iconLink": "",
+    "iconLink": "https://www.gamespot.com/a/uploads/scale_landscape/43/434805/3231548-0360139666-330927555811686",
     "gameId": "prey",
-    "poster": "",
+    "poster": "https://assets1.ignimgs.com/2017/05/05/prey-header-02-1494023711033.jpg",
     "description": "Prey - ця гра відправить вас у космос на станцію 'Талос-1', де виживання - це ваш головний пріоритет. Хто ви і якими засобами ви виживете?",
-    "videoReview": "",
-    "videoGameplay": "",
+    "videoReview": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/jaUCN5PVIdY?si=721z__5KsPEN8n8O' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
+    "videoGameplay": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/m1xjexCtAFc?si=DkrNv9_RJDb7UvCR' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
     "price": 100,
     "discountedPrice": null,
-    "category": ["Шутери", "Жахи"],
+    "category": ["Шутери", "Жахи", "Космос", "Екшн"],
     "players": "1",
     "disclaimers": [
       "Виживайте на космічній станції у грі Prey!",
       "Гра створює непередбачувану атмосферу та наповнена жахами.",
       "Дізнайтеся, хто ви насправді та виживіть за будь-яку ціну."
     ],
-    "releasedOn": "",
+    "releasedOn": "5/5/2017",
     "isAvailable": true,
     "popularity": 0,
     "collection": ""
   },
   {
-    "title": "Prison Architect: PlayStation4 Edition",
+    "title": "Prison Architect",
     "icon": "/prison-architect/prison-architect.jpg",
-    "iconLink": "",
+    "iconLink": "https://www.codecmoments.com/wp-content/uploads/2016/06/Prison-Architect-Feat-2.jpg",
     "gameId": "prison-architect",
-    "poster": "",
-    "description": "Prison Architect: PlayStation4 Edition - ця гра дозволить вам побудувати та управляти власним в'язницею. Ваша влада - це закон!",
-    "videoReview": "",
-    "videoGameplay": "",
+    "poster": "https://metro.co.uk/wp-content/uploads/2016/07/4.jpg?quality=80&strip=all",
+    "description": "Prison Architect - ця гра дозволить вам побудувати та управляти власною в'язницею. Ваша влада - це закон!",
+    "videoReview": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/Ro7h2Y7lTw0?si=eX_Np9h8m74AaJAT' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
+    "videoGameplay": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/B6zA6YHHWRc?si=b-_oQ-xZDk6RfNHQ' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
     "price": 100,
     "discountedPrice": null,
     "category": ["Симулятори", "Стратегії"],
     "players": "1",
     "disclaimers": [
-      "Будуйте та управляйте в'язницею у грі Prison Architect: PlayStation4 Edition!",
+      "Будуйте та управляйте в'язницею у грі Prison Architect!",
       "Ваша влада - це закон, а ваша в'язниця - це ваш світ.",
       "Зробіть світ безпечнішим, виконуючи правосуддя!"
     ],
-    "releasedOn": "",
+    "releasedOn": "28/6/2016",
     "isAvailable": true,
     "popularity": 0,
     "collection": ""
@@ -5973,12 +5968,12 @@
   {
     "title": "Pure Hold'em World Poker Championship",
     "icon": "/pure-holdem/pure-holdem.jpg",
-    "iconLink": "",
+    "iconLink": "https://image.api.playstation.com/cdn/EP4337/CUSA01103_00/C1AjuTL6pycuEzXUYyc7AC6mVKmhoNBV.jpg",
     "gameId": "pure-holdem",
-    "poster": "",
+    "poster": "https://image.api.playstation.com/cdn/UP2070/CUSA01104_00/FREE_CONTENTpN67SjSoflzsb2nalnp9/PREVIEW_SCREENSHOT4_162633.jpg",
     "description": "Pure Hold'em World Poker Championship - ця гра запрошує вас на найбільший покерний турнір у світі. Готуйтеся до стратегії та вдалих рухів!",
-    "videoReview": "",
-    "videoGameplay": "",
+    "videoReview": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/wKQyZOCsyoQ?si=HQECBdBBFq16l-EP' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
+    "videoGameplay": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/G5fFJm0c3Nc?si=zQMla6MKSASTtjbk' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
     "price": 100,
     "discountedPrice": null,
     "category": ["Настільні", "Аркади"],
@@ -5988,7 +5983,7 @@
       "Стратегія, інтриги та успіх чекають на вас за картковим столом.",
       "Станьте чемпіоном покеру та виграйте світовий турнір!"
     ],
-    "releasedOn": "",
+    "releasedOn": "19/8/2015",
     "isAvailable": true,
     "popularity": 0,
     "collection": ""
@@ -5996,12 +5991,12 @@
   {
     "title": "Pure Pool",
     "icon": "/pure-pool/pure-pool.jpg",
-    "iconLink": "",
+    "iconLink": "https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA00332_00/9/i_b4ab994c09b02424ff625b3c273b01a9075bef01a882fba6852c29db0295b4c9/i/icon0.png",
     "gameId": "pure-pool",
-    "poster": "",
+    "poster": "https://images.purexbox.com/dd7678c0ce86c/1280x720.jpg",
     "description": "Pure Pool - ця гра запрошує вас в світ більярду. Змагайтесь з друзями або вдосконалюйте свою майстерність в одиночній грі.",
-    "videoReview": "",
-    "videoGameplay": "",
+    "videoReview": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/-ym0_4H9qNM?si=QJSFUSDB2EO4NfsT' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
+    "videoGameplay": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/WTiP9C4gdpA?si=8kQGaNX4sHisyBrz' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
     "price": 100,
     "discountedPrice": null,
     "category": ["Спортивні", "Симулятори"],
@@ -6417,7 +6412,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "Tomb Raider"
   },
   {
     "title": "Risk Urban Assault",
@@ -6800,7 +6795,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "Tomb Raider"
   },
   {
     "title": "Shadow Warrior 2",
@@ -6915,7 +6910,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "Sniper Elite"
   },
   {
     "title": "Sniper Elite 5",
@@ -6938,7 +6933,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "Sniper Elite"
   },
   {
     "title": "Sniper Ghost Warrior Contracts 2",
@@ -7076,7 +7071,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "South Park"
   },
   {
     "title": "South Park: The Stick of Truth",
@@ -7099,7 +7094,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "South Park"
   },
   {
     "title": "Space Crew: Legendary Edition",
@@ -7286,7 +7281,7 @@
     "collection": ""
   },
   {
-    "title": "STAR OCEAN THE DIVINE FORCE",
+    "title": "STAR OCEAN: THE DIVINE FORCE",
     "icon": "/star-ocean-the-divine/star-ocean-the-divine.jpg",
     "iconLink": "",
     "gameId": "star-ocean-the-divine",
@@ -7306,7 +7301,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "STAR OCEAN"
   },
   {
     "title": "STAR OCEAN: IAF DIGITAL EDITION",
@@ -7329,7 +7324,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "STAR OCEAN"
   },
   {
     "title": "Star Trek: Bridge Crew",
@@ -7421,7 +7416,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "STORY OF SEASONS"
   },
   {
     "title": "STORY OF SEASONS: Pioneers of Olive Town",
@@ -7444,7 +7439,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "STORY OF SEASONS"
   },
   {
     "title": "STORY OF SEASONS: Pioneers of Olive Town + Expansion Pass Set",
@@ -7467,7 +7462,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "STORY OF SEASONS"
   },
   {
     "title": "Stranded Deep",
@@ -7513,7 +7508,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "Street Fighter"
   },
   {
     "title": "Street Fighter V: Champion Edition",
@@ -7536,7 +7531,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "Street Fighter"
   },
   {
     "title": "Sundered: Eldritch Edition",
@@ -7827,12 +7822,12 @@
     "collection": ""
   },
   {
-    "title": "Terraria – PlayStation4 Edition",
+    "title": "Terraria",
     "icon": "/terraria/terraria.jpg",
     "iconLink": "",
     "gameId": "terraria-ps4-edition",
     "poster": "",
-    "description": "Terraria – PlayStation4 Edition - це відкритий світ, де ви зможете будувати, досліджувати і битися з різними істотами власного вигадування.",
+    "description": "Terraria - це відкритий світ, де ви зможете будувати, досліджувати і битися з різними істотами власного вигадування.",
     "videoReview": "",
     "videoGameplay": "",
     "price": 100,
@@ -7840,7 +7835,7 @@
     "category": ["Пригоди"],
     "players": "1-8",
     "disclaimers": [
-      "Побудуйте свій власний світ у Terraria – PlayStation4 Edition.",
+      "Побудуйте свій власний світ у Terraria.",
       "Досліджуйте небезпечні підземелля та боріться з монстрами.",
       "Гра для тих, хто любить будувати і виживати!"
     ],
@@ -7887,7 +7882,7 @@
     "players": "1",
     "disclaimers": [
       "Станьте музичним героєм у The Artful Escape.",
-      "Подорожуйте між світами та використовуйте музику для рятування світу.",
+      "Подорожуйте між світами та використовуйте музику для Порятунок світу.",
       "Непередбачувані пригоди та неймовірний саундтрек гарантовані!"
     ],
     "releasedOn": "",
@@ -7962,7 +7957,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "The Dark Pictures Anthology"
   },
   {
     "title": "The Dark Pictures Anthology: Man of Medan",
@@ -7985,7 +7980,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "The Dark Pictures Anthology"
   },
   {
     "title": "The Elder Scrolls Online - PS4",
@@ -8008,7 +8003,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "Elder Scrolls"
   },
   {
     "title": "The Elder Scrolls V: Skyrim Special Edition - PS5 & PS4",
@@ -8031,7 +8026,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "Elder Scrolls"
   },
   {
     "title": "The Escapists 2",
@@ -8077,7 +8072,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "The Evil Within"
   },
   {
     "title": "The Evil Within 2",
@@ -8100,7 +8095,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "The Evil Within"
   },
   {
     "title": "The Fisherman - Fishing Planet",
@@ -8399,7 +8394,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "The Surge"
   },
   {
     "title": "The Surge 2",
@@ -8422,7 +8417,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "The Surge"
   },
   {
     "title": "The Talos Principle: Deluxe Edition",
@@ -8560,7 +8555,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "This is the Police"
   },
   {
     "title": "This Is the Police 2",
@@ -8583,7 +8578,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "This is the Police"
   },
   {
     "title": "This War of Mine: Final Cut",
@@ -8655,7 +8650,7 @@
     "collection": ""
   },
   {
-    "title": "Tom Clancy's Ghost Recon Breakpoint",
+    "title": "Tom Clancy's: Ghost Recon Breakpoint",
     "icon": "/tom-clancys-ghost-recon-breakpoint/tom-clancys-ghost-recon-breakpoint.jpg",
     "iconLink": "",
     "gameId": "tom-clancys-ghost-recon-breakpoint",
@@ -8675,10 +8670,10 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "Tom Clancy's"
   },
   {
-    "title": "Tom Clancy's Rainbow Six Siege",
+    "title": "Tom Clancy's: Rainbow Six Siege",
     "icon": "/tom-clancys-rainbow-six-siege/tom-clancys-rainbow-six-siege.jpg",
     "iconLink": "",
     "gameId": "tom-clancys-rainbow-six-siege",
@@ -8698,10 +8693,10 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "Tom Clancy's"
   },
   {
-    "title": "TOM CLANCY'S THE DIVISION",
+    "title": "Tom Clancy's: The Division",
     "icon": "/tom-clancys-the-division/tom-clancys-the-division.jpg",
     "iconLink": "",
     "gameId": "tom-clancys-the-division",
@@ -8721,10 +8716,10 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "Tom Clancy's"
   },
   {
-    "title": "Tom Clancy's The Division 2",
+    "title": "Tom Clancy's: The Division 2",
     "icon": "/tom-clancys-the-division-2/tom-clancys-the-division-2.jpg",
     "iconLink": "",
     "gameId": "tom-clancys-the-division-2",
@@ -8744,10 +8739,10 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "Tom Clancy's"
   },
   {
-    "title": "Tom Clancy’s Rainbow Six Extraction",
+    "title": "Tom Clancy’s: Rainbow Six Extraction",
     "icon": "/tom-clancys-rainbow-six-extraction-ps4-ps5/tom-clancys-rainbow-six-extraction-ps4-ps5.jpg",
     "iconLink": "",
     "gameId": "tom-clancys-rainbow-six-extraction-ps4-ps5",
@@ -8767,7 +8762,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "Tom Clancy's"
   },
   {
     "title": "Tomb Raider: Definitive Edition",
@@ -8790,7 +8785,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "Tomb Raider"
   },
   {
     "title": "Totally Reliable Delivery Service",
@@ -9135,7 +9130,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "Two Point Hospital"
   },
   {
     "title": "Two Point Hospital",
@@ -9158,7 +9153,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "Two Point Hospital"
   },
 
 
@@ -9171,7 +9166,7 @@
 
 
   {
-    "title": "UNCHARTED: Legacy of Thieves Collection",
+    "title": "Uncharted: Legacy of Thieves Collection",
     "icon": "/uncharted-legacy-of-thieves-collection/uncharted-legacy-of-thieves-collection.jpg",
     "iconLink": "",
     "gameId": "uncharted-legacy-of-thieves-collection",
@@ -9191,7 +9186,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "Uncharted:"
   },
   {
     "title": "Uncharted: The Lost Legacy",
@@ -9214,7 +9209,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "Uncharted:"
   },
   {
     "title": "Undertale",
@@ -9492,7 +9487,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "Warhammer"
   },
   {
     "title": "Warhammer: Chaosbane",
@@ -9515,7 +9510,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "Warhammer"
   },
   {
     "title": "Warhammer: Chaosbane Slayer Edition",
@@ -9538,7 +9533,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "Warhammer"
   },
   {
     "title": "Warhammer: Vermintide 2",
@@ -9561,7 +9556,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "Warhammer"
   },
   {
     "title": "WARRIORS ALL-STARS",
@@ -9768,7 +9763,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "Wolfenstein"
   },
   {
     "title": "Wolfenstein: The Old Blood",
@@ -9791,7 +9786,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "Wolfenstein"
   },
   {
     "title": "Wolfenstein: Youngblood",
@@ -9814,7 +9809,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "Wolfenstein"
   },
 
 
@@ -9847,7 +9842,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "Wolfenstein"
   },
   {
     "title": "WORLD OF FINAL FANTASY",
@@ -9870,7 +9865,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "FINAL FANTASY"
   },
   {
     "title": "World War Z",
@@ -9893,7 +9888,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "World War Z"
   },
   {
     "title": "World War Z: Aftermath",
@@ -9916,7 +9911,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "World War Z"
   },
   {
     "title": "Worms W.M.D",
@@ -9942,7 +9937,7 @@
     "collection": ""
   },
   {
-    "title": "Wreckfest PlayStation5 Version",
+    "title": "Wreckfest",
     "icon": "/wreckfest-playstation-5-version/wreckfest-playstation-5-version.jpg",
     "iconLink": "",
     "gameId": "wreckfest-playstation-5-version",
@@ -9962,7 +9957,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "Wreckfest"
   },
   {
     "title": "Wreckfest: Drive Hard. Die Last.",
@@ -9985,7 +9980,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "Wreckfest"
   },
 
 
@@ -10043,7 +10038,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "Yakuza"
   },
   {
     "title": "Yakuza: Like a Dragon",
@@ -10066,7 +10061,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "Yakuza"
   },
   {
     "title": "Yet Another Zombie Defense HD",
@@ -10112,7 +10107,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "Ys"
   },
   {
     "title": "Ys VIII: Lacrimosa of DANA",
@@ -10135,7 +10130,7 @@
     "releasedOn": "",
     "isAvailable": true,
     "popularity": 0,
-    "collection": ""
+    "collection": "Ys"
   },
   {
     "title": "ZOMBI",

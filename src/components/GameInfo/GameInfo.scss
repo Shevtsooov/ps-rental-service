@@ -2,10 +2,26 @@
 @import "../../styles/utils/colors.scss";
 
 .game {
+  position: relative;
   width: 250px;
   text-align: center;
   margin: 0 auto;
+  user-select: none;
+  // pointer-events:none;
 
+  &--unavailable {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    
+    background-image: url('../../assets/images/unavailable.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    width: 150px;
+    height: 150px;
+  }
 
   &_image {
     display: block;
@@ -74,6 +90,12 @@
         background: #fff;
         color: $main-blue;
         border: 1px solid $main-blue;
+      }
+
+      &--disabled {
+        pointer-events: none;
+        background-color: #b6b4b4;
+        border: 1px solid #b6b4b4;
       }
     }
 

@@ -51,12 +51,16 @@ export const GamePage: React.FC = () => {
 
   return (
     <div className="game_page" ref={topContainer}>
+      
+
       <div className="game_page__images">
         <img
           src={`${game?.poster}`}
           alt={`${game?.title}`}
           className='game_page__poster'
-        />
+          />
+
+        {!game?.isAvailable && <div className="game_page--unavailable" />}
 
         <img
           src={`../images/games/${game?.icon}`}
@@ -91,7 +95,9 @@ export const GamePage: React.FC = () => {
           <div className="game_page__price">
           {shoppingCartGames.length === 0 || shoppingCartGames[0].gameId === game.gameId
             ? (
-              <p className='game_page__price_discountedPrice'>Одна гра - безкоштовно</p>
+              <p className='game_page__price_discountedPrice'>
+                {game.isAvailable && 'Одна гра - безкоштовно'}
+              </p>
             )
             : (
               <>
@@ -100,7 +106,7 @@ export const GamePage: React.FC = () => {
                   'game_page__price_regularPrice': game.discountedPrice
                 })}
                 >
-                  {`${game.price}₴`}
+                  {game.isAvailable && `${game.price}₴`}
                 </p>
                 {game.discountedPrice && (
                   <p className="game_page__price_discountedPrice">{`${game.discountedPrice}₴`}</p>
@@ -112,7 +118,8 @@ export const GamePage: React.FC = () => {
           <div className="game_page_buttons">
             <button 
               className={cn('game_page_buttons_cart', {
-                'game_page_buttons_cart--added': shoppingCartGames.includes(game)
+                'game_page_buttons_cart--added': shoppingCartGames.includes(game),
+                'game_page_buttons_cart--disabled': !game?.isAvailable,
               })}
               onClick={() => handleAddToCartGame(game)}
             >

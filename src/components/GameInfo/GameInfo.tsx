@@ -42,8 +42,12 @@ export const GameInfo: React.FC<Props> = ({ game, index }) => {
 
   return (
     <div className="game">
+
+      {!game.isAvailable && <div className="game--unavailable" />}
+      
       <NavLink to={`/games/${game.gameId}`}>
         <img
+          // src={game.iconLink}
           src={`../images/games/${game.icon}`}
           alt={`${game.title} - logo`}
           className="game_image"
@@ -82,7 +86,8 @@ export const GameInfo: React.FC<Props> = ({ game, index }) => {
       <div className="game_buttons">
         <button 
           className={cn('game_buttons_cart', {
-            'game_buttons_cart--added': shoppingCartGames.includes(game)
+            'game_buttons_cart--added': shoppingCartGames.includes(game),
+            'game_buttons_cart--disabled': !game.isAvailable,
           })}
           onClick={() => handleAddToCartGame(game)}
         >

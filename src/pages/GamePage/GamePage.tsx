@@ -14,6 +14,29 @@ export const GamePage: React.FC = () => {
   const { gameIdLink } = useParams();
   const [collectionGames, setCollectionGames] = useState<Game[]>([])
   const game = games.find(g => g.gameId === gameIdLink);
+  const savedGames = useAppSelector(state => state.savedGames.value);
+  const shoppingCartGames = useAppSelector(state => state.shoppingCartGames.value);
+  const dispatch = useAppDispatch();
+
+  const handleSaveGame = (game: Game) => {
+    if (savedGames.includes(game)) {
+      dispatch(filterSavedGames(game.gameId));
+
+      return;
+    }
+
+    dispatch(setSavedGames(game));
+  };
+
+  const handleAddToCartGame = (game: Game) => {
+    if (shoppingCartGames.includes(game)) {
+      dispatch(filterShoppingCartGames(game.gameId));
+
+      return;
+    }
+
+    dispatch(setShoppingCartGames(game));
+  };
 
   useEffect(() => {
     setCollectionGames(games.filter(g => (
@@ -27,32 +50,7 @@ export const GamePage: React.FC = () => {
   useEffect(() => {
     topContainer.current?.scrollIntoView({ block: "start" });
     }, []);
-
-  const savedGames = useAppSelector(state => state.savedGames.value);
-  const shoppingCartGames = useAppSelector(state => state.shoppingCartGames.value);
-  const dispatch = useAppDispatch();
-
-  const handleSaveGame = (game: Game) => {
-    if (savedGames.includes(game)) {
-      dispatch(filterSavedGames(game.gameId));
-      console.log('includes')
-      return;
-    }
-
-    dispatch(setSavedGames(game));
-  }
-
-  const handleAddToCartGame = (game: Game) => {
-    if (shoppingCartGames.includes(game)) {
-      dispatch(filterShoppingCartGames(game.gameId));
-
-      return;
-    }
-
-    dispatch(setShoppingCartGames(game));
-  }
   
-
   const videoReviev = parse(`${game?.videoReview}`);
   const videoGameplay = parse(`${game?.videoGameplay}`);
 

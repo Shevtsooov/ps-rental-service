@@ -32,13 +32,14 @@ export const Carousel: React.FC<Props> = ({ title, description, games }) => {
     return (
       <div className="carousel">
         <div className="carousel__top">
-          <div></div>
-          <h3 className="carousel__title">
-            {`${title} - ${games.length} ${correctGamesWord}`}
-          </h3>
-          <p>{description}</p>
+          <div>
+            <h3 className="carousel__title">
+              {`${title} - ${games.length} ${correctGamesWord}`}
+            </h3>
+            <p>{description}</p>
+          </div>
 
-          {/* <div className="carousel__slider">
+          <div className="carousel__slider">
             <button
               className="carousel__button"
               onClick={handlePrevClick}
@@ -59,7 +60,7 @@ export const Carousel: React.FC<Props> = ({ title, description, games }) => {
                   carousel__button-icon--right"
               ></span>
             </button>
-          </div> */}
+          </div>
         </div>
   
         <div className="carousel__content" ref={listRef}>

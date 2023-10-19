@@ -49,7 +49,7 @@ export const Homepage: React.FC = () => {
   .sort((gameA, gameB) => (
     gameB.popularity - gameA.popularity
   ))
-  .slice(0, 6);
+  .slice(0, 15);
 
   return (
     <div className="homepage">

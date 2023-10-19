@@ -55,18 +55,7 @@ export const Homepage: React.FC = () => {
     <div className="homepage">
       <Slider />
 
-      {/* <Carousel title={'Колекція'} /> */}
-      
       {/* <Aaa /> */}
-
-      {/* <div>
-        <ul>
-          {fff.map(game => (
-            <li>{game}</li>
-            // <img src={`${game.poster}`} alt="" className='aaa'/>
-          ))}
-        </ul>
-      </div> */}
 
       <BookPS />
 

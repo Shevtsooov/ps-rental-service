@@ -16,6 +16,15 @@ export const GameInfo: React.FC<Props> = ({ game, index }) => {
   const shoppingCartGames = useAppSelector(state => state.shoppingCartGames.value);
   const dispatch = useAppDispatch();
 
+  const {
+    title,
+    icon,
+    gameId,
+    price,
+    discountedPrice,
+    isAvailable,
+  } = game;
+
   const handleSaveGame = (game: Game) => {
     if (savedGames.includes(game)) {
       dispatch(filterSavedGames(game.gameId));
@@ -43,41 +52,43 @@ export const GameInfo: React.FC<Props> = ({ game, index }) => {
   return (
     <div className="game">
 
-      {!game.isAvailable && <div className="game--unavailable" />}
+      {!isAvailable && <div className="game--unavailable" />}
       
-      <NavLink to={`/games/${game.gameId}`}>
+      <NavLink to={`/games/${gameId}`}>
         <img
           // src={game.iconLink}
-          src={`../images/games/${game.icon}`}
-          alt={`${game.title} - logo`}
+          src={`../images/games/${icon}`}
+          alt={`${title} - logo`}
           className="game_image"
           // onClick={scrollToTop}
         />
       </NavLink>
       <NavLink
         className="game_heading"
-        to={`/games/${game.gameId}`}
+        to={`/games/${gameId}`}
         onClick={scrollToTop}
       >
-        {`${index + 1}. ${game.title}`}
+        {`${index + 1}. ${title}`}
       </NavLink>
      
       <div className="game_price">
-      {shoppingCartGames.length === 0 || shoppingCartGames[0].gameId === game.gameId
+      {shoppingCartGames.length === 0 || shoppingCartGames[0].gameId === gameId
         ? (
-          <p className='game_price_discountedPrice'>Одна гра - безкоштовно</p>
+          <p className='game_price_discountedPrice'>
+            {isAvailable && 'Одна гра - безкоштовно'}
+          </p>
         )
         : (
           <>
             <p 
             className={cn({
-              'game_price_regularPrice': game.discountedPrice
+              'game_price_regularPrice': discountedPrice
             })}
             >
-              {`${game.price}₴`}
+              {`${price}₴`}
             </p>
-            {game.discountedPrice && (
-              <p className="game_price_discountedPrice">{`${game.discountedPrice}₴`}</p>
+            {discountedPrice && (
+              <p className="game_price_discountedPrice">{`${discountedPrice}₴`}</p>
             )}
           </>
         )}
@@ -87,7 +98,7 @@ export const GameInfo: React.FC<Props> = ({ game, index }) => {
         <button 
           className={cn('game_buttons_cart', {
             'game_buttons_cart--added': shoppingCartGames.includes(game),
-            'game_buttons_cart--disabled': !game.isAvailable,
+            'game_buttons_cart--disabled': !isAvailable,
           })}
           onClick={() => handleAddToCartGame(game)}
         >

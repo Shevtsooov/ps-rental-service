@@ -3,17 +3,21 @@
 
 .carousel {
   padding: 20px 0;
+  background-color: $main-grey;
 
   &__top {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     padding: 0 20px;
+    gap: 10px;
+
     margin-bottom: 24px;
   }
 
   &__title {
     font-size: 20px;
-    color: $secondary-grey;
+    color: #000;
   }
 
   &__slider {

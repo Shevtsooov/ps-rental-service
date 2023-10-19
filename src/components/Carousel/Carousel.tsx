@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
-import games from '../../data/games.json'
+import React, { useRef } from 'react';
 
 import './Carousel.scss';
 import { GameInfo } from '../GameInfo/GameInfo';
@@ -7,21 +6,13 @@ import { Game } from '../../types/Game';
 
 interface Props {
   title: string;
-  gameId: string;
+  description: string;
+  games: Game[];
 }
 
-export const Carousel: React.FC<Props> = ({ title, gameId }) => {
+export const Carousel: React.FC<Props> = ({ title, description, games }) => {
     const listRef = useRef<HTMLDivElement | null>(null);
-    const [collectionGames, setCollectionGames] = useState<Game[]>([])
-
-    useEffect(() => {
-      const currentGame = games.find(game => game.gameId === gameId);
-      setCollectionGames(games.filter(game => (
-        game.collection === currentGame?.collection
-      )))
-    }, []);
-
-
+   
     const handlePrevClick = () => {
       if (listRef.current) {
         listRef.current.scrollLeft -= 250;
@@ -34,18 +25,20 @@ export const Carousel: React.FC<Props> = ({ title, gameId }) => {
       }
     };
 
-    const correctGamesWord = collectionGames.length < 5
+    const correctGamesWord = games.length < 5
       ? 'гри'
       : 'ігор';
 
     return (
       <div className="carousel">
         <div className="carousel__top">
+          <div></div>
           <h3 className="carousel__title">
-            {`${title} - ${collectionGames.length} ${correctGamesWord}`}
+            {`${title} - ${games.length} ${correctGamesWord}`}
           </h3>
-  
-          <div className="carousel__slider">
+          <p>{description}</p>
+
+          {/* <div className="carousel__slider">
             <button
               className="carousel__button"
               onClick={handlePrevClick}
@@ -66,12 +59,12 @@ export const Carousel: React.FC<Props> = ({ title, gameId }) => {
                   carousel__button-icon--right"
               ></span>
             </button>
-          </div>
+          </div> */}
         </div>
   
         <div className="carousel__content" ref={listRef}>
           <div className="carousel__scroll-wrapper">
-            {collectionGames.map(game => (
+            {games.map(game => (
               <GameInfo game={game} index={0} />
             ))}
           </div>

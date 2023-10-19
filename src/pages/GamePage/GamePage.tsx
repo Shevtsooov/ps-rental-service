@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './GamePage.scss';
 import { useParams } from 'react-router-dom';
 import games from '../../data/games.json'
@@ -12,6 +12,14 @@ import { Carousel } from '../../components/Carousel/Carousel';
 
 export const GamePage: React.FC = () => {
   const { gameIdLink } = useParams();
+  const [collectionGames, setCollectionGames] = useState<Game[]>([])
+  const game = games.find(g => g.gameId === gameIdLink);
+
+  useEffect(() => {
+    setCollectionGames(games.filter(g => (
+      g.collection === game?.collection
+    )))
+  }, []);
 
   // THIS BLOCK ENSURES THE PAGE OPENS FROM THE TOP
   const topContainer = useRef<null | HTMLDivElement>(null); 
@@ -44,7 +52,6 @@ export const GamePage: React.FC = () => {
     dispatch(setShoppingCartGames(game));
   }
   
-  const game = games.find(g => g.gameId === gameIdLink);
 
   const videoReviev = parse(`${game?.videoReview}`);
   const videoGameplay = parse(`${game?.videoGameplay}`);
@@ -174,7 +181,11 @@ export const GamePage: React.FC = () => {
       </div>
 
       {game && game.collection !== "" && (
-        <Carousel title="Колекція" gameId={game.gameId} />
+        <Carousel
+          title="Колекція"
+          description=''
+          games={collectionGames}
+        />
       )}
     </div>
   );

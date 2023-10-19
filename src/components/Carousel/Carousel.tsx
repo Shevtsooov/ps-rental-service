@@ -17,7 +17,7 @@ export const Carousel: React.FC<Props> = ({ title, gameId }) => {
     useEffect(() => {
       const currentGame = games.find(game => game.gameId === gameId);
       setCollectionGames(games.filter(game => (
-        game.title.includes(currentGame!.collection)
+        game.collection === currentGame?.collection
       )))
     }, []);
 

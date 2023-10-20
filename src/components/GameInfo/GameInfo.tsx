@@ -60,7 +60,7 @@ export const GameInfo: React.FC<Props> = ({ game, index }) => {
           src={`../images/games/${icon}`}
           alt={`${title} - logo`}
           className="game_image"
-          onClick={scrollToTop}
+          // onClick={scrollToTop}
         />
       </NavLink>
       <NavLink

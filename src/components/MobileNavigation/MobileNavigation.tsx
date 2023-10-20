@@ -10,8 +10,11 @@ export const MobileNavigation = () => {
   const navBoxRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    document.addEventListener('click', handleClickOutside);
+
     return () => {
       setIsMenuOpen(false);
+      document.removeEventListener('click', handleClickOutside);
     }
   }, [])
 
@@ -22,14 +25,6 @@ export const MobileNavigation = () => {
       setIsMenuOpen(false);
     }
   };
-
-  useEffect(() => {
-    document.addEventListener('click', handleClickOutside);
-
-    return () => {
-      document.removeEventListener('click', handleClickOutside);
-    };
-  }, []);
 
   useEffect(() => {
     if (isMenuOpen) {

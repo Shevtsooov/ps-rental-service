@@ -10,13 +10,11 @@ import { Carousel } from '../../components/Carousel/Carousel';
 export const Homepage: React.FC = () => {
   // let categories: string[] = [];
 
-  // const addd = games.map(game => game.category.map(cat =>
-  //   categories.push(cat)
-  // ))
+  const addd = games.map(game => game.players)
 
-  // const catSet = new Set(categories);
+  const catSet = new Set(addd);
 
-  // const fff = Array.from(catSet)
+  const fff = Array.from(catSet)
 
   // const allTheCategories = [
   //   'Пригоди',
@@ -38,6 +36,8 @@ export const Homepage: React.FC = () => {
   //   'Музика',
   //   'Риболовля',
   //   'Дитячі',
+  //   'Ретро',
+  //   'Кіберпанк',
   //   'Жахи',
   //   'Настільні',
   //   'Детективи',
@@ -54,6 +54,10 @@ export const Homepage: React.FC = () => {
   return (
     <div className="homepage">
       <Slider />
+{/* 
+      {fff.sort().map(year => (
+        <li>{`'${year}',`}</li>
+      ))} */}
 
       {/* <Aaa /> */}
 
@@ -61,6 +65,7 @@ export const Homepage: React.FC = () => {
 
       <Carousel 
         title="Вибір гравців"
+        showNumberOFGames={false}
         description={`ТОП-${sortedGames.length} ігор, які замовляють найчастіше`}
         games={sortedGames}
       />

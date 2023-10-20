@@ -6,10 +6,6 @@ import { Navigation } from '../Navigation/Navigation';
 import { ShoppingCartLink } from '../ShoppingCartLink/ShoppingCartLink';
 import './Header.scss';
 
-// type Props = {
-//   ref: HTMLDivElement | null
-// }
-
 export const Header: React.FC = () => {
   const user = true;
 

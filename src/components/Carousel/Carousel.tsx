@@ -5,12 +5,18 @@ import { GameInfo } from '../GameInfo/GameInfo';
 import { Game } from '../../types/Game';
 
 interface Props {
+  showNumberOFGames: boolean;
   title: string;
   description: string;
   games: Game[];
 }
 
-export const Carousel: React.FC<Props> = ({ title, description, games }) => {
+export const Carousel: React.FC<Props> = ({
+  showNumberOFGames,
+  title,
+  description,
+  games
+}) => {
     const listRef = useRef<HTMLDivElement | null>(null);
    
     const handlePrevClick = () => {
@@ -34,7 +40,8 @@ export const Carousel: React.FC<Props> = ({ title, description, games }) => {
         <div className="carousel__top">
           <div>
             <h3 className="carousel__title">
-              {`${title} - ${games.length} ${correctGamesWord}`}
+              {`${title}`} 
+              {showNumberOFGames && <span>{` - ${games.length} ${correctGamesWord}`}</span>}
             </h3>
             <p>{description}</p>
           </div>

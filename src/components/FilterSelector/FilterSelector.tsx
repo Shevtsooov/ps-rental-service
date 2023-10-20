@@ -4,16 +4,15 @@ import './FilterSelector.scss';
 
 export const FilterSelector: React.FC = () => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
-  const [generalFilter, setGeneralFilter] = useState<string>('');
+  // const [generalFilter, setGeneralFilter] = useState<string>('');
   const [categoryFilter, setCategoryFilter] = useState<string[]>([]);
   const [chosenPlayers, setChosenPlayers] = useState<string>('');
   const [chosenYears, setChosenYears] = useState<string>('');
 
-  // const [isFilterOpen, setIsFilterOpen] = useState(false);
-
   useEffect(() => {
     return () => {
       setIsFilterOpen(false);
+      handleClearFilters();
     }
   }, [])
 
@@ -28,55 +27,72 @@ export const FilterSelector: React.FC = () => {
   }, [isFilterOpen]);
 
   const handleClearFilters = () => {
-    setGeneralFilter('');
+    // setGeneralFilter('');
     setCategoryFilter([]);
     setChosenPlayers('');
     setChosenYears('');
   }
 
-  useEffect(() => {
-    return () => {
-      handleClearFilters();
-    }
-  }, []);
-
-  const generalOptions = [
-    'Для дітей',
-    'Для нього та для неї',
-    'Для компанії',
-    'Граю один',
-  ];
+  // const generalOptions = [
+  //   'Для дітей',
+  //   'Для нього та для неї',
+  //   'Для компанії',
+  //   'Граю один',
+  // ];
 
   const categories = [
-    'Action',
-    'Автосимулятори(гонки)',
-    'Аркади',
-    'Дитячі',
-    'Квест',
-    'Платформери',
     'Пригоди',
-    'Рольові',
+    'Платформери',
+    'Екшн',
+    'Бійки',
+    'Кооперативні',
     'Симулятори',
-    'Спортивні',
+    'Головоломки',
+    'Шутери',
+    'Космос',
+    'Рольові',
+    'Сімейні',
     'Стратегії',
-    'Жахи, виживання',
-    'Військові',
-    'Шутери від першої особи',
-    'Шутери від третьої особи',
+    'Аркади',
+    'Спортивні',
+    'Відкритий світ',
+    'Гонки',
+    'Музика',
+    'Риболовля',
+    'Дитячі',
+    'Ретро',
+    'Кіберпанк',
+    'Жахи',
+    'Настільні',
+    'Детективи',
+    'Виживання',
+    "Для нього та для неї"
   ];
 
   const players = ['1', '2', '2+'];
-  const years = ['<2020', '2020', '2021', '2022', '2023'];
+  const years = [
+    '2013',
+    '2014',
+    '2015',
+    '2016',
+    '2017',
+    '2018',
+    '2019',
+    '2020',
+    '2021',
+    '2022',
+    '2023',
+  ];
   
-  const handleGeneralFilter = (option: string) => {
-    setGeneralFilter((state) => {
-      if (state === option) {
-        return state = ''
-      } else {
-        return state = option;
-      }
-    });
-  };
+  // const handleGeneralFilter = (option: string) => {
+  //   setGeneralFilter((state) => {
+  //     if (state === option) {
+  //       return state = ''
+  //     } else {
+  //       return state = option;
+  //     }
+  //   });
+  // };
 
   const handleCategoryFilter = (option: string) => {
     setCategoryFilter((state) => {
@@ -136,7 +152,7 @@ export const FilterSelector: React.FC = () => {
             />
           </div>
 
-          <div className="filterSelector__filterBlock">
+          {/* <div className="filterSelector__filterBlock">
             {generalOptions.map(option => (
               <button
                 key={option}
@@ -148,11 +164,11 @@ export const FilterSelector: React.FC = () => {
                 {option}
               </button>
             ))}
-          </div>
+          </div> */}
 
           <div className="filterSelector__filterBlock">
             <h4 className="filterSelector__filterBlock_heading">Оберіть катерорії:</h4>
-            {categories.map(category => (
+            {categories.sort().map(category => (
               <button
                 key={category}
                 className={cn('filterSelector__filterBlock_item', {

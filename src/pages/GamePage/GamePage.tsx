@@ -181,6 +181,7 @@ export const GamePage: React.FC = () => {
       {game && game.collection !== "" && (
         <Carousel
           title="Колекція"
+          showNumberOFGames={true}
           description=''
           games={collectionGames}
         />

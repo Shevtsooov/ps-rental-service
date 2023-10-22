@@ -1,3 +1,4 @@
+import { Sorting } from './../components/Sorting/Sorting';
 import { configureStore } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import { queryReducer } from './Slices/query.slice';
@@ -9,6 +10,11 @@ import { monthLookUpLimitReducer } from './Slices/monthLookUpLimit';
 import { isCalendarShownReducer } from './Slices/isCalendarShown.slice';
 import { isDeliveryShownReducer } from './Slices/isDeliveryShown.slice';
 import { chosenDeliveryReducer } from './Slices/chosenDelivery.slice';
+import { GamesApi } from './RTK_Query/games.service';
+import { filteredCategoriesReducer } from './Slices/filteredCategories.slice';
+import { filteredSortingReducer } from './Slices/filteredSorting.slice';
+import { filteredYearReducer } from './Slices/filteredYear.slice';
+import { filteredPlayersReducer } from './Slices/filteredPlayers.slice';
 
 export const store = configureStore({
   reducer: {
@@ -21,11 +27,17 @@ export const store = configureStore({
     isCalendarShown: isCalendarShownReducer,
     isDeliveryShown: isDeliveryShownReducer,
     chosenDelivery: chosenDeliveryReducer,
-    // [QuestionsApi.reducerPath]: QuestionsApi.reducer,
+
+    filteredSorting: filteredSortingReducer,
+    filteredCategories: filteredCategoriesReducer,
+    filteredYear: filteredYearReducer,
+    filteredPlayers: filteredPlayersReducer,
+
+    [GamesApi.reducerPath]: GamesApi.reducer,
   },
-  // middleware: (getDefaultMiddleware) => (
-  //   getDefaultMiddleware().concat(QuestionsApi.middleware)
-  // )
+  middleware: (getDefaultMiddleware) => (
+    getDefaultMiddleware().concat(GamesApi.middleware)
+  )
 })
 
 export type RootState = ReturnType<typeof store.getState>

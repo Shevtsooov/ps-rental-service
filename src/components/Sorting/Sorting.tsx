@@ -1,10 +1,14 @@
 import cn from 'classnames';
 import './Sorting.scss';
 import { useEffect, useRef, useState } from 'react';
+import { useAppDispatch, useAppSelector } from '../../Redux/store';
+import { setFilteredSorting } from '../../Redux/Slices/filteredSorting.slice';
 
 export const Sorting: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [chosen, setChosen] = useState('Популярні');
+  const filteredSorting = useAppSelector(state => state.filteredSorting.value);
+  const dispatch = useAppDispatch();
+
   const sortingRef = useRef<HTMLDivElement>(null);
 
   const dropdownOptions = [
@@ -36,7 +40,7 @@ export const Sorting: React.FC = () => {
   };
 
   const handleOptionClick = (option: string) => {
-    setChosen(option);
+    dispatch(setFilteredSorting(option));
   };
 
   return (
@@ -46,7 +50,7 @@ export const Sorting: React.FC = () => {
       ref={sortingRef}
     >
       <div className="sorting__select" >
-        <p>{chosen}</p>
+        <p>{filteredSorting}</p>
       </div>
       {isOpen && (
       <ul className='sorting__select-items'>

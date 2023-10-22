@@ -1,13 +1,18 @@
 import { useEffect, useState } from 'react';
 import cn from 'classnames';
 import './FilterSelector.scss';
+import { filterFilteredCategories, resetFilteredCategoriess, setFilteredCategories } from '../../Redux/Slices/filteredCategories.slice';
+import { useAppDispatch, useAppSelector } from '../../Redux/store';
+import { resetFilteredPlayers, setFilteredPlayers } from '../../Redux/Slices/filteredPlayers.slice';
+import { resetFilteredYear, setFilteredYear } from '../../Redux/Slices/filteredYear.slice';
 
 export const FilterSelector: React.FC = () => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
-  // const [generalFilter, setGeneralFilter] = useState<string>('');
-  const [categoryFilter, setCategoryFilter] = useState<string[]>([]);
-  const [chosenPlayers, setChosenPlayers] = useState<string>('');
-  const [chosenYears, setChosenYears] = useState<string>('');
+
+  const filteredCategories = useAppSelector(state => state.filteredCategories.value);
+  const filteredYear = useAppSelector(state => state.filteredYear.value);
+  const filteredPlayers = useAppSelector(state => state.filteredPlayers.value);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     return () => {
@@ -28,9 +33,9 @@ export const FilterSelector: React.FC = () => {
 
   const handleClearFilters = () => {
     // setGeneralFilter('');
-    setCategoryFilter([]);
-    setChosenPlayers('');
-    setChosenYears('');
+    dispatch(resetFilteredCategoriess());
+    resetFilteredPlayers();
+    resetFilteredYear();
   }
 
   // const generalOptions = [
@@ -95,33 +100,27 @@ export const FilterSelector: React.FC = () => {
   // };
 
   const handleCategoryFilter = (option: string) => {
-    setCategoryFilter((state) => {
-      if (state.includes(option)) {
-        return state.filter((op) => op !== option);
-      } else {
-        return [...state, option];
-      }
-    });
+    if (filteredCategories.includes(option)) {
+      dispatch(filterFilteredCategories(option));
+    }
+
+    dispatch(setFilteredCategories(option));
   };
 
   const handleChosenPlayers = (option: string) => {
-    setChosenPlayers((state) => {
-      if (state === option) {
-        return state = ''
-      } else {
-        return state = option;
-      }
-    });
+    if (filteredPlayers === option) {
+      dispatch(resetFilteredPlayers());
+    }
+
+    dispatch(setFilteredPlayers(option));
   };
 
   const handleChosenYears = (option: string) => {
-    setChosenYears((state) => {
-      if (state === option) {
-        return state = ''
-      } else {
-        return state = option;
-      }
-    });
+    if (filteredYear === option) {
+      dispatch(resetFilteredYear());
+    }
+
+    dispatch(setFilteredYear(option));
   };
 
   return (
@@ -172,7 +171,7 @@ export const FilterSelector: React.FC = () => {
               <button
                 key={category}
                 className={cn('filterSelector__filterBlock_item', {
-                  'filterSelector__filterBlock_item--active': categoryFilter.includes(category)
+                  'filterSelector__filterBlock_item--active': filteredCategories.includes(category)
                 })}
                 onClick={() => handleCategoryFilter(category)}
               >
@@ -187,7 +186,7 @@ export const FilterSelector: React.FC = () => {
               <button
                 key={player}
                 className={cn('filterSelector__filterBlock_item', {
-                  'filterSelector__filterBlock_item--active': chosenPlayers === player
+                  'filterSelector__filterBlock_item--active': filteredPlayers === player
                 })}
                 onClick={() => handleChosenPlayers(player)}
               >
@@ -202,7 +201,7 @@ export const FilterSelector: React.FC = () => {
               <button
                 key={year}
                 className={cn('filterSelector__filterBlock_item', {
-                  'filterSelector__filterBlock_item--active': chosenYears === year
+                  'filterSelector__filterBlock_item--active': filteredYear === year
                 })}
                 onClick={() => handleChosenYears(year)}
               >

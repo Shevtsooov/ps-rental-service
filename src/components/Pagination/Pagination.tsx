@@ -24,7 +24,7 @@ export const Pagination: React.FC<Props> = ({
   const visiblePages = generateVisiblePages(
     paginationPage,
     totalPages,
-    8, // this number defines the number of shown numbers in pagination(length of pagination)
+    6, // this number defines the number of shown numbers in pagination(length of pagination)
   );
 
   const handlePageChange = (page: number) => {

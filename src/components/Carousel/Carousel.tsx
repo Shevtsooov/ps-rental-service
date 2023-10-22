@@ -73,7 +73,7 @@ export const Carousel: React.FC<Props> = ({
         <div className="carousel__content" ref={listRef}>
           <div className="carousel__scroll-wrapper">
             {games.map(game => (
-              <GameInfo game={game} index={0} />
+              <GameInfo game={game} />
             ))}
           </div>
         </div>

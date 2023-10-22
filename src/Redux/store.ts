@@ -15,6 +15,7 @@ import { filteredCategoriesReducer } from './Slices/filteredCategories.slice';
 import { filteredSortingReducer } from './Slices/filteredSorting.slice';
 import { filteredYearReducer } from './Slices/filteredYear.slice';
 import { filteredPlayersReducer } from './Slices/filteredPlayers.slice';
+import { paginationPageReducer } from './Slices/paginationPage.slice';
 
 export const store = configureStore({
   reducer: {
@@ -32,6 +33,8 @@ export const store = configureStore({
     filteredCategories: filteredCategoriesReducer,
     filteredYear: filteredYearReducer,
     filteredPlayers: filteredPlayersReducer,
+
+    paginationPage: paginationPageReducer,
 
     [GamesApi.reducerPath]: GamesApi.reducer,
   },

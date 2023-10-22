@@ -12,11 +12,12 @@ export const Sorting: React.FC = () => {
   const sortingRef = useRef<HTMLDivElement>(null);
 
   const dropdownOptions = [
-    "Популярні",
+    // "Популярні",
     "Найновіші",
-    "Дешевші",
-    "Дорожчі",
-    "Зі знижкою"
+    "Старіші",
+    // "Дешевші",
+    // "Дорожчі",
+    // "Зі знижкою"
   ]
 
   const handleClickOutside: EventListener = (event) => {

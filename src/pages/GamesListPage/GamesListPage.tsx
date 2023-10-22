@@ -4,6 +4,7 @@ import { Filter } from '../../components/Filter/Filter';
 import { GameList } from '../../components/GameList/GameList';
 import { useFindGamesQuery } from '../../Redux/RTK_Query/games.service';
 import { useAppSelector } from '../../Redux/store';
+import { Loader } from '../../components/Loader/Loader';
 
 export const GamesListPage: React.FC = () => {
   const query = useAppSelector(state => state.query.value);
@@ -41,7 +42,9 @@ export const GamesListPage: React.FC = () => {
 
       <Filter />
 
-      {games && <GameList games={games} />} 
+      {isLoading && <Loader />}
+
+      {isSuccess && <GameList games={games} />} 
     </div>
 
   );

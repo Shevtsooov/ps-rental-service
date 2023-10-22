@@ -1,10 +1,14 @@
 import { useEffect, useState } from 'react';
 import cn from 'classnames';
 import './FilterSelector.scss';
-import { filterFilteredCategories, resetFilteredCategoriess, setFilteredCategories } from '../../Redux/Slices/filteredCategories.slice';
+import { filterFilteredCategories,
+  resetFilteredCategoriess,
+  setFilteredCategories,
+} from '../../Redux/Slices/filteredCategories.slice';
 import { useAppDispatch, useAppSelector } from '../../Redux/store';
 import { resetFilteredPlayers, setFilteredPlayers } from '../../Redux/Slices/filteredPlayers.slice';
 import { resetFilteredYear, setFilteredYear } from '../../Redux/Slices/filteredYear.slice';
+import { resetPaginationPage } from '../../Redux/Slices/paginationPage.slice';
 
 export const FilterSelector: React.FC = () => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
@@ -17,7 +21,7 @@ export const FilterSelector: React.FC = () => {
   useEffect(() => {
     return () => {
       setIsFilterOpen(false);
-      handleClearFilters();
+      // handleClearFilters();
     }
   }, [])
 
@@ -34,8 +38,8 @@ export const FilterSelector: React.FC = () => {
   const handleClearFilters = () => {
     // setGeneralFilter('');
     dispatch(resetFilteredCategoriess());
-    resetFilteredPlayers();
-    resetFilteredYear();
+    dispatch(resetFilteredPlayers());;
+    dispatch(resetFilteredYear());;
   }
 
   // const generalOptions = [
@@ -101,26 +105,39 @@ export const FilterSelector: React.FC = () => {
 
   const handleCategoryFilter = (option: string) => {
     if (filteredCategories.includes(option)) {
+      console.log(filteredCategories.includes(option));
       dispatch(filterFilteredCategories(option));
+      dispatch(resetPaginationPage());
+
+      return;
     }
 
+    dispatch(resetPaginationPage());
     dispatch(setFilteredCategories(option));
   };
 
   const handleChosenPlayers = (option: string) => {
     if (filteredPlayers === option) {
       dispatch(resetFilteredPlayers());
+      dispatch(resetPaginationPage());
+
+      return;
     }
 
+    dispatch(resetPaginationPage());
     dispatch(setFilteredPlayers(option));
   };
 
   const handleChosenYears = (option: string) => {
     if (filteredYear === option) {
       dispatch(resetFilteredYear());
+      dispatch(resetPaginationPage());
+
+      return;
     }
 
     dispatch(setFilteredYear(option));
+    dispatch(resetPaginationPage());
   };
 
   return (

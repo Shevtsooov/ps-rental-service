@@ -21,7 +21,7 @@ export const filteredCategoriesSlice = createSlice({
     },
     filterFilteredCategories: (state, action) => {
       return {
-        ...state,
+        // ...state,
         value: state.value.filter((cat) => cat !== action.payload),
       };
     },

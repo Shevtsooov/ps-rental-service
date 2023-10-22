@@ -8,10 +8,9 @@ import { NavLink } from 'react-router-dom';
 
 type Props = {
   game: Game,
-  index: number,
 }
 
-export const GameInfo: React.FC<Props> = ({ game, index }) => {
+export const GameInfo: React.FC<Props> = ({ game }) => {
   const savedGames = useAppSelector(state => state.savedGames.value);
   const shoppingCartGames = useAppSelector(state => state.shoppingCartGames.value);
   const dispatch = useAppDispatch();
@@ -60,7 +59,7 @@ export const GameInfo: React.FC<Props> = ({ game, index }) => {
           src={`../images/games/${icon}`}
           alt={`${title} - logo`}
           className="game_image"
-          // onClick={scrollToTop}
+          onClick={scrollToTop}
         />
       </NavLink>
       <NavLink
@@ -68,7 +67,7 @@ export const GameInfo: React.FC<Props> = ({ game, index }) => {
         to={`/games/${gameId}`}
         onClick={scrollToTop}
       >
-        {`${index + 1}. ${title}`}
+        {title}
       </NavLink>
      
       <div className="game_price">

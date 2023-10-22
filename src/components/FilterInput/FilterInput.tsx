@@ -1,3 +1,4 @@
+import { resetPaginationPage } from '../../Redux/Slices/paginationPage.slice';
 import { setQuery } from '../../Redux/Slices/query.slice';
 import { useAppDispatch, useAppSelector } from '../../Redux/store';
 import './FilterInput.scss';
@@ -8,6 +9,7 @@ export const FilterInput: React.FC = () => {
 
   const handleSearch = (search: string) => {
     dispatch(setQuery(search));
+    dispatch(resetPaginationPage());
   }
 
   const handleClearQuery = () => {

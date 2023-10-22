@@ -54,8 +54,8 @@ export const Homepage: React.FC = () => {
   return (
     <div className="homepage">
       <Slider />
-{/* 
-      {fff.sort().map(year => (
+
+      {/* {fff.sort().map(year => (
         <li>{`'${year}',`}</li>
       ))} */}
 

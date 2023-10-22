@@ -73,8 +73,11 @@ export const GameInfo: React.FC<Props> = ({ game }) => {
       <div className="game_price">
       {shoppingCartGames.length === 0 || shoppingCartGames[0].gameId === gameId
         ? (
-          <p className='game_price_discountedPrice'>
-            {isAvailable && 'Одна гра - безкоштовно'}
+          <p className={cn('game_price_discountedPrice',{
+            'game_price_discountedPrice--off': !isAvailable
+          })}
+          >
+           Одна гра - безкоштовно
           </p>
         )
         : (

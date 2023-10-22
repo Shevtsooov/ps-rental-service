@@ -64,6 +64,10 @@
     &_discountedPrice {
       color: #24991c;
       font-size: 18px;
+
+      &--off {
+        opacity: 0;
+      }
     }
   }
 

@@ -31,6 +31,12 @@ export const GameList: React.FC<Props> = ({ games }) => {
         ))}
       </div>
 
+      {gamesToShow.length === 0 && (
+        <p className="gameList--warning">
+          На жаль, ми не маємо ігор за обраними фільтрами
+        </p>
+      )}
+
       {!showPagination && (
         <Pagination 
           total={games.length}

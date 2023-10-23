@@ -24,7 +24,7 @@ export const defaultCategories = [
   'Настільні',
   'Детективи',
   'Виживання',
-  "Для нього та для неї"
+  'Для нього та для неї'
 ];
 
 export const players = [

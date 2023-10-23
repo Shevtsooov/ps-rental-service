@@ -10,12 +10,9 @@ import { resetFilteredPlayers, setFilteredPlayers } from '../../Redux/Slices/fil
 import { resetFilteredYear, setFilteredYear } from '../../Redux/Slices/filteredYear.slice';
 import { resetPaginationPage } from '../../Redux/Slices/paginationPage.slice';
 import { SetURLSearchParams } from 'react-router-dom';
+import { defaultCategories, players, years } from '../../helpers/filterOptions';
 
-type Props = {
-  setSearchParams: SetURLSearchParams,
-}
-
-export const FilterSelector: React.FC<Props> = ({ setSearchParams }) => {
+export const FilterSelector: React.FC = () => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
   const filteredCategories = useAppSelector(state => state.filteredCategories.value);
@@ -55,66 +52,6 @@ export const FilterSelector: React.FC<Props> = ({ setSearchParams }) => {
   //   'Для компанії',
   //   'Граю один',
   // ];
-
-  const defaultCategories = [
-    'Пригоди',
-    'Платформери',
-    'Екшн',
-    'Бійки',
-    'Кооперативні',
-    'Симулятори',
-    'Головоломки',
-    'Шутери',
-    'Космос',
-    'Рольові',
-    'Сімейні',
-    'Стратегії',
-    'Аркади',
-    'Спортивні',
-    'Відкритий світ',
-    'Гонки',
-    'Музика',
-    'Риболовля',
-    'Дитячі',
-    'Ретро',
-    'Кіберпанк',
-    'Жахи',
-    'Настільні',
-    'Детективи',
-    'Виживання',
-    "Для нього та для неї"
-  ];
-
-  const players = [
-    '1',
-    '1+',
-    '1-16',
-    '1-2',
-    '1-24',
-    '1-3',
-    '1-32',
-    '1-4',
-    '1-5',
-    '1-6',
-    '1-8',
-    '1-99',
-    '2',
-    '5-8'
-  ];
-  
-  const years = [
-    '2013',
-    '2014',
-    '2015',
-    '2016',
-    '2017',
-    '2018',
-    '2019',
-    '2020',
-    '2021',
-    '2022',
-    '2023',
-  ];
   
   // const handleGeneralFilter = (option: string) => {
   //   setGeneralFilter((state) => {
@@ -124,48 +61,41 @@ export const FilterSelector: React.FC<Props> = ({ setSearchParams }) => {
   //       return state = option;
   //     }
   //   });
-  // };
+  // };  
 
   const handleCategoryFilter = (option: string) => {
-    // console.log('option - ', option);/
     if (filteredCategories.includes(option)) {
-      
       dispatch(filterFilteredCategories(option));
       dispatch(resetPaginationPage());
       
       return;
     }
     
-    // setSearchParams({ categories: `${categories},${option}`});
-    // setSearchParams({ categories: [ ...categories, option] })
     dispatch(resetPaginationPage());
     dispatch(setFilteredCategories(option));
   };
 
   const handleChosenPlayers = (option: string) => {
     if (filteredPlayers === option) {
-      setSearchParams({ players: '' })
       dispatch(resetFilteredPlayers());
       dispatch(resetPaginationPage());
 
       return;
     }
 
-    setSearchParams({ players: option })
+
     dispatch(resetPaginationPage());
     dispatch(setFilteredPlayers(option));
   };
 
   const handleChosenYears = (option: string) => {
     if (filteredYear === option) {
-      setSearchParams({ year: '' })
       dispatch(resetFilteredYear());
       dispatch(resetPaginationPage());
 
       return;
     }
 
-    setSearchParams({ year: option })
     dispatch(setFilteredYear(option));
     dispatch(resetPaginationPage());
   };

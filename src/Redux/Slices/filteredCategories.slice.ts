@@ -19,6 +19,9 @@ export const filteredCategoriesSlice = createSlice({
         value: [...state.value, action.payload],
       };
     },
+    hardSetFilteredCategories: (state, action) => {
+        state.value =  action.payload
+    },
     filterFilteredCategories: (state, action) => {
       return {
         // ...state,
@@ -33,6 +36,7 @@ export const filteredCategoriesSlice = createSlice({
 
 export const {
   setFilteredCategories,
+  hardSetFilteredCategories,
   filterFilteredCategories,
   resetFilteredCategoriess,
 } = filteredCategoriesSlice.actions;

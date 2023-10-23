@@ -9,11 +9,12 @@ import { setQuery } from '../../Redux/Slices/query.slice';
 
 import { setFilteredYear } from '../../Redux/Slices/filteredYear.slice';
 import { setFilteredPlayers } from '../../Redux/Slices/filteredPlayers.slice';
-import { setFilteredCategories } from '../../Redux/Slices/filteredCategories.slice';
+import { hardSetFilteredCategories } from '../../Redux/Slices/filteredCategories.slice';
 import { setFilteredSorting } from '../../Redux/Slices/filteredSorting.slice';
 
 
 export const Filter: React.FC = () => {
+  
   const filteredSorting = useAppSelector(state => state.filteredSorting.value);
   const query = useAppSelector(state => state.query.value);
   const filteredCategories = useAppSelector(state => state.filteredCategories.value);
@@ -30,50 +31,33 @@ export const Filter: React.FC = () => {
   const players = searchParams.get('players') || '';
 
   const params = useMemo(() => ({
-    sortBy: sortBy !== ''
-      ? sortBy
-      : filteredSorting,
-    search: search !== ''
-      ? search
-      : query,
+    sortBy: filteredSorting,
+    search: query,
     categories: filteredCategories.join(','),
-    year: year !== ''
-      ? year
-      : filteredYear,
-    players: players !== ''
-      ? players
-      : filteredPlayers,
-  }), [filteredPlayers, filteredSorting, filteredCategories, filteredYear, players, categories, query, search, sortBy, year]);
-
-  console.log(params.categories);
-  console.log('filteredCategories - ', filteredCategories);
-
+    year: filteredYear,
+    players: filteredPlayers,
+  }), [filteredPlayers, filteredSorting, filteredCategories, filteredYear, query]);
 
   useEffect(() => {
+    
     setSearchParams(params);
-  }, [setSearchParams, params]);
+  }, [params]);
 
   useEffect(() => {
     dispatch(setFilteredSorting(sortBy));
     dispatch(setQuery(search));
-    if (categories !== '') {
-      categories.split(',').forEach(cat => {
-        if (!filteredCategories.includes(cat)) {
-          dispatch(setFilteredCategories(cat))
-        }
-      })
-    }
+    dispatch(hardSetFilteredCategories(categories.split(',')));
     dispatch(setFilteredYear(year));
     dispatch(setFilteredPlayers(players));
   }, []);
 
   return (
     <div className="filter">
-      <FilterInput setSearchParams={setSearchParams} />
+      <FilterInput  />
 
-      <Sorting setSearchParams={setSearchParams} />
+      <Sorting />
 
-      <FilterSelector setSearchParams={setSearchParams} />
+      <FilterSelector />
     </div>
   );
 }

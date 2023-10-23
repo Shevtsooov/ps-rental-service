@@ -4,23 +4,17 @@ import { setQuery } from '../../Redux/Slices/query.slice';
 import { useAppDispatch, useAppSelector } from '../../Redux/store';
 import './FilterInput.scss';
 
-type Props = {
-  setSearchParams: SetURLSearchParams,
-}
-
-export const FilterInput: React.FC<Props> = ({ setSearchParams }) => {
+export const FilterInput: React.FC = () => {
   const query = useAppSelector(state => state.query.value);
   const dispatch = useAppDispatch();
 
   const handleSearch = (search: string) => {
-    setSearchParams({ search: search });
     dispatch(setQuery(search));
     dispatch(resetPaginationPage());
   }
 
   const handleClearQuery = () => {
     dispatch(setQuery(''));
-    setSearchParams({ search: '' });
   }
   
   return (

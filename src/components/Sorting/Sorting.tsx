@@ -3,8 +3,13 @@ import './Sorting.scss';
 import { useEffect, useRef, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../Redux/store';
 import { setFilteredSorting } from '../../Redux/Slices/filteredSorting.slice';
+import { SetURLSearchParams } from 'react-router-dom';
 
-export const Sorting: React.FC = () => {
+type Props = {
+  setSearchParams: SetURLSearchParams,
+}
+
+export const Sorting: React.FC<Props> = ({ setSearchParams }) => {
   const [isOpen, setIsOpen] = useState(false);
   const filteredSorting = useAppSelector(state => state.filteredSorting.value);
   const dispatch = useAppDispatch();
@@ -41,6 +46,7 @@ export const Sorting: React.FC = () => {
   };
 
   const handleOptionClick = (option: string) => {
+    setSearchParams({ sortBy: option });
     dispatch(setFilteredSorting(option));
   };
 

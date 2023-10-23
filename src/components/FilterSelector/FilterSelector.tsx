@@ -9,14 +9,21 @@ import { useAppDispatch, useAppSelector } from '../../Redux/store';
 import { resetFilteredPlayers, setFilteredPlayers } from '../../Redux/Slices/filteredPlayers.slice';
 import { resetFilteredYear, setFilteredYear } from '../../Redux/Slices/filteredYear.slice';
 import { resetPaginationPage } from '../../Redux/Slices/paginationPage.slice';
+import { SetURLSearchParams } from 'react-router-dom';
 
-export const FilterSelector: React.FC = () => {
+type Props = {
+  setSearchParams: SetURLSearchParams,
+}
+
+export const FilterSelector: React.FC<Props> = ({ setSearchParams }) => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
   const filteredCategories = useAppSelector(state => state.filteredCategories.value);
   const filteredYear = useAppSelector(state => state.filteredYear.value);
   const filteredPlayers = useAppSelector(state => state.filteredPlayers.value);
   const dispatch = useAppDispatch();
+
+  // const [categories, setCategories] = useState()
 
   useEffect(() => {
     return () => {
@@ -49,7 +56,7 @@ export const FilterSelector: React.FC = () => {
   //   'Граю один',
   // ];
 
-  const categories = [
+  const defaultCategories = [
     'Пригоди',
     'Платформери',
     'Екшн',
@@ -120,38 +127,45 @@ export const FilterSelector: React.FC = () => {
   // };
 
   const handleCategoryFilter = (option: string) => {
+    // console.log('option - ', option);/
     if (filteredCategories.includes(option)) {
-      console.log(filteredCategories.includes(option));
+      
       dispatch(filterFilteredCategories(option));
       dispatch(resetPaginationPage());
-
+      
       return;
     }
-
+    
+    // setSearchParams({ categories: `${categories},${option}`});
+    // setSearchParams({ categories: [ ...categories, option] })
     dispatch(resetPaginationPage());
     dispatch(setFilteredCategories(option));
   };
 
   const handleChosenPlayers = (option: string) => {
     if (filteredPlayers === option) {
+      setSearchParams({ players: '' })
       dispatch(resetFilteredPlayers());
       dispatch(resetPaginationPage());
 
       return;
     }
 
+    setSearchParams({ players: option })
     dispatch(resetPaginationPage());
     dispatch(setFilteredPlayers(option));
   };
 
   const handleChosenYears = (option: string) => {
     if (filteredYear === option) {
+      setSearchParams({ year: '' })
       dispatch(resetFilteredYear());
       dispatch(resetPaginationPage());
 
       return;
     }
 
+    setSearchParams({ year: option })
     dispatch(setFilteredYear(option));
     dispatch(resetPaginationPage());
   };
@@ -200,7 +214,7 @@ export const FilterSelector: React.FC = () => {
 
           <div className="filterSelector__filterBlock">
             <h4 className="filterSelector__filterBlock_heading">Оберіть катерорії:</h4>
-            {categories.sort().map(category => (
+            {defaultCategories.sort().map(category => (
               <button
                 key={category}
                 className={cn('filterSelector__filterBlock_item', {

@@ -12,6 +12,9 @@ import { setFilteredPlayers } from '../../Redux/Slices/filteredPlayers.slice';
 import { hardSetFilteredCategories } from '../../Redux/Slices/filteredCategories.slice';
 import { setFilteredSorting } from '../../Redux/Slices/filteredSorting.slice';
 
+type ParamsType = {
+  [key: string]: string | string [];
+};
 
 export const Filter: React.FC = () => {
   
@@ -30,7 +33,7 @@ export const Filter: React.FC = () => {
   const year = searchParams.get('year') || '';
   const players = searchParams.get('players') || '';
 
-  const params = useMemo(() => ({
+  const params: ParamsType = useMemo(() => ({
     sortBy: filteredSorting,
     search: query,
     categories: filteredCategories.join(','),
@@ -39,6 +42,11 @@ export const Filter: React.FC = () => {
   }), [filteredPlayers, filteredSorting, filteredCategories, filteredYear, query]);
 
   useEffect(() => {
+    for (const key in params) {
+      if (params[key] === '') {
+        delete params[key];
+      }
+    }
     
     setSearchParams(params);
   }, [params]);

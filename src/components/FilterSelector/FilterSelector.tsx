@@ -106,9 +106,21 @@ export const FilterSelector: React.FC = () => {
   || filteredPlayers !== ''
   || query !== '';
 
-  const correctGamesWord = games && games!.length < 5
-  ? 'гри'
-  : 'ігор';
+  let correctGamesWord: string;
+
+  switch (games?.length.toString().slice(-1)) {
+    case '1':
+      correctGamesWord = 'гра'
+      break;
+    case '2':
+    case '3':
+    case '4':
+      correctGamesWord = 'гри'
+      break;
+
+    default:
+      correctGamesWord = 'ігор'
+  }
 
   return (
     <>

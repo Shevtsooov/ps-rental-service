@@ -9,9 +9,13 @@
 
   &__amount {
     position: absolute;
-    top: -6px;
+    top: -5px;
     right: -5px;
     padding: 3px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     width: 18px;
     height: 18px;

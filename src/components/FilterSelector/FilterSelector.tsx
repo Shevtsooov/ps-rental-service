@@ -77,11 +77,18 @@ export const FilterSelector: React.FC = () => {
     dispatch(resetPaginationPage());
   };
 
+  const handleOpenFilter = () => {
+    window.scrollTo({
+      top: 0, left: 0,
+    });
+    setIsFilterOpen(true);
+  };
+
   return (
     <>
       <div
         className="filterSelector"
-        onClick={() => setIsFilterOpen(true)}
+        onClick={handleOpenFilter}
       >
           <p>Фільтр</p>
       </div>

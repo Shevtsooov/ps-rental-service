@@ -22,10 +22,18 @@
   }
 
   &--warning {
-    margin: 0 auto;
+    height: 200px;
     padding: 50px 20px;
+
+    font-size: 28px;
+
     text-align: center;
     vertical-align: middle;
-    height: 200px;
+    
+    margin: 0 auto;
+
+    @include onMobile {
+      font-size: 20px;
+    }
   }
 }

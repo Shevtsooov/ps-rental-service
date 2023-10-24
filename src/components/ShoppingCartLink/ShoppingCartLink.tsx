@@ -16,8 +16,8 @@ export const ShoppingCartLink: React.FC = () => {
           className="shoppingCartLink__img"
           src={`${shoppingCart}`}
           alt="Shopping cart"
-        >
-        </img>
+        />
+
         {shoppingCartGames.length > 0 && (
           <p className="shoppingCartLink__amount">
             {shoppingCartGames.length}

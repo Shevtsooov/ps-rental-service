@@ -43,7 +43,6 @@
     border: 0;
 
     cursor: pointer;
-    color: #000;
     
     background-color: unset;
 
@@ -67,6 +66,7 @@
 
     &_item {
       font-size: 16px;
+      color: #000;
       background-color: #fff;
       border: 1px solid $secondary-grey;
       padding: 5px 10px;

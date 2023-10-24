@@ -37,7 +37,7 @@
     cursor: pointer;
 
     background-image: url('../../assets/icons/clear-search.svg');
-
+    background-repeat: no-repeat;
 
     &:hover {
       background-color: $main-blue-hv;

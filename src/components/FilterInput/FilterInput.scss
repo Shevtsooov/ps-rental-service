@@ -34,10 +34,10 @@
 
     border-radius: 30px;
     border: 0;
-    color: #fff;
     cursor: pointer;
 
-    background-color: $main-blue;
+    background-image: url('../../assets/icons/clear-search.svg');
+
 
     &:hover {
       background-color: $main-blue-hv;

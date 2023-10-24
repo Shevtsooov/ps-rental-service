@@ -30,9 +30,7 @@ export const FilterInput: React.FC = () => {
         <button 
           className='filterInput__clear'
           onClick={handleClearQuery}
-        >
-          X
-        </button>
+        />
       )}
     </div>
   );

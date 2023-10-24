@@ -40,15 +40,35 @@ export const Slider: React.FC = () => {
     };
   }, []);
 
+  const handlePreviousPoster = () => {
+    if (index === 0) {
+      setIndex(posters.length - 1);
+
+      return;
+    }
+
+    setIndex((prevIndex) => prevIndex - 1);
+  }
+
+  const handleNextPoster = () => {
+    if (index === posters.length - 1) {
+      setIndex(0);
+      
+      return;
+    }
+
+    setIndex((prevIndex) => prevIndex + 1);
+  }
+
   return (
     <div className="slider">
       <button
         className="slider__button slider__button--previous"
-        onClick={() => setIndex((prevIndex) => (prevIndex - 1) % posters.length)}
+        onClick={handlePreviousPoster}
       />
       <button
         className="slider__button slider__button--next"
-        onClick={() => setIndex((prevIndex) => (prevIndex + 1) % posters.length)}
+        onClick={handleNextPoster}
       />
       {posters.map((poster, i) => (
         <div 

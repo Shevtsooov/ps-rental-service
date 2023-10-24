@@ -10,14 +10,31 @@ import { resetFilteredPlayers, setFilteredPlayers } from '../../Redux/Slices/fil
 import { resetFilteredYear, setFilteredYear } from '../../Redux/Slices/filteredYear.slice';
 import { resetPaginationPage } from '../../Redux/Slices/paginationPage.slice';
 import { defaultCategories, players, years } from '../../helpers/filterOptions';
+import { useFindGamesQuery } from '../../Redux/RTK_Query/games.service';
 
 export const FilterSelector: React.FC = () => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
+  const query = useAppSelector(state => state.query.value);
+  const filteredSorting = useAppSelector(state => state.filteredSorting.value);
   const filteredCategories = useAppSelector(state => state.filteredCategories.value);
   const filteredYear = useAppSelector(state => state.filteredYear.value);
   const filteredPlayers = useAppSelector(state => state.filteredPlayers.value);
   const dispatch = useAppDispatch();
+
+  const { data: games, refetch, isLoading, isSuccess } = useFindGamesQuery({
+    sortBy: filteredSorting === 'Найновіші'
+      ? 'DESC'
+      : 'ASC',
+    query: query,
+    categories: filteredCategories,
+    year: filteredYear,
+    players: filteredPlayers,
+  });
+
+  useEffect(() => {
+      refetch();
+  }, [games, refetch]);
 
   useEffect(() => {
     return () => {
@@ -84,6 +101,15 @@ export const FilterSelector: React.FC = () => {
     setIsFilterOpen(true);
   };
 
+  const areResultsShown = filteredCategories.length !== 0
+  || filteredYear !== '' 
+  || filteredPlayers !== ''
+  || query !== '';
+
+  const correctGamesWord = games && games!.length < 5
+  ? 'гри'
+  : 'ігор';
+
   return (
     <>
       <div
@@ -95,13 +121,25 @@ export const FilterSelector: React.FC = () => {
 
       {isFilterOpen && (
         <div
-          className={cn(
-            'filterSelector__box', { 
+          className={cn('filterSelector__box', { 
               'filterSelector__box--active': isFilterOpen
             },
           )}
         >
           <div className="filterSelector__head">
+            {areResultsShown && games && (
+              <button
+                className={cn('filterSelector__head_results', { 
+                    'filterSelector__head_results--absent': games.length === 0
+                  },
+                )}
+                onClick={() => setIsFilterOpen(!isFilterOpen)}
+              >
+                {games && games.length > 0
+                  ? `Знайдено: ${games.length} ${correctGamesWord}`
+                  : 'Нічого не знайдено'}
+              </button>
+            )}
             <h3>
               Фільтр ігор
             </h3>

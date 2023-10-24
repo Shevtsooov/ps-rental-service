@@ -30,8 +30,10 @@ export const Filter: React.FC = () => {
   const sortBy = searchParams.get('sortBy') || 'Найновіші';
   const search = searchParams.get('search') || '';
   const categories = searchParams.get('categories') || '';
+  console.log('categories - ', categories);
   const year = searchParams.get('year') || '';
   const players = searchParams.get('players') || '';
+
 
   const params: ParamsType = useMemo(() => ({
     sortBy: filteredSorting,
@@ -54,7 +56,9 @@ export const Filter: React.FC = () => {
   useEffect(() => {
     dispatch(setFilteredSorting(sortBy));
     dispatch(setQuery(search));
-    dispatch(hardSetFilteredCategories(categories.split(',')));
+    if (categories !== '') {
+      dispatch(hardSetFilteredCategories(categories.split(',')));
+    }
     dispatch(setFilteredYear(year));
     dispatch(setFilteredPlayers(players));
   }, []);

@@ -32,8 +32,7 @@ export const Pagination: React.FC<Props> = ({
       dispatch(setPaginationPage(page));
 
       window.scrollTo({
-        top: 0,
-        behavior: 'smooth',
+        top: 60, left: 0, behavior: 'smooth'
       });
     }
   };
@@ -61,7 +60,6 @@ export const Pagination: React.FC<Props> = ({
         >
           <a
             className="pagination__page-link"
-            // href={`#${page}`}
             onClick={() => handlePageChange(page)}
           >
             {page}
@@ -76,7 +74,6 @@ export const Pagination: React.FC<Props> = ({
       >
         <a
           className="pagination__page-link"
-          // href="#next"
           aria-disabled={paginationPage === totalPages}
           onClick={() => handlePageChange(paginationPage + 1)}
         >

@@ -30,7 +30,6 @@ export const Filter: React.FC = () => {
   const sortBy = searchParams.get('sortBy') || 'Найновіші';
   const search = searchParams.get('search') || '';
   const categories = searchParams.get('categories') || '';
-  console.log('categories - ', categories);
   const year = searchParams.get('year') || '';
   const players = searchParams.get('players') || '';
 

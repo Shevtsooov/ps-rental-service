@@ -27,7 +27,7 @@ export const GameInfo: React.FC<Props> = ({ game }) => {
   const handleSaveGame = (game: Game) => {
     if (savedGames.includes(game)) {
       dispatch(filterSavedGames(game.gameId));
-      console.log('includes')
+
       return;
     }
 

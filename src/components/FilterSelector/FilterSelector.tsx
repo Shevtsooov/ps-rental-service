@@ -9,7 +9,6 @@ import { useAppDispatch, useAppSelector } from '../../Redux/store';
 import { resetFilteredPlayers, setFilteredPlayers } from '../../Redux/Slices/filteredPlayers.slice';
 import { resetFilteredYear, setFilteredYear } from '../../Redux/Slices/filteredYear.slice';
 import { resetPaginationPage } from '../../Redux/Slices/paginationPage.slice';
-import { SetURLSearchParams } from 'react-router-dom';
 import { defaultCategories, players, years } from '../../helpers/filterOptions';
 
 export const FilterSelector: React.FC = () => {
@@ -20,12 +19,9 @@ export const FilterSelector: React.FC = () => {
   const filteredPlayers = useAppSelector(state => state.filteredPlayers.value);
   const dispatch = useAppDispatch();
 
-  // const [categories, setCategories] = useState()
-
   useEffect(() => {
     return () => {
       setIsFilterOpen(false);
-      // handleClearFilters();
     }
   }, [])
 
@@ -40,28 +36,10 @@ export const FilterSelector: React.FC = () => {
   }, [isFilterOpen]);
 
   const handleClearFilters = () => {
-    // setGeneralFilter('');
     dispatch(resetFilteredCategoriess());
     dispatch(resetFilteredPlayers());;
     dispatch(resetFilteredYear());;
   }
-
-  // const generalOptions = [
-  //   'Для дітей',
-  //   'Для нього та для неї',
-  //   'Для компанії',
-  //   'Граю один',
-  // ];
-  
-  // const handleGeneralFilter = (option: string) => {
-  //   setGeneralFilter((state) => {
-  //     if (state === option) {
-  //       return state = ''
-  //     } else {
-  //       return state = option;
-  //     }
-  //   });
-  // };  
 
   const handleCategoryFilter = (option: string) => {
     if (filteredCategories.includes(option)) {
@@ -82,7 +60,6 @@ export const FilterSelector: React.FC = () => {
 
       return;
     }
-
 
     dispatch(resetPaginationPage());
     dispatch(setFilteredPlayers(option));
@@ -127,20 +104,6 @@ export const FilterSelector: React.FC = () => {
               onClick={() => setIsFilterOpen(!isFilterOpen)}
             />
           </div>
-
-          {/* <div className="filterSelector__filterBlock">
-            {generalOptions.map(option => (
-              <button
-                key={option}
-                className={cn('filterSelector__filterBlock_item', {
-                  'filterSelector__filterBlock_item--active': generalFilter === option
-                })}
-                onClick={() => handleGeneralFilter(option)}
-              >
-                {option}
-              </button>
-            ))}
-          </div> */}
 
           <div className="filterSelector__filterBlock">
             <h4 className="filterSelector__filterBlock_heading">Оберіть катерорії:</h4>

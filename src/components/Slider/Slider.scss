@@ -84,7 +84,10 @@
     &_button {
       border: 0;
       width: 100px;
-      padding: 5px 10px;
+      padding: 5px 10px 7px;
+      // display: flex;
+      // justify-content: center;
+      // align-items: center;
 
       border-radius: 30px;
       font-size: 18px;

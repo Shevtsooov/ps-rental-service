@@ -1,27 +1,28 @@
 import './Slider.scss';
-import spiderMan from '../../assets/images/spider-man.png'
-import fifa23 from '../../assets/images/fifa-23.jpg'
-import cyberpunk from '../../assets/images/cyberpunk.jpg'
 import { useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 const posters = [
   {
-    title: 'Spider Man 2',
-    description: 'Пітер Паркер та Майлз Моралес повертаються у новій захоплюючій пригоді! Наступна частина франшизи "Marvel\'s"',
-    image: spiderMan,
-    bgColor: '#4a0304'
+    title: 'Spider-Man: Miles Morales',
+    description: 'Станьте частиною Спайдервсесвіту у Marvel\'s Spider-Man: Miles Morales!',
+    image: 'https://www.godisageek.com/wp-content/uploads/Miles-Morales-review.jpg',
+    bgColor: '#4a0304',
+    link: '/games/marvels-spider-man-miles-morales-ps4-ps5'
   },
   {
     title: 'FIFA 23',
-    description: 'FIFA FIFA FIFA FIFA FIFA FIFA FIFA FIFA FIFA FIFA FIFA FIFA FIFA FIFA FIFA ',
-    image: fifa23,
-    bgColor: '#c2c2c2'
+    description: 'Завдяки реалістичній графіці, ви зануритесь в атмосферу гри!',
+    image: 'https://assets.beartai.com/uploads/2023/02/fifa-23-image-11.jpg',
+    bgColor: '#c2c2c2',
+    link: '/games/fifa-23'
   },
   {
-    title: 'Cyberpunk',
-    description: 'Cyberpunk Cyberpunk Cyberpunk Cyberpunk Cyberpunk Cyberpunk Cyberpunk Cyberpunk Cyberpunk Cyberpunk Cyberpunk Cyberpunk Cyberpunk ',
-    image: cyberpunk,
-    bgColor: '#c2c2c2'
+    title: 'God of War',
+    description: 'Стати богом не так легко.',
+    image: 'https://3238leblogdemarvelll-1278.kxcdn.com/wp-content/uploads/2018/05/god-of-war-2018-kratos-atreus.jpg',
+    bgColor: '#c2c2c2',
+    link: '/games/god-of-war'
   },
 ];
 
@@ -41,6 +42,14 @@ export const Slider: React.FC = () => {
 
   return (
     <div className="slider">
+      <button
+        className="slider__button slider__button--previous"
+        onClick={() => setIndex((prevIndex) => (prevIndex - 1) % posters.length)}
+      />
+      <button
+        className="slider__button slider__button--next"
+        onClick={() => setIndex((prevIndex) => (prevIndex + 1) % posters.length)}
+      />
       {posters.map((poster, i) => (
         <div 
           className={`slider__poster
@@ -59,7 +68,12 @@ export const Slider: React.FC = () => {
           <div className="slider__poster_info">
             <h1 className="slider__poster_heading">{poster.title}</h1>
             <p className="slider__poster_description">{poster.description}</p>
-            <button className="slider__poster_button">До гри</button>
+            <NavLink 
+              className="slider__poster_button"
+              to={poster.link}
+            >
+              До гри
+            </NavLink>
           </div>
         </div>
       ))}

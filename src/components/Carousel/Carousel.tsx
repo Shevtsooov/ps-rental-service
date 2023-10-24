@@ -8,7 +8,7 @@ interface Props {
   showNumberOFGames: boolean;
   title: string;
   description: string;
-  games: Game[];
+  games: Game[] | undefined;
 }
 
 export const Carousel: React.FC<Props> = ({
@@ -31,7 +31,7 @@ export const Carousel: React.FC<Props> = ({
       }
     };
 
-    const correctGamesWord = games.length < 5
+    const correctGamesWord = games!.length < 5
       ? 'гри'
       : 'ігор';
 
@@ -41,7 +41,7 @@ export const Carousel: React.FC<Props> = ({
           <div>
             <h3 className="carousel__title">
               {`${title}`} 
-              {showNumberOFGames && <span>{` - ${games.length} ${correctGamesWord}`}</span>}
+              {showNumberOFGames && <span>{` - ${games?.length} ${correctGamesWord}`}</span>}
             </h3>
             <p>{description}</p>
           </div>
@@ -72,7 +72,7 @@ export const Carousel: React.FC<Props> = ({
   
         <div className="carousel__content" ref={listRef}>
           <div className="carousel__scroll-wrapper">
-            {games.map(game => (
+            {games!.map(game => (
               <GameInfo game={game} />
             ))}
           </div>

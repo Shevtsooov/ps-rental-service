@@ -7,7 +7,7 @@ export const GamesApi = createApi({
     baseUrl: 'https://testps.onrender.com'
   }),
   endpoints: (builder) => ({
-    getAllGames: builder.query<Game, void>({
+    getAllGames: builder.query<Game[], void>({
       query: () => 'games'
     }),
     findGames: builder.query<Game[], {

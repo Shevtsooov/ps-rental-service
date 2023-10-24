@@ -4,6 +4,13 @@
 .slider {
   position: relative;
   width: 100%;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  // margin: 0 20px;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
   
   &__button {
     position: absolute;

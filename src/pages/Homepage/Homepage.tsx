@@ -28,9 +28,9 @@ export const Homepage: React.FC = () => {
       {games 
         ? (
           <Carousel 
-            title="Вибір гравців"
+            title="Новинки"
             showNumberOFGames={false}
-            description={`ТОП-${sortedGames?.length} ігор, які замовляють найчастіше`}
+            description=''
             games={sortedGames}
           />)
         : <Loader />

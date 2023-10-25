@@ -153,17 +153,26 @@ export const FilterSelector: React.FC = () => {
         >
           <div className="filterSelector__head">
             {areResultsShown && games && (
-              <button
-                className={cn('filterSelector__head_results', { 
-                    'filterSelector__head_results--absent': games.length === 0
-                  },
-                )}
-                onClick={() => setIsFilterOpen(!isFilterOpen)}
-              >
-                {games && games.length > 0
-                  ? `Знайдено ${games.length} ${correctGamesWord}`
-                  : 'Нічого не знайдено'}
-              </button>
+              <div className="filterSelector__head_resultsBlock" >
+                <button
+                  className={cn('filterSelector__head_results', { 
+                      'filterSelector__head_results--absent': games.length === 0
+                    },
+                  )}
+                  onClick={() => setIsFilterOpen(!isFilterOpen)}
+                >
+                  {games && games.length > 0
+                    ? `Знайдено ${games.length} ${correctGamesWord}`
+                    : 'Нічого не знайдено'}
+                </button>
+
+                <button
+                  className="filterSelector__head_results filterSelector__head_results--clear"
+                  onClick={handleClearFilters}
+                >
+                  Очистити
+                </button>
+              </div>
             )}
             <h3>
               Фільтр ігор
@@ -188,13 +197,13 @@ export const FilterSelector: React.FC = () => {
                 onMouseLeave={handeleHideDescription}
               >
                 {category.title}
-                <span
+                {/* <span
                   className={cn('filterSelector__filterBlock_description',{
                     'filterSelector__filterBlock_description--active': showDescription && descriptionCategory === category.title
                   })}
                 >
                   {category.description}
-                </span>
+                </span> */}
               </button>
             ))}
           </div>

@@ -38,7 +38,7 @@
     margin-bottom: 15px;
 
     &_results {
-      position: absolute;
+      
       top: -3px;
       left: -3px;
 
@@ -54,6 +54,16 @@
       &--absent {
         background-color: #f39090;
       }
+
+      &--clear {
+        background-color: #f39090;
+      }
+    }
+
+    &_resultsBlock {
+      position: absolute;
+      display: flex;
+      gap: 10px;
     }
   }
 

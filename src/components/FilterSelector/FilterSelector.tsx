@@ -11,6 +11,7 @@ import { resetFilteredYear, setFilteredYear } from '../../Redux/Slices/filteredY
 import { resetPaginationPage } from '../../Redux/Slices/paginationPage.slice';
 import { defaultCategories, players, years } from '../../helpers/filterOptions';
 import { useFindGamesQuery } from '../../Redux/RTK_Query/games.service';
+import { setQuery } from '../../Redux/Slices/query.slice';
 
 export const FilterSelector: React.FC = () => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
@@ -24,7 +25,7 @@ export const FilterSelector: React.FC = () => {
   const filteredPlayers = useAppSelector(state => state.filteredPlayers.value);
   const dispatch = useAppDispatch();
 
-  const { data: games, refetch, isLoading, isSuccess } = useFindGamesQuery({
+  const { data: games, refetch } = useFindGamesQuery({
     sortBy: filteredSorting === 'Найновіші'
       ? 'DESC'
       : 'ASC',
@@ -55,9 +56,10 @@ export const FilterSelector: React.FC = () => {
   }, [isFilterOpen]);
 
   const handleClearFilters = () => {
+    dispatch(setQuery(''));
     dispatch(resetFilteredCategoriess());
-    dispatch(resetFilteredPlayers());;
-    dispatch(resetFilteredYear());;
+    dispatch(resetFilteredPlayers());
+    dispatch(resetFilteredYear());
   }
 
   const handleCategoryFilter = (option: string) => {

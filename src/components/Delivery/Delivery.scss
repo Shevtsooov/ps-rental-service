@@ -27,6 +27,8 @@
     }
 
     &_option {
+      display: flex;
+      align-items: center;
       padding: 5px;
       display: flex;
       gap: 10px;
@@ -37,6 +39,20 @@
       &--active {
         border-radius: 10px;
         background-color: #f7f7f7;
+      }
+
+      &_address {
+        display: none;
+
+        padding: 3px 5px;
+
+        outline: none;
+        border: 1px solid $main-blue;
+        font-size: 12px;
+
+        &--active {
+          display: block;
+        }
       }
     }
 
@@ -68,7 +84,7 @@
       gap: 10px;
       font-size: 14px;
       
-      margin-bottom: 10px;
+      margin-bottom: 5px;
     }
 
     &_text {

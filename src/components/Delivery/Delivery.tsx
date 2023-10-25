@@ -23,9 +23,21 @@ export const Delivery: React.FC = () => {
     return '';
   });
 
+  const [savedAddress, setSavedAddress] = useState<string>(() => {
+    const storedAddress = localStorage.getItem('savedAddress');
+    const parsedAddress = storedAddress ? JSON.parse(storedAddress) : '';
+    
+    if (parsedAddress.length !== '') {
+      return parsedAddress;
+    }
+    
+    return '';
+  });
+
   useEffect(() => {
     sessionStorage.setItem("storedDelivery", JSON.stringify(selectedDelivery));
-  }, [selectedDelivery]);
+    localStorage.setItem("savedAddress", JSON.stringify(savedAddress));
+  }, [selectedDelivery, savedAddress]);
 
   useEffect(() => {
     if (isDeliveryShown) {
@@ -65,15 +77,28 @@ export const Delivery: React.FC = () => {
               })}
               onClick={() => handleChooseDelivery('Доставка')}
             >
-                <img
-                  src={`${shipping}`}
-                  alt="Доставка"
-                  className="delivery__modal_icon"
-                />
+              <img
+
+                src={`${shipping}`}
+                alt="Доставка"
+                className="delivery__modal_icon"
+              />
+
               <div className="delivery__info">
                 <p className="delivery__info_heading">Доставка по Львову</p>
                 <p className="delivery__info_price">100₴</p>
+                
+                <input
+                  className={cn('delivery__modal_option_address', {
+                    'delivery__modal_option_address--active': chosenDelivery === 'Доставка'
+                  })}
+                  type="text"
+                  placeholder='Вкажіть адресу'
+                  value={savedAddress}
+                  onChange={(e) => setSavedAddress(e.target.value)}
+                />
               </div>
+
             </div>
 
             <div
@@ -119,8 +144,16 @@ export const Delivery: React.FC = () => {
               {shippingWay}
             </p>
 
-            {chosenDelivery === 'Доставка' && (
-              <p className="delivery__info_price">100₴</p>
+            {chosenDelivery === 'Доставка' && savedAddress === '' && (
+              <p className="delivery__info_price">
+                100₴
+              </p>
+            )}
+
+            {chosenDelivery === 'Доставка' && savedAddress !== '' && (
+              <p className="delivery__info_price">
+                {`100₴ - ${savedAddress}`}
+              </p>
             )}
 
             {chosenDelivery === 'Самовивіз' && (

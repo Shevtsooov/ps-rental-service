@@ -14,6 +14,8 @@ import { useFindGamesQuery } from '../../Redux/RTK_Query/games.service';
 
 export const FilterSelector: React.FC = () => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [showDescription, setShowDescription] = useState(false);
+  const [descriptionCategory, setDescriptionCategory] = useState('');
 
   const query = useAppSelector(state => state.query.value);
   const filteredSorting = useAppSelector(state => state.filteredSorting.value);
@@ -110,7 +112,7 @@ export const FilterSelector: React.FC = () => {
 
   switch (games?.length.toString().slice(-1)) {
     case '1':
-      correctGamesWord = 'гра'
+      correctGamesWord = 'гру'
       break;
     case '2':
     case '3':
@@ -120,7 +122,18 @@ export const FilterSelector: React.FC = () => {
 
     default:
       correctGamesWord = 'ігор'
+  };
+
+  const handeleShowDescription = (title: string) => {
+    setDescriptionCategory(title);
+    setShowDescription(true);
   }
+
+  const handeleHideDescription = () => {
+    setDescriptionCategory('');
+    setShowDescription(false);
+  }
+
 
   return (
     <>
@@ -148,7 +161,7 @@ export const FilterSelector: React.FC = () => {
                 onClick={() => setIsFilterOpen(!isFilterOpen)}
               >
                 {games && games.length > 0
-                  ? `Знайдено: ${games.length} ${correctGamesWord}`
+                  ? `Знайдено ${games.length} ${correctGamesWord}`
                   : 'Нічого не знайдено'}
               </button>
             )}
@@ -166,13 +179,22 @@ export const FilterSelector: React.FC = () => {
             <h4 className="filterSelector__filterBlock_heading">Оберіть катерорії:</h4>
             {defaultCategories.sort().map(category => (
               <button
-                key={category}
+                key={category.title}
                 className={cn('filterSelector__filterBlock_item', {
-                  'filterSelector__filterBlock_item--active': filteredCategories.includes(category)
+                  'filterSelector__filterBlock_item--active': filteredCategories.includes(category.title)
                 })}
-                onClick={() => handleCategoryFilter(category)}
+                onClick={() => handleCategoryFilter(category.title)}
+                onMouseEnter={() => handeleShowDescription(category.title)}
+                onMouseLeave={handeleHideDescription}
               >
-                {category}
+                {category.title}
+                <span
+                  className={cn('filterSelector__filterBlock_description',{
+                    'filterSelector__filterBlock_description--active': showDescription && descriptionCategory === category.title
+                  })}
+                >
+                  {category.description}
+                </span>
               </button>
             ))}
           </div>

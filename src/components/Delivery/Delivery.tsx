@@ -85,20 +85,32 @@ export const Delivery: React.FC = () => {
               />
 
               <div className="delivery__info">
-                <p className="delivery__info_heading">Доставка по Львову</p>
+                <p className="delivery__info_heading">
+                  Доставка по Львову
+                </p>
+
                 <p className="delivery__info_price">100₴</p>
-                
-                <input
+
+                <div
                   className={cn('delivery__modal_option_address', {
                     'delivery__modal_option_address--active': chosenDelivery === 'Доставка'
                   })}
-                  type="text"
-                  placeholder='Вкажіть адресу'
-                  value={savedAddress}
-                  onChange={(e) => setSavedAddress(e.target.value)}
-                />
+                >
+                  <input
+                    className="delivery__modal_option_address--input"
+                    type="text"
+                    placeholder='Вкажіть адресу'
+                    value={savedAddress}
+                    onChange={(e) => setSavedAddress(e.target.value)}
+                  />
+                  {savedAddress !== '' && (
+                  <span
+                    className="delivery__modal_option_address--clear"
+                    onClick={() => setSavedAddress('')}
+                  />)}
+                </div>
+    
               </div>
-
             </div>
 
             <div

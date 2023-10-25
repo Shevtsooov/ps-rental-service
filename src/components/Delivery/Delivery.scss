@@ -42,16 +42,35 @@
       }
 
       &_address {
+        position: relative;
         display: none;
-
-        padding: 3px 5px;
-
-        outline: none;
-        border: 1px solid $main-blue;
-        font-size: 12px;
 
         &--active {
           display: block;
+        }
+
+        &--input {
+          padding: 2px 5px;
+
+          outline: none;
+          border: 1px solid $main-blue;
+          font-size: 12px;
+        }
+
+        &--clear {
+          position: absolute;
+          top: calc(50% - 5px);
+          right: 5px;
+      
+          width: 10px;
+          height: 10px;
+      
+          border-radius: 30px;
+          border: 0;
+          cursor: pointer;
+      
+          background-image: url('../../assets/icons/clear-search.svg');
+          background-repeat: no-repeat;
         }
       }
     }

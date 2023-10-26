@@ -18,7 +18,7 @@ export const FilterByBlock: React.FC<Props> = ({
   return (
     <div className="filterByBlock">
       <h4 className="filterByBlock__heading">{title}</h4>
-      {filterOptions.map(option => (
+      {filterOptions.sort().map(option => (
         <button
           key={option}
           className={cn('filterByBlock__item', {

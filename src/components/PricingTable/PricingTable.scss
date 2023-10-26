@@ -1,0 +1,41 @@
+@import "../../styles/utils/mixins.scss";
+@import "../../styles/utils/colors.scss";
+
+.pricingTable {
+  width: 100%;
+  border-collapse: collapse;
+
+  margin-bottom: 15px;
+
+  &__head {
+    color: $main-blue;
+
+    &_nod {
+      font-weight: 600;
+      padding: 10px;
+      width: 50%;
+      text-align: center;
+    }
+    
+    &_price {
+      font-weight: 600;
+      text-align: center;
+      width: 50%;
+    }
+  }
+
+  &__row {
+    
+    &_nod {
+      padding: 10px;
+      width: 50%;
+      text-align: center;
+    }
+    
+    &_price {
+      text-align: center;
+      width: 50%;
+    }
+  }
+}
+

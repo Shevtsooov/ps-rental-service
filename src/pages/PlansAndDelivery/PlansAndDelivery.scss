@@ -1,4 +1,16 @@
 @import "../../styles/utils/mixins.scss";
 @import "../../styles/utils/colors.scss";
 
+.plansPage {
+  padding: 20px;
 
+  &__title {
+    font-size: 20px;
+    margin-bottom: 25px;
+  }
+
+  &__title2 {
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
+}

@@ -1,0 +1,53 @@
+@import "../../styles/utils/mixins.scss";
+@import "../../styles/utils/colors.scss";
+
+.filterByBlock {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  margin-bottom: 15px;
+
+  &__heading {
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+
+  &__item {
+    position: relative;
+    font-size: 16px;
+    color: #000;
+    background-color: #fff;
+    border: 1px solid $secondary-grey;
+    padding: 5px 10px;
+
+    &--active {
+      background-color: $main-blue;
+      color: #fff;
+      border: 1px solid $main-blue;
+    }
+  }
+
+  // &_description {
+  //   display: none;
+
+  //   position: absolute;
+  //   top: 35px;
+  //   left: 0;
+
+  //   z-index: 2;
+
+  //   padding: 3px 2px 5px;
+  //   font-size: 10px;
+  //   background-color: #fff;
+  //   color: #000;
+
+  //   border: 1px solid $main-blue;
+
+  //   &--active {
+  //     display: block;
+  //   }
+  // }
+}

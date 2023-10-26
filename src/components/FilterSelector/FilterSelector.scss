@@ -36,34 +36,6 @@
     align-items: start;
 
     margin-bottom: 15px;
-
-    &_results {
-      border: 0;
-      padding: 5px 10px;
-      border-radius: 30px;
-      font-size: 16px;
-
-      background-color: $main-blue;
-      color: #fff;
-      cursor: pointer;
-
-      &--absent {
-        background-color: #f39090;
-      }
-
-      &--clear {
-        background-color: #f39090;
-      }
-    }
-
-    &_resultsBlock {
-      position: absolute;
-      top: -3px;
-      left: -3px;
-
-      display: flex;
-      gap: 10px;
-    }
   }
 
   &__button {
@@ -78,59 +50,6 @@
     background-image: url('../../assets/icons/burger_menu-open.svg');
     background-repeat: no-repeat;
     background-position: center;
-  }
-
-  &__filterBlock {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-
-    margin-bottom: 15px;
-
-    &_heading {
-      width: 100%;
-      margin-bottom: 10px;
-      font-size: 14px;
-    }
-
-    &_item {
-      position: relative;
-      font-size: 16px;
-      color: #000;
-      background-color: #fff;
-      border: 1px solid $secondary-grey;
-      padding: 5px 10px;
-
-      &--active {
-        background-color: $main-blue;
-        color: #fff;
-        border: 1px solid $main-blue;
-      }
-    }
-
-    &_description {
-      display: none;
-
-      position: absolute;
-      top: 35px;
-      left: 0;
-
-      z-index: 2;
-
-      padding: 3px 2px 5px;
-      font-size: 10px;
-      background-color: #fff;
-      color: #000;
-
-      border: 1px solid $main-blue;
-
-      &--active {
-        display: block;
-      }
-
-    }
-
   }
   
   &__actions {

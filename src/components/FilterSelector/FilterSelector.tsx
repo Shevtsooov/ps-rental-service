@@ -12,11 +12,13 @@ import { resetPaginationPage } from '../../Redux/Slices/paginationPage.slice';
 import { defaultCategories, players, years } from '../../helpers/filterOptions';
 import { useFindGamesQuery } from '../../Redux/RTK_Query/games.service';
 import { setQuery } from '../../Redux/Slices/query.slice';
+import { FilterResults } from '../FilterResults/FilterResults';
+import { FilterByBlock } from '../FilterByBlock/FilterByBlock';
 
 export const FilterSelector: React.FC = () => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
-  const [showDescription, setShowDescription] = useState(false);
-  const [descriptionCategory, setDescriptionCategory] = useState('');
+  // const [showDescription, setShowDescription] = useState(false);
+  // const [descriptionCategory, setDescriptionCategory] = useState('');
 
   const query = useAppSelector(state => state.query.value);
   const filteredSorting = useAppSelector(state => state.filteredSorting.value);
@@ -110,31 +112,15 @@ export const FilterSelector: React.FC = () => {
   || filteredPlayers !== ''
   || query !== '';
 
-  let correctGamesWord: string;
+  // const handeleShowDescription = (title: string) => {
+  //   setDescriptionCategory(title);
+  //   setShowDescription(true);
+  // }
 
-  switch (games?.length.toString().slice(-1)) {
-    case '1':
-      correctGamesWord = 'гру'
-      break;
-    case '2':
-    case '3':
-    case '4':
-      correctGamesWord = 'гри'
-      break;
-
-    default:
-      correctGamesWord = 'ігор'
-  };
-
-  const handeleShowDescription = (title: string) => {
-    setDescriptionCategory(title);
-    setShowDescription(true);
-  }
-
-  const handeleHideDescription = () => {
-    setDescriptionCategory('');
-    setShowDescription(false);
-  }
+  // const handeleHideDescription = () => {
+  //   setDescriptionCategory('');
+  //   setShowDescription(false);
+  // }
 
 
   return (
@@ -155,26 +141,12 @@ export const FilterSelector: React.FC = () => {
         >
           <div className="filterSelector__head">
             {areResultsShown && games && (
-              <div className="filterSelector__head_resultsBlock" >
-                <button
-                  className={cn('filterSelector__head_results', { 
-                      'filterSelector__head_results--absent': games.length === 0
-                    },
-                  )}
-                  onClick={() => setIsFilterOpen(!isFilterOpen)}
-                >
-                  {games && games.length > 0
-                    ? `Знайдено ${games.length} ${correctGamesWord}`
-                    : 'Нічого не знайдено'}
-                </button>
-
-                <button
-                  className="filterSelector__head_results filterSelector__head_results--clear"
-                  onClick={handleClearFilters}
-                >
-                  Очистити
-                </button>
-              </div>
+              <FilterResults
+                games={games}
+                setIsFilterOpen={setIsFilterOpen}
+                isFilterOpen={isFilterOpen}
+                handleClearFilters={handleClearFilters}
+              />
             )}
             <h3>
               Фільтр ігор
@@ -186,76 +158,26 @@ export const FilterSelector: React.FC = () => {
             />
           </div>
 
-          <div className="filterSelector__filterBlock">
-            <h4 className="filterSelector__filterBlock_heading">Оберіть катерорії:</h4>
-            {defaultCategories.sort().map(category => (
-              <button
-                key={category.title}
-                className={cn('filterSelector__filterBlock_item', {
-                  'filterSelector__filterBlock_item--active': filteredCategories.includes(category.title)
-                })}
-                onClick={() => handleCategoryFilter(category.title)}
-                onMouseEnter={() => handeleShowDescription(category.title)}
-                onMouseLeave={handeleHideDescription}
-              >
-                {category.title}
-                {/* <span
-                  className={cn('filterSelector__filterBlock_description',{
-                    'filterSelector__filterBlock_description--active': showDescription && descriptionCategory === category.title
-                  })}
-                >
-                  {category.description}
-                </span> */}
-              </button>
-            ))}
-          </div>
+          <FilterByBlock
+            title="Оберіть катерорії:"
+            filterOptions={defaultCategories}
+            chosenFilter={filteredCategories}
+            chooseFunction={handleCategoryFilter}
+          />
 
-          <div className="filterSelector__filterBlock">
-            <h4 className="filterSelector__filterBlock_heading">Оберіть кількість гравців:</h4>
-            {players.map(player => (
-              <button
-                key={player}
-                className={cn('filterSelector__filterBlock_item', {
-                  'filterSelector__filterBlock_item--active': filteredPlayers === player
-                })}
-                onClick={() => handleChosenPlayers(player)}
-              >
-                {player}
-              </button>
-            ))}
-          </div>
+          <FilterByBlock
+            title="Оберіть кількість гравців:"
+            filterOptions={players}
+            chosenFilter={filteredPlayers}
+            chooseFunction={handleChosenPlayers}
+          />
 
-          <div className="filterSelector__filterBlock">
-            <h4 className="filterSelector__filterBlock_heading">Оберіть роки релізу:</h4>
-            {years.map(year => (
-              <button
-                key={year}
-                className={cn('filterSelector__filterBlock_item', {
-                  'filterSelector__filterBlock_item--active': filteredYear === year
-                })}
-                onClick={() => handleChosenYears(year)}
-              >
-                {year}
-              </button>
-            ))}
-          </div>
-          
-          <div className="filterSelector__actions">
-            <button
-              className="filterSelector__actions_button filterSelector__actions_button--clear"
-              onClick={handleClearFilters}
-            >
-              Очистити
-            </button>
-
-            <button
-              className="filterSelector__actions_button filterSelector__actions_button--apply"
-              onClick={() => setIsFilterOpen(!isFilterOpen)}
-            >
-              Застосувати
-            </button>
-          </div>
-
+          <FilterByBlock
+            title="Оберіть роки релізу:"
+            filterOptions={years}
+            chosenFilter={filteredYear}
+            chooseFunction={handleChosenYears}
+          />
         </div>
       )}  
     </>

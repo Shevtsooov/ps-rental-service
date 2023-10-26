@@ -11,13 +11,9 @@ import { setFilteredYear } from '../../Redux/Slices/filteredYear.slice';
 import { setFilteredPlayers } from '../../Redux/Slices/filteredPlayers.slice';
 import { hardSetFilteredCategories } from '../../Redux/Slices/filteredCategories.slice';
 import { setFilteredSorting } from '../../Redux/Slices/filteredSorting.slice';
-
-type ParamsType = {
-  [key: string]: string | string [];
-};
+import { ParamsType } from '../../types/ParamsType';
 
 export const Filter: React.FC = () => {
-  
   const filteredSorting = useAppSelector(state => state.filteredSorting.value);
   const query = useAppSelector(state => state.query.value);
   const filteredCategories = useAppSelector(state => state.filteredCategories.value);

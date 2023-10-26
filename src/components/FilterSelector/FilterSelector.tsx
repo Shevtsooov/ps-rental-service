@@ -165,15 +165,15 @@ export const FilterSelector: React.FC = () => {
             chooseFunction={handleCategoryFilter}
           />
 
-          <FilterByBlock
+          {/* <FilterByBlock
             title="Оберіть кількість гравців:"
             filterOptions={players}
             chosenFilter={filteredPlayers}
             chooseFunction={handleChosenPlayers}
-          />
+          /> */}
 
           <FilterByBlock
-            title="Оберіть роки релізу:"
+            title="Оберіть рік релізу:"
             filterOptions={years}
             chosenFilter={filteredYear}
             chooseFunction={handleChosenYears}

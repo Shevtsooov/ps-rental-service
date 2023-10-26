@@ -9,6 +9,10 @@
 
   margin-bottom: 15px;
 
+  &:last-child {
+    margin-bottom: 50px;
+  }
+
   &__heading {
     width: 100%;
     margin-bottom: 10px;

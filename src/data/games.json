@@ -8052,7 +8052,7 @@
     "videoGameplay": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/_HKzCdL3TnI?si=pwjzLY1LOhwX-d-D' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
     "price": 100,
     "discountedPrice": null,
-    "category": ["Жахи", "Виживання", "Екшн"],
+    "category": ["Жахи", "Виживання", "Екшн", "Бійки"],
     "players": "1",
     "disclaimers": [
       "Змагайтеся зі своїми глибинними страхами у The Evil Within.",
@@ -8075,7 +8075,7 @@
     "videoGameplay": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/RJ_9aRQr56I?si=2VrfoC4MVJZJkmiE' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
     "price": 100,
     "discountedPrice": null,
-    "category": ["Жахи", "Бійки"],
+    "category": ["Жахи", "Виживання", "Бійки", "Екшн"],
     "players": "1",
     "disclaimers": [
       "Поїднаєтеся в кошмари знову у The Evil Within 2.",

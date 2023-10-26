@@ -4,8 +4,8 @@ import shipping from '../../assets/images/shipping.png'
 import { useEffect, useState } from 'react';
 import { openDelivery } from '../../Redux/Slices/isDeliveryShown.slice';
 import { useAppSelector, useAppDispatch } from '../../Redux/store';
-import cn from 'classnames';
 import { setChosenDelivery } from '../../Redux/Slices/chosenDelivery.slice';
+import { DeliveryModal } from '../DeliveryModal/DeliveryModal';
 
 export const Delivery: React.FC = () => {
   const isDeliveryShown = useAppSelector(state => state.isDeliveryShown.value);
@@ -47,140 +47,67 @@ export const Delivery: React.FC = () => {
     }
 
     document.body.style.overflow = 'auto'
-  }, [isDeliveryShown])
+  }, [isDeliveryShown]);
 
   const handleOpenDelivery = () => {
     dispatch(openDelivery());
-  }
-
-  let shippingWay = chosenDelivery === '' || chosenDelivery === 'Доставка'
-    ? 'Доставка'
-    : 'Самовивіз'
+  };
 
   const handleChooseDelivery = (delivery: string) => {
     setSelectedDelivery(delivery);
     dispatch(setChosenDelivery(delivery));
-  }
+  };
+
+  let shippingWay = chosenDelivery === '' || chosenDelivery === 'Доставка'
+  ? 'Доставка'
+  : 'Самовивіз'
 
   return (
-      <div className="delivery" onClick={handleOpenDelivery}>
+    <div className="delivery" onClick={handleOpenDelivery}>
+      {isDeliveryShown && (
+        <DeliveryModal
+          chosenDelivery={chosenDelivery}
+          handleChooseDelivery={handleChooseDelivery}
+          savedAddress={savedAddress}
+          setSavedAddress={setSavedAddress}
+        />
+      )}
 
-        {isDeliveryShown && (
-          <div className="delivery__modal">
-            <h4 className="delivery__modal_title">
-              Оберіть спосіб доставки
-            </h4>
+      <div className="delivery__img">
+        <img
+          src={chosenDelivery === "Самовивіз"
+            ? selfPickup
+            : shipping}
+          alt={chosenDelivery === "Самовивіз"
+            ? "Самовивіз"
+            : "Доставка"}
+          className="delivery__img_icon"
+        />
+      </div>
+      
+      <div className="delivery__info">
+        <p className="delivery__info_heading">{shippingWay}</p>
 
-            <div
-              className={cn('delivery__modal_option', {
-                'delivery__modal_option--active': chosenDelivery === 'Доставка'
-              })}
-              onClick={() => handleChooseDelivery('Доставка')}
-            >
-              <img
-
-                src={`${shipping}`}
-                alt="Доставка"
-                className="delivery__modal_icon"
-              />
-
-              <div className="delivery__info">
-                <p className="delivery__info_heading">
-                  Доставка по Львову
-                </p>
-
-                <p className="delivery__info_price">100₴</p>
-
-                <div
-                  className={cn('delivery__modal_option_address', {
-                    'delivery__modal_option_address--active': chosenDelivery === 'Доставка'
-                  })}
-                >
-                  <input
-                    className="delivery__modal_option_address--input"
-                    type="text"
-                    placeholder='Вкажіть адресу'
-                    value={savedAddress}
-                    onChange={(e) => setSavedAddress(e.target.value)}
-                  />
-                  {savedAddress !== '' && (
-                  <span
-                    className="delivery__modal_option_address--clear"
-                    onClick={() => setSavedAddress('')}
-                  />)}
-                </div>
-    
-              </div>
-            </div>
-
-            <div
-              className={cn('delivery__modal_option', {
-                'delivery__modal_option--active': chosenDelivery === 'Самовивіз'
-              })}
-              onClick={() => handleChooseDelivery('Самовивіз')}
-            >
-                <img
-                  src={`${selfPickup}`}
-                  alt="Доставка"
-                  className="delivery__modal_icon"
-                />
-              <div className="delivery__info">
-                <p className="delivery__info_heading">Самовивіз</p>
-                <p className="delivery__info_price">Сихівський район</p>
-              </div>
-            </div>
-          </div>
+        {chosenDelivery === 'Доставка' && (
+          <p className="delivery__info_price">
+            {savedAddress
+              ? `100₴ - ${savedAddress}`
+              : "100₴ - будь ласка, вкажіть адресу"}
+          </p>
         )}
 
-        {(chosenDelivery === '' || chosenDelivery === 'Доставка') && (
-          <div className="delivery__img">
-            <img
-              src={`${shipping}`}
-              alt="Доставка"
-              className="delivery__img_icon"
-            />
-          </div>)}
-          
-          {selectedDelivery === 'Самовивіз' && (
-            <div className="delivery__img">
-              <img
-                src={`${selfPickup}`}
-                alt="Самовивіз"
-                className="delivery__img_icon"
-              />
-            </div>
-          )}
-        
-        <div className="delivery__info">
-            <p className="delivery__info_heading">
-              {shippingWay}
-            </p>
+        {chosenDelivery === 'Самовивіз' && (
+          <p className="delivery__info_text">
+            Менеджер зв'яжеться з вами після замовлення для уточнення деталей.
+          </p>
+        )}
 
-            {chosenDelivery === 'Доставка' && savedAddress === '' && (
-              <p className="delivery__info_price">
-                100₴
-              </p>
-            )}
-
-            {chosenDelivery === 'Доставка' && savedAddress !== '' && (
-              <p className="delivery__info_price">
-                {`100₴ - ${savedAddress}`}
-              </p>
-            )}
-
-            {chosenDelivery === 'Самовивіз' && (
-              <p className="delivery__info_text">
-                Менеджер зв'яжеться з вами після замовлення для уточнення деталей.
-              </p>
-            )}
-            {chosenDelivery === '' && (
-              <p 
-                className="delivery__info_button"
-              >
-                Оберіть спосіб доставки
-              </p>
-            )}
-        </div>
+        {!chosenDelivery && (
+          <p className="delivery__info_button">
+            Оберіть спосіб доставки
+          </p>
+        )}
       </div>
+    </div>
   );
 }

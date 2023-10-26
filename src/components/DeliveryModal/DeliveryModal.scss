@@ -1,0 +1,90 @@
+@import "../../styles/utils/mixins.scss";
+@import "../../styles/utils/colors.scss";
+
+.deliveryModal {
+  width: 350px;
+
+  position: fixed;
+  top: 25%;
+  left: calc(50% - 175px);
+
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: $main-grey;
+
+  border-radius: 10px;
+
+  &__title {
+    font-size: 18px;
+    margin-bottom: 25px;
+  }
+
+  &__option {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    transition: background-color 0.4s;
+    cursor: pointer;
+
+    &--active {
+      border-radius: 10px;
+      background-color: #f7f7f7;
+    }
+
+    &_address {
+      position: relative;
+      display: none;
+
+      &--active {
+        display: block;
+      }
+
+      &--input {
+        padding: 2px 5px;
+
+        outline: none;
+        border: 1px solid $main-blue;
+        font-size: 12px;
+      }
+
+      &--clear {
+        position: absolute;
+        top: calc(50% - 5px);
+        right: 5px;
+    
+        width: 10px;
+        height: 10px;
+    
+        border-radius: 30px;
+        border: 0;
+        cursor: pointer;
+    
+        background-image: url('../../assets/icons/clear-search.svg');
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  &__icon {
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+
+    &_heading {
+      margin-bottom: 5px;
+    }
+
+    &_desc {
+      font-size: 14px;
+    }
+  }
+}

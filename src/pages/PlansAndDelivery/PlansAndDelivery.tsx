@@ -12,6 +12,11 @@ export const PlansAndDelivery: React.FC = () => {
       <h1 className="plansPage__title">
         Тарифи
       </h1>
+      
+      <div>
+        <p className="plansPage__description">Одна гра - безкоштовно.</p>
+        <p className="plansPage__description">Кожна наступна - +100₴ до суми замовлення.</p>
+      </div>
 
       <PricingTable 
         chosenNumber={chosenNumber}

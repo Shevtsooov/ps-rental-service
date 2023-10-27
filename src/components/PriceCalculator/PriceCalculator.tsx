@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import cn from 'classnames';
 import './PriceCalculator.scss';
+import { useNavigate } from 'react-router-dom';
 
 type Props = {
   chosenNumber: number
@@ -16,7 +17,7 @@ export const PriceCalculator: React.FC<Props> = ({
   const [sum, setSum] = useState<number>(450);
   const [chosenDelivery, setChosenDelivery] = useState<string>('Самовивіз');
   const [deliveryPrice, setDeliveryPrice] = useState<number>(0);
-  
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (chosenNumber > 1) {
@@ -67,6 +68,10 @@ export const PriceCalculator: React.FC<Props> = ({
     }
 
     setChosenNumber(number => number - 1);
+  };
+
+  const goToShoppingCart = () => {
+    navigate("/shopping-cart");
   }
 
   return (
@@ -75,6 +80,18 @@ export const PriceCalculator: React.FC<Props> = ({
         Калькулятор
       </h4>
 
+      <p
+        className="priceCalculator__description"
+      >
+        Загальну суму з іграми можна підрахувати
+        <span
+          className="priceCalculator__link"
+          onClick={goToShoppingCart}
+        >
+          тут
+        </span>
+      </p>
+      
       <div className="calculator">
         <p className="calculator__sum">{`${sum}₴`}</p>
 

@@ -6,11 +6,15 @@
 
   &__title {
     font-size: 28px;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
   }
 
-  &__title2 {
-    font-size: 16px;
-    margin-bottom: 25px;
+  &__description {
+    font-size: 14px;
+    margin-bottom: 5px;
+
+    &:last-child {
+      margin-bottom: 20px;
+    }
   }
 }

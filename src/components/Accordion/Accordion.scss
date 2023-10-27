@@ -2,6 +2,8 @@
 @import "../../styles/utils/colors.scss";
 
 .accordion {
+  margin-bottom: 40px;
+  
   &__item {
     margin-bottom: 16px;
     background-color: $main-grey;

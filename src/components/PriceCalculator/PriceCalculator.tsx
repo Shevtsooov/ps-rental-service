@@ -37,9 +37,9 @@ export const PriceCalculator: React.FC<Props> = ({
     if (chosenNumber < 3) {
       setPrice(450);
     } else if (chosenNumber > 6) {
-      setPrice(350);
+      setPrice(300);
     } else {
-      setPrice(400);
+      setPrice(350);
     }
 
     setSum((chosenNumber * price) + deliveryPrice);

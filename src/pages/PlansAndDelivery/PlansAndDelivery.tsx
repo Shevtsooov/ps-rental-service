@@ -3,9 +3,8 @@ import './PlansAndDelivery.scss';
 import { PricingTable } from '../../components/PricingTable/PricingTable';
 import { PriceCalculator } from '../../components/PriceCalculator/PriceCalculator';
 
-import shipping from '../../assets/images/shipping.png'
-import selfPickup from '../../assets/images/self-pickup.png'
 import { Accordion } from '../../components/Accordion/Accordion';
+import { DeliveryDetails } from '../../components/DeliveryDetails/DeliveryDetails';
 
 const faq = [
   {
@@ -58,41 +57,7 @@ export const PlansAndDelivery: React.FC = () => {
         Наразі ми пропонуємо два способи доставки:
       </p>
 
-      <div className='plansPage__deliveryOption'>
-        <img
-          src={`${selfPickup}`}
-          alt="Доставка"
-          className="plansPage__deliveryOption__icon"
-        />
-
-        <div className="plansPage__deliveryOption__info">
-          <p className="plansPage__deliveryOption__info_heading">
-            Самовивіз
-          </p>
-
-          <p className="plansPage__deliveryOption__info_desc">
-            Сихівський район
-          </p>
-        </div>
-      </div>
-
-      <div className='plansPage__deliveryOption'>
-        <img
-          src={`${shipping}`}
-          alt="Доставка"
-          className="plansPage__deliveryOption__icon"
-        />
-
-        <div className="plansPage__deliveryOption__info">
-          <p className="plansPage__deliveryOption__info_heading">
-              Доставка по Львову
-          </p>
-
-          <p className="plansPage__deliveryOption__info_desc">
-            100₴
-          </p>
-        </div>
-      </div>
+      <DeliveryDetails />
 
       <h2 className="plansPage__title">
         Часті запитання

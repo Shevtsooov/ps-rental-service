@@ -1,0 +1,81 @@
+@import "../../styles/utils/mixins.scss";
+@import "../../styles/utils/colors.scss";
+
+.deliveryDetailsBlock {
+  margin-bottom: 40px;
+}
+
+.deliveryDetails {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  
+  padding: 10px 30px ;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  background-color: $main-grey;
+
+  border-radius: 10px;
+  margin-bottom: 15px;
+
+  &__arrow {
+    position: absolute;
+    top: 25px;
+    right: 10px;
+
+    width: 20px;
+    height: 20px;
+    background-color: unset;
+    border: 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('../../assets/icons/arrow.svg');
+    transition: transform 0.5s;
+
+    &--active {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__title {
+    font-size: 18px;
+  }
+
+  &__option {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    display: flex;
+    gap: 10px;
+    transition: background-color 0.4s;
+    cursor: pointer;
+
+  }
+
+  &__icon {
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+
+    &_heading {
+      margin-bottom: 5px;
+    }
+
+    &_desc {
+      font-size: 14px;
+    }
+  }
+
+  &__description {
+    font-size: 14px;
+    white-space: pre-wrap;
+    margin-bottom: 15px;
+  }
+}

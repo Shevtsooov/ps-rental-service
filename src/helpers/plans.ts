@@ -5,7 +5,7 @@ export const plans = [
     numberOfDays: [1, 2]
   },
   {
-    days: '3-6 доби',
+    days: '3-6 діб',
     price: '400₴',
     numberOfDays: [3, 4, 5, 6]
   },

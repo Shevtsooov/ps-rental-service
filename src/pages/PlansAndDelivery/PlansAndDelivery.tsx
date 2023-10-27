@@ -60,10 +60,10 @@ export const PlansAndDelivery: React.FC = () => {
       <DeliveryDetails />
 
       <h2 className="plansPage__title">
-        Часті запитання
+        Популярні питання
       </h2>
       <p className="plansPage__description">
-        В цьому блоці ми відповідаємо на найпопулярніші запитання
+        В цьому блоці ми відповідаємо на найпопулярніші запитання від наших клієнтів
       </p>
 
       <Accordion faq={faq} />

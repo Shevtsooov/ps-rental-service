@@ -4,14 +4,40 @@
 .priceCalculator {
   font-size: 24px;
   margin-bottom: 25px;
+  background-color: $main-grey;
+  padding: 5px;
+  border-radius: 10px;
+  user-select: none;
 
   &__title {
-    font-size: 18px;
-    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+
+    &--text{
+      font-size: 20px;
+    }
+
+    &--arrow {
+      width: 20px;
+      height: 20px;
+      background-color: unset;
+      border: 0;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-image: url('../../assets/icons/arrow.svg');
+      transition: transform 0.5s;
+
+      &--active {
+        transform: rotate(180deg);
+      }
+    }
   }
 
   &__description {
     font-size: 14px;
+    padding: 5px;
     margin-bottom: 15px;
   }
 
@@ -28,6 +54,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 20;
+    padding: 5px;
 
   margin-bottom: 15px;
 
@@ -78,7 +105,7 @@
     border: 1px solid $main-blue;
     display: flex;
     flex-direction: row;
-
+    margin: 5px;
     font-size: 18px;
 
     &_option {

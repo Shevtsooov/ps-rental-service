@@ -6,6 +6,7 @@ import { PriceCalculator } from '../../components/PriceCalculator/PriceCalculato
 
 export const PlansAndDelivery: React.FC = () => {
   const [chosenNumber, setChosenNumber] = useState<number>(1);
+  const [isCalculatorOpen, setIsCalculatorOpen] = useState(false);
 
   return (
     <div className="plansPage">
@@ -20,11 +21,14 @@ export const PlansAndDelivery: React.FC = () => {
 
       <PricingTable 
         chosenNumber={chosenNumber}
+        isCalculatorOpen={isCalculatorOpen}
       />
 
       <PriceCalculator
         chosenNumber={chosenNumber}
         setChosenNumber={setChosenNumber}
+        isCalculatorOpen={isCalculatorOpen}
+        setIsCalculatorOpen={setIsCalculatorOpen}
       />
       
       <h2 className="plansPage__title">

@@ -4,9 +4,13 @@ import './PricingTable.scss';
 
 type Props = {
   chosenNumber: number,
+  isCalculatorOpen: boolean,
 };
 
-export const PricingTable: React.FC<Props> = ({ chosenNumber }) => {
+export const PricingTable: React.FC<Props> = ({
+  chosenNumber,
+  isCalculatorOpen,
+}) => {
 
   return (
     <table className="pricingTable">
@@ -23,7 +27,7 @@ export const PricingTable: React.FC<Props> = ({ chosenNumber }) => {
       {plans.map(plan => (
         <tr
           className={cn("pricingTable__row", {
-            "pricingTable__row--active": plan.numberOfDays.includes(chosenNumber)
+            "pricingTable__row--active": plan.numberOfDays.includes(chosenNumber) && isCalculatorOpen
           })}
           key={plan.days}
         >

@@ -3,7 +3,7 @@
 
 .accordion {
   margin-bottom: 40px;
-  
+
   &__item {
     margin-bottom: 16px;
     background-color: $main-grey;
@@ -13,7 +13,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 5px 10px;
+      padding: 10px;
 
       font-size: 16px;
       font-weight: 400;

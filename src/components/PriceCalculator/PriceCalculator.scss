@@ -2,5 +2,82 @@
 @import "../../styles/utils/colors.scss";
 
 .priceCalculator {
- 
+  font-size: 24px;
+  margin-bottom: 25px;
+
+  &__title {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+}
+
+.calculator {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20;
+
+  margin-bottom: 15px;
+
+  &__sum {
+    font-size: 65px;
+  }
+
+  &__nod {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+
+    &--number {
+      font-size: 50px;
+    }
+
+    &--correctForm {
+  
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+
+    &_button {
+      width: 35px;
+      height: 35px;
+
+      border: 0;
+      border-radius: 30px;
+
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    &--add {
+      background-image: url('../../assets/icons/add.svg');
+    }
+    
+    &--subtract {
+      background-image: url('../../assets/icons/subtract.svg');
+    }
+  }
+
+  &__delivery {
+    border: 1px solid $main-blue;
+    display: flex;
+    flex-direction: row;
+
+    font-size: 18px;
+
+    &_option {
+      width: 50%;
+      padding: 5px 10px;
+      text-align: center;
+
+      &--active {
+        color: #fff;
+        background-color: $main-blue;
+      }
+    }
+  }
 }

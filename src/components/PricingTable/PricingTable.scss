@@ -26,6 +26,9 @@
 
   &__row {
     
+    &--active {
+      background-color: #e5ecfd;
+    }
     &_nod {
       padding: 10px;
       width: 50%;

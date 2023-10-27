@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './PlansAndDelivery.scss';
 import { PricingTable } from '../../components/PricingTable/PricingTable';
 import { PriceCalculator } from '../../components/PriceCalculator/PriceCalculator';
 
 
 export const PlansAndDelivery: React.FC = () => {
+  const [chosenNumber, setChosenNumber] = useState<number>(1);
 
   return (
     <div className="plansPage">
@@ -12,9 +13,14 @@ export const PlansAndDelivery: React.FC = () => {
         Тарифи
       </h1>
 
-      <PricingTable />
+      <PricingTable 
+        chosenNumber={chosenNumber}
+      />
 
-      <PriceCalculator />
+      <PriceCalculator
+        chosenNumber={chosenNumber}
+        setChosenNumber={setChosenNumber}
+      />
       
       <h2 className="plansPage__title">
         Доставка

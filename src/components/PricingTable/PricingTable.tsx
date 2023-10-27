@@ -1,7 +1,12 @@
 import { plans } from '../../helpers/plans';
+import cn from 'classnames';
 import './PricingTable.scss';
 
-export const PricingTable: React.FC = () => {
+type Props = {
+  chosenNumber: number,
+};
+
+export const PricingTable: React.FC<Props> = ({ chosenNumber }) => {
 
   return (
     <table className="pricingTable">
@@ -16,7 +21,12 @@ export const PricingTable: React.FC = () => {
       </tr>
 
       {plans.map(plan => (
-        <tr className="pricingTable__row">
+        <tr
+          className={cn("pricingTable__row", {
+            "pricingTable__row--active": plan.numberOfDays.includes(chosenNumber)
+          })}
+          key={plan.days}
+        >
           <td className="pricingTable__row_nod">
             {plan.days}
           </td>

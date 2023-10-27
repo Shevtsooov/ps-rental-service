@@ -27,6 +27,7 @@
         height: 20px;
         background-image: url('../../assets/icons/arrow.svg');
         background-repeat: no-repeat;
+        transition: transform 0.5s;
         
         &--active {
           transform: rotate(180deg);

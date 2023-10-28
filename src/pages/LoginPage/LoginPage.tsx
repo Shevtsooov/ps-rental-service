@@ -1,17 +1,26 @@
 import React, { useState } from 'react';
 import './LoginPage.scss';
 import { LoginForm } from '../../components/LoginForm/LoginForm';
+import { RegistrationForm } from '../../components/RegistrationForm/RegistrationForm';
 
 
 export const LoginPage: React.FC = () => {
+  const [whatToShow, setWhatToShow] = useState('Реєстрація');
 
   return (
     <div className="loginPage">
-      <h1 className="loginPage__title">
-        Авторизація
-      </h1>
 
-      <LoginForm />
+      {whatToShow === 'Авторизація' && (
+        <LoginForm 
+          setWhatToShow={setWhatToShow}
+        />
+      )}
+
+      {whatToShow === 'Реєстрація' && (
+        <RegistrationForm
+          setWhatToShow={setWhatToShow}
+        />
+      )}
       
     </div>
   );

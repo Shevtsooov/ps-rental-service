@@ -1,7 +1,11 @@
 import { useState } from 'react';
 import './LoginForm.scss';
 
-export const LoginForm: React.FC = () => {
+type Props = {
+  setWhatToShow: (option: string) => void,
+};
+
+export const LoginForm: React.FC<Props> = ({ setWhatToShow }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [fieldType, setFieldType] = useState('password');
@@ -14,9 +18,21 @@ export const LoginForm: React.FC = () => {
     }
 
     setFieldType('password');
-  }
+  };
+
   return (
     <div className="loginForm">
+      <h1 className="loginForm__title">
+        Авторизація
+      </h1>
+
+      <p className="loginForm__description">
+        {`Створіть аккаунт для зручності.\тВже Маєте аккаунт? Увійдіть`}
+        <span>
+          тут
+        </span>
+      </p>     
+      
       <div className="loginForm__field">
         <input
           className="loginForm__field_input"
@@ -51,6 +67,7 @@ export const LoginForm: React.FC = () => {
       <div className="loginForm__actions">
         <button
           className="loginForm__actions_button loginForm__actions_button--registration"
+          onClick={() => setWhatToShow('Реєстрація')}
         >
           Реєстрація
         </button>

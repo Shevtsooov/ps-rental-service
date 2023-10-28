@@ -2,5 +2,115 @@
 @import "../../styles/utils/colors.scss";
 
 .registrationForm {
- 
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 40px;
+  
+  &__title {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  &__description {
+    font-size: 14px;
+    white-space: pre-wrap;
+
+    margin-bottom: 30px;
+
+    &--here {
+      color: $main-blue;
+      font-weight: 600;
+      cursor: pointer;
+      margin-left: 2px;
+    }
+  }
+
+  &__field {
+    position: relative;
+
+    margin-bottom: 25px;
+
+    &:nth-last-child(2) {
+      margin-bottom: 50px;
+    }
+
+    &_input {
+      width: 100%;
+      height: 50px;
+      padding: 10px 15px;
+      border-radius: 10px;
+      border: 0;
+      font-size: 20px;
+      background-color: $main-grey;
+    }
+
+    &--clear {
+      position: absolute;
+      top: calc(50% - 12.5px);
+      right: 10px;
+      width: 25px;
+      height: 25px;
+
+      cursor: pointer;
+
+      border: 0;
+      border-radius: 30px;
+      background-color: unset;
+
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-image: url('../../assets/icons/clear-search.svg');
+    }
+    
+    &_showPassword {
+      position: absolute;
+      top: calc(50% - 15px);
+      right: 45px;
+    
+      width: 30px;
+      height: 30px;
+      border: 0;
+
+      cursor: pointer;
+
+      background-color: unset;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-image: url('../../assets/icons/show-password.svg');
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 25px;
+
+    &_button {
+      font-size: 24px;
+      border: 2px solid $main-blue;
+      border-radius: 10px;
+      padding: 10px 15px;
+      width: 100%;
+      cursor: pointer;
+  
+      &--registration {
+        color: $main-blue;
+        background-color: #fff;
+  
+        &:hover {
+          background-color: $main-grey;
+        }
+      }
+  
+      &--login {
+        background-color: $main-blue;
+        color: #fff;
+  
+        &:hover {
+          background-color: $main-blue-hv;
+          border-color: $main-blue-hv;
+        }
+      }
+    }
+  }
 }

@@ -1,4 +1,3 @@
-import { Sorting } from './../components/Sorting/Sorting';
 import { configureStore } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import { queryReducer } from './Slices/query.slice';

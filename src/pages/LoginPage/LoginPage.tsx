@@ -5,7 +5,7 @@ import { RegistrationForm } from '../../components/RegistrationForm/Registration
 
 
 export const LoginPage: React.FC = () => {
-  const [whatToShow, setWhatToShow] = useState('Реєстрація');
+  const [whatToShow, setWhatToShow] = useState('Авторизація');
 
   return (
     <div className="loginPage">

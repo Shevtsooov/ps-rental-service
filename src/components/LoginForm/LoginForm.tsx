@@ -25,13 +25,13 @@ export const LoginForm: React.FC<Props> = ({ setWhatToShow }) => {
       <h1 className="loginForm__title">
         Авторизація
       </h1>
-
+{/* 
       <p className="loginForm__description">
         {`Створіть аккаунт для зручності.\тВже Маєте аккаунт? Увійдіть`}
         <span>
           тут
         </span>
-      </p>     
+      </p>      */}
       
       <div className="loginForm__field">
         <input

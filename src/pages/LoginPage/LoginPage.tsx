@@ -7,6 +7,16 @@ export const LoginPage: React.FC = () => {
   const [password, setPassword] = useState('');
   const [fieldType, setFieldType] = useState('password');
 
+  const changeInputType = () => {
+    if (fieldType === 'password') {
+      setFieldType('text');
+
+      return;
+    }
+
+    setFieldType('password');
+  }
+
   return (
     <div className="loginPage">
       <h1 className="loginPage__title">
@@ -36,8 +46,7 @@ export const LoginPage: React.FC = () => {
           {password !== '' && (
             <button
               className="loginPage__showPassword"
-              onMouseDown={() => setFieldType('text')}
-              onMouseUp={() => setFieldType('password')}
+              onClick={changeInputType}
             />
           )}
 

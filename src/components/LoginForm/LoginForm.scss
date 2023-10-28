@@ -4,13 +4,12 @@
 .loginForm {
   display: flex;
   flex-direction: column;
-  gap: 30px;
 
   margin-bottom: 40px;
   
   &__title {
     font-size: 28px;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
   }
 
   &__description {
@@ -23,8 +22,10 @@
   &__field {
     position: relative;
 
-    &:nth-child(3n) {
-      margin-bottom: 25px;
+    margin-bottom: 25px;
+
+    &:nth-last-child(2) {
+      margin-bottom: 50px;
     }
 
     &_input {
@@ -41,10 +42,28 @@
       }
     }
     
+    &--clear {
+      position: absolute;
+      top: calc(50% - 12.5px);
+      right: 10px;
+      width: 25px;
+      height: 25px;
+
+      cursor: pointer;
+
+      border: 0;
+      border-radius: 30px;
+      background-color: unset;
+
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-image: url('../../assets/icons/clear-search.svg');
+    }
+    
     &_showPassword {
       position: absolute;
       top: calc(50% - 15px);
-      right: 10px;
+      right: 45px;
     
       width: 30px;
       height: 30px;
@@ -60,11 +79,11 @@
     
     &_lostPassword {
       position: absolute;
-      bottom: -20px;
-      right: 10px;
+      bottom: -25px;
+      right: 0;
     
       color: $secondary-grey;
-    
+      font-size: 16px;
       border: 0;
       background-color: unset;
     

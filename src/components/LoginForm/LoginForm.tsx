@@ -41,6 +41,12 @@ export const LoginForm: React.FC<Props> = ({ setWhatToShow }) => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
+        {email !== '' && (
+          <button
+            className="registrationForm__field--clear"
+            onClick={() => setEmail('')}
+          />
+        )}
       </div>
 
       <div className="loginForm__field">
@@ -53,10 +59,18 @@ export const LoginForm: React.FC<Props> = ({ setWhatToShow }) => {
         />
 
         {password !== '' && (
-          <button
-            className="loginForm__field_showPassword"
-            onClick={changeInputType}
-          />
+          <>
+            <button
+              className="loginForm__field_showPassword"
+              onClick={changeInputType}
+            />
+
+            <button
+              className="registrationForm__field--clear"
+              onClick={() => setPassword('')}
+            />
+          </>
+
         )}
 
         <button className="loginForm__field_lostPassword">

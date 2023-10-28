@@ -24,6 +24,24 @@ export const RegistrationForm: React.FC<Props> = ({ setWhatToShow }) => {
 
     setFieldType('password');
   };
+
+  const handleAddPhoneNumber = (digit: string) => {
+    if (!'0123456789'.includes(digit.slice(-1))) {
+      return;
+    }
+
+    if(digit.length < 11) {
+      setPhoneNumber(digit);
+
+      return;
+    }
+
+    if ((phoneNumber + digit.slice(-1)).length === 11) {
+      return;
+    }
+
+    setPhoneNumber(digit);
+  };
   
   return (
     <div className="registrationForm">
@@ -79,10 +97,11 @@ export const RegistrationForm: React.FC<Props> = ({ setWhatToShow }) => {
       <div className="registrationForm__field">
         <input
           className="registrationForm__field_input"
-          placeholder="Номер телефону"
+          placeholder="Номер телефону - 0XX-XXX-XX-XX"
           type="text"
+          
           value={phoneNumber}
-          onChange={(e) => setPhoneNumber(e.target.value)}
+          onChange={(e) => handleAddPhoneNumber(e.target.value)}
         />
         {phoneNumber !== '' && (
           <button

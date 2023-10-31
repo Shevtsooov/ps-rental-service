@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import './RegistrationForm.scss';
 import cn from 'classnames';
+import { useAddNewUserMutation } from '../../Redux/RTK_Query/users.service';
+import { RegistrationModal } from '../RegistrationModal/RegistrationModal';
 
 type Props = {
   setWhatToShow: (option: string) => void,
@@ -14,6 +16,25 @@ export const RegistrationForm: React.FC<Props> = ({ setWhatToShow }) => {
   const [phoneNumber, setPhoneNumber] = useState('');
 
   const [fieldType, setFieldType] = useState('password');
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+   // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [ addNewUser ] = useAddNewUserMutation();
+
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = 'hidden';
+
+      return;
+    }
+    window.scrollTo({
+      top: 0, left: 0,
+    });
+
+    document.body.style.overflow = 'auto'
+  }, [isModalOpen]);
 
   const changeInputType = () => {
     if (fieldType === 'password') {
@@ -42,16 +63,61 @@ export const RegistrationForm: React.FC<Props> = ({ setWhatToShow }) => {
 
     setPhoneNumber(digit);
   };
+
+  const registerNewUser = async () => {
+    setIsModalOpen(true);
+    setIsLoading(true);
+
+    try {
+      const newUser = {
+        email,
+        fullName,
+        password,
+        address,
+        phoneNumber,
+      };
+
+      const response = await addNewUser(newUser);
+
+      if (response) {
+        console.log('A new user was added successfully:', response);
+      }
+
+    } catch (error) {
+      console.error('Error adding question:', error);
+      
+      return;
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const clearFields = () => {
+    setEmail('');
+    setFullName('');
+    setPassword('');
+    setAddress('');
+    setPhoneNumber('');
+    setIsModalOpen(false);
+  };
   
   return (
     <div className="registrationForm">
+
+      {isModalOpen && (
+        <RegistrationModal
+          email={email}
+          clearFields={clearFields}
+          isLoading={isLoading}
+        />
+      )}
 
       <h1 className="registrationForm__title">
         Реєстрація
       </h1>
 
       <p className="registrationForm__description">
-        {`Створіть аккаунт для зручності.\nВже маєте аккаунт? Увійдіть`}
+        Вже маєте аккаунт? Увійдіть
         <span 
           className="registrationForm__description--here"
           onClick={() => setWhatToShow('Авторизація')}
@@ -155,10 +221,11 @@ export const RegistrationForm: React.FC<Props> = ({ setWhatToShow }) => {
       <div className="registrationForm__actions">
         <button
           className="registrationForm__actions_button registrationForm__actions_button--login"
+          onClick={registerNewUser}
         >
           Далі
         </button>
       </div>
     </div>
   );
-}
+};

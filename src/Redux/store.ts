@@ -15,6 +15,7 @@ import { filteredSortingReducer } from './Slices/filteredSorting.slice';
 import { filteredYearReducer } from './Slices/filteredYear.slice';
 import { filteredPlayersReducer } from './Slices/filteredPlayers.slice';
 import { paginationPageReducer } from './Slices/paginationPage.slice';
+import { UsersApi } from './RTK_Query/users.service';
 
 export const store = configureStore({
   reducer: {
@@ -36,9 +37,11 @@ export const store = configureStore({
     paginationPage: paginationPageReducer,
 
     [GamesApi.reducerPath]: GamesApi.reducer,
+    [UsersApi.reducerPath]: UsersApi.reducer,
   },
   middleware: (getDefaultMiddleware) => (
-    getDefaultMiddleware().concat(GamesApi.middleware)
+    getDefaultMiddleware().concat(GamesApi.middleware),
+    getDefaultMiddleware().concat(UsersApi.middleware)
   )
 })
 

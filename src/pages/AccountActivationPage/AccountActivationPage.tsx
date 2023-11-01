@@ -6,7 +6,7 @@ import { useActivateUserQuery } from '../../Redux/RTK_Query/users.service';
 
 
 export const AccountActivationPage = () => {
-  const [error, setError] = useState('');
+  const [error, setError] = useState<string | null>(null);
   const [done, setDone] = useState(false);
 
   const { activationToken } = useParams<{ activationToken: string }>();
@@ -22,10 +22,7 @@ export const AccountActivationPage = () => {
         setError('Activation failed. Please try again or contact support.');
         setDone(true);
       }
-    } else {
-      setError('An error occurred during activation. Please try again later.');
-      setDone(true);
-    }
+    } 
   }, [activateData, isSuccess]);
 
   if (!done) {

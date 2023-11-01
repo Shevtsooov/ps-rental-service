@@ -11,16 +11,20 @@ export const AccountActivationPage = () => {
 
   const { activationToken } = useParams<{ activationToken: string }>();
 
-  const { data: activateData, isSuccess } = useActivateUserQuery(activationToken || '');
+  const { data: activateData, isSuccess, isError} = useActivateUserQuery(activationToken || '');
 
   useEffect(() => {
     if (isSuccess) {
       setDone(true);
-    } else {
+
+      return;
+    } 
+    
+    if (isError) {
       setError('На жаль, активація аккаунту не виконана.');
       setDone(true);
     }
-  }, [activateData, isSuccess]);
+  }, [activateData, isSuccess, isError]);
 
   if (!done) {
     return <Loader />;

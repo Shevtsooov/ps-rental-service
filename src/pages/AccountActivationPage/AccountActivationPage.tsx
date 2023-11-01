@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import { Loader } from '../../components/Loader/Loader';
 import './AccountActivationPage.scss';
 import { useActivateUserQuery } from '../../Redux/RTK_Query/users.service';
@@ -14,15 +14,12 @@ export const AccountActivationPage = () => {
   const { data: activateData, isSuccess } = useActivateUserQuery(activationToken || '');
 
   useEffect(() => {
-    if (activateData) {
-      // Check if the activation was successful, you might have a specific field in your response to indicate success.
-      if (isSuccess) {
-        setDone(true);
-      } else {
-        setError('Activation failed. Please try again or contact support.');
-        setDone(true);
-      }
-    } 
+    if (isSuccess) {
+      setDone(true);
+    } else {
+      setError('На жаль, активація аккаунту не виконана.');
+      setDone(true);
+    }
   }, [activateData, isSuccess]);
 
   if (!done) {
@@ -30,21 +27,27 @@ export const AccountActivationPage = () => {
   }
 
   return (
-    <>
-      <h1 className="title">Активація аккаунту</h1>
+    <div className="acAcPage">
+      <h1 className="acAcPage__title">Активація аккаунту</h1>
 
       {error
         ? (
-          <p className="notification is-danger is-light">
+          <p className="acAcPage__error">
             {error}
           </p>
         )
         : (
-          <p className="notification is-success is-light">
-            Ваш аккаунт активований
-          </p>
-        )
-        }
-    </>
+          <>
+            <p className="acAcPage__success">
+              Ваш аккаунт успішно активовано.
+            </p>
+
+            <NavLink to="/games" className="acAcPage__button">
+              До ігор
+            </NavLink>
+          </>
+       )
+      }
+    </div>
   );
 };

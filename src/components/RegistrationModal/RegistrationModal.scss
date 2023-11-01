@@ -33,11 +33,19 @@
 
   &__notice {
     font-size: 20px;
-    margin-bottom: 15px;
+  }
+
+  &__smallNotice {
+    margin-bottom: 25px;
   }
 
   &__email {
-    font-size: 28px;
+    // width: 160px;
+    padding: 10px 15px;
+    border-radius: 30px;
+    background-color: #fff;
+    word-wrap: break-word;
+    font-size: 20px;
     margin-bottom: 50px;
   }
 

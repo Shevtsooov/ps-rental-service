@@ -1,2 +1,33 @@
 @import "../../styles/utils/mixins.scss";
 @import "../../styles/utils/colors.scss";
+
+.acAcPage {
+  padding: 20px;
+  height: 50vh;
+
+  &__title {
+    font-size: 28px;
+    margin-bottom: 25px;
+  }
+
+  &__error {
+    color: #ff8e8e;
+  }
+
+  &__success {
+    color: #248e04;
+    margin-bottom: 80px;
+  }
+
+  &__button {
+    display: block;
+    text-align: center;
+    font-size: 24px;
+    border: 2px solid $main-blue;
+    background-color: $main-blue;
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+}

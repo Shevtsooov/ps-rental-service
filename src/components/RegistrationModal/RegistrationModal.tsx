@@ -22,7 +22,7 @@ export const RegistrationModal: React.FC<Props> = ({
         <>
           <h1 className="registrationModal__title">Аккаунт створено успішно</h1>
 
-          <p className="registrationModal__notice">Залишилось лише його активувати</p>
+          <p className="registrationModal__notice">Залишилось активувати його</p>
           
           <img
             src={checkEmail}
@@ -31,8 +31,10 @@ export const RegistrationModal: React.FC<Props> = ({
           />
 
           <p className="registrationModal__notice">Будь ласка, перевірте свою скриньку:</p>
+          <p className="registrationModal__smallNotice">Також не забудьте перевірити папку "Спам"</p>
 
           <h3 className="registrationModal__email">{email}</h3>
+
 
           <button
             className="registrationModal__button"

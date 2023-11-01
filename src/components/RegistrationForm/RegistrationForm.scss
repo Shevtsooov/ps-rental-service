@@ -43,11 +43,25 @@
       border: 0;
       font-size: 18px;
       background-color: $main-grey;
+
+      margin-bottom: 10px;
+
+      &--error {
+        background-color: #f9c9c9;
+      }
+    }
+
+    &_warning {
+      position: absolute;
+      top: -20px;
+      left: 0;
+      font-size: 14px;
+      color: #f8b1b1;
     }
 
     &--clear {
       position: absolute;
-      top: calc(50% - 12.5px);
+      top: calc(39% - 12.5px);
       right: 10px;
       width: 25px;
       height: 25px;

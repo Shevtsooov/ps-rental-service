@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './RegistrationForm.scss';
 import cn from 'classnames';
-import { useAddNewUserMutation } from '../../Redux/RTK_Query/users.service';
+import { useAddNewUserMutation, useGetAllUsersQuery } from '../../Redux/RTK_Query/users.service';
 import { RegistrationModal } from '../RegistrationModal/RegistrationModal';
 
 type Props = {
@@ -19,8 +19,23 @@ export const RegistrationForm: React.FC<Props> = ({ setWhatToShow }) => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  
+  const noErrors = {
+    noFullName: false, 
+    noAddress: false, 
+    shortAddress: '', 
+    noPhoneNumber: false, 
+    shortPhoneNumber: '', 
+    noEmail: false, 
+    incorrectEmail: '', 
+    isEmailRegistered: '',
+    noPassword: false, 
+    weakPassword: '', 
+  }
+  const [error, setError] = useState(noErrors);
 
   const [ addNewUser ] = useAddNewUserMutation();
+  const { data: users } = useGetAllUsersQuery();
 
   useEffect(() => {
     if (isModalOpen) {
@@ -64,6 +79,106 @@ export const RegistrationForm: React.FC<Props> = ({ setWhatToShow }) => {
   };
 
   const registerNewUser = async () => {
+
+    const emailPattern = /^[\w.+-]+@([\w-]+\.){1,3}[\w-]{2,}$/;
+
+    const isAlreadyRegistered = users?.find(user => (
+      user.email === email
+    ));
+
+    const anyError = !email
+    || !emailPattern.test(email)
+    || email === ''
+    || isAlreadyRegistered
+    || !password
+    || password.length < 6
+    || !fullName
+    || fullName.length < 6
+    || address.length < 6
+    || !address
+    || !phoneNumber
+    || phoneNumber.length !== 10;
+
+    if (anyError) {
+      if (fullName === '') {
+        setError(error => ({
+          ...error,
+          noFullName: true
+        }));
+
+        console.log('error - ', error);
+      }
+  
+      if (address === '') {
+        setError(error => ({
+          ...error,
+          noAddress: true
+        }));
+      }
+    
+      if (address.length < 6) {
+        setError(error => ({
+          ...error,
+          shortAddress: 'Закоротка адреса'
+        }));
+      }
+  
+      if (phoneNumber === '') {
+        setError(error => ({
+          ...error,
+          noPhoneNumber: true
+        }));
+      }
+    
+      if (phoneNumber !== '' && phoneNumber.length !== 10) {
+        setError(error => ({
+          ...error,
+          shortPhoneNumber: 'Номер має складатись з 10 цифр'
+        }));
+      }
+      
+      if (email === '') {
+        setError(error => ({
+          ...error,
+          noEmail: true
+        }));
+      }
+      
+      if (email !== '' && !emailPattern.test(email)) {
+        setError(error => ({
+          ...error,
+          incorrectEmail: 'Будь ласка, перевірте правильність адреси'
+        }));
+      }
+      
+      if (isAlreadyRegistered) {
+        setError(error => ({
+          ...error,
+          isEmailRegistered: 'Клієнт з такою поштою вже зареєстрований'
+        }));
+      }
+  
+      if (password === '') {
+        setError(error => ({
+          ...error,
+          noPassword: true
+        }));
+      }
+    
+      if (password !== '' && password.length < 8) {
+        setError(error => ({
+          ...error,
+          weakPassword: 'Закороткий пароль'
+        }));
+      }
+
+      setTimeout(() => {
+        setError(noErrors);
+      }, 2000);
+
+      return;
+    }
+
     setIsModalOpen(true);
     setIsLoading(true);
 
@@ -127,7 +242,9 @@ export const RegistrationForm: React.FC<Props> = ({ setWhatToShow }) => {
 
       <div className="registrationForm__field">
         <input
-          className="registrationForm__field_input"
+          className={cn("registrationForm__field_input", {
+            "registrationForm__field_input--error": error.noFullName
+          })}
           placeholder="Ім'я та прізвище"
           type="text"
           value={fullName}
@@ -144,7 +261,9 @@ export const RegistrationForm: React.FC<Props> = ({ setWhatToShow }) => {
 
       <div className="registrationForm__field">
         <input
-          className="registrationForm__field_input"
+          className={cn("registrationForm__field_input", {
+            "registrationForm__field_input--error": error.noAddress
+          })}
           placeholder="Адреса"
           type="text"
           value={address}
@@ -160,8 +279,16 @@ export const RegistrationForm: React.FC<Props> = ({ setWhatToShow }) => {
       </div>
 
       <div className="registrationForm__field">
+        {error.shortPhoneNumber && (
+          <p className="registrationForm__field_warning">
+            {error.shortPhoneNumber}
+          </p>
+        )}
+
         <input
-          className="registrationForm__field_input"
+          className={cn("registrationForm__field_input", {
+            "registrationForm__field_input--error": error.noPhoneNumber || error.shortPhoneNumber
+          })}
           placeholder="Номер телефону - 0XX-XXX-XX-XX"
           type="text"
           
@@ -178,13 +305,24 @@ export const RegistrationForm: React.FC<Props> = ({ setWhatToShow }) => {
       </div>
       
       <div className="registrationForm__field">
+        {(error.incorrectEmail || error.isEmailRegistered) && (
+          <p className="registrationForm__field_warning">
+            {error.incorrectEmail || error.isEmailRegistered}
+          </p>
+        )}
+
         <input
-          className="registrationForm__field_input"
+          className={cn("registrationForm__field_input", {
+            "registrationForm__field_input--error": error.noEmail || error.incorrectEmail || error.isEmailRegistered
+          })}
           placeholder='Email'
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
+
+
+
         {email !== '' && (
           <button
             className="registrationForm__field--clear"
@@ -194,8 +332,16 @@ export const RegistrationForm: React.FC<Props> = ({ setWhatToShow }) => {
       </div>
 
       <div className="registrationForm__field">
+        {error.weakPassword && (
+          <p className="registrationForm__field_warning">
+            {error.weakPassword}
+          </p>
+        )}
+        
         <input
-          className="registrationForm__field_input"
+          className={cn("registrationForm__field_input", {
+            "registrationForm__field_input--error": error.noPassword || error.weakPassword
+          })}
           placeholder='Придумайте надійний пароль'
           type={fieldType}
           value={password}

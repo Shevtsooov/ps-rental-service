@@ -7,9 +7,9 @@ export const UsersApi = createApi({
     baseUrl: 'https://testps.onrender.com'
   }),
   endpoints: (builder) => ({
-    // getAllGames: builder.query<Game[], void>({
-    //   query: () => 'games'
-    // }),
+    getAllUsers: builder.query<User[], void>({
+      query: () => 'users'
+    }),
     // findGames: builder.query<Game[], {
     //   sortBy?:string,
     //   query?: string;
@@ -46,7 +46,7 @@ export const UsersApi = createApi({
 })
 
 export const {
-  // useGetAllGamesQuery,
+  useGetAllUsersQuery,
   // useFindGamesQuery,
   useAddNewUserMutation,
   // useEditGameMutation,

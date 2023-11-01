@@ -18,6 +18,7 @@ import { GamePage } from './pages/GamePage/GamePage';
 import { ShoppingCartBubble } from './components/ShoppingCartBubble/ShoppingCartBubble';
 import { useAppSelector } from './Redux/store';
 import { useInViewport } from './helpers/useInViewport';
+import { AccountActivationPage } from './pages/AccountActivationPage/AccountActivationPage';
 
 export const App: React.FC = () => {
   const shoppingCartGames = useAppSelector(state => state.shoppingCartGames.value);
@@ -50,6 +51,7 @@ export const App: React.FC = () => {
         <Route path="login" element={<LoginPage />} />
         <Route path="saved-games" element={<SavedGames />} />
         <Route path="shopping-cart" element={<ShoppingCart />} />
+        <Route path="activate/:activationToken" element={<AccountActivationPage />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
 

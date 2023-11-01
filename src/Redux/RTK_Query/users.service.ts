@@ -10,6 +10,9 @@ export const UsersApi = createApi({
     getAllUsers: builder.query<User[], void>({
       query: () => 'users'
     }),
+    activateUser: builder.query<void, string>({
+      query: (activationToken) => `activation/${activationToken}`
+    }),
     // findGames: builder.query<Game[], {
     //   sortBy?:string,
     //   query?: string;
@@ -47,7 +50,7 @@ export const UsersApi = createApi({
 
 export const {
   useGetAllUsersQuery,
-  // useFindGamesQuery,
+  useActivateUserQuery,
   useAddNewUserMutation,
   // useEditGameMutation,
 } = UsersApi;

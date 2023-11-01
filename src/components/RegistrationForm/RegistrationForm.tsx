@@ -20,7 +20,6 @@ export const RegistrationForm: React.FC<Props> = ({ setWhatToShow }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [ addNewUser ] = useAddNewUserMutation();
 
   useEffect(() => {

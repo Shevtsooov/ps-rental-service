@@ -40,8 +40,10 @@ export const store = configureStore({
     [UsersApi.reducerPath]: UsersApi.reducer,
   },
   middleware: (getDefaultMiddleware) => (
-    getDefaultMiddleware().concat(GamesApi.middleware),
-    getDefaultMiddleware().concat(UsersApi.middleware)
+    getDefaultMiddleware().concat([
+        GamesApi.middleware,
+        UsersApi.middleware,
+      ])
   )
 })
 

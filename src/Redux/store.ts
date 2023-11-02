@@ -16,9 +16,12 @@ import { filteredYearReducer } from './Slices/filteredYear.slice';
 import { filteredPlayersReducer } from './Slices/filteredPlayers.slice';
 import { paginationPageReducer } from './Slices/paginationPage.slice';
 import { UsersApi } from './RTK_Query/users.service';
+import { userReducer } from './Slices/first.slice';
 
 export const store = configureStore({
   reducer: {
+    user: userReducer,
+    
     query: queryReducer,
     savedGames: savedGamesReducer,
     shoppingCartGames: shoppingCartGamesReducer,

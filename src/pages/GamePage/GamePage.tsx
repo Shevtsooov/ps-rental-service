@@ -14,6 +14,8 @@ export const GamePage: React.FC = () => {
   const { gameIdLink } = useParams();
   const [collectionGames, setCollectionGames] = useState<Game[]>([])
   const game = games.find(g => g.gameId === gameIdLink);
+  const user = useAppSelector(state => state.user.value);
+
   const savedGames = useAppSelector(state => state.savedGames.value);
   const shoppingCartGames = useAppSelector(state => state.shoppingCartGames.value);
   const dispatch = useAppDispatch();
@@ -95,7 +97,7 @@ export const GamePage: React.FC = () => {
         </p>
       </div>
 
-      {game && (
+      {game && user && (
         <>
           <div className="game_page__price">
           {shoppingCartGames.length === 0 || shoppingCartGames[0].gameId === game.gameId
@@ -119,7 +121,7 @@ export const GamePage: React.FC = () => {
               </>
             )}
           </div>
-          
+
           <div className="game_page_buttons">
             <button 
               className={cn('game_page_buttons_cart', {

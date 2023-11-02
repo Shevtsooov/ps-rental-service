@@ -13,6 +13,7 @@ type Props = {
 export const GameInfo: React.FC<Props> = ({ game }) => {
   const savedGames = useAppSelector(state => state.savedGames.value);
   const shoppingCartGames = useAppSelector(state => state.shoppingCartGames.value);
+  const user = useAppSelector(state => state.user.value);
   const dispatch = useAppDispatch();
 
   const {
@@ -96,25 +97,34 @@ export const GameInfo: React.FC<Props> = ({ game }) => {
         )}
       </div>
       
-      <div className="game_buttons">
-        <button 
-          className={cn('game_buttons_cart', {
-            'game_buttons_cart--added': shoppingCartGames.includes(game),
-            'game_buttons_cart--disabled': !isAvailable,
-          })}
-          onClick={() => handleAddToCartGame(game)}
-        >
-          {shoppingCartGames.includes(game)
-          ? 'видалити'
-          : 'додати в кошик'}
-        </button>
-        <button
-          className={cn('game_buttons_heart', {
-            'game_buttons_heart--active': savedGames.includes(game)
-          })}
-          onClick={() => handleSaveGame(game)}
-        />
-      </div>
+      {user !== null
+        ? (
+          <div className="game_buttons">
+            <button 
+              className={cn('game_buttons_cart', {
+                'game_buttons_cart--added': shoppingCartGames.includes(game),
+                'game_buttons_cart--disabled': !isAvailable,
+              })}
+              onClick={() => handleAddToCartGame(game)}
+            >
+              {shoppingCartGames.includes(game)
+              ? 'видалити'
+              : 'додати в кошик'}
+            </button>
+            <button
+              className={cn('game_buttons_heart', {
+                'game_buttons_heart--active': savedGames.includes(game)
+              })}
+              onClick={() => handleSaveGame(game)}
+            />
+          </div>
+        )
+        : (
+          <div className="game_noUser">
+            Увійдіть або зареєструйтесь, щоб робити замовлення та зберігати улюблені ігри
+          </div>
+        )
+      }
     </div>
   );
 }

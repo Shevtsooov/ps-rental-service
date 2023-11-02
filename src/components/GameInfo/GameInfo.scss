@@ -121,4 +121,11 @@
       }
     }
   }
+
+  &_noUser {
+    background: $main-grey;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 14px;
+  }
 }

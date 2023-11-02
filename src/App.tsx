@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 
 import './App.scss';
@@ -16,9 +16,10 @@ import { SavedGames } from './pages/SavedGames/SavedGames';
 import { ShoppingCart } from './pages/ShoppingCart/ShoppingCart';
 import { GamePage } from './pages/GamePage/GamePage';
 import { ShoppingCartBubble } from './components/ShoppingCartBubble/ShoppingCartBubble';
-import { useAppSelector } from './Redux/store';
+import { useAppDispatch, useAppSelector } from './Redux/store';
 import { useInViewport } from './helpers/useInViewport';
 import { AccountActivationPage } from './pages/AccountActivationPage/AccountActivationPage';
+import { setUser } from './Redux/Slices/first.slice';
 
 export const App: React.FC = () => {
   const shoppingCartGames = useAppSelector(state => state.shoppingCartGames.value);
@@ -27,6 +28,17 @@ export const App: React.FC = () => {
   // THIS CODE SETS isVisible = true WHEN REF IS IN THE VIEWPORT
   const headerRef = useRef<HTMLDivElement | null>(null);
   const [isVisible] = useInViewport(headerRef);
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem('user');
+    const parsedUser = storedUser ? JSON.parse(storedUser) : null;
+    
+    if (parsedUser !== null) {
+      dispatch(setUser(parsedUser));
+    }
+    
+  }, []);
   
   const showCartBubble = location.pathname !== '/shopping-cart'
   && shoppingCartGames.length > 0

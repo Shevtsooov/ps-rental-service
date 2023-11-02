@@ -1,15 +1,31 @@
 import { useState } from 'react';
 import './LoginForm.scss';
+import { useLoginUserMutation } from '../../Redux/RTK_Query/users.service';
+import { accessTokenService } from '../../helpers/accessTokenService';
+import { setUser } from '../../Redux/Slices/first.slice';
+import { useAppDispatch } from '../../Redux/store';
+import { useNavigate } from "react-router-dom";
 
 type Props = {
   setWhatToShow: (option: string) => void,
 };
 
-export const LoginForm: React.FC<Props> = ({ setWhatToShow }) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [fieldType, setFieldType] = useState('password');
+type credentials = {
+  email: string,  
+  password: string,
+};
 
+const emptyCredentials = {
+  email: '',  
+  password: '',
+}
+
+export const LoginForm: React.FC<Props> = ({ setWhatToShow }) => {
+  const [credentials, setCredentials] = useState<credentials>(emptyCredentials);
+  const [fieldType, setFieldType] = useState('password');
+  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+  
   const changeInputType = () => {
     if (fieldType === 'password') {
       setFieldType('text');
@@ -18,6 +34,39 @@ export const LoginForm: React.FC<Props> = ({ setWhatToShow }) => {
     }
 
     setFieldType('password');
+  };
+
+  const [ loginUser ] = useLoginUserMutation();
+
+  const setPassword = (pass: string) => {
+    setCredentials({ ...credentials, password: pass })
+  }
+
+  const setEmail = (mail: string) => {
+    setCredentials({ ...credentials, email: mail })
+  }
+
+  const login = async () => {
+    try {
+      const response = await loginUser(credentials);
+      
+      if ('data' in response) {
+        const { accessToken, normalizedUser } = response.data;
+
+        accessTokenService.save(accessToken);
+        dispatch(setUser(normalizedUser));
+        localStorage.setItem('user', JSON.stringify(normalizedUser))
+
+        console.log('user - ', normalizedUser);
+      }
+    } catch (error) {
+      // Handle errors here, for example, show an error message to the user.
+      console.error('Login failed:', error);
+    } finally {
+      setPassword('');
+      setEmail('');
+      navigate("/");
+    }
   };
 
   return (
@@ -38,10 +87,10 @@ export const LoginForm: React.FC<Props> = ({ setWhatToShow }) => {
           className="loginForm__field_input"
           placeholder='Email'
           type="email"
-          value={email}
+          value={credentials.email}
           onChange={(e) => setEmail(e.target.value)}
         />
-        {email !== '' && (
+        {credentials.email !== '' && (
           <button
             className="registrationForm__field--clear"
             onClick={() => setEmail('')}
@@ -54,11 +103,11 @@ export const LoginForm: React.FC<Props> = ({ setWhatToShow }) => {
           className="loginForm__field_input loginForm__field_input--spaced"
           placeholder='Пароль'
           type={fieldType}
-          value={password}
+          value={credentials.password}
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        {password !== '' && (
+        {credentials.password !== '' && (
           <>
             <button
               className="loginForm__field_showPassword"
@@ -88,6 +137,7 @@ export const LoginForm: React.FC<Props> = ({ setWhatToShow }) => {
 
         <button
           className="loginForm__actions_button loginForm__actions_button--login"
+          onClick={login}
         >
           Увійти
         </button>

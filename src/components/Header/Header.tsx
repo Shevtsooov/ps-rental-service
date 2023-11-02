@@ -5,9 +5,36 @@ import { MobileNavigation } from '../MobileNavigation/MobileNavigation';
 import { Navigation } from '../Navigation/Navigation';
 import { ShoppingCartLink } from '../ShoppingCartLink/ShoppingCartLink';
 import './Header.scss';
+import { useAppDispatch, useAppSelector } from '../../Redux/store';
+import { useState, useEffect } from 'react';
+import { setUser } from '../../Redux/Slices/first.slice';
+import { User } from '../../types/User';
 
 export const Header: React.FC = () => {
-  const user = true;
+  const user = useAppSelector(state => state.user?.value);
+
+  // const dispatch = useAppDispatch();
+  
+  // const [storedUser, setStoredUser] = useState<User | null>(() => {
+  //   const storedUser = localStorage.getItem('user');
+  //   const parsedUser = storedUser ? JSON.parse(storedUser) : null;
+    
+  //   if (parsedUser !== null) {
+  //     return parsedUser;
+  //   }
+    
+  //   return null;
+  // });
+
+  // useEffect(() => {
+  //   const storedUser = localStorage.getItem('user');
+  //   const parsedUser = storedUser ? JSON.parse(storedUser) : null;
+    
+  //   if (parsedUser !== null) {
+  //     dispatch(setUser(parsedUser));
+  //   }
+    
+  // }, [storedUser]);
 
   return (
     <div className="header">
@@ -24,7 +51,7 @@ export const Header: React.FC = () => {
 
       {!user && <Login />}
       
-      {user && (
+      {user !== null && (
         <div className='header__actions'>
           <SavedGamesLink />
           <ShoppingCartLink />

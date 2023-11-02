@@ -4,7 +4,8 @@ import { Game } from '../../types/Game';
 export const GamesApi = createApi({
   reducerPath: 'GamesApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'http://localhost:5020'
+    baseUrl: 'https://testps.onrender.com'
+    // baseUrl: 'http://localhost:5020'
   }),
   endpoints: (builder) => ({
     getAllGames: builder.query<Game[], void>({

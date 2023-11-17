@@ -43,12 +43,12 @@ export const AccountPage: React.FC = () => {
 
   useEffect(() => {
     if (user) {
-      const [year, month, day] = user.createdAt.toString().slice(0, 10).split('-');
+      const [year, month, day] = user?.createdAt.toString().slice(0, 10).split('-');
 
       setYear(+year);
       setMonth(+month);
       setDay(+day);
-      setPassedDays(calculateDaysPassed(user.createdAt.toString()));
+      setPassedDays(calculateDaysPassed(user?.createdAt.toString()));
     }
   }, [user]);
 

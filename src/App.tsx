@@ -23,14 +23,14 @@ import { useRefreshUserMutation } from './Redux/RTK_Query/authApi.service';
 import { setUser } from './Redux/Slices/user.slice';
 import { useCookies } from 'react-cookie';
 import { refreshTokenService } from './helpers/refreshTokenService';
+import { RegistrationPage } from './pages/RegistrationPage/RegistrationPage';
+import { AccountPage } from './pages/AccountPage/AccountPage';
 
 export const App: React.FC = () => {
-  const shoppingCartGames = useAppSelector(state => state.shoppingCartGames.value);
+  // const shoppingCartGames = useAppSelector(state => state.shoppingCartGames.value);
   const user = useAppSelector(state => state.user.value);
 
   const [refreshUser] = useRefreshUserMutation();
-
-  const [cookies, setCookies] = useCookies();
 
   const location = useLocation();
 
@@ -98,10 +98,15 @@ export const App: React.FC = () => {
         <Route path="plans" element={<PlansAndDelivery />} />
         <Route path="agreement" element={<Agreement />} />
         <Route path="about-ps5" element={<AboutPS5 />} />
+
         <Route path="login" element={<LoginPage />} />
+        <Route path="registration" element={<RegistrationPage />} />
+
+        <Route path="account" element={<AccountPage />} />
         <Route path="saved-games" element={<SavedGames />} />
         <Route path="shopping-cart" element={<ShoppingCart />} />
         <Route path="activate/:activationToken" element={<AccountActivationPage />} />
+
         <Route path="*" element={<PageNotFound />} />
       </Routes>
 

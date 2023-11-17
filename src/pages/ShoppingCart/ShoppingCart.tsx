@@ -1,13 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './ShoppingCart.scss';
 import { useAppDispatch, useAppSelector } from '../../Redux/store';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ShoppingCartList } from '../../components/ShoppingCartList/ShoppingCartList';
 import { PSShoppingCartInfo } from '../../components/PSShoppingCartInfo/PSShoppingCartInfo';
 import { Delivery } from '../../components/Delivery/Delivery';
 import { closeCalendar } from '../../Redux/Slices/isCalendarShown.slice';
 import { closeDelivery } from '../../Redux/Slices/isDeliveryShown.slice';
 import { resetChosenDelivery, setChosenDelivery } from '../../Redux/Slices/chosenDelivery.slice';
+import { refreshTokenService } from '../../helpers/refreshTokenService';
 
 export const ShoppingCart: React.FC = () => {
   const user = useAppSelector(state => state.user.value);
@@ -17,6 +18,7 @@ export const ShoppingCart: React.FC = () => {
   const isDeliveryShown = useAppSelector(state => state.isDeliveryShown.value);
   const chosenDelivery = useAppSelector(state => state.chosenDelivery.value);
   const [finalPrice, setFinalPrice] = useState<number | null>(null);
+  const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
     // THIS BLOCK ENSURES THE PAGE OPENS FROM THE TOP
@@ -76,6 +78,12 @@ export const ShoppingCart: React.FC = () => {
     dispatch(closeCalendar());
     dispatch(closeDelivery());
   };
+
+  useEffect(() => {
+    if (!refreshTokenService.get()) {
+      navigate('/');
+    }
+  }, []);
 
   return (
     <div

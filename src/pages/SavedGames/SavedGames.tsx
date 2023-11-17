@@ -2,14 +2,16 @@ import React, { useEffect } from 'react';
 import './SavedGames.scss';
 import { useAppDispatch, useAppSelector } from '../../Redux/store';
 import { GameList } from '../../components/GameList/GameList';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useGetAllGamesQuery } from '../../Redux/RTK_Query/games.service';
 import { hardSetSavedGames, resetSavedGames } from '../../Redux/Slices/savedGames.slice';
+import { refreshTokenService } from '../../helpers/refreshTokenService';
 
 export const SavedGames: React.FC = () => {
   const savedGames = useAppSelector(state => state.savedGames.value);
   const user = useAppSelector(state => state.user.value);
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
   const { data: games } = useGetAllGamesQuery();
   
   // useEffect(() => {
@@ -37,6 +39,12 @@ export const SavedGames: React.FC = () => {
       dispatch(hardSetSavedGames(gamesToAdd));
     }
   }, [user, games, dispatch]);
+
+  useEffect(() => {
+    if (!refreshTokenService.get()) {
+      navigate('/');
+    }
+  }, []);
 
   return (
     <div className="savedGames">

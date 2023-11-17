@@ -43,8 +43,9 @@ export const GamesListPage: React.FC = () => {
       <Filter />
 
       {isLoading && <Loader />}
+    {/* <Loader /> */}
 
-      {isSuccess && <GameList games={games} />} 
+      {isSuccess && <GameList games={games} />}
     </div>
 
   );

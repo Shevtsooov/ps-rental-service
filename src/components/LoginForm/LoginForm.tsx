@@ -2,14 +2,10 @@ import { useState } from 'react';
 import './LoginForm.scss';
 
 import { useAppDispatch } from '../../Redux/store';
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useLoginUserMutation } from '../../Redux/RTK_Query/authApi.service';
 import { setUser } from '../../Redux/Slices/user.slice';
 import { refreshTokenService } from '../../helpers/refreshTokenService';
-
-type Props = {
-  setWhatToShow: (option: string) => void,
-};
 
 type credentials = {
   email: string,  
@@ -21,7 +17,7 @@ const emptyCredentials = {
   password: '',
 }
 
-export const LoginForm: React.FC<Props> = ({ setWhatToShow }) => {
+export const LoginForm: React.FC = () => {
   const [credentials, setCredentials] = useState<credentials>(emptyCredentials);
   const [fieldType, setFieldType] = useState('password');
   const navigate = useNavigate();
@@ -127,12 +123,13 @@ export const LoginForm: React.FC<Props> = ({ setWhatToShow }) => {
       </div>
 
       <div className="loginForm__actions">
-        <button
+        <NavLink
+          to="/registration"
           className="loginForm__actions_button loginForm__actions_button--registration"
-          onClick={() => setWhatToShow('Реєстрація')}
+          // onClick={() => setWhatToShow('Реєстрація')}
         >
           Реєстрація
-        </button>
+        </NavLink>
 
         <button
           className="loginForm__actions_button loginForm__actions_button--login"

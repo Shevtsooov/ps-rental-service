@@ -1,21 +1,14 @@
 // import { NavLink } from 'react-router-dom';
 import cn from 'classnames';
-
 import './MobileNavigation.scss';
 import { useEffect, useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from '../../Redux/store';
-import { refreshTokenService } from '../../helpers/refreshTokenService';
-import { logOut } from '../../Redux/Slices/user.slice';
-import { useLogOutUserMutation } from '../../Redux/RTK_Query/authApi.service';
+import { useAppSelector } from '../../Redux/store';
 
 export const MobileNavigation = () => {
   const user = useAppSelector(state => state.user.value);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navBoxRef = useRef<HTMLDivElement>(null);
-  const [ serverLogOut ] = useLogOutUserMutation();
-
-  const dispatch = useAppDispatch();
 
   useEffect(() => {
     document.addEventListener('click', handleClickOutside);
@@ -43,31 +36,6 @@ export const MobileNavigation = () => {
 
     document.body.style.overflow = 'auto'
   }, [isMenuOpen]);
-
-  const handleLogOut = async () => {
-    const refreshToken = refreshTokenService.get();
-
-    console.log('refreshToken - ', refreshToken);
-    
-    try {
-      if (refreshToken) {
-        const response = await serverLogOut({
-          refreshToken: refreshToken
-        });
-
-        console.log(response);
-      }
-
-      refreshTokenService.remove();
-      dispatch(logOut());
-      setIsMenuOpen(false);
-    } catch (error) {
-      console.error('Error logOut user:', error);
-    } 
-    
-
-
-  }
   
   return (
     <nav className="mobileNav" ref={navBoxRef}>
@@ -174,12 +142,12 @@ export const MobileNavigation = () => {
               <li>
                 <NavLink
                   className="mobileNav__link"
-                  to="/"
-                  onClick={handleLogOut}
+                  to="/account"
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   <div className="mobileNav__link_text">
-                    <span className="mobileNav__link--icon mobileNav__link--login"></span>
-                    <p>Вийти</p>
+                    <span className="mobileNav__link--icon mobileNav__link--account"></span>
+                    <p>Miй аккаунт</p>
                   </div>
                     <span className="mobileNav__link--arrow"></span>
 

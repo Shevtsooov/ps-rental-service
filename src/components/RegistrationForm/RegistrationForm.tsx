@@ -4,12 +4,9 @@ import cn from 'classnames';
 import { useGetAllUsersQuery } from '../../Redux/RTK_Query/users.service';
 import { RegistrationModal } from '../RegistrationModal/RegistrationModal';
 import { useRegisterUserMutation } from '../../Redux/RTK_Query/authApi.service';
+import { NavLink } from 'react-router-dom';
 
-type Props = {
-  setWhatToShow: (option: string) => void,
-};
-
-export const RegistrationForm: React.FC<Props> = ({ setWhatToShow }) => {
+export const RegistrationForm: React.FC = () => {
   const [email, setEmail] = useState('');
   const [fullName, setFullName] = useState('');
   const [password, setPassword] = useState('');
@@ -235,12 +232,12 @@ export const RegistrationForm: React.FC<Props> = ({ setWhatToShow }) => {
 
       <p className="registrationForm__description">
         Вже маєте аккаунт? Увійдіть
-        <span 
+        <NavLink
+          to='/login'
           className="registrationForm__description--here"
-          onClick={() => setWhatToShow('Авторизація')}
         >
           тут
-        </span>
+        </NavLink>
       </p>  
 
       <div className="registrationForm__field">
@@ -294,7 +291,7 @@ export const RegistrationForm: React.FC<Props> = ({ setWhatToShow }) => {
           })}
           placeholder="Номер телефону - 0XX-XXX-XX-XX"
           type="text"
-          
+          autoComplete='off'
           value={phoneNumber}
           onChange={(e) => handleAddPhoneNumber(e.target.value)}
         />

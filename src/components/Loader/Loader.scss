@@ -8,18 +8,30 @@
   width: 44px;
   height: 44px;
   position: relative;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   margin: 0 16px;
+  text-align: center;
 
   &__container {
-    min-height: calc(100vh - 48px - 283px);
-    text-align: center;
+    min-height: 40px;
 
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     background-color: unset;
     font-family: arial;
+
+    padding: 100px 50px;
+  }
+
+  &__title {
+    margin-top: 15px;
+    font-size: 20px;
+    text-align: center;
+    animation: blink 2s linear infinite; 
   }
 }
 
@@ -164,5 +176,17 @@
 
   100% {
     stroke-dashoffset: 275;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }

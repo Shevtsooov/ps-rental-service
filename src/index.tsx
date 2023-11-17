@@ -5,7 +5,7 @@ import { App } from './App';
 import './styles/normilize.scss'
 import { store } from './Redux/store';
 import { Provider } from 'react-redux';
-
+import { CookiesProvider } from "react-cookie";
 const rootElement = document.getElementById('root');
 
 if (rootElement) {
@@ -15,7 +15,9 @@ if (rootElement) {
     <Provider store={store}>
       <BrowserRouter>
         <React.StrictMode>
+          <CookiesProvider>
             <App />
+          </CookiesProvider>
         </React.StrictMode>
       </BrowserRouter>
     </Provider>

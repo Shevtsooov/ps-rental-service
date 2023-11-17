@@ -10,11 +10,13 @@ import { closeDelivery } from '../../Redux/Slices/isDeliveryShown.slice';
 import { resetChosenDelivery, setChosenDelivery } from '../../Redux/Slices/chosenDelivery.slice';
 
 export const ShoppingCart: React.FC = () => {
+  const user = useAppSelector(state => state.user.value);
   const shoppingCartGames = useAppSelector(state => state.shoppingCartGames.value);
   const bookedDays = useAppSelector(state => state.bookedDays.value);
   const isCalendarShown = useAppSelector(state => state.isCalendarShown.value);
   const isDeliveryShown = useAppSelector(state => state.isDeliveryShown.value);
   const chosenDelivery = useAppSelector(state => state.chosenDelivery.value);
+  const [finalPrice, setFinalPrice] = useState<number | null>(null);
   const dispatch = useAppDispatch();
 
     // THIS BLOCK ENSURES THE PAGE OPENS FROM THE TOP
@@ -43,38 +45,43 @@ export const ShoppingCart: React.FC = () => {
     dispatch(resetChosenDelivery());
     dispatch(setChosenDelivery(selectedDelivery))
   }, [selectedDelivery, dispatch]);
+
+  useEffect(() => {
+    if (user) {
+      const gamesPrice = (user?.cartGames?.length - 1) * 100;
   
-  const gamesPrice = (shoppingCartGames.length - 1) * 100;
-
-  let psPricePerDay = 450;
-
-  if (bookedDays.length > 2) {
-    psPricePerDay = 350; 
-  }
-
-  if (bookedDays.length > 6) {
-    psPricePerDay = 300; 
-  }
-
-  const deliveryPrice = chosenDelivery === 'Доставка'
-    ? 100
-    : 0;
-
-    console.log('deliveryPrice - ', deliveryPrice);
-
-  const finalPrice = shoppingCartGames.length
-  ? deliveryPrice + (psPricePerDay * bookedDays.length) + gamesPrice
-  : deliveryPrice + (psPricePerDay * bookedDays.length);
-
-  console.log('finalPrice - ', finalPrice);
-
+      let psPricePerDay = 450;
+    
+      if (bookedDays.length > 2) {
+        psPricePerDay = 350; 
+      }
+    
+      if (bookedDays.length > 6) {
+        psPricePerDay = 300; 
+      }
+    
+      const deliveryPrice = chosenDelivery === 'Доставка'
+        ? 100
+        : 0;
+  
+      const finalPriceCalc = user?.cartGames.length
+      ? deliveryPrice + (psPricePerDay * bookedDays.length) + gamesPrice
+      : deliveryPrice + (psPricePerDay * bookedDays.length);
+  
+      setFinalPrice(finalPriceCalc);
+    }
+  }, []);
+  
   const handleToggleCalendar = () => {
     dispatch(closeCalendar());
     dispatch(closeDelivery());
   };
 
   return (
-    <div className="shoppingCart" ref={topContainer}>
+    <div
+      className="shoppingCart"
+      // ref={topContainer}
+    >
 
         {(isCalendarShown || isDeliveryShown) && (
           <div
@@ -88,13 +95,13 @@ export const ShoppingCart: React.FC = () => {
         className='shoppingCart__amount'
       >
         {`Кількість ігор: ${
-          shoppingCartGames
-            ? shoppingCartGames.length
+          user?.cartGames
+            ? user?.cartGames.length
             : 'обрахування...'
           }`}
       </p>
 
-      {shoppingCartGames.length
+      {user?.cartGames.length
       ? <ShoppingCartList />
       : (
         <div className="shoppingCart__empty_list">

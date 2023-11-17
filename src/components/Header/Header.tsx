@@ -5,10 +5,7 @@ import { MobileNavigation } from '../MobileNavigation/MobileNavigation';
 import { Navigation } from '../Navigation/Navigation';
 import { ShoppingCartLink } from '../ShoppingCartLink/ShoppingCartLink';
 import './Header.scss';
-import { useAppDispatch, useAppSelector } from '../../Redux/store';
-import { useState, useEffect } from 'react';
-import { setUser } from '../../Redux/Slices/first.slice';
-import { User } from '../../types/User';
+import { useAppSelector } from '../../Redux/store';
 
 export const Header: React.FC = () => {
   const user = useAppSelector(state => state.user?.value);

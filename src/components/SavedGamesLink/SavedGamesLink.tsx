@@ -1,12 +1,10 @@
 import { Link } from 'react-router-dom';
 import './SavedGamesLink.scss';
-
 import heart from '../../assets/icons/heart.svg'
-
 import { useAppSelector } from '../../Redux/store';
 
 export const SavedGamesLink: React.FC = () => {
-  const savedGames = useAppSelector(state => state.savedGames.value);
+  const user = useAppSelector(state => state.user.value);
 
   return (
     <div className="savedGamesLink">
@@ -18,9 +16,9 @@ export const SavedGamesLink: React.FC = () => {
           src={`${heart}`}
           alt="Saved games"
         />
-        {savedGames.length > 0 && (
+        {user && user.likedGames.length > 0 && (
           <p className="savedGamesLink__amount">
-            {savedGames.length}
+            {user.likedGames.length}
           </p>
         )}
       </Link>

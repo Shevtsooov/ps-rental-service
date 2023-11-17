@@ -69,6 +69,7 @@
         background-repeat: no-repeat;
         background-position: 3px 4px;
         // background-color: $main-grey;
+        cursor: pointer;
 
         &--active {
           background-image: url('../../assets/icons/heart-active.svg');
@@ -91,6 +92,7 @@
         background-color: unset;
 
         font-size: 18px;
+        cursor: pointer;
       }
     }
   }

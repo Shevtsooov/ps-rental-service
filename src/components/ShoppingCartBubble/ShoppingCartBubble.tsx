@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 
 
 export const ShoppingCartBubble: React.FC = () => {
-  const shoppingCartGames = useAppSelector(state => state.shoppingCartGames.value);
+  const user = useAppSelector(state => state.user.value);
   
   return (
     <NavLink className="shoppingCartBubble" to='/shopping-cart'>
@@ -15,7 +15,7 @@ export const ShoppingCartBubble: React.FC = () => {
         className="shoppingCartBubble__img"
       />
       <p className="shoppingCartBubble__amount">
-        {shoppingCartGames.length}
+        {user?.cartGames.length}
       </p>
     </NavLink>
   );

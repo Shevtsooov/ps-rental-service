@@ -5,13 +5,12 @@ export const Login: React.FC = () => {
 
   return (
     <div className="login">
-      <button 
+      <NavLink
+        to="/login"
         className="login__button"
       >
-        <NavLink to="login" className="login__button_text">
           Увійти
-        </NavLink>
-      </button>
+      </NavLink>
     </div>
   );
 }

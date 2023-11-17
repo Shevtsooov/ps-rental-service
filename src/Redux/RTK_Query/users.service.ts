@@ -1,15 +1,23 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { User } from '../../types/User';
 
+type tokens = {
+  accessToken: string,
+  refreshToken: string,
+}
+
 export const UsersApi = createApi({
   reducerPath: 'UsersApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://testps.onrender.com'
-    // baseUrl: 'http://localhost:5020'
+    // baseUrl: 'https://testps.onrender.com'
+    baseUrl: 'http://localhost:5020'
   }),
   endpoints: (builder) => ({
     getAllUsers: builder.query<User[], void>({
       query: () => 'users'
+    }),
+    getOneUser: builder.query<User[], string>({
+      query: (id) => `users/${id}`
     }),
     activateUser: builder.query<void, string>({
       query: (activationToken) => `activation/${activationToken}`
@@ -19,7 +27,7 @@ export const UsersApi = createApi({
     <
       { 
         accessToken: string,
-        normalizedUser: Partial<User>,
+        user: User,
       }, 
       {
         email: string,
@@ -28,15 +36,26 @@ export const UsersApi = createApi({
     >
     ({
       query: (body) => ({
-        url: `authentication`,
+        url: 'login',
         method: 'POST',
         body,
       }),
     }),
 
-    addNewUser: builder.mutation<User, Partial<User>>({
+    addNewUser: builder.mutation
+    <
+      { 
+        tokens: tokens,
+        user: User,
+      }, 
+      {
+        email: string,
+        password: string,
+      }
+    >
+    ({
       query: (body) => ({
-        url: `users`,
+        url: 'registration',
         method: 'POST',
         body,
       }),
@@ -60,8 +79,9 @@ export const UsersApi = createApi({
 
 export const {
   useGetAllUsersQuery,
+  useGetOneUserQuery,
   useActivateUserQuery,
   useLoginUserMutation,
   useAddNewUserMutation,
-  // useEditGameMutation,
+  useEditUserMutation,
 } = UsersApi;

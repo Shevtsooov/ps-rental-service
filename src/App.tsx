@@ -19,10 +19,19 @@ import { ShoppingCartBubble } from './components/ShoppingCartBubble/ShoppingCart
 import { useAppDispatch, useAppSelector } from './Redux/store';
 import { useInViewport } from './helpers/useInViewport';
 import { AccountActivationPage } from './pages/AccountActivationPage/AccountActivationPage';
-import { setUser } from './Redux/Slices/first.slice';
+import { useRefreshUserMutation } from './Redux/RTK_Query/authApi.service';
+import { setUser } from './Redux/Slices/user.slice';
+import { useCookies } from 'react-cookie';
+import { refreshTokenService } from './helpers/refreshTokenService';
 
 export const App: React.FC = () => {
   const shoppingCartGames = useAppSelector(state => state.shoppingCartGames.value);
+  const user = useAppSelector(state => state.user.value);
+
+  const [refreshUser] = useRefreshUserMutation();
+
+  const [cookies, setCookies] = useCookies();
+
   const location = useLocation();
 
   // THIS CODE SETS isVisible = true WHEN REF IS IN THE VIEWPORT
@@ -31,17 +40,46 @@ export const App: React.FC = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    const storedUser = localStorage.getItem('user');
-    const parsedUser = storedUser ? JSON.parse(storedUser) : null;
-    
-    if (parsedUser !== null) {
-      dispatch(setUser(parsedUser));
-    }
-    
-  }, []);
-  
-  const showCartBubble = location.pathname !== '/shopping-cart'
-  && shoppingCartGames.length > 0
+    const fetchData = async () => {
+      const refreshTokenFromLS = refreshTokenService.get();
+      
+      // console.log('refreshTokenFromLS - ', refreshTokenFromLS);
+
+      if (refreshTokenFromLS) {
+        try {
+          const response = await refreshUser({
+            refreshToken: refreshTokenFromLS,
+          });
+
+          if ('data' in response) {
+            const { refreshToken, user } = response.data;
+            refreshTokenService.remove()
+            refreshTokenService.save(refreshToken);
+            dispatch(setUser(user));
+          }
+        } catch (error) {
+          // Handle errors, e.g., log or show an error message
+          console.error('Error refreshing user:', error);
+        }
+      }
+    };
+
+    fetchData();
+  }, [dispatch, refreshUser]);
+
+  // useEffect(() => {
+  //   if (user) {
+  //     const showCartBubble = location.pathname !== '/shopping-cart'
+  //     && user?.cartGames.length > 0
+  //     && !isVisible;
+
+  //     setIsBubbleShown(showCartBubble);
+  //   }
+  // }, [user]);
+
+  const showCartBubble = user
+  && location.pathname !== '/shopping-cart'
+  && user?.cartGames.length > 0
   && !isVisible;
 
   return (
@@ -70,4 +108,4 @@ export const App: React.FC = () => {
       <Footer />
     </>  
   );
-}
+};

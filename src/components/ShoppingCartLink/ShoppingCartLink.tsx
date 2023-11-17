@@ -5,7 +5,7 @@ import shoppingCart from '../../assets/icons/shoppingCart.svg'
 import { useAppSelector } from '../../Redux/store';
 
 export const ShoppingCartLink: React.FC = () => {
-  const shoppingCartGames = useAppSelector(state => state.shoppingCartGames.value);
+  const user = useAppSelector(state => state.user.value);
   
   return (
     <div className="shoppingCartLink">
@@ -18,9 +18,9 @@ export const ShoppingCartLink: React.FC = () => {
           alt="Shopping cart"
         />
 
-        {shoppingCartGames.length > 0 && (
+        {user && user.cartGames.length > 0 && (
           <p className="shoppingCartLink__amount">
-            {shoppingCartGames.length}
+            {user.cartGames.length}
           </p>
         )}
       </Link>

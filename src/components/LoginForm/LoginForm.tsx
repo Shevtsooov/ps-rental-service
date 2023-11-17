@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import './LoginForm.scss';
-import { useLoginUserMutation } from '../../Redux/RTK_Query/users.service';
-import { accessTokenService } from '../../helpers/accessTokenService';
-import { setUser } from '../../Redux/Slices/first.slice';
+
 import { useAppDispatch } from '../../Redux/store';
 import { useNavigate } from "react-router-dom";
+import { useLoginUserMutation } from '../../Redux/RTK_Query/authApi.service';
+import { setUser } from '../../Redux/Slices/user.slice';
+import { refreshTokenService } from '../../helpers/refreshTokenService';
 
 type Props = {
   setWhatToShow: (option: string) => void,
@@ -36,7 +37,7 @@ export const LoginForm: React.FC<Props> = ({ setWhatToShow }) => {
     setFieldType('password');
   };
 
-  const [ loginUser ] = useLoginUserMutation();
+  const [ login ] = useLoginUserMutation();
 
   const setPassword = (pass: string) => {
     setCredentials({ ...credentials, password: pass })
@@ -46,18 +47,16 @@ export const LoginForm: React.FC<Props> = ({ setWhatToShow }) => {
     setCredentials({ ...credentials, email: mail })
   }
 
-  const login = async () => {
+  const handleLogin = async () => {
+    console.log('here - ');
     try {
-      const response = await loginUser(credentials);
+      const response = await login(credentials);
       
       if ('data' in response) {
-        const { accessToken, normalizedUser } = response.data;
+        const { refreshToken, user } = response.data;
 
-        accessTokenService.save(accessToken);
-        dispatch(setUser(normalizedUser));
-        localStorage.setItem('user', JSON.stringify(normalizedUser))
-
-        console.log('user - ', normalizedUser);
+        refreshTokenService.save(refreshToken);
+        dispatch(setUser(user));
       }
     } catch (error) {
       // Handle errors here, for example, show an error message to the user.
@@ -137,7 +136,7 @@ export const LoginForm: React.FC<Props> = ({ setWhatToShow }) => {
 
         <button
           className="loginForm__actions_button loginForm__actions_button--login"
-          onClick={login}
+          onClick={handleLogin}
         >
           Увійти
         </button>

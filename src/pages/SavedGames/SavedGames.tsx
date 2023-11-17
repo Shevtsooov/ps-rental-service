@@ -1,11 +1,42 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './SavedGames.scss';
-import { useAppSelector } from '../../Redux/store';
+import { useAppDispatch, useAppSelector } from '../../Redux/store';
 import { GameList } from '../../components/GameList/GameList';
 import { Link } from 'react-router-dom';
+import { useGetAllGamesQuery } from '../../Redux/RTK_Query/games.service';
+import { hardSetSavedGames, resetSavedGames } from '../../Redux/Slices/savedGames.slice';
 
 export const SavedGames: React.FC = () => {
   const savedGames = useAppSelector(state => state.savedGames.value);
+  const user = useAppSelector(state => state.user.value);
+  const dispatch = useAppDispatch();
+  const { data: games } = useGetAllGamesQuery();
+  
+  // useEffect(() => {
+  //   dispatch(resetSavedGames());
+    
+  //   if (user) {
+  //     const savedGameIds = user?.likedGames;
+
+  //     const gamesToAdd = games?.filter((game) => savedGameIds.includes(game.gameId));
+
+  //     dispatch(hardSetSavedGames(gamesToAdd));
+  //   }
+  // }, [user]);
+
+  useEffect(() => {
+    dispatch(resetSavedGames());
+  
+    if (user) {
+      console.log('useEffect - User available:', user);
+  
+      const gamesToAdd = games?.filter((game) => (
+        user.likedGames.includes(game.gameId)
+      ));
+  
+      dispatch(hardSetSavedGames(gamesToAdd));
+    }
+  }, [user, games, dispatch]);
 
   return (
     <div className="savedGames">
@@ -20,17 +51,13 @@ export const SavedGames: React.FC = () => {
           }`}
       </p>
 
-      {savedGames.length
+      {savedGames && savedGames.length
         ? <GameList games={savedGames} />
         : (
           <div className="savedGames__empty_list">
             <h4 className="savedGames__empty_list_heading">
               Ти ще не зберіг жодної гри
             </h4>
-
-            {/* <p className="savedGames__empty_list_">
-              Хутчіш додавай:
-            </p> */}
 
             <button className="savedGames__empty_list_button">
               <Link

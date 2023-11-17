@@ -15,26 +15,24 @@ export const shoppingCartGamesSlice = createSlice({
   initialState,
   reducers: {
     setShoppingCartGames: (state, action) => {
-      return {
-        ...state,
-        value: [...state.value, action.payload],
-      };
+      state.value = [...state.value, action.payload];
     },
+    hardSetShoppingCartGames: (state, action) => {
+      state.value =  action.payload
+  },
     filterShoppingCartGames: (state, action) => {
-      return {
-        // ...state,
-        value: state.value.filter((game) => game.gameId !== action.payload),
-      };
+      state.value = state.value.filter((game) => game.gameId !== action.payload);
     },
-    resetShoppingCartGamess: (state) => {
-      state.value = []
+    resetShoppingCartGames: (state) => {
+      state.value = [];
     },
   },
 })
 
 export const {
   setShoppingCartGames,
+  hardSetShoppingCartGames,
   filterShoppingCartGames,
-  resetShoppingCartGamess,
+  resetShoppingCartGames,
 } = shoppingCartGamesSlice.actions;
 export const shoppingCartGamesReducer = shoppingCartGamesSlice.reducer;

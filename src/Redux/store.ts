@@ -16,7 +16,9 @@ import { filteredYearReducer } from './Slices/filteredYear.slice';
 import { filteredPlayersReducer } from './Slices/filteredPlayers.slice';
 import { paginationPageReducer } from './Slices/paginationPage.slice';
 import { UsersApi } from './RTK_Query/users.service';
-import { userReducer } from './Slices/first.slice';
+import { AuthApi } from './RTK_Query/authApi.service';
+// import { UserApi } from './RTK_Query/userApi.service';
+import { userReducer } from './Slices/user.slice';
 
 export const store = configureStore({
   reducer: {
@@ -41,11 +43,15 @@ export const store = configureStore({
 
     [GamesApi.reducerPath]: GamesApi.reducer,
     [UsersApi.reducerPath]: UsersApi.reducer,
+    [AuthApi.reducerPath]: AuthApi.reducer,
+    // [UserApi.reducerPath]: UserApi.reducer,
   },
   middleware: (getDefaultMiddleware) => (
     getDefaultMiddleware().concat([
         GamesApi.middleware,
         UsersApi.middleware,
+        AuthApi.middleware,
+        // UserApi.middleware,
       ])
   )
 })

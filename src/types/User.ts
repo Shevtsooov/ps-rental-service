@@ -1,7 +1,6 @@
 export interface User {
   id: string,
   email: string;
-  password: string;
   role: string;
   adminComments: string[];
   fullName: string;
@@ -18,4 +17,5 @@ export interface User {
   activationToken: string;
   createdAt: Date,
   updatedAt: Date,
+  __v: number,
 }

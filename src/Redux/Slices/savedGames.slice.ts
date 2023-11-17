@@ -1,9 +1,8 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
 import { Game } from '../../types/Game';
-// import type { PayloadAction } from '@reduxjs/toolkit'
 
 export interface SavedGamesState {
-  value: Game[]
+  value: Game[];
 }
 
 const initialState: SavedGamesState = {
@@ -15,26 +14,24 @@ export const savedGamesSlice = createSlice({
   initialState,
   reducers: {
     setSavedGames: (state, action) => {
-      return {
-        ...state,
-        value: [...state.value, action.payload],
-      };
+      state.value = [...state.value, action.payload];
     },
+    hardSetSavedGames: (state, action) => {
+      state.value =  action.payload
+  },
     filterSavedGames: (state, action) => {
-      return {
-        // ...state,
-        value: state.value.filter((game) => game.gameId !== action.payload),
-      };
+      state.value = state.value.filter((game) => game.gameId !== action.payload);
     },
-    resetSavedGamess: (state) => {
-      state.value = []
+    resetSavedGames: (state) => {
+      state.value = [];
     },
   },
 })
 
 export const {
   setSavedGames,
+  hardSetSavedGames,
   filterSavedGames,
-  resetSavedGamess,
+  resetSavedGames,
 } = savedGamesSlice.actions;
 export const savedGamesReducer = savedGamesSlice.reducer;

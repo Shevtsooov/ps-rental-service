@@ -1,23 +1,25 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { Game } from '../../types/Game';
 
+interface FetchOptions {
+  sortBy?:string,
+  query?: string;
+  categories?: string[];
+  year?: string,
+  players?: string,
+}
+
 export const GamesApi = createApi({
   reducerPath: 'GamesApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://testps.onrender.com'
-    // baseUrl: 'http://localhost:5020'
+    // baseUrl: 'https://testps.onrender.com'
+    baseUrl: 'http://localhost:5020'
   }),
   endpoints: (builder) => ({
     getAllGames: builder.query<Game[], void>({
       query: () => 'games'
     }),
-    findGames: builder.query<Game[], {
-      sortBy?:string,
-      query?: string;
-      categories?: string[];
-      year?: string,
-      players?: string,
-    }>({
+    findGames: builder.query<Game[], Partial<FetchOptions>>({
       query: ({ sortBy, query, categories, year, players }) => ({
         url: `games?sortBy=${sortBy}&query=${query}&categories=${categories}&year=${year}&players=${players}`,
       }),

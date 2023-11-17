@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import './RegistrationForm.scss';
 import cn from 'classnames';
-import { useAddNewUserMutation, useGetAllUsersQuery } from '../../Redux/RTK_Query/users.service';
+import { useGetAllUsersQuery } from '../../Redux/RTK_Query/users.service';
 import { RegistrationModal } from '../RegistrationModal/RegistrationModal';
+import { useRegisterUserMutation } from '../../Redux/RTK_Query/authApi.service';
 
 type Props = {
   setWhatToShow: (option: string) => void,
@@ -31,10 +32,12 @@ export const RegistrationForm: React.FC<Props> = ({ setWhatToShow }) => {
     isEmailRegistered: '',
     noPassword: false, 
     weakPassword: '', 
-  }
+  };
+  
   const [error, setError] = useState(noErrors);
 
-  const [ addNewUser ] = useAddNewUserMutation();
+  const [ register ] = useRegisterUserMutation();
+
   const { data: users } = useGetAllUsersQuery();
 
   useEffect(() => {
@@ -191,7 +194,7 @@ export const RegistrationForm: React.FC<Props> = ({ setWhatToShow }) => {
         phoneNumber,
       };
 
-      const response = await addNewUser(newUser);
+      const response = await register(newUser);
 
       if (response) {
         console.log('A new user was added successfully:', response);

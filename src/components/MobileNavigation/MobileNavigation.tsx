@@ -4,10 +4,18 @@ import cn from 'classnames';
 import './MobileNavigation.scss';
 import { useEffect, useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { useAppDispatch, useAppSelector } from '../../Redux/store';
+import { refreshTokenService } from '../../helpers/refreshTokenService';
+import { logOut } from '../../Redux/Slices/user.slice';
+import { useLogOutUserMutation } from '../../Redux/RTK_Query/authApi.service';
 
 export const MobileNavigation = () => {
+  const user = useAppSelector(state => state.user.value);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navBoxRef = useRef<HTMLDivElement>(null);
+  const [ serverLogOut ] = useLogOutUserMutation();
+
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     document.addEventListener('click', handleClickOutside);
@@ -34,7 +42,32 @@ export const MobileNavigation = () => {
     }
 
     document.body.style.overflow = 'auto'
-  }, [isMenuOpen])
+  }, [isMenuOpen]);
+
+  const handleLogOut = async () => {
+    const refreshToken = refreshTokenService.get();
+
+    console.log('refreshToken - ', refreshToken);
+    
+    try {
+      if (refreshToken) {
+        const response = await serverLogOut({
+          refreshToken: refreshToken
+        });
+
+        console.log(response);
+      }
+
+      refreshTokenService.remove();
+      dispatch(logOut());
+      setIsMenuOpen(false);
+    } catch (error) {
+      console.error('Error logOut user:', error);
+    } 
+    
+
+
+  }
   
   return (
     <nav className="mobileNav" ref={navBoxRef}>
@@ -136,20 +169,41 @@ export const MobileNavigation = () => {
               </NavLink>
             </li>
 
-            <li>
-              <NavLink
-                className="mobileNav__link"
-                to="/login"
-                onClick={() => setIsMenuOpen(p => !p)}
-              >
-                <div className="mobileNav__link_text">
-                  <span className="mobileNav__link--icon mobileNav__link--login"></span>
-                  <p>Увійти</p>
-                </div>
-                  <span className="mobileNav__link--arrow"></span>
+            {user
+              ? (
+              <li>
+                <NavLink
+                  className="mobileNav__link"
+                  to="/"
+                  onClick={handleLogOut}
+                >
+                  <div className="mobileNav__link_text">
+                    <span className="mobileNav__link--icon mobileNav__link--login"></span>
+                    <p>Вийти</p>
+                  </div>
+                    <span className="mobileNav__link--arrow"></span>
 
-              </NavLink>
-            </li>
+                </NavLink>
+              </li>
+              )
+              : (
+                <li>
+                  <NavLink
+                    className="mobileNav__link"
+                    to="/login"
+                    onClick={() => setIsMenuOpen(p => !p)}
+                  >
+                    <div className="mobileNav__link_text">
+                      <span className="mobileNav__link--icon mobileNav__link--login"></span>
+                      <p>Увійти</p>
+                    </div>
+                      <span className="mobileNav__link--arrow"></span>
+
+                  </NavLink>
+                </li>
+              )
+            }
+            
           </ul>
       </div>
       )}  

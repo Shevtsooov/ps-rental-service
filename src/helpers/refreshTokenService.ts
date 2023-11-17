@@ -1,4 +1,4 @@
-const key = 'accessToken';
+const key = 'refreshToken';
 
 function get() {
   return localStorage.getItem(key)
@@ -12,4 +12,4 @@ function remove() {
   return localStorage.removeItem(key)
 }
 
-export const accessTokenService = { get, save, remove };
+export const refreshTokenService = { get, save, remove };

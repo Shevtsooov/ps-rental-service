@@ -64,8 +64,8 @@ export const AccountPage: React.FC = () => {
       ? (
         <div className="accountPage">
           <div className="accountPage__block">
-            <h1 className="accountPage__field">{user?.fullName}</h1>
-            <h2 className="accountPage__field">{user?.email}</h2>
+            <h1 className="accountPage__field accountPage__title">{user?.fullName}</h1>
+            <h2 className="accountPage__field accountPage__email">{user?.email}</h2>
             <h3 className="accountPage__field">{user?.address}</h3>
             <h3 className="accountPage__field">{user?.phoneNumber}</h3>
             {year && month && day && (
@@ -73,13 +73,37 @@ export const AccountPage: React.FC = () => {
             )}
             <p className="accountPage__field">{`З нами ${passedDays} днів`}</p>
           </div>
+          
+          <div className="accountPage__navigation">
+            <NavLink
+              className="accountPage__button"
+              to="/account/orders"
+            >
+              Мої замовлення
+            </NavLink>
+
+            <NavLink
+              className="accountPage__button"
+              to="/saved-games"
+            >
+              Збережені ігри
+            </NavLink>
+
+            <NavLink
+              className="accountPage__button"
+              to="/shopping-cart"
+            >
+              Кошик
+            </NavLink>
+          </div>
+          
 
           <NavLink
-            className="accountPage_button"
-            to="/account"
+            className="accountPage__logOut"
+            to="/"
             onClick={handleLogOut}
           >
-          Вийти з аккаунту
+            Вийти з аккаунту
           </NavLink>
         </div>
       )

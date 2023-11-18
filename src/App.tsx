@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 
 import './App.scss';
@@ -21,13 +21,12 @@ import { useInViewport } from './helpers/useInViewport';
 import { AccountActivationPage } from './pages/AccountActivationPage/AccountActivationPage';
 import { useRefreshUserMutation } from './Redux/RTK_Query/authApi.service';
 import { setUser } from './Redux/Slices/user.slice';
-import { useCookies } from 'react-cookie';
 import { refreshTokenService } from './helpers/refreshTokenService';
 import { RegistrationPage } from './pages/RegistrationPage/RegistrationPage';
 import { AccountPage } from './pages/AccountPage/AccountPage';
+import { AccountOrders } from './pages/AccountOrders/AccountOrders';
 
 export const App: React.FC = () => {
-  // const shoppingCartGames = useAppSelector(state => state.shoppingCartGames.value);
   const user = useAppSelector(state => state.user.value);
 
   const [refreshUser] = useRefreshUserMutation();
@@ -43,8 +42,6 @@ export const App: React.FC = () => {
     const fetchData = async () => {
       const refreshTokenFromLS = refreshTokenService.get();
       
-      // console.log('refreshTokenFromLS - ', refreshTokenFromLS);
-
       if (refreshTokenFromLS) {
         try {
           const response = await refreshUser({
@@ -58,7 +55,6 @@ export const App: React.FC = () => {
             dispatch(setUser(user));
           }
         } catch (error) {
-          // Handle errors, e.g., log or show an error message
           console.error('Error refreshing user:', error);
         }
       }
@@ -66,16 +62,6 @@ export const App: React.FC = () => {
 
     fetchData();
   }, [dispatch, refreshUser]);
-
-  // useEffect(() => {
-  //   if (user) {
-  //     const showCartBubble = location.pathname !== '/shopping-cart'
-  //     && user?.cartGames.length > 0
-  //     && !isVisible;
-
-  //     setIsBubbleShown(showCartBubble);
-  //   }
-  // }, [user]);
 
   const showCartBubble = user
   && location.pathname !== '/shopping-cart'
@@ -103,6 +89,8 @@ export const App: React.FC = () => {
         <Route path="registration" element={<RegistrationPage />} />
 
         <Route path="account" element={<AccountPage />} />
+        <Route path="account/orders" element={<AccountOrders />} />
+
         <Route path="saved-games" element={<SavedGames />} />
         <Route path="shopping-cart" element={<ShoppingCart />} />
         <Route path="activate/:activationToken" element={<AccountActivationPage />} />

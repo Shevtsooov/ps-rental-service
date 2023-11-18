@@ -11,6 +11,6 @@ export const calculateDaysPassed = (createdAt: string) => {
   // Convert milliseconds to days
   const differenceInDays: number = differenceInMilliseconds / (1000 * 60 * 60 * 24);
 
-  return Math.floor(differenceInDays + 1);
+  return Math.floor(differenceInDays + 1.5);
 }
 

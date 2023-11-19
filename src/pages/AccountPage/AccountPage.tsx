@@ -79,7 +79,7 @@ export const AccountPage: React.FC = () => {
               className="accountPage__button"
               to="/account/orders"
             >
-              Мої замовлення
+              {`Мої замовлення [${user.completedOrders}]`}
             </NavLink>
 
             <NavLink

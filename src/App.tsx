@@ -25,6 +25,9 @@ import { refreshTokenService } from './helpers/refreshTokenService';
 import { RegistrationPage } from './pages/RegistrationPage/RegistrationPage';
 import { AccountPage } from './pages/AccountPage/AccountPage';
 import { AccountOrders } from './pages/AccountOrders/AccountOrders';
+import { AdminPage } from './pages/AdminPage/AdminPage';
+import { ClientsPage } from './pages/ClientsPage/ClientsPage';
+import { Orders } from './pages/Orders/Orders';
 
 export const App: React.FC = () => {
   const user = useAppSelector(state => state.user.value);
@@ -94,6 +97,10 @@ export const App: React.FC = () => {
         <Route path="saved-games" element={<SavedGames />} />
         <Route path="shopping-cart" element={<ShoppingCart />} />
         <Route path="activate/:activationToken" element={<AccountActivationPage />} />
+
+        <Route path="administration" element={<AdminPage />} />
+        <Route path="clients" element={<ClientsPage />} />
+        <Route path="orders" element={<Orders />} />
 
         <Route path="*" element={<PageNotFound />} />
       </Routes>

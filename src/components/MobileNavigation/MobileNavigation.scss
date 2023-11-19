@@ -37,6 +37,7 @@
     top: 60px;
     left: 0;
     display: flex;
+    flex-direction: column;
 
     z-index: 999;
 
@@ -45,14 +46,16 @@
 
     padding: 60px 20px;
     
-
     background-color: $main-grey;
+
   }
 
   &__list {
     display: flex;
     flex-direction: column;
     width: 100%;
+
+    margin-bottom: 40px;
   }
 
   &__link {

@@ -9,8 +9,8 @@ type tokens = {
 export const UsersApi = createApi({
   reducerPath: 'UsersApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://testps.onrender.com'
-    // baseUrl: 'http://localhost:5020'
+    // baseUrl: 'https://testps.onrender.com'
+    baseUrl: 'http://localhost:5020'
   }),
   endpoints: (builder) => ({
     getAllUsers: builder.query<User[], void>({

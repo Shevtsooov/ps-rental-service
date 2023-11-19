@@ -19,6 +19,7 @@ import { UsersApi } from './RTK_Query/users.service';
 import { AuthApi } from './RTK_Query/authApi.service';
 // import { UserApi } from './RTK_Query/userApi.service';
 import { userReducer } from './Slices/user.slice';
+import { activeClientReducer } from './Slices/activeClient.slice';
 
 export const store = configureStore({
   reducer: {
@@ -40,6 +41,8 @@ export const store = configureStore({
     filteredPlayers: filteredPlayersReducer,
 
     paginationPage: paginationPageReducer,
+
+    activeClient: activeClientReducer,
 
     [GamesApi.reducerPath]: GamesApi.reducer,
     [UsersApi.reducerPath]: UsersApi.reducer,

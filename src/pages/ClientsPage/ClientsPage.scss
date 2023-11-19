@@ -1,0 +1,10 @@
+@import "../../styles/utils/mixins.scss";
+@import "../../styles/utils/colors.scss";
+
+.clientsPage {
+  padding: 20px;
+
+  &__amount {
+    margin-bottom: 25px;
+  }
+}

@@ -9,8 +9,8 @@ type tokens = {
 export const AuthApi = createApi({
   reducerPath: 'AuthApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://testps.onrender.com'
-    // baseUrl: 'http://localhost:5020'
+    // baseUrl: 'https://testps.onrender.com'
+    baseUrl: 'http://localhost:5020'
   }),
   endpoints: (builder) => ({
     registerUser: builder.mutation

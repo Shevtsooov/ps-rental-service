@@ -3,4 +3,10 @@
 
 .accountOrders {
   padding: 20px;
+  min-height: 50vh;
+
+  &__title {
+    font-size: 28px;
+    margin-bottom: 25px;
+  }
 }

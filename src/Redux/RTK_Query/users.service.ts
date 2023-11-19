@@ -16,7 +16,7 @@ export const UsersApi = createApi({
     getAllUsers: builder.query<User[], void>({
       query: () => 'users'
     }),
-    getOneUser: builder.query<User[], string>({
+    getOneUser: builder.query<User, string>({
       query: (id) => `users/${id}`
     }),
     activateUser: builder.query<void, string>({

@@ -20,6 +20,8 @@ import { AuthApi } from './RTK_Query/authApi.service';
 // import { UserApi } from './RTK_Query/userApi.service';
 import { userReducer } from './Slices/user.slice';
 import { activeClientReducer } from './Slices/activeClient.slice';
+import { OrdersApi } from './RTK_Query/orders.service';
+import { activeOrderReducer } from './Slices/activeOrder.slice';
 
 export const store = configureStore({
   reducer: {
@@ -43,10 +45,12 @@ export const store = configureStore({
     paginationPage: paginationPageReducer,
 
     activeClient: activeClientReducer,
+    activeOrder: activeOrderReducer,
 
     [GamesApi.reducerPath]: GamesApi.reducer,
     [UsersApi.reducerPath]: UsersApi.reducer,
     [AuthApi.reducerPath]: AuthApi.reducer,
+    [OrdersApi.reducerPath]: OrdersApi.reducer,
     // [UserApi.reducerPath]: UserApi.reducer,
   },
   middleware: (getDefaultMiddleware) => (
@@ -54,6 +58,7 @@ export const store = configureStore({
         GamesApi.middleware,
         UsersApi.middleware,
         AuthApi.middleware,
+        OrdersApi.middleware,
         // UserApi.middleware,
       ])
   )

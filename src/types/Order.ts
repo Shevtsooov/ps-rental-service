@@ -1,0 +1,16 @@
+export interface Order {
+  _id: string,
+  bookedDays: string[],
+  orderedGames: string[],
+  deliveryOption: string,
+  deliveryAddress: string,
+  userId: string,
+  orderStatus: string,
+  sumOfOrder: number,
+  userComment: string,
+  adminComment: string,
+  isArchived: boolean,
+  createdAt: Date,
+  updatedAt: Date,
+  __v: number,
+}

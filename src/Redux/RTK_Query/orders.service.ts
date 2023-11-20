@@ -25,7 +25,7 @@ export const OrdersApi = createApi({
         orderedGames?: string[],
         deliveryOption?: string,
         deliveryAddress?: string,
-        user?: string,
+        userId?: string,
         orderStatus?: string,
         sumOfOrder?: number,
         userComment?: string,
@@ -35,7 +35,7 @@ export const OrdersApi = createApi({
     >
     ({
       query: (body) => ({
-        url: 'registration',
+        url: 'orders',
         method: 'POST',
         body,
       }),
@@ -43,7 +43,7 @@ export const OrdersApi = createApi({
 
     editOrder: builder.mutation<Order, Partial<Order>>({
       query: (body) => ({
-        url: `Orders`,
+        url: `orders`,
         method: 'PATCH',
         body,
       }),

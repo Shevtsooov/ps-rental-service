@@ -9,24 +9,26 @@ import { closeCalendar } from '../../Redux/Slices/isCalendarShown.slice';
 import { closeDelivery } from '../../Redux/Slices/isDeliveryShown.slice';
 import { resetChosenDelivery, setChosenDelivery } from '../../Redux/Slices/chosenDelivery.slice';
 import { refreshTokenService } from '../../helpers/refreshTokenService';
+import { useAddNewOrderMutation } from '../../Redux/RTK_Query/orders.service';
 
 export const ShoppingCart: React.FC = () => {
   const user = useAppSelector(state => state.user.value);
-  const shoppingCartGames = useAppSelector(state => state.shoppingCartGames.value);
   const bookedDays = useAppSelector(state => state.bookedDays.value);
   const isCalendarShown = useAppSelector(state => state.isCalendarShown.value);
   const isDeliveryShown = useAppSelector(state => state.isDeliveryShown.value);
   const chosenDelivery = useAppSelector(state => state.chosenDelivery.value);
-  const [finalPrice, setFinalPrice] = useState<number | null>(null);
+  const [finalPrice, setFinalPrice] = useState<number>(0);
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
-    // THIS BLOCK ENSURES THE PAGE OPENS FROM THE TOP
-    const topContainer = useRef<null | HTMLDivElement>(null); 
+  const [ makeNewOrder, isSuccess ] = useAddNewOrderMutation();
 
-    useEffect(() => {
-      topContainer.current?.scrollIntoView({ block: "start" });
-      }, []);
+  // THIS BLOCK ENSURES THE PAGE OPENS FROM THE TOP
+  const topContainer = useRef<null | HTMLDivElement>(null); 
+
+  useEffect(() => {
+    topContainer.current?.scrollIntoView({ block: "start" });
+    }, []);
 
   const [selectedDelivery, setSelectedDelivery] = useState<string>(() => {
     const storedDelivery = sessionStorage.getItem('storedDelivery');
@@ -84,6 +86,33 @@ export const ShoppingCart: React.FC = () => {
       navigate('/');
     }
   }, []);
+
+  const handleSubmit = async () => {
+    const days = bookedDays.map(day => (
+      day.toString().slice(4, 14))
+    );
+
+    try {
+      makeNewOrder({
+        bookedDays: days,
+        orderedGames: user?.cartGames,
+        deliveryOption: chosenDelivery,
+        deliveryAddress: selectedDelivery || user?.address,
+        userId: user?.id,
+        orderStatus: 'В обробці',
+        sumOfOrder: finalPrice,
+        adminComment: 'Тут поки що пусто',
+        isArchived: false,
+      })
+
+      if (isSuccess) {
+        navigate('/');
+      }
+
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   return (
     <div
@@ -144,7 +173,10 @@ export const ShoppingCart: React.FC = () => {
       )}
 
       <div className="shoppingCart__checkout">
-        <button className="shoppingCart__checkout_button">
+        <button
+          className="shoppingCart__checkout_button"
+          onClick={handleSubmit}
+        >
           Оформити прокат
         </button>
       </div>

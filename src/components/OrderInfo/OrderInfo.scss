@@ -29,4 +29,28 @@
       transform: rotate(180deg);
     }
   }
+
+
+  .game {
+    display: flex;
+    text-align: left;
+    gap: 15px;
+    width: 100%;
+  
+    margin-bottom: 10px;
+
+    &__img {
+      display: block;
+      width: 55px;
+      height: 55px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+    
+    &__title {
+      font-size: 20px;
+      margin-bottom: 5px;
+      color: #000;
+    }
+  }
 }

@@ -6,6 +6,8 @@ import { useAppSelector, useAppDispatch } from '../../Redux/store';
 import { useGetAllUsersQuery, useGetOneUserQuery } from '../../Redux/RTK_Query/users.service';
 import { useState, useEffect } from 'react';
 import { User } from '../../types/User';
+import { Game } from '../../types/Game';
+import { useGetAllGamesQuery } from '../../Redux/RTK_Query/games.service';
 
 type Props = {
   order: Order,
@@ -30,9 +32,11 @@ export const OrderInfo: React.FC<Props> = ({ order }) => {
 
   const activeOrder = useAppSelector(state => state.activeOrder.value);
   const [orderUser, setOrderUser] = useState<User | null>(null);
+  const [orderGames, setOrderGames] = useState<Game[]>([]);
   const dispatch = useAppDispatch();
 
-const {data: users } = useGetAllUsersQuery();
+const { data: users } = useGetAllUsersQuery();
+const { data: games } = useGetAllGamesQuery();
 
 useEffect(() => {
   const orderUser = users?.find(user => user.id === userId);
@@ -53,6 +57,16 @@ useEffect(() => {
 
     dispatch(setActiveOrder(_id));
   };
+
+  useEffect(() => {
+    if (users && games) {
+      const gamesToAdd = games.filter((game) => (
+        orderedGames.includes(game.gameId)
+      ));
+  
+      setOrderGames(gamesToAdd);
+    } 
+  }, [users, games]);
 
   return (
     <div className="orderInfo">
@@ -83,7 +97,26 @@ useEffect(() => {
         >
           {`+38${orderUser?.phoneNumber}`}
         </a>
+
+        <div>
+          {orderGames.map(game => (
+            <div className='game'>
+              <a href={`/games/${game.gameId}`} >
+                <img
+                  className='game__img'
+                  src={`${game.iconLink}`}
+                  alt=""
+                />
+              </a>
+      
+              <a href={`/games/${game.gameId}`} >
+                <h4 className='game__title'>{game.title}</h4>
+              </a>
+            </div>
+          ))}
+        </div>
       </div>
+
     </div>
   );
 }

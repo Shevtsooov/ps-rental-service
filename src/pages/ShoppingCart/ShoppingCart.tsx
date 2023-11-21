@@ -41,9 +41,21 @@ export const ShoppingCart: React.FC = () => {
     return '';
   });
 
+  const [savedAddress, setSavedAddress] = useState<string>(() => {
+    const storedAddress = localStorage.getItem('savedAddress');
+    const parsedAddress = storedAddress ? JSON.parse(storedAddress) : '';
+    
+    if (parsedAddress.length !== '') {
+      return parsedAddress;
+    }
+    
+    return '';
+  });
+
   useEffect(() => {
     sessionStorage.setItem("storedDelivery", JSON.stringify(selectedDelivery));
-  }, [selectedDelivery]);
+    localStorage.setItem("savedAddress", JSON.stringify(savedAddress));
+  }, [selectedDelivery, savedAddress]);
 
   useEffect(() => {
     dispatch(resetChosenDelivery());
@@ -74,7 +86,7 @@ export const ShoppingCart: React.FC = () => {
   
       setFinalPrice(finalPriceCalc);
     }
-  }, []);
+  }, [bookedDays, user, chosenDelivery]);
   
   const handleToggleCalendar = () => {
     dispatch(closeCalendar());
@@ -89,7 +101,7 @@ export const ShoppingCart: React.FC = () => {
 
   const handleSubmit = async () => {
     const days = bookedDays.map(day => (
-      day.toString().slice(4, 14))
+      day.toString().slice(4, 15))
     );
 
     try {
@@ -97,11 +109,12 @@ export const ShoppingCart: React.FC = () => {
         bookedDays: days,
         orderedGames: user?.cartGames,
         deliveryOption: chosenDelivery,
-        deliveryAddress: selectedDelivery || user?.address,
+        deliveryAddress: savedAddress || user?.address,
         userId: user?.id,
         orderStatus: 'В обробці',
         sumOfOrder: finalPrice,
         adminComment: 'Тут поки що пусто',
+        userComment: 'Тут поки що пусто',
         isArchived: false,
       })
 

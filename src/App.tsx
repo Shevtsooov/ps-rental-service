@@ -68,6 +68,8 @@ export const App: React.FC = () => {
 
   const showCartBubble = user
   && location.pathname !== '/shopping-cart'
+  && location.pathname !== '/orders'
+  && location.pathname !== '/clients'
   && user?.cartGames.length > 0
   && !isVisible;
 

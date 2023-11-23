@@ -1,5 +1,5 @@
 import './Footer.scss';
-import footerLogo from '../../assets/images/ps-footer-logo.png'
+import footerLogo from '../../assets/icons/PlayAtHome-grey.svg'
 import { NavLink } from 'react-router-dom';
 
 export const Footer: React.FC = () => {

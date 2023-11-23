@@ -1,5 +1,10 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { Game } from '../../types/Game';
+import { isProduction } from '../../env';
+
+const BASE_URL = isProduction
+  ? 'https://testps.onrender.com'
+  : 'http://localhost:5020'
 
 interface FetchOptions {
   sortBy?:string,
@@ -12,8 +17,7 @@ interface FetchOptions {
 export const GamesApi = createApi({
   reducerPath: 'GamesApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://testps.onrender.com'
-    // baseUrl: 'http://localhost:5020'
+    baseUrl: BASE_URL
   }),
   endpoints: (builder) => ({
     getAllGames: builder.query<Game[], void>({

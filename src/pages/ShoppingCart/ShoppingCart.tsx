@@ -125,7 +125,9 @@ export const ShoppingCart: React.FC = () => {
     } catch (error) {
       console.error(error);
     }
-  }
+  };
+
+  console.log('savedAddress - ', savedAddress);
 
   return (
     <div

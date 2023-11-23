@@ -1,16 +1,22 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { User } from '../../types/User';
+import { isProduction } from '../../env';
 
 type tokens = {
   accessToken: string,
   refreshToken: string,
 }
 
+const BASE_URL = isProduction
+  ? 'https://testps.onrender.com'
+  : 'http://localhost:5020'
+
+  console.log('BASE_URL - ', BASE_URL);
+
 export const UsersApi = createApi({
   reducerPath: 'UsersApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://testps.onrender.com'
-    // baseUrl: 'http://localhost:5020'
+    baseUrl: BASE_URL
   }),
   endpoints: (builder) => ({
     getAllUsers: builder.query<User[], void>({

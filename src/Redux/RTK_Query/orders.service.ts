@@ -1,11 +1,15 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { Order } from '../../types/Order';
+import { isProduction } from '../../env';
+
+const BASE_URL = isProduction
+  ? 'https://testps.onrender.com'
+  : 'http://localhost:5020'
 
 export const OrdersApi = createApi({
   reducerPath: 'OrdersApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://testps.onrender.com'
-    // baseUrl: 'http://localhost:5020'
+    baseUrl: BASE_URL
   }),
   endpoints: (builder) => ({
     getAllOrders: builder.query<Order[], void>({

@@ -4,7 +4,7 @@ import { isProduction } from '../../env';
 
 const BASE_URL = isProduction
   ? 'https://testps.onrender.com'
-  : 'http://localhost:5020'
+  : 'http://localhost:5020';
 
 
 type tokens = {

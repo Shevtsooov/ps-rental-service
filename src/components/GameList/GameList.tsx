@@ -10,8 +10,9 @@ type Props = {
 }
 
 export const GameList: React.FC<Props> = ({ games }) => {
-  const paginationPage = useAppSelector(state => state.paginationPage.value);
+  // const paginationPage = useAppSelector(state => state.paginationPage.value);
   const [perPage, setPerPage] = useState(16);
+  const [paginationPage, setPaginationPage] = useState(1);
 
   const start = perPage * paginationPage - perPage;
   const end = perPage * paginationPage <= games.length
@@ -20,7 +21,7 @@ export const GameList: React.FC<Props> = ({ games }) => {
 
   const gamesToShow = games.slice(start, end);
 
-  const showPagination = games.length < perPage 
+  const showPagination = games.length <= perPage 
   || games.length === 0;
 
   return (
@@ -38,7 +39,9 @@ export const GameList: React.FC<Props> = ({ games }) => {
       )}
 
       {!showPagination && (
-        <Pagination 
+        <Pagination
+          paginationPage={paginationPage}
+          setPaginationPage={setPaginationPage}
           total={games.length}
           perPage={perPage}
         />

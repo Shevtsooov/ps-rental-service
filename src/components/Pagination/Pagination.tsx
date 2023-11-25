@@ -5,19 +5,22 @@ import {
   generateVisiblePages,
 } from '../../helpers/generateVisiblePages';
 import { useAppDispatch, useAppSelector } from '../../Redux/store';
-import { setPaginationPage } from '../../Redux/Slices/paginationPage.slice';
 
 /* eslint-disable */
 interface Props {
+  paginationPage: number,
+  setPaginationPage: (page: number) => void,
   total: number,
   perPage: number,
 };
 
 export const Pagination: React.FC<Props> = ({
+  paginationPage,
+  setPaginationPage,
   total,
   perPage,
 }) => {
-  const paginationPage = useAppSelector(state => state.paginationPage.value);
+  // const paginationPage = useAppSelector(state => state.paginationPage.value);
   const dispatch = useAppDispatch();
   
   const totalPages = Math.ceil(total / perPage);
@@ -29,7 +32,7 @@ export const Pagination: React.FC<Props> = ({
 
   const handlePageChange = (page: number) => {
     if (paginationPage !== page && page >= 1 && page <= totalPages) {
-      dispatch(setPaginationPage(page));
+      setPaginationPage(page);
 
       window.scrollTo({
         top: 60, left: 0, behavior: 'smooth'

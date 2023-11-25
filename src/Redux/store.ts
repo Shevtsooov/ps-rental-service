@@ -22,6 +22,7 @@ import { userReducer } from './Slices/user.slice';
 import { activeClientReducer } from './Slices/activeClient.slice';
 import { OrdersApi } from './RTK_Query/orders.service';
 import { activeOrderReducer } from './Slices/activeOrder.slice';
+import { orderpaginationPageReducer } from './Slices/orderPaginationPage.slice';
 
 export const store = configureStore({
   reducer: {
@@ -43,6 +44,7 @@ export const store = configureStore({
     filteredPlayers: filteredPlayersReducer,
 
     paginationPage: paginationPageReducer,
+    orderPaginationPage: orderpaginationPageReducer,
 
     activeClient: activeClientReducer,
     activeOrder: activeOrderReducer,

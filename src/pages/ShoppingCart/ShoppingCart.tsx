@@ -11,6 +11,8 @@ import { resetChosenDelivery, setChosenDelivery } from '../../Redux/Slices/chose
 import { refreshTokenService } from '../../helpers/refreshTokenService';
 import { useAddNewOrderMutation } from '../../Redux/RTK_Query/orders.service';
 import { setSavedAddress } from '../../Redux/Slices/savedAddress.slice';
+import { Loader } from '../../components/Loader/Loader';
+import { setDefaultResultOrder } from 'dns';
 
 export const ShoppingCart: React.FC = () => {
   const user = useAppSelector(state => state.user.value);
@@ -19,6 +21,9 @@ export const ShoppingCart: React.FC = () => {
   const isDeliveryShown = useAppSelector(state => state.isDeliveryShown.value);
   const chosenDelivery = useAppSelector(state => state.chosenDelivery.value);
   const savedAddress = useAppSelector(state => state.savedAddress.value);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isResult, setIsResult] = useState(false);
+
   const [finalPrice, setFinalPrice] = useState<number>(0);
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
@@ -51,20 +56,8 @@ export const ShoppingCart: React.FC = () => {
     return '';
   });
 
-  // const [savedAddress, setSavedAddress] = useState<string>(() => {
-  //   const storedAddress = localStorage.getItem('savedAddress');
-  //   const parsedAddress = storedAddress ? JSON.parse(storedAddress) : '';
-    
-  //   if (parsedAddress.length !== '') {
-  //     return parsedAddress;
-  //   }
-    
-  //   return '';
-  // });
-
   useEffect(() => {
     sessionStorage.setItem("storedDelivery", JSON.stringify(selectedDelivery));
-    // localStorage.setItem("savedAddress", JSON.stringify(savedAddress));
   }, [selectedDelivery,]);
 
   useEffect(() => {
@@ -115,7 +108,9 @@ export const ShoppingCart: React.FC = () => {
     );
 
     try {
-      makeNewOrder({
+      setIsLoading(true);
+      
+      await makeNewOrder({
         bookedDays: days,
         orderedGames: user?.cartGames,
         deliveryOption: chosenDelivery,
@@ -129,7 +124,13 @@ export const ShoppingCart: React.FC = () => {
       })
 
       if (isSuccess) {
-        navigate('/');
+        setIsResult(true);
+        console.log('isResult - ', isResult);
+        
+        setTimeout(() => {
+          setIsResult(false);
+          navigate('/');
+        }, 4000);
       }
 
     } catch (error) {
@@ -140,72 +141,97 @@ export const ShoppingCart: React.FC = () => {
   console.log('savedAddress - ', savedAddress);
 
   return (
-    <div
-      className="shoppingCart"
-      // ref={topContainer}
-    >
-
-        {(isCalendarShown || isDeliveryShown) && (
-          <div
-            className="shoppingCart__modal_bg"
-            onClick={handleToggleCalendar}
-          />
-        )}
-
-      <h1 className='shoppingCart__title'>Кошик</h1>
-      <p
-        className='shoppingCart__amount'
+    <>
+    {isResult && (
+      <div
+        className='shoppingCart__modal'
       >
-        {`Кількість ігор: ${
-          user?.cartGames
-            ? user?.cartGames.length
-            : 'обрахування...'
-          }`}
-      </p>
-
-      {user?.cartGames.length
-      ? <ShoppingCartList />
-      : (
-        <div className="shoppingCart__empty_list">
-          <h4 className="shoppingCart__empty_list_heading">
-            Ти ще не обрав жодної гри
-          </h4>
-
-          <button className="shoppingCart__empty_list_button">
-            <Link
-              to="/games"
-              className="shoppingCart__empty_list_button--link"
-            >
-              До списку ігор
-            </Link>
-          </button>
-        </div>
-      )}
-
-      <PSShoppingCartInfo />
-      
-      <Delivery />
-
-      {bookedDays.length > 0 && (
-        <div className="shoppingCart__finalPrice">
-          <h5 className="shoppingCart__finalPrice_title">
-            Загальна вартість:
-          </h5>
-          <p className="shoppingCart__finalPrice_amount">
-            {`${finalPrice}₴`}
-          </p>
-        </div>
-      )}
-
-      <div className="shoppingCart__checkout">
-        <button
-          className="shoppingCart__checkout_button"
-          onClick={handleSubmit}
-        >
-          Оформити прокат
-        </button>
+        <h4>Ваше замовлення прийнято</h4>
+        <p>Очікуйте email з підтвердженням</p>
+        <p>Скоро з вами зв'яжеться менеджер</p>
       </div>
+    )}
+
+    {isLoading
+      ?  (
+        <div className='shoppingCart__loader'>
+          <Loader />
+        </div>
+      )
+      : (
+        <>
+        <div
+          className="shoppingCart"
+          // ref={topContainer}
+        >
+
+            {(isCalendarShown || isDeliveryShown) && (
+              <div
+                className="shoppingCart__modal_bg"
+                onClick={handleToggleCalendar}
+              />
+            )}
+
+          <h1 className='shoppingCart__title'>Кошик</h1>
+          <p
+            className='shoppingCart__amount'
+          >
+            {`Кількість ігор: ${
+              user?.cartGames
+                ? user?.cartGames.length
+                : 'обрахування...'
+              }`}
+          </p>
+
+          {user?.cartGames.length
+          ? <ShoppingCartList />
+          : (
+            <div className="shoppingCart__empty_list">
+              <h4 className="shoppingCart__empty_list_heading">
+                Ти ще не обрав жодної гри
+              </h4>
+
+              <button className="shoppingCart__empty_list_button">
+                <Link
+                  to="/games"
+                  className="shoppingCart__empty_list_button--link"
+                >
+                  До списку ігор
+                </Link>
+              </button>
+            </div>
+          )}
+
+          <PSShoppingCartInfo />
+          
+          <Delivery />
+
+          {bookedDays.length > 0 && (
+            <div className="shoppingCart__finalPrice">
+              <h5 className="shoppingCart__finalPrice_title">
+                Загальна вартість:
+              </h5>
+              <p className="shoppingCart__finalPrice_amount">
+                {`${finalPrice}₴`}
+              </p>
+            </div>
+          )}
+
+          <div className="shoppingCart__checkout">
+            <button
+              className="shoppingCart__checkout_button"
+              onClick={handleSubmit}
+            >
+              Оформити прокат
+            </button>
+          </div>
+        
+        </div>
+        </>
+      ) 
+    }
+    </>
     
-    </div>
+    
   );
 }

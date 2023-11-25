@@ -19,7 +19,8 @@ export const RegistrationForm: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   
   const noErrors = {
-    noFullName: false, 
+    noFullName: false,
+    shortUsername: '',
     noAddress: false, 
     shortAddress: '', 
     noPhoneNumber: false, 
@@ -108,6 +109,13 @@ export const RegistrationForm: React.FC = () => {
 
         console.log('error - ', error);
       }
+
+      if (fullName.length < 6) {
+        setError(error => ({
+          ...error,
+          shortUsername: 'Закоротке ім\'я та прізвище'
+        }));
+      }
   
       if (address === '') {
         setError(error => ({
@@ -147,7 +155,7 @@ export const RegistrationForm: React.FC = () => {
       if (email !== '' && !emailPattern.test(email)) {
         setError(error => ({
           ...error,
-          incorrectEmail: 'Будь ласка, перевірте правильність адреси'
+          incorrectEmail: 'Будь ласка, перевірте правильність email адреси'
         }));
       }
       
@@ -241,6 +249,11 @@ export const RegistrationForm: React.FC = () => {
       </p>  
 
       <div className="registrationForm__field">
+        {fullName !== '' && error.shortUsername && (
+          <p className="registrationForm__field_warning">
+            {error.shortUsername}
+          </p>
+        )}
         <input
           className={cn("registrationForm__field_input", {
             "registrationForm__field_input--error": error.noFullName
@@ -260,6 +273,11 @@ export const RegistrationForm: React.FC = () => {
       </div>
 
       <div className="registrationForm__field">
+        {address !== '' && error.shortAddress && (
+          <p className="registrationForm__field_warning">
+            {error.shortAddress}
+          </p>
+        )}
         <input
           className={cn("registrationForm__field_input", {
             "registrationForm__field_input--error": error.noAddress

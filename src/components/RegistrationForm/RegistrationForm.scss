@@ -43,9 +43,12 @@
       border: 0;
       font-size: 18px;
       background-color: $main-grey;
-      outline: 1px solid $main-blue;
 
       margin-bottom: 10px;
+
+      &:focus {
+        border: 1px solid $main-blue;
+      }
 
       &--error {
         background-color: #f9c9c9;

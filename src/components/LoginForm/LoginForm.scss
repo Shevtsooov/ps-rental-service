@@ -37,7 +37,9 @@
       font-size: 18px;
       background-color: $main-grey;
 
-      outline: 1px solid $main-blue;
+      &:focus {
+        border: 1px solid $main-blue;
+      }
     
       &--spaced {
         letter-spacing: 6px;

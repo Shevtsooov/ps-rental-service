@@ -152,7 +152,7 @@ useEffect(() => {
             : (
               <div className='allInfo__dates__block'>
                 <p className='allInfo__dates__block--period'>
-                  {`${bookedDays[0]}: ${bookedDays.length} ${amountOfDays}`}
+                  {bookedDays[0]}
                 </p>
                 <p className='allInfo__dates__block--days'>
                   {`${bookedDays.length} ${amountOfDays}`}

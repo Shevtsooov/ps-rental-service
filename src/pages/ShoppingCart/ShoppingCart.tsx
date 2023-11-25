@@ -114,7 +114,7 @@ export const ShoppingCart: React.FC = () => {
         orderStatus: 'В обробці',
         sumOfOrder: finalPrice,
         adminComment: 'Тут поки що пусто',
-        userComment: 'Тут поки що пусто',
+        userComment: 'Адмін комент: Тут поки що пусто',
         isArchived: false,
       })
 

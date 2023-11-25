@@ -9,15 +9,37 @@
 
   margin-bottom: 15px;
 
-  &__firstBlock {
+  &__title {
+    font-size: 22px;
+  }
+
+  &__comment {
+    color: $main-blue;
+    margin-bottom: 5px;
+  }
+
+  &__commentText {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #fff;
+  }
+
+  &__header {
     display: flex;
+    align-items: center;
     gap: 10px;
     justify-content: space-between;
+
+  }
+
+  &__firstBlock {
+    display: flex;
     align-items: center;
+    gap: 10px;
+    justify-content: space-between;
   }
 
   &__arrow {
-    display: block;
     margin-top: 5px;
     width: 20px;
     height: 20px;
@@ -30,27 +52,66 @@
     }
   }
 
+  &__price {
+    font-size: 20px;
+  }
+}
 
-  .game {
+.allInfo {
+  display: none;
+
+  &--active {
     display: flex;
-    text-align: left;
-    gap: 15px;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 0;
     width: 100%;
-  
-    margin-bottom: 10px;
+  }
 
-    &__img {
-      display: block;
-      width: 55px;
-      height: 55px;
-      border-radius: 10px;
-      object-fit: cover;
-    }
-    
-    &__title {
-      font-size: 20px;
-      margin-bottom: 5px;
-      color: #000;
-    }
+  &__client {
+    margin-bottom: 15px;
+  }
+
+  &__dates {
+    margin-bottom: 15px;
+  }
+
+  &__clientComment {
+    margin-bottom: 15px;
+  }
+
+  &__delivery {
+    margin-bottom: 15px;
+  }
+
+  &__price {
+    margin-bottom: 15px;
+  }
+
+  &__adminComment {
+    margin-bottom: 15px;
+  }
+}
+
+.game {
+  display: flex;
+  text-align: left;
+  gap: 15px;
+  width: 100%;
+
+  margin-bottom: 10px;
+
+  &__img {
+    display: block;
+    width: 55px;
+    height: 55px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  
+  &__title {
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: #000;
   }
 }

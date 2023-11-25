@@ -3,11 +3,12 @@ import cn from "classnames";
 import './OrderInfo.scss';
 import { removeActiveOrder, setActiveOrder } from '../../Redux/Slices/activeOrder.slice';
 import { useAppSelector, useAppDispatch } from '../../Redux/store';
-import { useGetAllUsersQuery, useGetOneUserQuery } from '../../Redux/RTK_Query/users.service';
+import { useGetAllUsersQuery } from '../../Redux/RTK_Query/users.service';
 import { useState, useEffect } from 'react';
 import { User } from '../../types/User';
 import { Game } from '../../types/Game';
 import { useGetAllGamesQuery } from '../../Redux/RTK_Query/games.service';
+import { monthsSelected } from '../../helpers/CorrectDateNames';
 
 type Props = {
   order: Order,
@@ -33,6 +34,10 @@ export const OrderInfo: React.FC<Props> = ({ order }) => {
   const activeOrder = useAppSelector(state => state.activeOrder.value);
   const [orderUser, setOrderUser] = useState<User | null>(null);
   const [orderGames, setOrderGames] = useState<Game[]>([]);
+  const [year, setYear] = useState<number | null>(null);
+  const [month, setMonth] = useState<number | null>(null);
+  const [day, setDay] = useState<number | null>(null);
+  const [amountOfDays, setAmountOfDays] = useState<string>('доба');
   const dispatch = useAppDispatch();
 
 const { data: users } = useGetAllUsersQuery();
@@ -45,6 +50,24 @@ useEffect(() => {
     setOrderUser(orderUser);
   }
 }, [users]);
+
+useEffect(() => {
+  if (order) {
+    const [year, month, day] = createdAt.toString().slice(0, 10).split('-');
+
+    setYear(+year);
+    setMonth(+month);
+    setDay(+day);
+
+    if (bookedDays.length > 1) {
+      setAmountOfDays('доби');
+    }
+  
+    if (bookedDays.length > 4) {
+      setAmountOfDays('діб')
+    }
+  }
+}, [order]);
 
 // console.log('orderUser - ', orderUser);
 
@@ -70,8 +93,14 @@ useEffect(() => {
 
   return (
     <div className="orderInfo">
-      <div className="orderInfo__firstBlock">
-        <h2>{createdAt.toString().slice(0, 10)}</h2>
+      <div className="orderInfo__header">
+        {year && month && day && (
+         <h3 className="orderInfo__title">{`
+          ${day}
+          ${monthsSelected[month - 1]}
+          ${year.toString().slice(2)} р.
+        `}</h3>
+        )}
 
         <div className="orderInfo__firstBlock">
           <p>{orderStatus}</p>
@@ -86,17 +115,49 @@ useEffect(() => {
       </div>
 
       <div
-        className={cn('clientInfo__text', {
-          'clientInfo__text--active': activeOrder === _id
+        className={cn('allInfo', {
+          'allInfo--active': activeOrder === _id
         })}
       >
-        <p>{orderUser?.fullName}</p>
-        <a
-          href={`tel:+38${orderUser?.phoneNumber}`}
-          className='clientInfo__phoneNumber'
-        >
-          {`+38${orderUser?.phoneNumber}`}
-        </a>
+        <div className='allInfo__client'>
+          <p>{orderUser?.fullName}</p>
+          <a
+            href={`tel:+38${orderUser?.phoneNumber}`}
+            className='orderInfo__phoneNumber'
+          >
+            {`+38${orderUser?.phoneNumber}`}
+          </a>
+        </div>
+
+        <div className='allInfo__dates'>
+          <p>Заброньовані дати:</p>
+          <p>{`${bookedDays[0]} - ${bookedDays[bookedDays.length - 1]}: ${bookedDays.length} ${amountOfDays}`}</p>
+        </div>
+
+        {userComment && (
+          <div className='allInfo__clientComment'>
+            <p className='orderInfo__comment'>Коментар до замовлення:</p>
+            <p className='orderInfo__commentText'>
+              <em>
+                {`"${userComment}"`}
+              </em>
+            </p>
+          </div>
+        )}
+
+        {deliveryOption === 'Доставка'
+          ? (
+            <div className='allInfo__delivery'>
+              <p>{`Спосіб доставки: ${deliveryOption}`}</p>
+              <p>{`Адреса доставки: ${deliveryAddress}`}</p>
+            </div>
+          )
+          : (
+            <div className='allInfo__delivery'>
+              <p>{`Спосіб доставки: ${deliveryOption}`}</p>
+            </div>
+          )
+        }
 
         <div>
           {orderGames.map(game => (
@@ -115,8 +176,14 @@ useEffect(() => {
             </div>
           ))}
         </div>
-      </div>
 
+        <p className='allInfo__price'>
+          {`Сума замовлення: ${sumOfOrder} грн`}
+        </p>
+ 
+
+        <p className='allInfo__adminComment'>{`${adminComment}`}</p>
+      </div>
     </div>
   );
 }

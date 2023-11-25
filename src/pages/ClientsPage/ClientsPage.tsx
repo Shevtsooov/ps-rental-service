@@ -3,6 +3,7 @@ import './ClientsPage.scss';
 import { useGetAllUsersQuery } from '../../Redux/RTK_Query/users.service';
 import { ClientInfo } from '../../components/ClientInfo/ClientInfo';
 import { Pagination } from '../../components/Pagination/Pagination';
+import { Loader } from '../../components/Loader/Loader';
 
 
 export const ClientsPage: React.FC = () => {
@@ -35,13 +36,25 @@ export const ClientsPage: React.FC = () => {
   return (
     <div className="clientsPage">
       <h1>Список клієнтів</h1>
-      <p className="clientsPage__amount">{`Кількість клієнтів: ${clientsToShow?.length}`}</p>
 
-      <div className="clientsPage__list">
-        {clientsToShow?.map(client => (
-          <ClientInfo client={client} key={client.email}/>
-        ))}
-      </div>
+
+      {allTheClients
+        ? (
+          <>
+            <p className="clientsPage__amount">
+              {`Кількість клієнтів: ${allTheClients?.length}`}
+            </p>
+
+            <div className="clientsPage__list">
+              {clientsToShow?.map(client => (
+                <ClientInfo client={client} key={client.email}/>
+              ))}
+            </div>
+          </>
+
+        )
+        : <Loader />
+      }
 
       {!showPagination && allTheClients && (
         <Pagination

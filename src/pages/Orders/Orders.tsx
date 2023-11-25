@@ -3,6 +3,7 @@ import './Orders.scss';
 import { useGetAllOrdersQuery } from '../../Redux/RTK_Query/orders.service';
 import { OrderInfo } from '../../components/OrderInfo/OrderInfo';
 import { Pagination } from '../../components/Pagination/Pagination';
+import { Loader } from '../../components/Loader/Loader';
 
 
 export const Orders: React.FC = () => {
@@ -35,11 +36,23 @@ export const Orders: React.FC = () => {
     <div className="orders">
       <h1 className="orders__title">Замовлення</h1>
 
-      <div className='orders__list'>
-        {ordersToShow?.map(order => (
-          <OrderInfo order={order} key={order._id} />
-        ))}
-      </div>
+      {allTheOrders
+        ? (
+          <>
+            <p className="orders__amount">
+              {`Кількість замовлень: ${allTheOrders?.length}`}
+            </p>
+
+            <div className='orders__list'>
+              {ordersToShow?.map(order => (
+                <OrderInfo order={order} key={order._id} />
+              ))}
+            </div>
+          </>
+        )
+        : <Loader />
+      }
+      
 
       {!showPagination && allTheOrders && (
         <Pagination

@@ -60,12 +60,12 @@
       top: -20px;
       left: 0;
       font-size: 14px;
-      color: #f8b1b1;
+      color: $main-warning-hv;
     }
 
     &--clear {
       position: absolute;
-      top: calc(39% - 12.5px);
+      top: 12px;
       right: 10px;
       width: 25px;
       height: 25px;
@@ -83,7 +83,7 @@
     
     &_showPassword {
       position: absolute;
-      top: calc(50% - 15px);
+      top: 10px;
       right: 45px;
     
       width: 30px;

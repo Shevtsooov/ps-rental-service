@@ -106,8 +106,6 @@ export const RegistrationForm: React.FC = () => {
           ...error,
           noFullName: true
         }));
-
-        console.log('error - ', error);
       }
 
       if (fullName.length < 6) {

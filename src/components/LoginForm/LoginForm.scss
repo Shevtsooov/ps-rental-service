@@ -46,9 +46,17 @@
       }
     }
     
+    &_warning {
+      position: absolute;
+      top: -20px;
+      left: 0;
+      font-size: 14px;
+      color: $main-warning-hv;
+    }
+
     &--clear {
       position: absolute;
-      top: calc(50% - 12.5px);
+      top: 20px;
       right: 10px;
       width: 25px;
       height: 25px;

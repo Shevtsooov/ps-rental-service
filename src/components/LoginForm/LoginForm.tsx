@@ -6,6 +6,8 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useLoginUserMutation } from '../../Redux/RTK_Query/authApi.service';
 import { setUser } from '../../Redux/Slices/user.slice';
 import { refreshTokenService } from '../../helpers/refreshTokenService';
+import { useGetAllUsersQuery } from '../../Redux/RTK_Query/users.service';
+import cn from 'classnames';
 
 type credentials = {
   email: string,  
@@ -15,11 +17,23 @@ type credentials = {
 const emptyCredentials = {
   email: '',  
   password: '',
-}
+};
+
+const noErrors = {
+  isEmailTypedIn: '',
+  isEmailCorrect: '',
+  noSuchUser: '',
+  isPasswordTypedIn: '',
+  incorrectPassword: '', 
+};
 
 export const LoginForm: React.FC = () => {
   const [credentials, setCredentials] = useState<credentials>(emptyCredentials);
   const [fieldType, setFieldType] = useState('password');
+  const { data: users } = useGetAllUsersQuery();
+  
+  const [error, setError] = useState(noErrors);
+  
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   
@@ -33,7 +47,7 @@ export const LoginForm: React.FC = () => {
     setFieldType('password');
   };
 
-  const [ login ] = useLoginUserMutation();
+  const [ login, isLoading ] = useLoginUserMutation();
 
   const setPassword = (pass: string) => {
     setCredentials({ ...credentials, password: pass })
@@ -43,24 +57,89 @@ export const LoginForm: React.FC = () => {
     setCredentials({ ...credentials, email: mail })
   }
 
+
+
   const handleLogin = async () => {
-    console.log('here - ');
+
+    const emailPattern = /^[\w.+-]+@([\w-]+\.){1,3}[\w-]{2,}$/;
+  
+    const anyError = !credentials.email
+      || !emailPattern.test(credentials.email)
+      || error.noSuchUser
+      || !credentials.password;
+
+    const isSuchUser = users?.find(user => (
+      user.email === credentials.email
+    ));
+
+    if (anyError) {
+
+      if (!credentials.email) {
+        setError(error => ({
+          ...error,
+          isEmailTypedIn: 'Будь ласка, введіть email адресу'
+        }));
+      }
+
+      if (!emailPattern.test(credentials.email)) {
+        setError(error => ({
+          ...error,
+          isEmailCorrect: 'Будь ласка, перевірте правильність email адреси'
+        }));
+      }
+
+      if (!isSuchUser) {
+        setError(error => ({
+          ...error,
+          noSuchUser: 'На жаль, такого юзера не існує.'
+        }));
+      }
+
+      if (!credentials.password) {
+        setError(error => ({
+          ...error,
+          isPasswordTypedIn: 'Будь ласка, введіть пароль'
+        }));
+      }
+
+      setTimeout(() => {
+        setError(noErrors);
+      }, 2000);
+
+      return;
+    }
+
     try {
+
       const response = await login(credentials);
       
+      if (!('data' in response)) {
+        setError(error => ({
+          ...error,
+          incorrectPassword: 'Невірний пароль'
+        }));
+
+        setTimeout(() => {
+          setError(noErrors);
+        }, 2000);
+  
+        return;
+      }
+
       if ('data' in response) {
         const { refreshToken, user } = response.data;
 
         refreshTokenService.save(refreshToken);
         dispatch(setUser(user));
+
+        setPassword('');
+        setEmail('');
+        navigate("/");
       }
-    } catch (error) {
+    } catch (error: any) {
       // Handle errors here, for example, show an error message to the user.
-      console.error('Login failed:', error);
-    } finally {
-      setPassword('');
-      setEmail('');
-      navigate("/");
+      // console.log('error.originalStatus) - ', error.originalStatus);
+      console.log('Login failed:', error);
     }
   };
 
@@ -78,6 +157,23 @@ export const LoginForm: React.FC = () => {
       </p>      */}
       
       <div className="loginForm__field">
+        {error.isEmailTypedIn && (
+          <p className="loginForm__field_warning">
+            {error.isEmailTypedIn}
+          </p>
+        )}
+
+        {credentials.email !== '' && error.isEmailCorrect && (
+          <p className="loginForm__field_warning">
+            {error.isEmailCorrect}
+          </p>
+        )}
+
+        {error.noSuchUser && !error.isEmailCorrect && (
+          <p className="loginForm__field_warning">
+            {error.noSuchUser}
+          </p>
+        )}
         <input
           className="loginForm__field_input"
           placeholder='Email'
@@ -94,6 +190,18 @@ export const LoginForm: React.FC = () => {
       </div>
 
       <div className="loginForm__field">
+        {error.isPasswordTypedIn && (
+          <p className="loginForm__field_warning">
+            {error.isPasswordTypedIn}
+          </p>
+        )}
+
+        {error.incorrectPassword && (
+          <p className="loginForm__field_warning">
+            {error.incorrectPassword}
+          </p>
+        )}
+
         <input
           className="loginForm__field_input loginForm__field_input--spaced"
           placeholder='Пароль'

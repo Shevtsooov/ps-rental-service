@@ -92,7 +92,9 @@ useEffect(() => {
   }, [users, games]);
 
   return (
-    <div className="orderInfo">
+    <div className={cn("orderInfo", {
+      "orderInfo--active": activeOrder === _id
+    })}>
       <div className="orderInfo__header">
         {year && month && day && (
          <h3 className="orderInfo__title">{`

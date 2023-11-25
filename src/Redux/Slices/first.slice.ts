@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 export interface firstState {
-  value: string
+  value: string | null
 }
 
 const initialState: firstState = {
@@ -12,14 +12,14 @@ export const firstSlice = createSlice({
   name: 'first',
   initialState,
   reducers: {
-    // setfirst: (state, action) => {
-    //   state.value = action.payload
-    // },
-    // logout: (state) => {
-    //   state.value = null
-    // },
+    setfirst: (state, action) => {
+      state.value = action.payload
+    },
+    resetFirst: (state) => {
+      state.value = null
+    },
   },
 })
 
-// export const { setfirst, logout } = firstSlice.actions;
+export const { setfirst, resetFirst } = firstSlice.actions;
 export const firstReducer = firstSlice.reducer;

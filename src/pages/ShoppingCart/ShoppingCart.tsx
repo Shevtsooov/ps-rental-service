@@ -10,6 +10,7 @@ import { closeDelivery } from '../../Redux/Slices/isDeliveryShown.slice';
 import { resetChosenDelivery, setChosenDelivery } from '../../Redux/Slices/chosenDelivery.slice';
 import { refreshTokenService } from '../../helpers/refreshTokenService';
 import { useAddNewOrderMutation } from '../../Redux/RTK_Query/orders.service';
+import { setSavedAddress } from '../../Redux/Slices/savedAddress.slice';
 
 export const ShoppingCart: React.FC = () => {
   const user = useAppSelector(state => state.user.value);
@@ -17,6 +18,7 @@ export const ShoppingCart: React.FC = () => {
   const isCalendarShown = useAppSelector(state => state.isCalendarShown.value);
   const isDeliveryShown = useAppSelector(state => state.isDeliveryShown.value);
   const chosenDelivery = useAppSelector(state => state.chosenDelivery.value);
+  const savedAddress = useAppSelector(state => state.savedAddress.value);
   const [finalPrice, setFinalPrice] = useState<number>(0);
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
@@ -28,7 +30,15 @@ export const ShoppingCart: React.FC = () => {
 
   useEffect(() => {
     topContainer.current?.scrollIntoView({ block: "start" });
-    }, []);
+  }, []);
+
+  useEffect(() => {
+    if (user && savedAddress === '') {
+      dispatch(setSavedAddress(user?.address));
+    }
+  }, [user]);
+
+  console.log('savedAddress - ', savedAddress);
 
   const [selectedDelivery, setSelectedDelivery] = useState<string>(() => {
     const storedDelivery = sessionStorage.getItem('storedDelivery');
@@ -41,21 +51,21 @@ export const ShoppingCart: React.FC = () => {
     return '';
   });
 
-  const [savedAddress, setSavedAddress] = useState<string>(() => {
-    const storedAddress = localStorage.getItem('savedAddress');
-    const parsedAddress = storedAddress ? JSON.parse(storedAddress) : '';
+  // const [savedAddress, setSavedAddress] = useState<string>(() => {
+  //   const storedAddress = localStorage.getItem('savedAddress');
+  //   const parsedAddress = storedAddress ? JSON.parse(storedAddress) : '';
     
-    if (parsedAddress.length !== '') {
-      return parsedAddress;
-    }
+  //   if (parsedAddress.length !== '') {
+  //     return parsedAddress;
+  //   }
     
-    return '';
-  });
+  //   return '';
+  // });
 
   useEffect(() => {
     sessionStorage.setItem("storedDelivery", JSON.stringify(selectedDelivery));
-    localStorage.setItem("savedAddress", JSON.stringify(savedAddress));
-  }, [selectedDelivery, savedAddress]);
+    // localStorage.setItem("savedAddress", JSON.stringify(savedAddress));
+  }, [selectedDelivery,]);
 
   useEffect(() => {
     dispatch(resetChosenDelivery());
@@ -113,8 +123,8 @@ export const ShoppingCart: React.FC = () => {
         userId: user?.id,
         orderStatus: 'В обробці',
         sumOfOrder: finalPrice,
-        adminComment: 'Тут поки що пусто',
-        userComment: 'Адмін комент: Тут поки що пусто',
+        adminComment: 'Це тестовий коментар від клієнта відносно цього замовлення',
+        userComment: 'Це тестовий коментар від клієнта',
         isArchived: false,
       })
 

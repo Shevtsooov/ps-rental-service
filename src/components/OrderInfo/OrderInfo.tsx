@@ -129,15 +129,10 @@ useEffect(() => {
           </a>
         </div>
 
-        <div className='allInfo__dates'>
-          <p>Заброньовані дати:</p>
-          <p>{`${bookedDays[0]} - ${bookedDays[bookedDays.length - 1]}: ${bookedDays.length} ${amountOfDays}`}</p>
-        </div>
-
         {userComment && (
           <div className='allInfo__clientComment'>
-            <p className='orderInfo__comment'>Коментар до замовлення:</p>
-            <p className='orderInfo__commentText'>
+            <p className='allInfo__clientComment--title'>Коментар до замовлення:</p>
+            <p className='allInfo__clientComment--text'>
               <em>
                 {`"${userComment}"`}
               </em>
@@ -145,6 +140,28 @@ useEffect(() => {
           </div>
         )}
 
+        <div className='allInfo__dates'>
+          <p>Заброньовані дати:</p>
+          {bookedDays.length > 1
+            ? (
+              <div className='allInfo__dates__block'>
+                <p className='allInfo__dates__block--period'>{`${bookedDays[0]} - ${bookedDays[bookedDays.length - 1]}`}</p>
+                <p className='allInfo__dates__block--days'>{`${bookedDays.length} ${amountOfDays}`}</p>
+              </div>
+            )
+            : (
+              <div className='allInfo__dates__block'>
+                <p className='allInfo__dates__block--period'>
+                  {`${bookedDays[0]}: ${bookedDays.length} ${amountOfDays}`}
+                </p>
+                <p className='allInfo__dates__block--days'>
+                  {`${bookedDays.length} ${amountOfDays}`}
+                </p>
+              </div>
+            )
+          }
+        </div>
+          
         {deliveryOption === 'Доставка'
           ? (
             <div className='allInfo__delivery'>
@@ -159,7 +176,9 @@ useEffect(() => {
           )
         }
 
-        <div>
+        <div className='allInfo__games'>
+          <h4 className='allInfo__games--title'>Обрані ігри:</h4>
+          <hr />
           {orderGames.map(game => (
             <div className='game'>
               <a href={`/games/${game.gameId}`} >
@@ -175,21 +194,23 @@ useEffect(() => {
               </a>
             </div>
           ))}
+          <hr />
         </div>
 
         <p className='allInfo__price'>
           {`Сума замовлення: ${sumOfOrder} грн`}
         </p>
  
-
-        <div className='allInfo__adminComment'>
-            <p className='orderInfo__comment'>Коментар від адміна:</p>
-            <p className='orderInfo__commentText'>
+        {!adminComment && (
+          <div className='allInfo__adminComment'>
+            <p className='allInfo__adminComment--title'>Коментар від адміна:</p>
+            <p className='allInfo__adminComment--text'>
               <em>
-                {`"${userComment}"`}
+                {`"${adminComment}"`}
               </em>
             </p>
           </div>
+        )}
       </div>
     </div>
   );

@@ -6,6 +6,23 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
+
+    &_price {
+      display: flex;
+      gap: 10px;
+      font-size: 16px;
+      margin-bottom: 10px;
+  
+      &_regularPrice {
+        text-decoration: line-through;
+        color: #dd0000;
+      }
+  
+      &_discountedPrice {
+        color: #24991c;
+        font-size: 20px;
+      }
+    }
     
     &_box {
       display: flex;
@@ -31,23 +48,6 @@
         font-size: 20px;
         color: #000;
         margin-bottom: 5px;
-      }
-
-      &_price {
-        display: flex;
-        gap: 10px;
-        font-size: 16px;
-        margin-bottom: 10px;
-    
-        &_regularPrice {
-          text-decoration: line-through;
-          color: #dd0000;
-        }
-    
-        &_discountedPrice {
-          color: #24991c;
-          font-size: 20px;
-        }
       }
     }
 

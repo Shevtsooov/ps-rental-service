@@ -7,9 +7,11 @@ import { useAppSelector, useAppDispatch } from '../../Redux/store';
 import { setChosenDelivery } from '../../Redux/Slices/chosenDelivery.slice';
 import { DeliveryModal } from '../DeliveryModal/DeliveryModal';
 
+
 export const Delivery: React.FC = () => {
   const isDeliveryShown = useAppSelector(state => state.isDeliveryShown.value);
   const chosenDelivery = useAppSelector(state => state.chosenDelivery.value);
+  const savedAddress = useAppSelector(state => state.savedAddress.value);
   const dispatch = useAppDispatch();
 
   const [selectedDelivery, setSelectedDelivery] = useState<string>(() => {
@@ -23,21 +25,21 @@ export const Delivery: React.FC = () => {
     return '';
   });
 
-  const [savedAddress, setSavedAddress] = useState<string>(() => {
-    const storedAddress = localStorage.getItem('savedAddress');
-    const parsedAddress = storedAddress ? JSON.parse(storedAddress) : '';
+  // const [savedAddress, setSavedAddress] = useState<string>(() => {
+  //   const storedAddress = localStorage.getItem('savedAddress');
+  //   const parsedAddress = storedAddress ? JSON.parse(storedAddress) : '';
     
-    if (parsedAddress.length !== '') {
-      return parsedAddress;
-    }
+  //   if (parsedAddress.length !== '') {
+  //     return parsedAddress;
+  //   }
     
-    return '';
-  });
+  //   return '';
+  // });
 
   useEffect(() => {
     sessionStorage.setItem("storedDelivery", JSON.stringify(selectedDelivery));
-    localStorage.setItem("savedAddress", JSON.stringify(savedAddress));
-  }, [selectedDelivery, savedAddress]);
+    // localStorage.setItem("savedAddress", JSON.stringify(savedAddress));
+  }, [selectedDelivery]);
 
   useEffect(() => {
     if (isDeliveryShown) {
@@ -68,8 +70,6 @@ export const Delivery: React.FC = () => {
         <DeliveryModal
           chosenDelivery={chosenDelivery}
           handleChooseDelivery={handleChooseDelivery}
-          savedAddress={savedAddress}
-          setSavedAddress={setSavedAddress}
         />
       )}
 

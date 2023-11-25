@@ -127,19 +127,19 @@ export const ShoppingCartList: React.FC = () => {
               <div className="shoppingCartList__game_info_price">
               {user?.cartGames.length === 0 || shoppingCartGames[0].gameId === game.gameId
                 ? (
-                  <p className='game_price_discountedPrice'>Одна гра - безкоштовно</p>
+                  <p className='shoppingCartList__game_price_discountedPrice'>Одна гра - безкоштовно</p>
                 )
                 : (
                   <>
                     <p 
                     className={cn({
-                      'game_price_regularPrice': game.discountedPrice
+                      'shoppingCartList__game_price_regularPrice': game.discountedPrice
                     })}
                     >
                       {`${game.price}₴`}
                     </p>
                     {game.discountedPrice && (
-                      <p className="game_price_discountedPrice">{`${game.discountedPrice}₴`}</p>
+                      <p className="shoppingCartList__game_price_discountedPrice">{`${game.discountedPrice}₴`}</p>
                     )}
                   </>
                 )}

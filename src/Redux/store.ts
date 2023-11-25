@@ -23,6 +23,7 @@ import { activeClientReducer } from './Slices/activeClient.slice';
 import { OrdersApi } from './RTK_Query/orders.service';
 import { activeOrderReducer } from './Slices/activeOrder.slice';
 import { orderpaginationPageReducer } from './Slices/orderPaginationPage.slice';
+import { savedAddressReducer } from './Slices/savedAddress.slice';
 
 export const store = configureStore({
   reducer: {
@@ -37,6 +38,7 @@ export const store = configureStore({
     isCalendarShown: isCalendarShownReducer,
     isDeliveryShown: isDeliveryShownReducer,
     chosenDelivery: chosenDeliveryReducer,
+    savedAddress: savedAddressReducer,
 
     filteredSorting: filteredSortingReducer,
     filteredCategories: filteredCategoriesReducer,

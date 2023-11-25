@@ -176,21 +176,6 @@ export const MobileNavigation = () => {
 
           {user && user.role === 'admin' && (
             <ul className="mobileNav__list">
-              <li>
-                <NavLink
-                  className="mobileNav__link"
-                  to="/administration"
-                  onClick={() => setIsMenuOpen(p => !p)}
-                >
-                  <div className="mobileNav__link_text">
-                    <span className="mobileNav__link--icon mobileNav__link--home"></span>
-                    <p>Адмінка</p>
-                  </div>
-
-                  
-                  <span className="mobileNav__link--arrow"></span>
-                </NavLink>
-              </li>
 
               <li>
                 <NavLink
@@ -199,7 +184,7 @@ export const MobileNavigation = () => {
                   onClick={() => setIsMenuOpen(p => !p)}
                 >
                   <div className="mobileNav__link_text">
-                    <span className="mobileNav__link--icon mobileNav__link--home"></span>
+                    <span className="mobileNav__link--icon mobileNav__link--clients"></span>
                     <p>Клієнти</p>
                   </div>
 
@@ -215,7 +200,7 @@ export const MobileNavigation = () => {
                   onClick={() => setIsMenuOpen(p => !p)}
                 >
                   <div className="mobileNav__link_text">
-                    <span className="mobileNav__link--icon mobileNav__link--home"></span>
+                    <span className="mobileNav__link--icon mobileNav__link--orders"></span>
                     <p>Замовлення</p>
                   </div>
 

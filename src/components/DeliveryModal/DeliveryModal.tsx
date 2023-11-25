@@ -2,20 +2,28 @@ import './DeliveryModal.scss';
 import cn from 'classnames';
 import shipping from '../../assets/images/shipping.png'
 import selfPickup from '../../assets/images/self-pickup.png'
+import { resetSavedAddress, setSavedAddress } from '../../Redux/Slices/savedAddress.slice';
+import { useAppSelector, useAppDispatch } from '../../Redux/store';
 
 type Props = {
   chosenDelivery: string,
   handleChooseDelivery: (option: string) => void,
-  savedAddress: string,
-  setSavedAddress: (option: string) => void,
 };
 
 export const DeliveryModal: React.FC<Props> = ({
   chosenDelivery,
   handleChooseDelivery,
-  savedAddress,
-  setSavedAddress,
 }) => {
+  const savedAddress = useAppSelector(state => state.savedAddress.value);
+  const dispatch = useAppDispatch();
+
+  const handleTypeInAddress = (address: string) => {
+    dispatch(setSavedAddress(address));
+  }
+
+  const handleResetAddress = () => {
+    dispatch(resetSavedAddress());
+  }
 
   return (
     <div className="deliveryModal">
@@ -53,12 +61,12 @@ export const DeliveryModal: React.FC<Props> = ({
               type="text"
               placeholder='Вкажіть адресу'
               value={savedAddress}
-              onChange={(e) => setSavedAddress(e.target.value)}
+              onChange={(e) => handleTypeInAddress(e.target.value)}
             />
             {savedAddress !== '' && (
             <span
               className="deliveryModal__option_address--clear"
-              onClick={() => setSavedAddress('')}
+              onClick={handleResetAddress}
             />)}
           </div>
         </div>

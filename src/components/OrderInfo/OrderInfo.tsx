@@ -182,7 +182,14 @@ useEffect(() => {
         </p>
  
 
-        <p className='allInfo__adminComment'>{`${adminComment}`}</p>
+        <div className='allInfo__adminComment'>
+            <p className='orderInfo__comment'>Коментар від адміна:</p>
+            <p className='orderInfo__commentText'>
+              <em>
+                {`"${userComment}"`}
+              </em>
+            </p>
+          </div>
       </div>
     </div>
   );

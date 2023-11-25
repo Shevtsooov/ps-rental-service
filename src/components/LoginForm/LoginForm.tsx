@@ -60,17 +60,19 @@ export const LoginForm: React.FC = () => {
 
 
   const handleLogin = async () => {
-
     const emailPattern = /^[\w.+-]+@([\w-]+\.){1,3}[\w-]{2,}$/;
-  
-    const anyError = !credentials.email
-      || !emailPattern.test(credentials.email)
-      || error.noSuchUser
-      || !credentials.password;
-
+    
     const isSuchUser = users?.find(user => (
       user.email === credentials.email
     ));
+
+    const anyError = !credentials.email
+      || !emailPattern.test(credentials.email)
+      || error.noSuchUser
+      || !credentials.password
+      || !isSuchUser;
+
+
 
     if (anyError) {
 

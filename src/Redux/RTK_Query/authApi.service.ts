@@ -38,7 +38,15 @@ export const AuthApi = createApi({
       }),
     }),
 
-    activateUser: builder.query<void, string>({
+    activateUser: builder.query
+    <
+      { 
+        accessToken: string,
+        refreshToken: string,
+        user: User,
+      },
+      string
+    >({
       query: (activationToken) => `activation/${activationToken}`
     }),
 

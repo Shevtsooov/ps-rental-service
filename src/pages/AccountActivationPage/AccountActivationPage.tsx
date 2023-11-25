@@ -3,11 +3,15 @@ import { NavLink, useParams } from 'react-router-dom';
 import { Loader } from '../../components/Loader/Loader';
 import './AccountActivationPage.scss';
 import { useActivateUserQuery } from '../../Redux/RTK_Query/users.service';
+import { setUser } from '../../Redux/Slices/user.slice';
+import { useAppDispatch } from '../../Redux/store';
+import { refreshTokenService } from '../../helpers/refreshTokenService';
 
 
 export const AccountActivationPage = () => {
   const [error, setError] = useState<string | null>(null);
   const [done, setDone] = useState(false);
+  const dispatch = useAppDispatch();
 
   const { activationToken } = useParams<{ activationToken: string }>();
 
@@ -15,8 +19,15 @@ export const AccountActivationPage = () => {
 
   useEffect(() => {
     if (isSuccess) {
-      setDone(true);
+      const { refreshToken, user } = activateData;
 
+      console.log('user - ', user);
+      console.log('refreshToken - ', refreshToken);
+
+      refreshTokenService.save(refreshToken);
+      dispatch(setUser(user));
+
+      setDone(true);
       return;
     } 
     
@@ -24,7 +35,7 @@ export const AccountActivationPage = () => {
       setError('На жаль, активація аккаунту не виконана.');
       setDone(true);
     }
-  }, [activateData, isSuccess, isError]);
+  }, [activateData, isSuccess, isError, dispatch]);
 
   if (!done) {
     return <Loader />;

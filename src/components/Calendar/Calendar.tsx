@@ -5,7 +5,7 @@ import {
   resetBookedDays,
   setBookedDays,
 } from '../../Redux/Slices/bookedDays.slice';
-import { months, monthsSelected } from '../../helpers/CorrectDateNames';
+import { months } from '../../helpers/CorrectDateNames';
 import './Calendar.scss';
 import { decreaseMonthLookUpLimit, increaseMonthLookUpLimit } from '../../Redux/Slices/monthLookUpLimit';
 import { useGetAllOrdersQuery } from '../../Redux/RTK_Query/orders.service';
@@ -16,7 +16,6 @@ export const Calendar: React.FC = () => {
   const [currentDate] = useState<Date>(new Date());
   const [currentMonth, setCurrentMonth] = useState<number>(currentDate.getMonth());
   const [currentYear, setCurrentYear] = useState<number>(currentDate.getFullYear());
-  const [isOverbooking, setIsOverbooking] = useState<boolean>(false);
   const [serverBookedDays, setServerBookedDays] = useState<string[]>([]);
 
   const [selectedDays, setSelectedDays] = useState<string[]>(() => {
@@ -147,21 +146,6 @@ const handleDayClick = (date: Date) => {
 
     setServerBookedDays(arr);
   }, [selectedStart, selectedEnd, allTheOrders]);
-
-
-  useEffect(() => {
-    const isOverlapping = bookedDays.some(day => (
-      serverBookedDays?.includes(day.toString().slice(4, 15))
-    ));
-  
-    // console.log('isOverlapping - ', isOverlapping);
-  }, [dispatch, bookedDays, serverBookedDays]);
-
-
-  // if (isOverlapping) {
-  //   setSelectedDays([]);
-  //   dispatch(resetBookedDays());
-  // }
 
   useEffect(() => {
     if (selectedStart || selectedEnd) {

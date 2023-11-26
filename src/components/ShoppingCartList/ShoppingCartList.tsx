@@ -11,7 +11,6 @@ import { setUser } from '../../Redux/Slices/user.slice';
 export const ShoppingCartList: React.FC = () => {
   const shoppingCartGames = useAppSelector(state => state.shoppingCartGames.value);
   const user = useAppSelector(state => state.user.value);
-  const savedGames = useAppSelector(state => state.savedGames.value);
   const { data: games } = useGetAllGamesQuery();
   const [ editUser ] = useEditUserMutation();
 

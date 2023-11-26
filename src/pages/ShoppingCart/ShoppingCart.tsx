@@ -14,9 +14,12 @@ import { setSavedAddress } from '../../Redux/Slices/savedAddress.slice';
 import { Loader } from '../../components/Loader/Loader';
 import { resetUserComment, setUserComment } from '../../Redux/Slices/userComment.slice';
 import { resetBookedDays } from '../../Redux/Slices/bookedDays.slice';
+import { useEditUserMutation } from '../../Redux/RTK_Query/users.service';
 
 export const ShoppingCart: React.FC = () => {
-  const {data: allTheOrders, refetch} = useGetAllOrdersQuery();
+  const {data: _, refetch} = useGetAllOrdersQuery();
+  const [ makeNewOrder, isSuccess ] = useAddNewOrderMutation();
+  const [ editUser ] = useEditUserMutation();
 
   const user = useAppSelector(state => state.user.value);
   const bookedDays = useAppSelector(state => state.bookedDays.value);
@@ -33,7 +36,6 @@ export const ShoppingCart: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
-  const [ makeNewOrder, isSuccess ] = useAddNewOrderMutation();
 
   // THIS BLOCK ENSURES THE PAGE OPENS FROM THE TOP
   const topContainer = useRef<null | HTMLDivElement>(null); 
@@ -164,16 +166,22 @@ export const ShoppingCart: React.FC = () => {
         userId: user?.id,
         orderStatus: 'В обробці',
         sumOfOrder: finalPrice,
-        adminComment: 'Це тестовий коментар від адміна відносно цього замовлення',
+        adminComment: '',
         userComment,
         isArchived: false,
       })
 
       if (isSuccess) {
         setIsResult(true);
+        refetch();
+
         sessionStorage.clear()
         dispatch(resetBookedDays());
-        refetch();
+        dispatch(resetUserComment());
+        await editUser({
+          id: user?.id,
+          cartGames: [],
+        });
 
         setTimeout(() => {
           setIsResult(false);

@@ -157,7 +157,7 @@ export const ShoppingCartList: React.FC = () => {
             <button
               className="shoppingCartList__game_actions--clear"
               onClick={() => handleAddToCartGame(game.gameId)}
-            >X</button>
+            />
           </div>
         </div>
       ))}

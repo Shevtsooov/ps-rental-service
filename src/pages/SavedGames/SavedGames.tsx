@@ -6,6 +6,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useGetAllGamesQuery } from '../../Redux/RTK_Query/games.service';
 import { hardSetSavedGames, resetSavedGames } from '../../Redux/Slices/savedGames.slice';
 import { refreshTokenService } from '../../helpers/refreshTokenService';
+import { Loader } from '../../components/Loader/Loader';
 
 export const SavedGames: React.FC = () => {
   const savedGames = useAppSelector(state => state.savedGames.value);
@@ -45,6 +46,10 @@ export const SavedGames: React.FC = () => {
       navigate('/');
     }
   }, []);
+
+  if (!user) {
+    return <Loader />
+  }
 
   return (
     <div className="savedGames">

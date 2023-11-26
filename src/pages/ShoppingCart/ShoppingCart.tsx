@@ -12,7 +12,7 @@ import { refreshTokenService } from '../../helpers/refreshTokenService';
 import { useAddNewOrderMutation } from '../../Redux/RTK_Query/orders.service';
 import { setSavedAddress } from '../../Redux/Slices/savedAddress.slice';
 import { Loader } from '../../components/Loader/Loader';
-import { setDefaultResultOrder } from 'dns';
+import { resetUserComment, setUserComment } from '../../Redux/Slices/userComment.slice';
 
 export const ShoppingCart: React.FC = () => {
   const user = useAppSelector(state => state.user.value);
@@ -21,6 +21,8 @@ export const ShoppingCart: React.FC = () => {
   const isDeliveryShown = useAppSelector(state => state.isDeliveryShown.value);
   const chosenDelivery = useAppSelector(state => state.chosenDelivery.value);
   const savedAddress = useAppSelector(state => state.savedAddress.value);
+  const userComment = useAppSelector(state => state.userComment.value);
+  const [isCommentShown, setIsCommentShown] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isResult, setIsResult] = useState(false);
 
@@ -96,6 +98,23 @@ export const ShoppingCart: React.FC = () => {
     dispatch(closeDelivery());
   };
 
+  const handleShowComment = () => {
+    setIsCommentShown(true);
+  };
+
+  const handleHideComment = () => {
+    setIsCommentShown(false);
+    dispatch(resetUserComment());
+  };
+
+  const handleAddComment = (comment: string) => {
+    dispatch(setUserComment(comment));
+  };
+
+  const handleClearComment = () => {
+    dispatch(resetUserComment());
+  };
+
   useEffect(() => {
     if (!refreshTokenService.get()) {
       navigate('/');
@@ -119,7 +138,7 @@ export const ShoppingCart: React.FC = () => {
         orderStatus: 'В обробці',
         sumOfOrder: finalPrice,
         adminComment: 'Це тестовий коментар від клієнта відносно цього замовлення',
-        userComment: 'Це тестовий коментар від клієнта',
+        userComment,
         isArchived: false,
       })
 
@@ -205,6 +224,38 @@ export const ShoppingCart: React.FC = () => {
           <PSShoppingCartInfo />
           
           <Delivery />
+
+          {!isCommentShown && userComment === '' && (
+            <button
+              className='shoppingCart__userComment'
+              onClick={handleShowComment}
+            >
+              Додати коментар
+            </button>
+          )}
+
+
+          {(isCommentShown || userComment !== '') && (
+            <div className='shoppingCart__comment'>
+              <textarea
+                className='shoppingCart__comment_input'
+                value={userComment}
+                onChange={(e) => handleAddComment(e.target.value)}
+              />
+            {userComment !== '' && (
+              <button
+                className='shoppingCart__comment--clear'
+                onClick={handleClearComment}
+              />
+            )}
+              <button
+                className='shoppingCart__comment--hide'
+                onClick={handleHideComment}
+              >
+                Видалити коментар
+              </button>
+            </div>
+          )}
 
           {bookedDays.length > 0 && (
             <div className="shoppingCart__finalPrice">

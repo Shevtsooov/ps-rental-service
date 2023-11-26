@@ -9,12 +9,15 @@ import { closeCalendar } from '../../Redux/Slices/isCalendarShown.slice';
 import { closeDelivery } from '../../Redux/Slices/isDeliveryShown.slice';
 import { resetChosenDelivery, setChosenDelivery } from '../../Redux/Slices/chosenDelivery.slice';
 import { refreshTokenService } from '../../helpers/refreshTokenService';
-import { useAddNewOrderMutation } from '../../Redux/RTK_Query/orders.service';
+import { useAddNewOrderMutation, useGetAllOrdersQuery } from '../../Redux/RTK_Query/orders.service';
 import { setSavedAddress } from '../../Redux/Slices/savedAddress.slice';
 import { Loader } from '../../components/Loader/Loader';
 import { resetUserComment, setUserComment } from '../../Redux/Slices/userComment.slice';
+import { resetBookedDays } from '../../Redux/Slices/bookedDays.slice';
 
 export const ShoppingCart: React.FC = () => {
+  const {data: allTheOrders, refetch} = useGetAllOrdersQuery();
+
   const user = useAppSelector(state => state.user.value);
   const bookedDays = useAppSelector(state => state.bookedDays.value);
   const isCalendarShown = useAppSelector(state => state.isCalendarShown.value);
@@ -45,7 +48,16 @@ export const ShoppingCart: React.FC = () => {
     }
   }, [user]);
 
-  console.log('savedAddress - ', savedAddress);
+  const [selectedDays, setSelectedDays] = useState<string[]>(() => {
+    const storedDays = sessionStorage.getItem('storedDays');
+    const parsedDays = storedDays ? JSON.parse(storedDays) : [];
+    
+    if (parsedDays.length > 0) {
+      return parsedDays;
+    }
+    
+    return [];
+  });
 
   const [selectedDelivery, setSelectedDelivery] = useState<string>(() => {
     const storedDelivery = sessionStorage.getItem('storedDelivery');
@@ -92,7 +104,7 @@ export const ShoppingCart: React.FC = () => {
       setFinalPrice(finalPriceCalc);
     }
   }, [bookedDays, user, chosenDelivery]);
-  
+
   const handleToggleCalendar = () => {
     dispatch(closeCalendar());
     dispatch(closeDelivery());
@@ -116,10 +128,25 @@ export const ShoppingCart: React.FC = () => {
   };
 
   useEffect(() => {
-    if (!refreshTokenService.get()) {
+    if (!refreshTokenService.get() ) {
       navigate('/');
     }
   }, []);
+
+  useEffect(() => {
+    if (isLoading) {
+      document.body.style.overflow = 'hidden';
+      window.scrollTo({
+        top: 0, left: 0,
+      });
+
+      setTimeout(() => (
+        document.body.style.overflow = 'auto'
+      ), 4000);
+
+      return;
+    }
+  }, [isLoading]);
 
   const handleSubmit = async () => {
     const days = bookedDays.map(day => (
@@ -137,15 +164,17 @@ export const ShoppingCart: React.FC = () => {
         userId: user?.id,
         orderStatus: 'В обробці',
         sumOfOrder: finalPrice,
-        adminComment: 'Це тестовий коментар від клієнта відносно цього замовлення',
+        adminComment: 'Це тестовий коментар від адміна відносно цього замовлення',
         userComment,
         isArchived: false,
       })
 
       if (isSuccess) {
         setIsResult(true);
-        console.log('isResult - ', isResult);
-        
+        sessionStorage.clear()
+        dispatch(resetBookedDays());
+        refetch();
+
         setTimeout(() => {
           setIsResult(false);
           navigate('/');
@@ -156,8 +185,6 @@ export const ShoppingCart: React.FC = () => {
       console.error(error);
     }
   };
-
-  console.log('savedAddress - ', savedAddress);
 
   return (
     <>
@@ -237,6 +264,7 @@ export const ShoppingCart: React.FC = () => {
 
           {(isCommentShown || userComment !== '') && (
             <div className='shoppingCart__comment'>
+              <h5 className='shoppingCart__comment_title'>Коментар:</h5>
               <textarea
                 className='shoppingCart__comment_input'
                 value={userComment}
@@ -257,7 +285,7 @@ export const ShoppingCart: React.FC = () => {
             </div>
           )}
 
-          {bookedDays.length > 0 && (
+          {user && (bookedDays.length > 0 || user?.cartGames?.length > 1) && (
             <div className="shoppingCart__finalPrice">
               <h5 className="shoppingCart__finalPrice_title">
                 Загальна вартість:

@@ -28,6 +28,7 @@ import { AccountOrders } from './pages/AccountOrders/AccountOrders';
 import { AdminPage } from './pages/AdminPage/AdminPage';
 import { ClientsPage } from './pages/ClientsPage/ClientsPage';
 import { Orders } from './pages/Orders/Orders';
+import { Loader } from './components/Loader/Loader';
 
 export const App: React.FC = () => {
   const user = useAppSelector(state => state.user.value);
@@ -72,6 +73,10 @@ export const App: React.FC = () => {
   && location.pathname !== '/clients'
   && user?.cartGames.length > 0
   && !isVisible;
+
+  if (!refreshTokenService.get() && !user) {
+    return <Loader />
+  };
 
   return (
     <>

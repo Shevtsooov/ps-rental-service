@@ -19,6 +19,7 @@
     font-size: 20px;
     gap: 30px;
     position: absolute;
+    z-index: 200;
     top: 60px;
     left: 0;
 
@@ -26,7 +27,6 @@
     height: calc(100vh - 60px);
 
     padding: 20px;
-    z-index: 100;
     overflow-y: scroll;
     
     background-color: $main-grey;
@@ -34,6 +34,7 @@
 
   &__modal_bg {
     position: fixed;
+    z-index: 100;
     top: 0;
     left: 0;
     width: 100%;
@@ -102,9 +103,14 @@
 
   &__comment {
     position: relative;
+    z-index: 99;
     width: 100%;
 
     margin-bottom: 25px;
+
+    &_title {
+      margin-bottom: 5px;
+    }
 
     &_input {
       width: 100%;
@@ -118,7 +124,7 @@
 
     &--clear {
       position: absolute;
-      top: 10px;
+      top: 28px;
       right: 8px;
       height: 20px;
       width: 20px;

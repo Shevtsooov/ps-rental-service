@@ -98,6 +98,12 @@
 
     }
 
+    &--booked {
+      background-color: rgb(114, 152, 206);
+      color: $secondary-grey;
+      pointer-events:none;
+    }
+
   }
 }
 

@@ -8,11 +8,16 @@ import {
 import { months, monthsSelected } from '../../helpers/CorrectDateNames';
 import './Calendar.scss';
 import { decreaseMonthLookUpLimit, increaseMonthLookUpLimit } from '../../Redux/Slices/monthLookUpLimit';
+import { useGetAllOrdersQuery } from '../../Redux/RTK_Query/orders.service';
+import { Loader } from '../Loader/Loader';
 
 export const Calendar: React.FC = () => {
+  const {data: allTheOrders} = useGetAllOrdersQuery();
   const [currentDate] = useState<Date>(new Date());
   const [currentMonth, setCurrentMonth] = useState<number>(currentDate.getMonth());
   const [currentYear, setCurrentYear] = useState<number>(currentDate.getFullYear());
+  const [isOverbooking, setIsOverbooking] = useState<boolean>(false);
+  const [serverBookedDays, setServerBookedDays] = useState<string[]>([]);
 
   const [selectedDays, setSelectedDays] = useState<string[]>(() => {
     const storedDays = sessionStorage.getItem('storedDays');
@@ -85,17 +90,13 @@ const handleDayClick = (date: Date) => {
     return;
   }
 
-  
-
   setSelectedStart(date.toDateString());
 };
 
-
   const generateSelectedDays = useCallback(() => {
-    // dispatch(resetSelectedDays());
     setSelectedDays([]);
     dispatch(resetBookedDays());
-  
+
     if (selectedStart && selectedEnd) {
       // Calculate the number of days between start and end (inclusive)
       const startTime = new Date(selectedStart).getTime();
@@ -104,37 +105,69 @@ const handleDayClick = (date: Date) => {
       for (let time = startTime; time <= endTime; time += 24 * 60 * 60 * 1000) {
         const date = new Date(time);
 
+        console.log('bookedDay - ', date.toString().slice(4, 15));
+
+        const isOverlapping = serverBookedDays?.includes(date.toString().slice(4, 15))
+
+        if (isOverlapping) {
+            setSelectedStart('');
+            setSelectedEnd('');
+            setSelectedDays([]);
+            dispatch(resetBookedDays());
+            
+            return;
+        }
+        
         setSelectedDays(days => [...days, date.toDateString()]);
         dispatch(setBookedDays(date.toDateString()));
+
+        if (isOverlapping) {
+          setSelectedStart('');
+          setSelectedEnd('');
+          setSelectedDays([]);
+          dispatch(resetBookedDays());
+          
+          return;
+        }
       }
+
     } else if (selectedStart) {
       setSelectedDays([selectedStart]);
       dispatch(setBookedDays(selectedStart))
     }
+
   }, [selectedStart, selectedEnd, dispatch]);
   
+  useEffect(() => {
+    let arr: string[] = [];
+
+    const serverBookedDays = allTheOrders?.map(order => (
+      arr = [ ...arr, ...order.bookedDays ]
+    ));
+
+    setServerBookedDays(arr);
+  }, [selectedStart, selectedEnd, allTheOrders]);
+
+
+  useEffect(() => {
+    const isOverlapping = bookedDays.some(day => (
+      serverBookedDays?.includes(day.toString().slice(4, 15))
+    ));
+  
+    // console.log('isOverlapping - ', isOverlapping);
+  }, [dispatch, bookedDays, serverBookedDays]);
+
+
+  // if (isOverlapping) {
+  //   setSelectedDays([]);
+  //   dispatch(resetBookedDays());
+  // }
+
   useEffect(() => {
     if (selectedStart || selectedEnd) {
       generateSelectedDays();
     }
   }, [selectedStart, selectedEnd, generateSelectedDays]);
-
-  // const handleBookDays = () => {
-  //   const isOverBooking = bookedDays.some(bDay => (
-  //     selectedDays.includes(bDay.toDateString())
-  //     ));
-
-  //     console.log(isOverBooking);
-
-  //   if (isOverBooking) {
-  //     alert('overbooking');
-
-  //     return;
-  //   }
-
-  //   dispatch(setBookedDays(selectedDays));
-  //   setSelectedStart('');
-  // }
 
   // Function to generate days for a given month
   const generateMonthDays = (year: number, month: number) => {
@@ -173,18 +206,20 @@ const handleDayClick = (date: Date) => {
       && date.getMonth() === currentDate.getMonth()
       && date.getFullYear() === currentDate.getFullYear();
 
-      // const isBooked = bookedDays && bookedDays.some(item => item.getTime() === date.getTime());
+      const dateString = date.toString().slice(4, 15);
+
+      const isBooked = serverBookedDays?.some(item => item === dateString);
 
       days.push(
         <div
-          key={i}
+          key={date.toString()}
           className={cn('calendar__day', {
             'calendar__day--off': isDayOff,
             'calendar__day--today': isToday,
             'calendar__day--selected': IsStartEndSelected,
             'calendar__day--selected_between': includedSelectedDays,
-            'calendar__day--disabled': isDisabled 
-            // || isBooked
+            'calendar__day--disabled': isDisabled,
+            'calendar__day--booked': isBooked 
           })}
           onClick={() => handleDayClick(date)}
         >
@@ -228,64 +263,38 @@ const handleDayClick = (date: Date) => {
 
     setCurrentMonth(month => month - 1);
     dispatch(decreaseMonthLookUpLimit());
-  }
+  };
 
-  let amountOfDays = 'доба';
-
-  if (selectedDays.length > 1) {
-    amountOfDays = 'доби';
-  }
-
-  if (selectedDays.length > 4) {
-    amountOfDays = 'діб';
-  }
-
-  const daysInLS = [];
-
-  for (let i = 0; i > selectedDays.length; i++) {
-    daysInLS.push(new Date(selectedDays[i]));
-  }
-
-  const firstDay = new Date(bookedDays[0]);
-  const lastDay = new Date(bookedDays[bookedDays.length - 1]);
+  console.log('bookedDays - ', bookedDays);
 
   return (
-    <div className="calendar">
-      <header className="calendar__header">
-        <button onClick={handlePreviousMonth}>П</button>
-        <h2>{`${months[currentMonth]}, ${currentYear}`}</h2>
-        <button onClick={handleNextMonth}>Н</button>
-      </header>
+    <>
+      {allTheOrders
+        ? (
+          <div className="calendar">
+            <header className="calendar__header">
+              <button onClick={handlePreviousMonth}>П</button>
+              <h2>{`${months[currentMonth]}, ${currentYear}`}</h2>
+              <button onClick={handleNextMonth}>Н</button>
+            </header>
 
-      <div className="calendar__days">
-        <div className="calendar__day">Пн</div>
-        <div className="calendar__day">Вт</div>
-        <div className="calendar__day">Ср</div>
-        <div className="calendar__day">Чт</div>
-        <div className="calendar__day">Пт</div>
-        <div className="calendar__day calendar__day--off">Сб</div>
-        <div className="calendar__day calendar__day--off">Нд</div>
-      </div>
+            <div className="calendar__days">
+              <div className="calendar__day">Пн</div>
+              <div className="calendar__day">Вт</div>
+              <div className="calendar__day">Ср</div>
+              <div className="calendar__day">Чт</div>
+              <div className="calendar__day">Пт</div>
+              <div className="calendar__day calendar__day--off">Сб</div>
+              <div className="calendar__day calendar__day--off">Нд</div>
+            </div>
 
-      <div className="calendar__grid">
-        {generateMonthDays(currentYear, currentMonth)}
-      </div>
-
-      {/* <button onClick={handleBookDays}>click</button> */}
-      {/* <hr />
-
-      {selectedDays?.length > 1 && (
-        <p>
-          {`${firstDay.getDate()} ${monthsSelected[firstDay.getMonth()]} - ${lastDay.getDate()} ${monthsSelected[lastDay.getMonth()]}`}
-        </p>
-      )}
-
-      <hr />
-
-      {selectedDays?.length > 0 && (
-        <p>{`${selectedDays.length} ${amountOfDays}`}</p>
-      )} */}
-      
-    </div>
+            <div className="calendar__grid">
+              {generateMonthDays(currentYear, currentMonth)}
+            </div>      
+          </div>
+        )
+        : <Loader />  
+      }
+    </>
   );
 };

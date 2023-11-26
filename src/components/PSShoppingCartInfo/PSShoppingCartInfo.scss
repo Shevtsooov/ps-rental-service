@@ -9,6 +9,7 @@
     &__calendar {
       width: 300px;
       position: fixed;
+      z-index: 200;
       top: 20%;
       left: calc(50% - 150px);
 

@@ -7,7 +7,7 @@ import { Loader } from '../../components/Loader/Loader';
 
 
 export const Orders: React.FC = () => {
-  const {data: allTheOrders} = useGetAllOrdersQuery();
+  const {data: allTheOrders} = useGetAllOrdersQuery();  
   const [paginationPage, setPaginationPage] = useState(1);
   const [perPage, setPerPage] = useState(10);
   const [start, setStart] = useState(0)

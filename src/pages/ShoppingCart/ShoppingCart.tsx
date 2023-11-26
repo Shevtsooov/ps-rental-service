@@ -17,8 +17,7 @@ import { resetBookedDays } from '../../Redux/Slices/bookedDays.slice';
 import { useEditUserMutation } from '../../Redux/RTK_Query/users.service';
 
 export const ShoppingCart: React.FC = () => {
-  const {data: _, refetch} = useGetAllOrdersQuery();
-  const [ makeNewOrder, isSuccess ] = useAddNewOrderMutation();
+  const {data: allTheOrders, refetch } = useGetAllOrdersQuery();
   const [ editUser ] = useEditUserMutation();
 
   const user = useAppSelector(state => state.user.value);
@@ -36,6 +35,7 @@ export const ShoppingCart: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
+  const [ makeNewOrder, isSuccess ] = useAddNewOrderMutation();
 
   // THIS BLOCK ENSURES THE PAGE OPENS FROM THE TOP
   const topContainer = useRef<null | HTMLDivElement>(null); 
@@ -49,17 +49,6 @@ export const ShoppingCart: React.FC = () => {
       dispatch(setSavedAddress(user?.address));
     }
   }, [user]);
-
-  const [selectedDays, setSelectedDays] = useState<string[]>(() => {
-    const storedDays = sessionStorage.getItem('storedDays');
-    const parsedDays = storedDays ? JSON.parse(storedDays) : [];
-    
-    if (parsedDays.length > 0) {
-      return parsedDays;
-    }
-    
-    return [];
-  });
 
   const [selectedDelivery, setSelectedDelivery] = useState<string>(() => {
     const storedDelivery = sessionStorage.getItem('storedDelivery');
@@ -155,9 +144,11 @@ export const ShoppingCart: React.FC = () => {
       day.toString().slice(4, 15))
     );
 
+    console.log('started');
+
     try {
       setIsLoading(true);
-      
+
       await makeNewOrder({
         bookedDays: days,
         orderedGames: user?.cartGames,
@@ -166,27 +157,28 @@ export const ShoppingCart: React.FC = () => {
         userId: user?.id,
         orderStatus: 'В обробці',
         sumOfOrder: finalPrice,
-        adminComment: '',
+        adminComment: 'Це тестовий коментар від адміна відносно цього замовлення',
         userComment,
         isArchived: false,
       })
+    
+      console.log('is here');
 
       if (isSuccess) {
         setIsResult(true);
-        refetch();
-
         sessionStorage.clear()
         dispatch(resetBookedDays());
-        dispatch(resetUserComment());
         await editUser({
           id: user?.id,
           cartGames: [],
         });
-
+        
         setTimeout(() => {
           setIsResult(false);
           navigate('/');
         }, 4000);
+
+        refetch();
       }
 
     } catch (error) {

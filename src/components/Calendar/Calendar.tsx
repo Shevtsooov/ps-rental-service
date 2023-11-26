@@ -274,7 +274,36 @@ const handleDayClick = (date: Date) => {
 
             <div className="calendar__grid">
               {generateMonthDays(currentYear, currentMonth)}
-            </div>      
+            </div>  
+
+            <div className="calendar__legend">
+              <div className="calendar__legend_passed">
+                <div className="calendar__legend_passed--day">
+                  6
+                </div>
+                <div className="calendar__legend_passed--text">
+                  - минулі дати
+                </div>
+              </div>
+
+              <div className="calendar__legend_booked">
+                <div className="calendar__legend_booked--day">
+                  17
+                </div>
+                <div className="calendar__legend_booked--text">
+                  - заброньовані дати
+                </div>
+              </div>
+
+              <div className="calendar__legend_available">
+                <div className="calendar__legend_available--day">
+                  10
+                </div>
+                <div className="calendar__legend_available--text">
+                  - доступні дати
+                </div>
+              </div>
+            </div>    
           </div>
         )
         : <Loader />  

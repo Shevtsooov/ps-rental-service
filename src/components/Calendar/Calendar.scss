@@ -99,11 +99,84 @@
     }
 
     &--booked {
-      background-color: rgb(114, 152, 206);
+      background-color: rgb(144, 185, 242);
       color: $secondary-grey;
       pointer-events:none;
     }
 
+  }
+
+  &__legend {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+
+    background-color: $main-blue;
+
+    &_passed {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      &--day {
+        width: 40px;
+        text-align: center;
+        padding: 10px;
+
+        background-color: #dbd9d9;
+        color: #6e6e6e;
+        pointer-events:none;
+      }
+
+      &--text {
+        font-size: 18px;
+        color: #fff;
+      }
+    }
+
+    &_booked {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      &--day {
+        width: 40px;
+        text-align: center;
+        padding: 10px;
+
+        background-color: rgb(144, 185, 242);
+        color: $secondary-grey;
+        pointer-events:none;
+      }
+
+      &--text {
+        font-size: 18px;
+        color: #fff;
+      }
+    }
+
+    &_available {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      &--day {
+        width: 40px;
+        text-align: center;
+        padding: 10px;
+
+        background-color: #f7f7f7;
+        
+        color: #000;
+        pointer-events:none;
+      }
+
+      &--text {
+        font-size: 18px;
+        color: #fff;
+      }
+    }
   }
 }
 

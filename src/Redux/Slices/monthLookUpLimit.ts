@@ -16,6 +16,9 @@ export const monthLookUpLimitSlice = createSlice({
       state.value += 1
     },
     decreaseMonthLookUpLimit: (state) => {
+      state.value -= 1
+    },
+    resetMonthLookUpLimit: (state) => {
       state.value = 0
     },
   },
@@ -24,5 +27,6 @@ export const monthLookUpLimitSlice = createSlice({
 export const {
   increaseMonthLookUpLimit,
   decreaseMonthLookUpLimit,
+  resetMonthLookUpLimit,
 } = monthLookUpLimitSlice.actions;
 export const monthLookUpLimitReducer = monthLookUpLimitSlice.reducer;

@@ -7,7 +7,7 @@ import {
 } from '../../Redux/Slices/bookedDays.slice';
 import { months } from '../../helpers/CorrectDateNames';
 import './Calendar.scss';
-import { decreaseMonthLookUpLimit, increaseMonthLookUpLimit } from '../../Redux/Slices/monthLookUpLimit';
+import { decreaseMonthLookUpLimit, increaseMonthLookUpLimit, resetMonthLookUpLimit } from '../../Redux/Slices/monthLookUpLimit';
 import { useGetAllOrdersQuery } from '../../Redux/RTK_Query/orders.service';
 import { Loader } from '../Loader/Loader';
 
@@ -215,7 +215,8 @@ const handleDayClick = (date: Date) => {
 
   const handleNextMonth = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.stopPropagation()
-    
+    console.log('click');
+
     if (monthLookUpLimit === 2) {
       return;
     }
@@ -249,6 +250,12 @@ const handleDayClick = (date: Date) => {
     setCurrentMonth(month => month - 1);
     dispatch(decreaseMonthLookUpLimit());
   };
+
+  useEffect(() => {
+    return () => {
+      dispatch(resetMonthLookUpLimit())
+    }
+  }, []);
 
   return (
     <>

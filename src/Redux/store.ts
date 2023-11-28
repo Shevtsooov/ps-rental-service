@@ -17,7 +17,6 @@ import { filteredPlayersReducer } from './Slices/filteredPlayers.slice';
 import { paginationPageReducer } from './Slices/paginationPage.slice';
 import { UsersApi } from './RTK_Query/users.service';
 import { AuthApi } from './RTK_Query/authApi.service';
-// import { UserApi } from './RTK_Query/userApi.service';
 import { userReducer } from './Slices/user.slice';
 import { activeClientReducer } from './Slices/activeClient.slice';
 import { OrdersApi } from './RTK_Query/orders.service';
@@ -65,7 +64,6 @@ export const store = configureStore({
         UsersApi.middleware,
         AuthApi.middleware,
         OrdersApi.middleware,
-        // UserApi.middleware,
       ])
   )
 })

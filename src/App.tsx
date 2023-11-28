@@ -71,6 +71,7 @@ export const App: React.FC = () => {
 // Set up an interval that calls refresh every 780000 milliseconds (13 minutes)
 const refreshInterval = setInterval(() => {
   refetch();
+  console.log('refetched');
 }, 780000);
 
 // Remember to clear the interval when the component unmounts

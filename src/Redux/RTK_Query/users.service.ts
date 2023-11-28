@@ -11,8 +11,6 @@ const BASE_URL = isProduction
   ? 'https://testps.onrender.com'
   : 'http://localhost:5020'
 
-  console.log('BASE_URL - ', BASE_URL);
-
 export const UsersApi = createApi({
   reducerPath: 'UsersApi',
   baseQuery: fetchBaseQuery({

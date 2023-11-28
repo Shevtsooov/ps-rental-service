@@ -6,17 +6,6 @@ const BASE_URL = isProduction
   ? 'https://testps.onrender.com'
   : 'http://localhost:5020';
 
-interface ErrorDetails {
-  data: string;
-  error: string;
-  originalStatus: number;
-  status: string;
-}
-
-interface ErrorResponse {
-  error: ErrorDetails;
-}
-
 export const AuthApi = createApi({
   reducerPath: 'AuthApi',
   baseQuery: fetchBaseQuery({
@@ -96,7 +85,7 @@ export const AuthApi = createApi({
         body,
       }),
     }),
-    
+
   })
 })
 

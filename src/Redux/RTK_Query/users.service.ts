@@ -19,6 +19,9 @@ export const UsersApi = createApi({
     baseUrl: BASE_URL
   }),
   endpoints: (builder) => ({
+    ping: builder.query<string, void>({
+      query: () => 'ping'
+    }),
     getAllUsers: builder.query<User[], void>({
       query: () => 'users'
     }),
@@ -84,6 +87,7 @@ export const UsersApi = createApi({
 })
 
 export const {
+  usePingQuery,
   useGetAllUsersQuery,
   useGetOneUserQuery,
   useActivateUserQuery,

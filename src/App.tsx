@@ -29,10 +29,11 @@ import { AdminPage } from './pages/AdminPage/AdminPage';
 import { ClientsPage } from './pages/ClientsPage/ClientsPage';
 import { Orders } from './pages/Orders/Orders';
 import { Loader } from './components/Loader/Loader';
+import { usePingQuery } from './Redux/RTK_Query/users.service';
 
 export const App: React.FC = () => {
   const user = useAppSelector(state => state.user.value);
-
+  const { data: ping, refetch } = usePingQuery();
   const [refreshUser] = useRefreshUserMutation();
 
   const location = useLocation();
@@ -66,6 +67,16 @@ export const App: React.FC = () => {
 
     fetchData();
   }, [dispatch, refreshUser]);
+
+// Set up an interval that calls refresh every 780000 milliseconds (13 minutes)
+const refreshInterval = setInterval(() => {
+  refetch();
+}, 780000);
+
+// Remember to clear the interval when the component unmounts
+useEffect(() => {
+  return () => clearInterval(refreshInterval);
+}, [refreshInterval]);
 
   const showCartBubble = user
   && location.pathname !== '/shopping-cart'

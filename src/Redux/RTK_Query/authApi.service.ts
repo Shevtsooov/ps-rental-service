@@ -96,7 +96,7 @@ export const AuthApi = createApi({
         body,
       }),
     }),
-
+    
   })
 })
 

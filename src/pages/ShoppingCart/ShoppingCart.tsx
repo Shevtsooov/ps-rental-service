@@ -15,6 +15,8 @@ import { Loader } from '../../components/Loader/Loader';
 import { resetUserComment, setUserComment } from '../../Redux/Slices/userComment.slice';
 import { resetBookedDays } from '../../Redux/Slices/bookedDays.slice';
 import { useEditUserMutation } from '../../Redux/RTK_Query/users.service';
+import { useRefreshUserMutation } from '../../Redux/RTK_Query/authApi.service';
+import { setUser } from '../../Redux/Slices/user.slice';
 
 export const ShoppingCart: React.FC = () => {
   const {data: allTheOrders, refetch } = useGetAllOrdersQuery();
@@ -36,6 +38,7 @@ export const ShoppingCart: React.FC = () => {
   const dispatch = useAppDispatch();
 
   const [ makeNewOrder, isSuccess ] = useAddNewOrderMutation();
+  const [refreshUser] = useRefreshUserMutation();
 
   // THIS BLOCK ENSURES THE PAGE OPENS FROM THE TOP
   const topContainer = useRef<null | HTMLDivElement>(null); 
@@ -172,7 +175,22 @@ export const ShoppingCart: React.FC = () => {
           id: user?.id,
           cartGames: [],
         });
-        
+
+        const refreshTokenFromLS = refreshTokenService.get();
+      
+        if (refreshTokenFromLS) {
+         const response = await refreshUser({
+              refreshToken: refreshTokenFromLS,
+            });
+
+            if ('data' in response) {
+              const { refreshToken, user } = response.data;
+              refreshTokenService.remove()
+              refreshTokenService.save(refreshToken);
+              dispatch(setUser(user));
+            }
+        };
+
         setTimeout(() => {
           setIsResult(false);
           navigate('/');

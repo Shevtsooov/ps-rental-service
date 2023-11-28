@@ -74,6 +74,7 @@ export const App: React.FC = () => {
   useEffect(() => {
     const interval = setInterval(async () => {
       await ping();
+      console.log('refreshed');
     }, 780000 );
 
     return () => clearInterval(interval);

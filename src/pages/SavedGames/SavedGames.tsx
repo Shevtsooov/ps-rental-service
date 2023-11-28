@@ -31,8 +31,6 @@ export const SavedGames: React.FC = () => {
     dispatch(resetSavedGames());
   
     if (user) {
-      console.log('useEffect - User available:', user);
-  
       const gamesToAdd = games?.filter((game) => (
         user.likedGames.includes(game.gameId)
       ));

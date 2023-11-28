@@ -27,8 +27,6 @@ export const Orders: React.FC = () => {
     }
   }, [paginationPage, allTheOrders, perPage]);
 
-  console.log('start - ', start);
-
   const showPagination = (allTheOrders && allTheOrders.length <= perPage) 
   || allTheOrders?.length === 0;
 

@@ -21,9 +21,6 @@ export const AccountActivationPage = () => {
     if (isSuccess) {
       const { refreshToken, user } = activateData;
 
-      console.log('user - ', user);
-      console.log('refreshToken - ', refreshToken);
-
       refreshTokenService.save(refreshToken);
       dispatch(setUser(user));
 

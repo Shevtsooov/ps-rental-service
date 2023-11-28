@@ -69,8 +69,6 @@ useEffect(() => {
   }
 }, [order]);
 
-// console.log('orderUser - ', orderUser);
-
   const handleActiveOrder = (_id: string) => {
     if (activeOrder === _id) {
       dispatch(removeActiveOrder());

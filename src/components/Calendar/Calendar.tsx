@@ -104,8 +104,6 @@ const handleDayClick = (date: Date) => {
       for (let time = startTime; time <= endTime; time += 24 * 60 * 60 * 1000) {
         const date = new Date(time);
 
-        console.log('bookedDay - ', date.toString().slice(4, 15));
-
         const isOverlapping = serverBookedDays?.includes(date.toString().slice(4, 15))
 
         if (isOverlapping) {
@@ -248,8 +246,6 @@ const handleDayClick = (date: Date) => {
     setCurrentMonth(month => month - 1);
     dispatch(decreaseMonthLookUpLimit());
   };
-
-  console.log('bookedDays - ', bookedDays);
 
   return (
     <>

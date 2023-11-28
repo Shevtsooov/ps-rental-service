@@ -137,9 +137,7 @@ export const LoginForm: React.FC = () => {
         navigate("/");
       }
     } catch (error: any) {
-      // Handle errors here, for example, show an error message to the user.
-      // console.log('error.originalStatus) - ', error.originalStatus);
-      console.log('Login failed:', error);
+      console.error('Login failed:', error);
     }
   };
 

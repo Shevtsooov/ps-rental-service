@@ -28,8 +28,6 @@ export const ClientsPage: React.FC = () => {
     }
   }, [paginationPage, allTheClients, perPage]);
 
-  console.log('start - ', start);
-
   const showPagination = (allTheClients && allTheClients.length <= perPage) 
   || allTheClients?.length === 0;
 

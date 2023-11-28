@@ -30,8 +30,6 @@ export const AccountOrders: React.FC = () => {
     }
   }, [paginationPage, userOrders, perPage]);
 
-  console.log('start - ', start);
-
   const showPagination = (userOrders && userOrders.length <= perPage) 
   || userOrders?.length === 0;
 

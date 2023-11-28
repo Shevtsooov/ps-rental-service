@@ -197,11 +197,7 @@ export const RegistrationForm: React.FC = () => {
         phoneNumber,
       };
 
-      const response = await register(newUser);
-
-      if (response) {
-        console.log('A new user was added successfully:', response);
-      }
+    await register(newUser);
 
     } catch (error) {
       console.error('Error adding question:', error);

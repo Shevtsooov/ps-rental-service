@@ -22,15 +22,11 @@ export const AccountPage: React.FC = () => {
   const handleLogOut = async () => {
     const refreshToken = refreshTokenService.get();
 
-    console.log('refreshToken - ', refreshToken);
-    
     try {
       if (refreshToken) {
-        const response = await serverLogOut({
+        await serverLogOut({
           refreshToken: refreshToken
         });
-
-        console.log(response);
       }
 
       refreshTokenService.remove();

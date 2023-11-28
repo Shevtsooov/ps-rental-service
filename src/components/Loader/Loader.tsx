@@ -20,6 +20,7 @@ export const Loader: React.FC = () => (
           <rect x="8" y="8" width="64" height="64"></rect>
         </svg>
       </div>
+      
       <h4 className="loader__title">Loading</h4>
       
     </div>

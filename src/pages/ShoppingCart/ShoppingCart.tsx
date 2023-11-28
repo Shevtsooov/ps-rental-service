@@ -18,6 +18,11 @@ import { useEditUserMutation } from '../../Redux/RTK_Query/users.service';
 import { useRefreshUserMutation } from '../../Redux/RTK_Query/authApi.service';
 import { setUser } from '../../Redux/Slices/user.slice';
 
+const noErrors = {
+  noDaysSelected: false,
+  noDeliverySelected: false,
+};
+
 export const ShoppingCart: React.FC = () => {
   const {data: allTheOrders, refetch } = useGetAllOrdersQuery();
   const [ editUser ] = useEditUserMutation();
@@ -32,6 +37,7 @@ export const ShoppingCart: React.FC = () => {
   const [isCommentShown, setIsCommentShown] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isResult, setIsResult] = useState(false);
+  const [error, setError] = useState(noErrors);
 
   const [finalPrice, setFinalPrice] = useState<number>(0);
   const navigate = useNavigate();
@@ -147,7 +153,30 @@ export const ShoppingCart: React.FC = () => {
       day.toString().slice(4, 15))
     );
 
-    console.log('started');
+    const anyError = days.length === 0
+    || !chosenDelivery;
+
+    if (anyError) {
+      if (!days.length) {
+        setError(error => ({
+          ...error,
+          noDaysSelected: true
+        }));
+      }
+
+      if (!chosenDelivery) {
+        setError(error => ({
+          ...error,
+          noDeliverySelected: true
+        }));
+      }
+
+      setTimeout(() => {
+        setError(noErrors);
+      }, 2000);
+
+      return;
+    }
 
     try {
       setIsLoading(true);
@@ -165,8 +194,6 @@ export const ShoppingCart: React.FC = () => {
         isArchived: false,
       })
     
-      console.log('is here');
-
       if (isSuccess) {
         setIsResult(true);
         sessionStorage.clear()
@@ -266,9 +293,9 @@ export const ShoppingCart: React.FC = () => {
             </div>
           )}
 
-          <PSShoppingCartInfo />
+          <PSShoppingCartInfo error={error} />
           
-          <Delivery />
+          <Delivery error={error} />
 
           {!isCommentShown && userComment === '' && (
             <button

@@ -6,9 +6,18 @@ import { openDelivery } from '../../Redux/Slices/isDeliveryShown.slice';
 import { useAppSelector, useAppDispatch } from '../../Redux/store';
 import { setChosenDelivery } from '../../Redux/Slices/chosenDelivery.slice';
 import { DeliveryModal } from '../DeliveryModal/DeliveryModal';
+import cn from 'classnames';
 
+interface ErrorType {
+  noDaysSelected: boolean,
+  noDeliverySelected: boolean,
+};
 
-export const Delivery: React.FC = () => {
+type Props = {
+  error: ErrorType,
+};
+
+export const Delivery: React.FC<Props> = ({ error }) => {
   const isDeliveryShown = useAppSelector(state => state.isDeliveryShown.value);
   const chosenDelivery = useAppSelector(state => state.chosenDelivery.value);
   const savedAddress = useAppSelector(state => state.savedAddress.value);
@@ -25,20 +34,8 @@ export const Delivery: React.FC = () => {
     return '';
   });
 
-  // const [savedAddress, setSavedAddress] = useState<string>(() => {
-  //   const storedAddress = localStorage.getItem('savedAddress');
-  //   const parsedAddress = storedAddress ? JSON.parse(storedAddress) : '';
-    
-  //   if (parsedAddress.length !== '') {
-  //     return parsedAddress;
-  //   }
-    
-  //   return '';
-  // });
-
   useEffect(() => {
     sessionStorage.setItem("storedDelivery", JSON.stringify(selectedDelivery));
-    // localStorage.setItem("savedAddress", JSON.stringify(savedAddress));
   }, [selectedDelivery]);
 
   useEffect(() => {
@@ -103,7 +100,9 @@ export const Delivery: React.FC = () => {
         )}
 
         {!chosenDelivery && (
-          <p className="delivery__info_button">
+          <p className={cn("delivery__info_button", {
+            "delivery__info_button--error": error.noDeliverySelected
+          })}>
             Оберіть спосіб доставки
           </p>
         )}

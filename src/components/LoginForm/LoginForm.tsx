@@ -72,8 +72,6 @@ export const LoginForm: React.FC = () => {
       || !credentials.password
       || !isSuchUser;
 
-
-
     if (anyError) {
 
       if (!credentials.email) {

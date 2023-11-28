@@ -7,8 +7,18 @@ import { useAppDispatch, useAppSelector } from '../../Redux/store';
 import { daysOfWeek, monthsSelected } from '../../helpers/CorrectDateNames';
 import { resetBookedDays, setBookedDays } from '../../Redux/Slices/bookedDays.slice';
 import { toggleCalendar } from '../../Redux/Slices/isCalendarShown.slice';
+import cn from 'classnames';
 
-export const PSShoppingCartInfo: React.FC = () => {
+interface ErrorType {
+  noDaysSelected: boolean,
+  noDeliverySelected: boolean,
+};
+
+type Props = {
+  error: ErrorType,
+};
+
+export const PSShoppingCartInfo: React.FC<Props> = ({ error }) => {
   
   const [selectedDays, setSelectedDays] = useState<string[]>(() => {
     const storedDays = sessionStorage.getItem('storedDays');
@@ -105,7 +115,9 @@ export const PSShoppingCartInfo: React.FC = () => {
 
             {bookedDays.length === 0 && (
               <p 
-                className="psShoppingCartInfo__info_booking_period_choose"
+                className={cn("psShoppingCartInfo__info_booking_period_choose", {
+                  "psShoppingCartInfo__info_booking_period_choose--error": error.noDaysSelected
+                })}
                 onClick={handleToggleCalendar}
               >
                 Оберіть дати

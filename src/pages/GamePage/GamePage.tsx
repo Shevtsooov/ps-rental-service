@@ -4,41 +4,90 @@ import { useParams } from 'react-router-dom';
 import games from '../../data/games.json'
 import parse from 'html-react-parser';
 import cn from 'classnames';
-import { filterSavedGames, setSavedGames } from '../../Redux/Slices/savedGames.slice';
-import { filterShoppingCartGames, setShoppingCartGames } from '../../Redux/Slices/shoppingCartGames.slice';
 import { useAppSelector, useAppDispatch } from '../../Redux/store';
 import { Game } from '../../types/Game';
 import { Carousel } from '../../components/Carousel/Carousel';
+import { useEditUserMutation } from '../../Redux/RTK_Query/users.service';
+import { setUser } from '../../Redux/Slices/user.slice';
 
 export const GamePage: React.FC = () => {
   const { gameIdLink } = useParams();
   const [collectionGames, setCollectionGames] = useState<Game[]>([])
   const game = games.find(g => g.gameId === gameIdLink);
+  const [ editUser ] = useEditUserMutation();
+
   const user = useAppSelector(state => state.user.value);
 
-  const savedGames = useAppSelector(state => state.savedGames.value);
-  const shoppingCartGames = useAppSelector(state => state.shoppingCartGames.value);
   const dispatch = useAppDispatch();
 
-  const handleSaveGame = (game: Game) => {
-    if (savedGames.includes(game)) {
-      dispatch(filterSavedGames(game.gameId));
+  const handleSaveGame = async (gameId: string) => {
+    try {
+      if (user?.likedGames.includes(gameId)) {
+        const response = await editUser({
+          id: user?.id,
+          likedGames: user?.likedGames.filter(id => id !== gameId)
+        });
+  
+        if ('data' in response) {
+          const updatedUser = response.data;
+          dispatch(setUser(updatedUser));
 
-      return;
+          return;
+        } else {
+          console.error('Error updating user:', response.error);
+        }
+      }
+
+      const response = await editUser({
+        id: user?.id,
+        likedGames: [ ...user!.likedGames, gameId ]
+      });
+
+      if ('data' in response) {
+        const updatedUser = response.data;
+        dispatch(setUser(updatedUser));
+
+        return;
+      } 
+    } catch (error) {
+      console.error('Error updating user:', error);
     }
-
-    dispatch(setSavedGames(game));
   };
 
-  const handleAddToCartGame = (game: Game) => {
-    if (shoppingCartGames.includes(game)) {
-      dispatch(filterShoppingCartGames(game.gameId));
+  const handleAddToCartGame = async (gameId: string) => {
+    try {
+      if (user?.cartGames.includes(gameId)) {
+        const response = await editUser({
+          id: user?.id,
+          cartGames: user?.cartGames.filter(id => id !== gameId)
+        });
+  
+        if ('data' in response) {
+          const updatedUser = response.data;
+          dispatch(setUser(updatedUser));
 
-      return;
+          return;
+        } else {
+          console.error('Error updating user:', response.error);
+        }
+      }
+
+      const response = await editUser({
+        id: user?.id,
+        cartGames: [ ...user!.cartGames, gameId ]
+      });
+
+      if ('data' in response) {
+        const updatedUser = response.data;
+        dispatch(setUser(updatedUser));
+
+        return;
+      } 
+    } catch (error) {
+      console.error('Error updating user:', error);
     }
-
-    dispatch(setShoppingCartGames(game));
   };
+
 
   useEffect(() => {
     setCollectionGames(games.filter(g => (
@@ -100,7 +149,7 @@ export const GamePage: React.FC = () => {
       {game && user && (
         <>
           <div className="game_page__price">
-          {shoppingCartGames.length === 0 || shoppingCartGames[0].gameId === game.gameId
+          {user.cartGames.length === 0 || user.cartGames[0] === game.gameId
             ? (
               <p className='game_page__price_discountedPrice'>
                 {game.isAvailable && 'Одна гра - безкоштовно'}
@@ -125,20 +174,20 @@ export const GamePage: React.FC = () => {
           <div className="game_page_buttons">
             <button 
               className={cn('game_page_buttons_cart', {
-                'game_page_buttons_cart--added': shoppingCartGames.includes(game),
+                'game_page_buttons_cart--added': user.cartGames.includes(game.gameId),
                 'game_page_buttons_cart--disabled': !game?.isAvailable,
               })}
-              onClick={() => handleAddToCartGame(game)}
+              onClick={() => handleAddToCartGame(game.gameId)}
             >
-              {shoppingCartGames.includes(game)
+              {user.cartGames.includes(game.gameId)
               ? 'видалити'
               : 'додати в кошик'}
             </button>
             <button
               className={cn('game_page_buttons_heart', {
-                'game_page_buttons_heart--active': savedGames.includes(game)
+                'game_page_buttons_heart--active': user.likedGames.includes(game.gameId)
               })}
-              onClick={() => handleSaveGame(game)}
+              onClick={() => handleSaveGame(game.gameId)}
             />
           </div>
         </>

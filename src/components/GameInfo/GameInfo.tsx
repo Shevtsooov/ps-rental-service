@@ -1,7 +1,6 @@
 import './GameInfo.scss';
 import cn from 'classnames';
 import { useAppDispatch, useAppSelector } from '../../Redux/store';
-import { filterShoppingCartGames, setShoppingCartGames } from '../../Redux/Slices/shoppingCartGames.slice';
 import { Game } from '../../types/Game';
 import { NavLink } from 'react-router-dom';
 import { useEditUserMutation } from '../../Redux/RTK_Query/users.service';

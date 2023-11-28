@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 
 import './App.scss';
@@ -29,11 +29,10 @@ import { AdminPage } from './pages/AdminPage/AdminPage';
 import { ClientsPage } from './pages/ClientsPage/ClientsPage';
 import { Orders } from './pages/Orders/Orders';
 import { Loader } from './components/Loader/Loader';
-import { usePingQuery } from './Redux/RTK_Query/users.service';
+import { usePingMutation } from './Redux/RTK_Query/users.service';
 
 export const App: React.FC = () => {
   const user = useAppSelector(state => state.user.value);
-  const { data: ping, refetch } = usePingQuery();
   const [refreshUser] = useRefreshUserMutation();
 
   const location = useLocation();
@@ -68,16 +67,17 @@ export const App: React.FC = () => {
     fetchData();
   }, [dispatch, refreshUser]);
 
-// Set up an interval that calls refresh every 780000 milliseconds (13 minutes)
-const refreshInterval = setInterval(() => {
-  refetch();
-  console.log('refetched');
-}, 780000);
+  // const [time, setTime] = useState(new Date());
 
-// Remember to clear the interval when the component unmounts
-useEffect(() => {
-  return () => clearInterval(refreshInterval);
-}, [refreshInterval]);
+  const [ ping ] = usePingMutation();
+
+  useEffect(() => {
+    const interval = setInterval(async () => {
+      await ping();
+    }, 780000 );
+
+    return () => clearInterval(interval);
+  }, []);
 
   const showCartBubble = user
   && location.pathname !== '/shopping-cart'

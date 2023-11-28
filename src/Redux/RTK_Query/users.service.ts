@@ -17,9 +17,6 @@ export const UsersApi = createApi({
     baseUrl: BASE_URL
   }),
   endpoints: (builder) => ({
-    ping: builder.query<string, void>({
-      query: () => 'ping'
-    }),
     getAllUsers: builder.query<User[], void>({
       query: () => 'users'
     }),
@@ -74,6 +71,12 @@ export const UsersApi = createApi({
         body,
       }),
     }),
+    ping: builder.mutation<void, void>({
+      query: () => ({
+        url: `ping`,
+        method: 'POST',
+      }),
+    }),
     // deleteGame: builder.mutation<Games, Partial<Game>>({
     //   query: (body) => ({
     //     url: `games`,
@@ -85,11 +88,11 @@ export const UsersApi = createApi({
 })
 
 export const {
-  usePingQuery,
   useGetAllUsersQuery,
   useGetOneUserQuery,
   useActivateUserQuery,
   useLoginUserMutation,
   useAddNewUserMutation,
   useEditUserMutation,
+  usePingMutation,
 } = UsersApi;

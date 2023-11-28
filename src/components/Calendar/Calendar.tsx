@@ -213,7 +213,9 @@ const handleDayClick = (date: Date) => {
     return days;
   };
 
-  const handleNextMonth = () => {
+  const handleNextMonth = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    e.stopPropagation()
+    
     if (monthLookUpLimit === 2) {
       return;
     }
@@ -230,7 +232,8 @@ const handleDayClick = (date: Date) => {
     dispatch(increaseMonthLookUpLimit());
   };
 
-  const handlePreviousMonth = () => {
+  const handlePreviousMonth = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    e.stopPropagation()
     if (currentYear !== currentDate.getFullYear() && currentMonth === 0) {
       setCurrentYear(currentYear => currentYear - 1);
       setCurrentMonth(11);
@@ -253,9 +256,19 @@ const handleDayClick = (date: Date) => {
         ? (
           <div className="calendar">
             <header className="calendar__header">
-              <button onClick={handlePreviousMonth}>П</button>
-              <h2>{`${months[currentMonth]}, ${currentYear}`}</h2>
-              <button onClick={handleNextMonth}>Н</button>
+              <button
+                onClick={(e) => handlePreviousMonth(e)}
+                className="calendar__button calendar__previousButton"
+              />
+
+              <h2
+                className="calendar__title"
+              >{`${months[currentMonth]}, ${currentYear}`}</h2>
+
+              <button
+                onClick={(e) => handleNextMonth(e)}
+                className="calendar__button calendar__nextButton"
+              />
             </header>
 
             <div className="calendar__days">

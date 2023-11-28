@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import { useGetAllGamesQuery } from '../../Redux/RTK_Query/games.service';
 import { useEditUserMutation } from '../../Redux/RTK_Query/users.service';
 import { setUser } from '../../Redux/Slices/user.slice';
+import { Loader } from '../Loader/Loader';
 
 export const ShoppingCartList: React.FC = () => {
   const shoppingCartGames = useAppSelector(state => state.shoppingCartGames.value);
@@ -99,67 +100,73 @@ export const ShoppingCartList: React.FC = () => {
 
   return (
     <div className="shoppingCartList">
+      {shoppingCartGames
+        ? (
+          <>
+            {shoppingCartGames?.map(game => (
+              <div className="shoppingCartList__game" key ={game.gameId}>
+                <div className="shoppingCartList__game_box">
+                  <div className="shoppingCartList__game_img">
+                    <NavLink to={`/games/${game.gameId}`}>
+                      <img
+                        src={`./images/games/${game.icon}`}
+                        alt={game.title}
+                        className="shoppingCartList__game_img_icon"
+                      />
+                    </NavLink>
+                  </div>
 
-      {shoppingCartGames?.map(game => (
-        <div className="shoppingCartList__game" key ={game.gameId}>
-          <div className="shoppingCartList__game_box">
-            <div className="shoppingCartList__game_img">
-              <NavLink to={`/games/${game.gameId}`}>
-                <img
-                  src={`./images/games/${game.icon}`}
-                  alt={game.title}
-                  className="shoppingCartList__game_img_icon"
-                />
-              </NavLink>
-            </div>
+                  <div className="shoppingCartList__game_info">
+                    <div>
+                      <NavLink to={`/games/${game.gameId}`}
+                        className="shoppingCartList__game_info_title"
+                      >
+                        {game.title}
+                      </NavLink>
 
-            <div className="shoppingCartList__game_info">
-              <div>
-                <NavLink to={`/games/${game.gameId}`}
-                  className="shoppingCartList__game_info_title"
-                >
-                  {game.title}
-                </NavLink>
+                    </div>
+                    
+                    <div className="shoppingCartList__game_info_price">
+                    {user?.cartGames.length === 0 || shoppingCartGames[0].gameId === game.gameId
+                      ? (
+                        <p className='shoppingCartList__game_price_discountedPrice'>Одна гра - безкоштовно</p>
+                      )
+                      : (
+                        <>
+                          <p 
+                          className={cn({
+                            'shoppingCartList__game_price_regularPrice': game.discountedPrice
+                          })}
+                          >
+                            {`${game.price}₴`}
+                          </p>
+                          {game.discountedPrice && (
+                            <p className="shoppingCartList__game_price_discountedPrice">{`${game.discountedPrice}₴`}</p>
+                          )}
+                        </>
+                      )}
+                    </div>
+                  </div>
+                </div>
 
-              </div>
-              
-              <div className="shoppingCartList__game_info_price">
-              {user?.cartGames.length === 0 || shoppingCartGames[0].gameId === game.gameId
-                ? (
-                  <p className='shoppingCartList__game_price_discountedPrice'>Одна гра - безкоштовно</p>
-                )
-                : (
-                  <>
-                    <p 
-                    className={cn({
-                      'shoppingCartList__game_price_regularPrice': game.discountedPrice
+                <div className="shoppingCartList__game_actions">
+                  <button
+                    className={cn('shoppingCartList__game_actions--save', {
+                      'shoppingCartList__game_actions--save--active': user?.likedGames.includes(game.gameId)
                     })}
-                    >
-                      {`${game.price}₴`}
-                    </p>
-                    {game.discountedPrice && (
-                      <p className="shoppingCartList__game_price_discountedPrice">{`${game.discountedPrice}₴`}</p>
-                    )}
-                  </>
-                )}
+                    onClick={() => handleSaveGame(game.gameId)}
+                  />
+                  <button
+                    className="shoppingCartList__game_actions--clear"
+                    onClick={() => handleAddToCartGame(game.gameId)}
+                  />
+                </div>
               </div>
-            </div>
-          </div>
-
-          <div className="shoppingCartList__game_actions">
-            <button
-              className={cn('shoppingCartList__game_actions--save', {
-                'shoppingCartList__game_actions--save--active': user?.likedGames.includes(game.gameId)
-              })}
-              onClick={() => handleSaveGame(game.gameId)}
-            />
-            <button
-              className="shoppingCartList__game_actions--clear"
-              onClick={() => handleAddToCartGame(game.gameId)}
-            />
-          </div>
-        </div>
-      ))}
+            ))}
+          </>
+        )
+        : <Loader />
+      }
     </div>
   );
 }

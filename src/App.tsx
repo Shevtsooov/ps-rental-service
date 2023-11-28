@@ -86,7 +86,7 @@ export const App: React.FC = () => {
   && user?.cartGames.length > 0
   && !isVisible;
 
-  if (!refreshTokenService.get()) {
+  if (refreshTokenService.get()) {
     return <Loader />
   };
 

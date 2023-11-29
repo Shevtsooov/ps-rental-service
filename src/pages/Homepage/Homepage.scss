@@ -7,6 +7,21 @@
     width: 500px;
     margin: 0 auto;
   }
+
+  &__seoBlock {
+    padding: 20px;
+
+    &__title {
+      font-size: 28px;
+
+      margin-bottom: 15px;
+    }
+
+    &__description {
+      font-size: 18px;
+      white-space: pre-wrap;
+    }
+  }
 }
 
 

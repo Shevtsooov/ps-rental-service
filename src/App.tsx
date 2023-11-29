@@ -95,6 +95,8 @@ export const App: React.FC = () => {
 
       {showCartBubble && <ShoppingCartBubble />}
 
+      <h1 className='app__title'>Оренда Playstation у Львові</h1>
+
       <Routes>
         <Route path="home" element={<Homepage />} />
         <Route path="/" element={<Navigate to="home" />} />

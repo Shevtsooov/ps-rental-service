@@ -31,7 +31,7 @@ export const Footer: React.FC = () => {
           <li 
             className='footer__item'
           >
-            <NavLink to="plans" className='footer__item_link'>
+            <NavLink to="pricing-and-delivery" className='footer__item_link'>
               Тарифи і доставка
             </NavLink>
           </li>

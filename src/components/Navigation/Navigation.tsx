@@ -34,7 +34,7 @@ export const Navigation = () => {
           className={({ isActive }) => cn(
             'nav__link', { 'is-active': isActive },
           )}
-          to="plans"
+          to="pricing-and-delivery"
         >
           Тарифи і доставка
         </NavLink>

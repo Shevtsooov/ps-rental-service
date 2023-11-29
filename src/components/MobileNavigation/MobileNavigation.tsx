@@ -93,7 +93,7 @@ export const MobileNavigation = () => {
             <li>
               <NavLink
                 className="mobileNav__link"
-                to="/plans"
+                to="/pricing-and-delivery"
                 onClick={() => setIsMenuOpen(p => !p)}
               >
                 <div className="mobileNav__link_text">

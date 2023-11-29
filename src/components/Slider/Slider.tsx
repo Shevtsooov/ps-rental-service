@@ -6,21 +6,21 @@ const posters = [
   {
     title: 'Spider-Man: Miles Morales',
     description: 'Станьте частиною Спайдервсесвіту у Marvel\'s Spider-Man: Miles Morales!',
-    image: 'https://www.godisageek.com/wp-content/uploads/Miles-Morales-review.jpg',
+    image: 'https://m.media-amazon.com/images/S/aplus-media/vc/7e789534-7bf9-4b77-88a4-a493e189ac20.__CR0,0,800,600_PT0_SX800_V1___.jpg',
     bgColor: '#4a0304',
     link: '/games/marvels-spider-man-miles-morales-ps4-ps5'
   },
   {
     title: 'FIFA 23',
     description: 'Завдяки реалістичній графіці, ви зануритесь в атмосферу гри!',
-    image: 'https://assets.beartai.com/uploads/2023/02/fifa-23-image-11.jpg',
+    image: 'https://w0.peakpx.com/wallpaper/120/566/HD-wallpaper-fifa-23-paris-saint-germain-games-fifa23.jpg',
     bgColor: '#c2c2c2',
     link: '/games/fifa-23'
   },
   {
     title: 'God of War',
     description: 'Стати богом не так легко.',
-    image: 'https://3238leblogdemarvelll-1278.kxcdn.com/wp-content/uploads/2018/05/god-of-war-2018-kratos-atreus.jpg',
+    image: 'https://videogames.si.com/.image/ar_16:9%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTkzNjAwNTg5MDA2NTEzNjQ4/god-of-war-ragnarok-kratos.jpg',
     bgColor: '#c2c2c2',
     link: '/games/god-of-war'
   },

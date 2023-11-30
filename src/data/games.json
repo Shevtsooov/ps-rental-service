@@ -9064,7 +9064,7 @@
     "videoGameplay": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/38nS3WgjpAU?si=b2hv_fTezJuzqaeE' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
     "price": 100,
     "discountedPrice": null,
-    "category": ["Аркади", "Головоломки", "Сімейні", "Дитячі", "Кооперативні"],
+    "category": ["Аркади", "Головоломки", "Сімейні", "Дитячі", "Кооперативні", "Для нього та для неї"],
     "players": "1-4",
     "disclaimers": [
       "Будуйте вежі та змагайтеся з друзями у Tricky Towers.",

@@ -2744,10 +2744,56 @@
       "Завдяки реалістичній графіці, ви зануритесь в атмосферу гри!"
     ],
     "releasedOn": "30/9/2022",
+    "isAvailable": false,
+    "popularity": 0,
+    "collection": "FIFA"
+  },
+  {
+    "title": "FC 24",
+    "icon": "/fc24/fc24.jpg",
+    "iconLink": "https://assetsio.reedpopcdn.com/FC24_UT_Keyart_4x5_withlogos.png?width=1200&height=1200&fit=bounds&quality=70&format=jpg&auto=webp",
+    "gameId": "fc-24",
+    "poster": "https://ichef.bbci.co.uk/news/976/cpsprodpb/126FE/production/_130381557_1e5c8c2d-b8fe-4843-9e01-7331cf1717a9.jpg",
+    "description": "FC 24 - це захоплююча футбольна гра з великим вибором команд, гравців та турнірів для вашого футбольного відпочинку.",
+    "videoReview": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/IYH05f8GQJA?si=O2q6jAuwoqyuyvC7' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
+    "videoGameplay": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/93mYC42hmW8?si=CnJUEY6HZBARspdl' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
+    "price": 100,
+    "discountedPrice": null,
+    "category": ["Спортивні", "Симулятори"],
+    "players": "1-4",
+    "disclaimers": [
+      "Грайте в захоплюючі футбольні матчі з FC 24.",
+      "Створіть свою власну футбольну команду та боріться за вершину турнірів.",
+      "Отримайте задоволення від реалістичної графіки та інтенсивності гри!"
+    ],
+    "releasedOn": "29/9/2023",
+    "isAvailable": true,
+    "popularity": 0,
+    "collection": "FIFA"
+  },
+  {
+    "title": "ibb&obb",
+    "icon": "/ibb-obb/ibb-obb.jpg",
+    "iconLink": "https://cdn.akamai.steamstatic.com/steam/apps/95400/capsule_616x353.jpg?t=1590420876",
+    "gameId": "ibb-obb",
+    "poster": "https://www.geekyhobbies.com/wp-content/uploads/2015/04/ibb-and-obb-feature-image.jpg",
+    "description": "ibb&obb - це захоплюючий платформер для двох гравців з унікальним геймплеєм та головоломками, що вимагають взаємодії.",
+    "videoReview": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/_LiGlHquPsI?si=DWxpspc5-FK5UjzO' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
+    "videoGameplay": "<iframe width='100%' height='100%' src='https://www.youtube.com/embed/w6QFGvqPr3Y?si=Itk534B3fD64oFwk' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>",
+    "price": 100,
+    "discountedPrice": null,
+    "category": ["Платформери", "Кооперативні", "Для нього та для неї"],
+    "players": "2",
+    "disclaimers": [
+      "Подорожуйте світом ibb&obb разом з друзями.",
+      "Розв'язуйте головоломки та взаємодійте, щоб пройти всі випробування.",
+      "Насолоджуйтеся веселим та дружнім геймплеєм в двох!"
+    ],
+    "releasedOn": "26/05/2014",
     "isAvailable": true,
     "popularity": 0,
     "collection": ""
-  },
+  },  
   {
     "title": "FIGHTING EX LAYER (Standard Version)",
     "icon": "/fighting-ex-layer/fighting-ex-layer.jpg",

@@ -5,6 +5,11 @@
 .game_page {
   position: relative;
 
+  &__loader {
+    height: 90vh;
+    padding-top: 150px;
+  }
+
   &--unavailable {
     position: absolute;
     top: 0;

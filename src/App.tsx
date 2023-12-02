@@ -30,6 +30,8 @@ import { ClientsPage } from './pages/ClientsPage/ClientsPage';
 import { Orders } from './pages/Orders/Orders';
 import { Loader } from './components/Loader/Loader';
 import { usePingMutation } from './Redux/RTK_Query/users.service';
+import { PasswordResetInitialization } from './pages/PasswordResetInitialization/PasswordResetInitialization';
+import { PasswordResetPage } from './pages/PasswordResetPage/PasswordResetPage';
 
 export const App: React.FC = () => {
   const user = useAppSelector(state => state.user.value);
@@ -108,7 +110,9 @@ export const App: React.FC = () => {
 
         <Route path="login" element={<LoginPage />} />
         <Route path="registration" element={<RegistrationPage />} />
-
+        <Route path="reset-password" element={<PasswordResetInitialization />} />
+        <Route path="reset-password/:resetToken" element={<PasswordResetPage />} />
+        
         <Route path="account" element={<AccountPage />} />
         <Route path="account/orders" element={<AccountOrders />} />
 

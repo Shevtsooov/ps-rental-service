@@ -1,13 +1,11 @@
 import { useState } from 'react';
 import './LoginForm.scss';
-
 import { useAppDispatch } from '../../Redux/store';
 import { NavLink, useNavigate } from "react-router-dom";
 import { useLoginUserMutation } from '../../Redux/RTK_Query/authApi.service';
 import { setUser } from '../../Redux/Slices/user.slice';
 import { refreshTokenService } from '../../helpers/refreshTokenService';
 import { useGetAllUsersQuery } from '../../Redux/RTK_Query/users.service';
-import cn from 'classnames';
 
 type credentials = {
   email: string,  
@@ -55,9 +53,7 @@ export const LoginForm: React.FC = () => {
 
   const setEmail = (mail: string) => {
     setCredentials({ ...credentials, email: mail })
-  }
-
-
+  };
 
   const handleLogin = async () => {
     const emailPattern = /^[\w.+-]+@([\w-]+\.){1,3}[\w-]{2,}$/;
@@ -146,13 +142,6 @@ export const LoginForm: React.FC = () => {
       <h1 className="loginForm__title">
         Авторизація
       </h1>
-{/* 
-      <p className="loginForm__description">
-        {`Створіть аккаунт для зручності.\тВже Маєте аккаунт? Увійдіть`}
-        <span>
-          тут
-        </span>
-      </p>      */}
       
       <div className="loginForm__field">
         {error.isEmailTypedIn && (
@@ -223,16 +212,18 @@ export const LoginForm: React.FC = () => {
 
         )}
 
-        <button className="loginForm__field_lostPassword">
+        <NavLink
+          className="loginForm__field_lostPassword"
+          to="/reset-password"
+        >
           відновити пароль
-        </button>
+        </NavLink>
       </div>
 
       <div className="loginForm__actions">
         <NavLink
           to="/registration"
           className="loginForm__actions_button loginForm__actions_button--registration"
-          // onClick={() => setWhatToShow('Реєстрація')}
         >
           Реєстрація
         </NavLink>

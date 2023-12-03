@@ -44,7 +44,7 @@ export const Homepage: React.FC = () => {
         : <Loader />
       } 
 
-      <AboutPS5 />
+      {/* <AboutPS5 /> */}
     </div>
   );
 }

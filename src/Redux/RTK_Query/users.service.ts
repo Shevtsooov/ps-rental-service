@@ -71,12 +71,6 @@ export const UsersApi = createApi({
         body,
       }),
     }),
-    ping: builder.mutation<void, void>({
-      query: () => ({
-        url: `ping`,
-        method: 'POST',
-      }),
-    }),
     // deleteGame: builder.mutation<Games, Partial<Game>>({
     //   query: (body) => ({
     //     url: `games`,
@@ -94,5 +88,4 @@ export const {
   useLoginUserMutation,
   useAddNewUserMutation,
   useEditUserMutation,
-  usePingMutation,
 } = UsersApi;

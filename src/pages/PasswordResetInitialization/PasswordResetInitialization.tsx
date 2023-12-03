@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './PasswordResetInitialization.scss';
 import { useAppDispatch } from '../../Redux/store';
 import { useGetAllUsersQuery } from '../../Redux/RTK_Query/users.service';
 import { useNavigate } from 'react-router-dom';
 import { useInitializePasswordResetMutation } from '../../Redux/RTK_Query/authApi.service';
 import { Loader } from '../../components/Loader/Loader';
+import checkEmail from '../../assets/gifs/checkEmail.gif'
 
 const noErrors = {
   isEmailTypedIn: '',
@@ -28,6 +29,15 @@ export const PasswordResetInitialization = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
+  useEffect(() => {
+    if (isResult) {
+      document.body.style.overflow = 'hidden';
+
+      return;
+    }
+
+    document.body.style.overflow = 'auto'
+  }, [isResult]);
 
   const handleInitiateReset = async () => {
     const emailPattern = /^[\w.+-]+@([\w-]+\.){1,3}[\w-]{2,}$/;
@@ -96,10 +106,15 @@ export const PasswordResetInitialization = () => {
     <>
       {isResult && (
         <div
-          className='pRp__modal'
+          className='pRI__modal'
         >
+          <img
+            src={checkEmail}
+            alt=""
+            className="pRI__modal__img"
+          />
           <h4>Запит на зміну пароля створено</h4>
-          <p>Очікуйте email з унікальним посиланням для зміни пароля</p>
+          <p>Очікуйте email з унікальним посиланням</p>
         </div>
       )}
 

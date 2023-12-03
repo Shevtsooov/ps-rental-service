@@ -139,7 +139,7 @@ export const RegistrationForm: React.FC = () => {
       if (phoneNumber !== '' && phoneNumber.length !== 10) {
         setError(error => ({
           ...error,
-          shortPhoneNumber: 'Номер має складатись з 10 цифр'
+          shortPhoneNumber: 'Номер має складатись з 10 цифр - 0YYXXXXXXX'
         }));
       }
       
@@ -301,7 +301,7 @@ export const RegistrationForm: React.FC = () => {
           className={cn("registrationForm__field_input", {
             "registrationForm__field_input--error": error.noPhoneNumber || error.shortPhoneNumber
           })}
-          placeholder="Номер телефону - 0XX-XXX-XX-XX"
+          placeholder="Номер телефону - 0YYXXXXXXX"
           type="text"
           autoComplete='off'
           value={phoneNumber}

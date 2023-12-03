@@ -28,8 +28,6 @@ import { AccountOrders } from './pages/AccountOrders/AccountOrders';
 import { AdminPage } from './pages/AdminPage/AdminPage';
 import { ClientsPage } from './pages/ClientsPage/ClientsPage';
 import { Orders } from './pages/Orders/Orders';
-import { Loader } from './components/Loader/Loader';
-import { usePingMutation } from './Redux/RTK_Query/users.service';
 import { PasswordResetInitialization } from './pages/PasswordResetInitialization/PasswordResetInitialization';
 import { PasswordResetPage } from './pages/PasswordResetPage/PasswordResetPage';
 
@@ -68,18 +66,6 @@ export const App: React.FC = () => {
 
     fetchData();
   }, [dispatch, refreshUser]);
-
-  // const [time, setTime] = useState(new Date());
-
-  const [ ping ] = usePingMutation();
-
-  useEffect(() => {
-    const interval = setInterval(async () => {
-      await ping();
-    }, 780000 );
-
-    return () => clearInterval(interval);
-  }, []);
 
   const showCartBubble = user
   && location.pathname !== '/shopping-cart'

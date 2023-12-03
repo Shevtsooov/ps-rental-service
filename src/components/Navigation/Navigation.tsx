@@ -51,7 +51,7 @@ export const Navigation = () => {
         </NavLink>
       </li>
 
-      <li className="nav__item">
+      {/* <li className="nav__item">
         <NavLink
           className={({ isActive }) => cn(
             'nav__link', { 'is-active': isActive },
@@ -60,7 +60,7 @@ export const Navigation = () => {
         >
           Про PS5
         </NavLink>
-      </li>
+      </li> */}
     </ul>
   </nav>
   )

@@ -122,7 +122,7 @@ export const MobileNavigation = () => {
               </NavLink>
             </li>
 
-            <li>
+            {/* <li>
               <NavLink
                 className="mobileNav__link"
                 to="/about-ps5"
@@ -135,7 +135,7 @@ export const MobileNavigation = () => {
                   <span className="mobileNav__link--arrow"></span>
 
               </NavLink>
-            </li>
+            </li> */}
 
             {user
               ? (

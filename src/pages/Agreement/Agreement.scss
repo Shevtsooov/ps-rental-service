@@ -1,2 +1,35 @@
 @import "../../styles/utils/mixins.scss";
 @import "../../styles/utils/colors.scss";
+
+.agreement {
+  padding: 20px;
+  scroll-behavior: smooth;
+
+  &__title {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  &__statement {
+    background: $main-grey;
+    border-radius: 15px;
+
+    padding: 10px 15px;
+    margin-bottom: 25px;
+  }
+
+
+  &__statementTitle {
+    font-size: 20px;
+    color: $main-blue;
+    margin-bottom: 10px;
+  }
+  
+  &__paragraph {
+    margin-bottom: 10px;
+    
+    &--warning {
+      color: $main-warning-hv;
+    }
+  }
+}

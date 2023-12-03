@@ -8,6 +8,7 @@ import { useGetAllGamesQuery } from '../../Redux/RTK_Query/games.service';
 import { useEditUserMutation } from '../../Redux/RTK_Query/users.service';
 import { setUser } from '../../Redux/Slices/user.slice';
 import { Loader } from '../Loader/Loader';
+import gamesIcon from '../../assets/images/games.png'
 
 export const ShoppingCartList: React.FC = () => {
   const shoppingCartGames = useAppSelector(state => state.shoppingCartGames.value);
@@ -99,7 +100,10 @@ export const ShoppingCartList: React.FC = () => {
   }, [user, games, dispatch]);
 
   return (
-    <div className="shoppingCartList">
+    <>
+    {user?.cartGames.length
+     ? (
+     <div className="shoppingCartList">
       {shoppingCartGames
         ? (
           <>
@@ -167,6 +171,32 @@ export const ShoppingCartList: React.FC = () => {
         )
         : <Loader />
       }
-    </div>
+    </div>)
+
+    : (
+      <div className="gamesBlock"> 
+        <div className="gamesBlock__img">
+          <img
+            src={gamesIcon}
+            alt="Коментар"
+            className="gamesBlock__img_icon"
+          />
+        </div>
+        
+        <div className="gamesBlock__info">
+          <p className="gamesBlock__info_title">Ігри</p>
+          
+          <p className="gamesBlock__info_description">Ти ще не обрав жодної гри</p>
+
+          <NavLink
+            to="/games"
+            className='gamesBlock__button'
+          >
+            Додати ігри
+          </NavLink>
+        </div>
+      </div>
+    )}
+  </>
   );
 }

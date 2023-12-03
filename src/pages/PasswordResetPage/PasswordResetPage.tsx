@@ -5,6 +5,7 @@ import { useAppDispatch } from '../../Redux/store';
 import { useGetAllUsersQuery } from '../../Redux/RTK_Query/users.service';
 import { useResetPasswordMutation } from '../../Redux/RTK_Query/authApi.service';
 import { Loader } from '../../components/Loader/Loader';
+import unlocked from '../../assets/gifs/passReset1.gif'
 
 const noErrors = {
   isPasswordTypedIn: '', 
@@ -125,6 +126,11 @@ export const PasswordResetPage = () => {
         <div
           className='pRp__modal'
         >
+          <img
+            src={unlocked}
+            alt=""
+            className="pRp__modal__img"
+          />
           <h4>Ваш пароль успішно змінено</h4>
           <p>Зараз вас буде перенаправлено на сторінку входу</p>
         </div>

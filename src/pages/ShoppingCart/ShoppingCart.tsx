@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './ShoppingCart.scss';
 import { useAppDispatch, useAppSelector } from '../../Redux/store';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { ShoppingCartList } from '../../components/ShoppingCartList/ShoppingCartList';
 import { PSShoppingCartInfo } from '../../components/PSShoppingCartInfo/PSShoppingCartInfo';
 import { Delivery } from '../../components/Delivery/Delivery';
@@ -12,15 +12,19 @@ import { refreshTokenService } from '../../helpers/refreshTokenService';
 import { useAddNewOrderMutation, useGetAllOrdersQuery } from '../../Redux/RTK_Query/orders.service';
 import { setSavedAddress } from '../../Redux/Slices/savedAddress.slice';
 import { Loader } from '../../components/Loader/Loader';
-import { resetUserComment, setUserComment } from '../../Redux/Slices/userComment.slice';
 import { resetBookedDays } from '../../Redux/Slices/bookedDays.slice';
 import { useEditUserMutation } from '../../Redux/RTK_Query/users.service';
 import { useRefreshUserMutation } from '../../Redux/RTK_Query/authApi.service';
 import { setUser } from '../../Redux/Slices/user.slice';
+import orderSuccessful from '../../assets/gifs/orderSuccessful.gif'
+import { UserComment } from '../../components/UserComment/UserComment';
+import cn from 'classnames';
+import { resetUserComment } from '../../Redux/Slices/userComment.slice';
 
 const noErrors = {
   noDaysSelected: false,
   noDeliverySelected: false,
+  isConditionsConfirmed: false,
 };
 
 export const ShoppingCart: React.FC = () => {
@@ -34,10 +38,10 @@ export const ShoppingCart: React.FC = () => {
   const chosenDelivery = useAppSelector(state => state.chosenDelivery.value);
   const savedAddress = useAppSelector(state => state.savedAddress.value);
   const userComment = useAppSelector(state => state.userComment.value);
-  const [isCommentShown, setIsCommentShown] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isResult, setIsResult] = useState(false);
   const [error, setError] = useState(noErrors);
+  const [isConditionsConfirmed, setIsConditionsConfirmed] = useState(false);
 
   const [finalPrice, setFinalPrice] = useState<number>(0);
   const navigate = useNavigate();
@@ -110,23 +114,6 @@ export const ShoppingCart: React.FC = () => {
     dispatch(closeDelivery());
   };
 
-  const handleShowComment = () => {
-    setIsCommentShown(true);
-  };
-
-  const handleHideComment = () => {
-    setIsCommentShown(false);
-    dispatch(resetUserComment());
-  };
-
-  const handleAddComment = (comment: string) => {
-    dispatch(setUserComment(comment));
-  };
-
-  const handleClearComment = () => {
-    dispatch(resetUserComment());
-  };
-
   useEffect(() => {
     if (!refreshTokenService.get() ) {
       navigate('/');
@@ -154,7 +141,8 @@ export const ShoppingCart: React.FC = () => {
     );
 
     const anyError = days.length === 0
-    || !chosenDelivery;
+    || !chosenDelivery
+    || !isConditionsConfirmed;
 
     if (anyError) {
       if (!days.length) {
@@ -168,6 +156,13 @@ export const ShoppingCart: React.FC = () => {
         setError(error => ({
           ...error,
           noDeliverySelected: true
+        }));
+      }
+
+      if (!isConditionsConfirmed) {
+        setError(error => ({
+          ...error,
+          isConditionsConfirmed: true
         }));
       }
 
@@ -189,7 +184,7 @@ export const ShoppingCart: React.FC = () => {
         userId: user?.id,
         orderStatus: 'В обробці',
         sumOfOrder: finalPrice,
-        adminComment: 'Це тестовий коментар від адміна відносно цього замовлення',
+        adminComment: '',
         userComment,
         isArchived: false,
       })
@@ -198,6 +193,8 @@ export const ShoppingCart: React.FC = () => {
         setIsResult(true);
         sessionStorage.clear()
         dispatch(resetBookedDays());
+        dispatch(resetUserComment());
+
         await editUser({
           id: user?.id,
           cartGames: [],
@@ -237,6 +234,11 @@ export const ShoppingCart: React.FC = () => {
       <div
         className='shoppingCart__modal'
       >
+          <img
+            src={orderSuccessful}
+            alt=""
+            className="shoppingCart__modal__img"
+          />
         <h4>Ваше замовлення прийнято</h4>
         <p>Очікуйте email з підтвердженням</p>
         <p>Скоро з вами зв'яжеться менеджер</p>
@@ -274,61 +276,38 @@ export const ShoppingCart: React.FC = () => {
               }`}
           </p>
 
-          {user?.cartGames.length
-          ? <ShoppingCartList />
-          : (
-            <div className="shoppingCart__empty_list">
-              <h4 className="shoppingCart__empty_list_heading">
-                Ти ще не обрав жодної гри
-              </h4>
-
-              <button className="shoppingCart__empty_list_button">
-                <Link
-                  to="/games"
-                  className="shoppingCart__empty_list_button--link"
-                >
-                  До списку ігор
-                </Link>
-              </button>
-            </div>
-          )}
+          <ShoppingCartList />
 
           <PSShoppingCartInfo error={error} />
           
           <Delivery error={error} />
 
-          {!isCommentShown && userComment === '' && (
-            <button
-              className='shoppingCart__userComment'
-              onClick={handleShowComment}
-            >
-              Додати коментар
-            </button>
-          )}
+          <UserComment />
 
-
-          {(isCommentShown || userComment !== '') && (
-            <div className='shoppingCart__comment'>
-              <h5 className='shoppingCart__comment_title'>Коментар:</h5>
-              <textarea
-                className='shoppingCart__comment_input'
-                value={userComment}
-                onChange={(e) => handleAddComment(e.target.value)}
-              />
-            {userComment !== '' && (
-              <button
-                className='shoppingCart__comment--clear'
-                onClick={handleClearComment}
-              />
-            )}
-              <button
-                className='shoppingCart__comment--hide'
-                onClick={handleHideComment}
+          <div className='shoppingCart__conditions'>
+              <label
+                className={cn('shoppingCart__conditions__label', {
+                  'shoppingCart__conditions__label--error': error.isConditionsConfirmed
+                })}
+                htmlFor="condtions"
+                onClick={(e) => setIsConditionsConfirmed(!isConditionsConfirmed)}
               >
-                Видалити коментар
-              </button>
-            </div>
-          )}
+                <input
+                  className='shoppingCart__conditions__input'
+                  name='conditions'
+                  type="checkbox"
+                  checked={isConditionsConfirmed}
+                />
+
+              я приймаю 
+                <NavLink
+                  to="/agreement"
+                  className='shoppingCart__conditions__link'
+                >
+                  умови прокату
+                </NavLink>
+              </label>
+          </div>
 
           {user && (bookedDays.length > 0 || user?.cartGames?.length > 1) && (
             <div className="shoppingCart__finalPrice">

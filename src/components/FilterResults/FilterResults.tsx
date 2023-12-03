@@ -33,7 +33,7 @@ export const FilterResults: React.FC<Props> = ({
     default:
       correctGamesWord = 'ігор'
   };
-console.log('isFetching  - ', isFetching );
+
   return (
     <>
       {isFetching 

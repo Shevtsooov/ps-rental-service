@@ -47,7 +47,7 @@ export const Navigation = () => {
           )}
           to="agreement"
         >
-          Умови договору
+          Умови прокату
         </NavLink>
       </li>
 

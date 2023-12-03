@@ -16,7 +16,7 @@ export const filteredSortingSlice = createSlice({
       state.value = action.payload
     },
     resetFilteredSorting: (state) => {
-      state.value = 'DESC'
+      state.value = 'Найновіші'
     },
   },
 })

@@ -41,7 +41,7 @@ export const Footer: React.FC = () => {
             className='footer__item'
           >
             <NavLink to="/agreement" className='footer__item_link'>
-              Умови договору
+              Умови прокату
             </NavLink>
           </li>
           {/* <li 

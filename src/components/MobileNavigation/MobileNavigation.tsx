@@ -114,7 +114,7 @@ export const MobileNavigation = () => {
               >
                 <div className="mobileNav__link_text">
                   <span className="mobileNav__link--icon mobileNav__link--agreement"></span>
-                  <p>Умови договору</p>
+                  <p>Умови прокату</p>
                 </div>
 
                   <span className="mobileNav__link--arrow"></span>

@@ -130,6 +130,10 @@
   }
 
   &__conditions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
     text-align: center;
     margin-bottom: 35px;
 

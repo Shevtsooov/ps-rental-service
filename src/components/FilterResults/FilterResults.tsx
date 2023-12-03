@@ -4,6 +4,7 @@ import cn from 'classnames';
 
 type Props = {
   games: Game[],
+  isFetching : boolean,
   setIsFilterOpen: (boolean: boolean) => void,
   isFilterOpen: boolean,
   handleClearFilters: () => void,
@@ -11,6 +12,7 @@ type Props = {
 
 export const FilterResults: React.FC<Props> = ({
   games,
+  isFetching ,
   setIsFilterOpen,
   isFilterOpen,
   handleClearFilters,
@@ -31,27 +33,49 @@ export const FilterResults: React.FC<Props> = ({
     default:
       correctGamesWord = 'ігор'
   };
-
+console.log('isFetching  - ', isFetching );
   return (
-    <div className="filterResults">
-      <button
-        className={cn('filterResults__found', { 
-            'filterResults__found--absent': games.length === 0
-          },
-        )}
-        onClick={() => setIsFilterOpen(!isFilterOpen)}
-      >
-        {games && games.length > 0
-          ? `Знайдено ${games.length} ${correctGamesWord}`
-          : 'Нічого не знайдено'}
-      </button>
+    <>
+      {isFetching 
+        ? (
+          <div className="filterResults">
+            <button
+              className='filterResults__found'
+              onClick={() => setIsFilterOpen(!isFilterOpen)}
+            >
+              Підбираємо ігри...
+            </button>
 
-      <button
-        className="filterResults__found filterResults__found--clear"
-        onClick={handleClearFilters}
-      >
-        Очистити
-      </button>
-    </div>
+            <button
+              className="filterResults__found filterResults__found--clear"
+              onClick={handleClearFilters}
+            >
+              Очистити
+            </button>
+          </div>
+        )
+        : (
+          <div className="filterResults">
+            <button
+              className={cn('filterResults__found', { 
+                  'filterResults__found--absent': games.length === 0
+                },
+              )}
+              onClick={() => setIsFilterOpen(!isFilterOpen)}
+            >
+              {games && games.length > 0
+                ? `Знайдено ${games.length} ${correctGamesWord}`
+                : 'Нічого не знайдено'}
+            </button>
+
+            <button
+              className="filterResults__found filterResults__found--clear"
+              onClick={handleClearFilters}
+            >
+              Очистити
+            </button>
+          </div>
+        )}
+    </> 
   );
 }

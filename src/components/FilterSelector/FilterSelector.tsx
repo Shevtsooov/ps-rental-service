@@ -27,7 +27,7 @@ export const FilterSelector: React.FC = () => {
   const filteredPlayers = useAppSelector(state => state.filteredPlayers.value);
   const dispatch = useAppDispatch();
 
-  const { data: games, refetch } = useFindGamesQuery({
+  const { data: games, refetch, isFetching  } = useFindGamesQuery({
     sortBy: filteredSorting === 'Найновіші'
       ? 'DESC'
       : 'ASC',
@@ -143,6 +143,7 @@ export const FilterSelector: React.FC = () => {
             {areResultsShown && games && (
               <FilterResults
                 games={games}
+                isFetching ={isFetching }
                 setIsFilterOpen={setIsFilterOpen}
                 isFilterOpen={isFilterOpen}
                 handleClearFilters={handleClearFilters}

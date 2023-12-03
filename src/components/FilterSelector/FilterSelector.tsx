@@ -76,17 +76,17 @@ export const FilterSelector: React.FC = () => {
     dispatch(setFilteredCategories(option));
   };
 
-  const handleChosenPlayers = (option: string) => {
-    if (filteredPlayers === option) {
-      dispatch(resetFilteredPlayers());
-      dispatch(resetPaginationPage());
+  // const handleChosenPlayers = (option: string) => {
+  //   if (filteredPlayers === option) {
+  //     dispatch(resetFilteredPlayers());
+  //     dispatch(resetPaginationPage());
 
-      return;
-    }
+  //     return;
+  //   }
 
-    dispatch(resetPaginationPage());
-    dispatch(setFilteredPlayers(option));
-  };
+  //   dispatch(resetPaginationPage());
+  //   dispatch(setFilteredPlayers(option));
+  // };
 
   const handleChosenYears = (option: string) => {
     if (filteredYear === option) {

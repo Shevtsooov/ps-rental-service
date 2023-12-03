@@ -9,7 +9,7 @@ import { Loader } from '../../components/Loader/Loader';
 export const AccountOrders: React.FC = () => {
   const user  = useAppSelector(state => state.user.value);
 
-  const { data: userOrders } = useGetUserOrdersQuery(user!.id);
+  const { data: userOrders, isLoading } = useGetUserOrdersQuery(user?.id);
 
   const [paginationPage, setPaginationPage] = useState(1);
   const [perPage, setPerPage] = useState(10);
@@ -38,34 +38,40 @@ export const AccountOrders: React.FC = () => {
   }
   
   return (
-    <div className="accountOrders">
-      <h1 className="accountOrders__title">Мої замовлення</h1>
+    <>
+      {isLoading
+        ? <Loader />
+        : (
+          <div className="accountOrders">
+            <h1 className="accountOrders__title">Мої замовлення</h1>
 
-      {userOrders
-        ? (
-          <>
-            <p className="accountOrders__amount">
-              {`Кількість замовлень: ${userOrders?.length}`}
-            </p>
+            {userOrders
+              ? (
+                <>
+                  <p className="accountOrders__amount">
+                    {`Кількість замовлень: ${userOrders?.length}`}
+                  </p>
 
-            <div className='accountOrders__list'>
-              {ordersToShow?.map(order => (
-                <OrderInfo order={order} key={order._id} />
-              ))}
-            </div>
-          </>
-        )
-        : <Loader />
-      }
+                  <div className='accountOrders__list'>
+                    {ordersToShow?.map(order => (
+                      <OrderInfo order={order} key={order._id} />
+                    ))}
+                  </div>
+                </>
+              )
+              : <Loader />
+            }
 
-      {!showPagination && userOrders && (
-        <Pagination
-          paginationPage={paginationPage}
-          setPaginationPage={setPaginationPage}
-          total={userOrders.length}
-          perPage={perPage}
-        />
-      )}
-    </div>
+            {!showPagination && userOrders && (
+              <Pagination
+                paginationPage={paginationPage}
+                setPaginationPage={setPaginationPage}
+                total={userOrders.length}
+                perPage={perPage}
+              />
+            )}
+          </div>
+        )}
+    </>
   );
 }

@@ -50,11 +50,10 @@ export const ShoppingCart: React.FC = () => {
   const [ makeNewOrder, isSuccess ] = useAddNewOrderMutation();
   const [refreshUser] = useRefreshUserMutation();
 
-  // THIS BLOCK ENSURES THE PAGE OPENS FROM THE TOP
-  const topContainer = useRef<null | HTMLDivElement>(null); 
-
   useEffect(() => {
-    topContainer.current?.scrollIntoView({ block: "start" });
+    window.scrollTo({
+      top: 0, left: 0,
+    });
   }, []);
 
   useEffect(() => {
@@ -121,7 +120,7 @@ export const ShoppingCart: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if (isLoading) {
+    if (isLoading || isResult) {
       document.body.style.overflow = 'hidden';
       window.scrollTo({
         top: 0, left: 0,
@@ -133,7 +132,7 @@ export const ShoppingCart: React.FC = () => {
 
       return;
     }
-  }, [isLoading]);
+  }, [isLoading, isResult]);
 
   const handleSubmit = async () => {
     const days = bookedDays.map(day => (
@@ -185,7 +184,7 @@ export const ShoppingCart: React.FC = () => {
         orderStatus: 'В обробці',
         sumOfOrder: finalPrice,
         adminComment: '',
-        userComment,
+        userComment: userComment.trim(),
         isArchived: false,
       })
     
@@ -215,10 +214,10 @@ export const ShoppingCart: React.FC = () => {
             }
         };
 
-        setTimeout(() => {
-          setIsResult(false);
-          navigate('/');
-        }, 4000);
+        // setTimeout(() => {
+        //   setIsResult(false);
+        //   navigate('/');
+        // }, 4000);
 
         refetch();
       }
@@ -227,6 +226,11 @@ export const ShoppingCart: React.FC = () => {
       console.error(error);
     }
   };
+
+  const closeModal = () => {
+    setIsResult(false);
+    navigate('/');
+  }
 
   return (
     <>
@@ -242,6 +246,13 @@ export const ShoppingCart: React.FC = () => {
         <h4>Ваше замовлення прийнято</h4>
         <p>Очікуйте email з підтвердженням</p>
         <p>Скоро з вами зв'яжеться менеджер</p>
+
+        <button
+            className="shoppingCart__modal__button"
+            onClick={closeModal}
+          >
+            OK
+          </button>
       </div>
     )}
 
@@ -255,7 +266,6 @@ export const ShoppingCart: React.FC = () => {
         <>
         <div
           className="shoppingCart"
-          // ref={topContainer}
         >
 
             {(isCalendarShown || isDeliveryShown) && (

@@ -32,6 +32,7 @@ export const OrderInfo: React.FC<Props> = ({ order }) => {
   } = order;
 
   const activeOrder = useAppSelector(state => state.activeOrder.value);
+  const user = useAppSelector(state => state.user.value);
   const [orderUser, setOrderUser] = useState<User | null>(null);
   const [orderGames, setOrderGames] = useState<Game[]>([]);
   const [year, setYear] = useState<number | null>(null);
@@ -201,7 +202,7 @@ useEffect(() => {
           {`Сума замовлення: ${sumOfOrder} грн`}
         </p>
  
-        {!adminComment && (
+        {adminComment && user?.role === 'admin' && adminComment !== '' && (
           <div className='allInfo__adminComment'>
             <p className='allInfo__adminComment--title'>Коментар від адміна:</p>
             <p className='allInfo__adminComment--text'>

@@ -22,7 +22,8 @@ const noErrors = {
   isEmailCorrect: '',
   noSuchUser: '',
   isPasswordTypedIn: '',
-  incorrectPassword: '', 
+  incorrectPassword: '',
+  userIsNotActivated: ''
 };
 
 export const LoginForm: React.FC = () => {
@@ -125,6 +126,19 @@ export const LoginForm: React.FC = () => {
       if ('data' in response) {
         const { refreshToken, user } = response.data;
 
+        if (user.activationToken !== 'activated') {
+          setError(error => ({
+            ...error,
+            userIsNotActivated: 'Будь ласка, активуйте аккаунт. Перегляньте скриньку'
+          }));
+
+          setTimeout(() => {
+            setError(noErrors);
+          }, 2000);
+    
+          return;
+        }
+
         refreshTokenService.save(refreshToken);
         dispatch(setUser(user));
 
@@ -159,6 +173,12 @@ export const LoginForm: React.FC = () => {
         {error.noSuchUser && !error.isEmailCorrect && (
           <p className="loginForm__field_warning">
             {error.noSuchUser}
+          </p>
+        )}
+
+        {error.userIsNotActivated && (
+          <p className="loginForm__field_warning">
+            {error.userIsNotActivated}
           </p>
         )}
         <input

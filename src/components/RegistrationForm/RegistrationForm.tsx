@@ -36,7 +36,7 @@ export const RegistrationForm: React.FC = () => {
 
   const [ register ] = useRegisterUserMutation();
 
-  const { data: users } = useGetAllUsersQuery();
+  const { data: users, refetch } = useGetAllUsersQuery();
 
   useEffect(() => {
     if (isModalOpen) {
@@ -215,6 +215,7 @@ export const RegistrationForm: React.FC = () => {
     setAddress('');
     setPhoneNumber('');
     setIsModalOpen(false);
+    refetch();
   };
   
   return (

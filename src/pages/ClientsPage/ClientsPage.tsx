@@ -4,15 +4,20 @@ import { useGetAllUsersQuery } from '../../Redux/RTK_Query/users.service';
 import { ClientInfo } from '../../components/ClientInfo/ClientInfo';
 import { Pagination } from '../../components/Pagination/Pagination';
 import { Loader } from '../../components/Loader/Loader';
+import { useAppSelector } from '../../Redux/store';
+import { refreshTokenService } from '../../helpers/refreshTokenService';
+import { useNavigate } from 'react-router-dom';
 
 
 export const ClientsPage: React.FC = () => {
   const { data: allTheClients } = useGetAllUsersQuery();
+  const user = useAppSelector(state => state.user.value);
 
   const [paginationPage, setPaginationPage] = useState(1);
   const [perPage, setPerPage] = useState(10);
-  const [start, setStart] = useState(0)
-  const [end, setEnd] = useState(0)
+  const [start, setStart] = useState(0);
+  const [end, setEnd] = useState(0);
+  const navigate = useNavigate();
 
   const clientsToShow = allTheClients?.slice(start, end);
 
@@ -31,37 +36,50 @@ export const ClientsPage: React.FC = () => {
   const showPagination = (allTheClients && allTheClients.length <= perPage) 
   || allTheClients?.length === 0;
 
+  useEffect(() => {
+    if (!refreshTokenService.get() || (user && user?.role === 'user')) {
+      navigate('/');
+    }
+  }, [user]);
+
   return (
-    <div className="clientsPage">
-      <h1>Список клієнтів</h1>
-
-
-      {allTheClients
+    <>
+      {user
         ? (
-          <>
-            <p className="clientsPage__amount">
-              {`Кількість клієнтів: ${allTheClients?.length}`}
-            </p>
+          <div className="clientsPage">
+            <h1>Список клієнтів</h1>
 
-            <div className="clientsPage__list">
-              {clientsToShow?.map(client => (
-                <ClientInfo client={client} key={client.email}/>
-              ))}
-            </div>
-          </>
 
+            {allTheClients
+              ? (
+                <>
+                  <p className="clientsPage__amount">
+                    {`Кількість клієнтів: ${allTheClients?.length}`}
+                  </p>
+
+                  <div className="clientsPage__list">
+                    {clientsToShow?.map(client => (
+                      <ClientInfo client={client} key={client.email}/>
+                    ))}
+                  </div>
+                </>
+
+              )
+              : <Loader />
+            }
+
+            {!showPagination && allTheClients && (
+              <Pagination
+                paginationPage={paginationPage}
+                setPaginationPage={setPaginationPage}
+                total={allTheClients.length}
+                perPage={perPage}
+              />
+            )}
+          </div>
         )
-        : <Loader />
-      }
-
-      {!showPagination && allTheClients && (
-        <Pagination
-          paginationPage={paginationPage}
-          setPaginationPage={setPaginationPage}
-          total={allTheClients.length}
-          perPage={perPage}
-        />
-      )}
-    </div>
+      : <Loader />}
+    </>
+    
   );
 }

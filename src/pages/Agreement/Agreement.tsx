@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Agreement.scss';
 import { BookPS } from '../../components/BookPS/BookPS';
 
 
 export const Agreement: React.FC = () => {
 
-
+  useEffect(() => {
+    window.scrollTo({
+      top: 0, left: 0,
+    });
+  }, []);
+  
   return (
     <div className="agreement">
       <h1 className="agreement__title">Умови прокату</h1>

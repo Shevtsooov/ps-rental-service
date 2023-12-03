@@ -14,6 +14,12 @@ export const SavedGames: React.FC = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const { data: games } = useGetAllGamesQuery();
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0, left: 0,
+    });
+  }, []);
   
   // useEffect(() => {
   //   dispatch(resetSavedGames());

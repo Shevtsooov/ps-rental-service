@@ -27,9 +27,6 @@ export const PasswordResetPage = () => {
 
   const { resetToken } = useParams<{ resetToken: string }>();
 
-  console.log('resetToken - ', `//${resetToken}//`);
-
-
   const [error, setError] = useState(noErrors);
   const [isSuchUser, setIsSuchUser] = useState(true);
 
@@ -107,10 +104,10 @@ export const PasswordResetPage = () => {
         setIsLoading(false);
         setIsResult(true);
 
-        setTimeout(() => {
-          setIsResult(false);
-          navigate('/login');
-        }, 4000);
+        // setTimeout(() => {
+        //   setIsResult(false);
+        //   navigate('/login');
+        // }, 4000);
       }
 
     } catch (error: any) {
@@ -118,7 +115,10 @@ export const PasswordResetPage = () => {
     }
   };
 
-
+  const closeModal = () => {
+    setIsResult(false);
+    navigate('/');
+  }
 
   return (
     <>
@@ -133,6 +133,13 @@ export const PasswordResetPage = () => {
           />
           <h4>Ваш пароль успішно змінено</h4>
           <p>Зараз вас буде перенаправлено на сторінку входу</p>
+
+          <button
+            className="pRp__modal__button"
+            onClick={closeModal}
+          >
+            OK
+          </button>
         </div>
       )}
 

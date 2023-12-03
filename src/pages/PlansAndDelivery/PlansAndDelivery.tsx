@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './PlansAndDelivery.scss';
 import { PricingTable } from '../../components/PricingTable/PricingTable';
 import { PriceCalculator } from '../../components/PriceCalculator/PriceCalculator';
@@ -27,6 +27,12 @@ const faq = [
 export const PlansAndDelivery: React.FC = () => {
   const [chosenNumber, setChosenNumber] = useState<number>(1);
   const [isCalculatorOpen, setIsCalculatorOpen] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0, left: 0,
+    });
+  }, []);
 
   return (
     <div className="plansPage">

@@ -19,6 +19,13 @@ export const AccountPage: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 0, left: 0,
+    });
+  }, []);
+
+
   const handleLogOut = async () => {
     const refreshToken = refreshTokenService.get();
 

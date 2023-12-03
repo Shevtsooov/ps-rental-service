@@ -15,7 +15,7 @@ export const OrdersApi = createApi({
     getAllOrders: builder.query<Order[], void>({
       query: () => 'orders'
     }),
-    getUserOrders: builder.query<Order[], string>({
+    getUserOrders: builder.query<Order[], string | undefined>({
       query: (id) => `orders/${id}`
     }),
 

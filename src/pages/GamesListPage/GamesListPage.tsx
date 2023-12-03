@@ -24,6 +24,12 @@ export const GamesListPage: React.FC = () => {
   });
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0, left: 0,
+    });
+  }, []);
+
+  useEffect(() => {
       refetch();
   }, [games, refetch]);
 

@@ -43,6 +43,12 @@ export const App: React.FC = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0, left: 0,
+    });
+  }, []);
+
+  useEffect(() => {
     const fetchData = async () => {
       const refreshTokenFromLS = refreshTokenService.get();
       

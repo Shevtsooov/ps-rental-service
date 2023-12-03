@@ -29,16 +29,6 @@ export const PasswordResetInitialization = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
-  useEffect(() => {
-    if (isResult) {
-      document.body.style.overflow = 'hidden';
-
-      return;
-    }
-
-    document.body.style.overflow = 'auto'
-  }, [isResult]);
-
   const handleInitiateReset = async () => {
     const emailPattern = /^[\w.+-]+@([\w-]+\.){1,3}[\w-]{2,}$/;
     
@@ -86,13 +76,13 @@ export const PasswordResetInitialization = () => {
       await resetPassword({ email });
 
       if (isSuccess) {
-        setIsLoading(false);
         setIsResult(true);
+        setIsLoading(false);
 
-        setTimeout(() => {
-          setIsResult(false);
-          navigate('/');
-        }, 4000);
+        // setTimeout(() => {
+        //   setIsResult(false);
+        //   navigate('/');
+        // }, 4000);
       }
 
     } catch (error: any) {
@@ -100,7 +90,10 @@ export const PasswordResetInitialization = () => {
     }
   };
 
-
+  const closeModal = () => {
+    setIsResult(false);
+    navigate('/');
+  }
 
   return (
     <>
@@ -115,6 +108,13 @@ export const PasswordResetInitialization = () => {
           />
           <h4>Запит на зміну пароля створено</h4>
           <p>Очікуйте email з унікальним посиланням</p>
+
+          <button
+            className="pRI__modal__button"
+            onClick={closeModal}
+          >
+            OK
+          </button>
         </div>
       )}
 

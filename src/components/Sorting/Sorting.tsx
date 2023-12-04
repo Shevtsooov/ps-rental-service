@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../Redux/store';
 import { setFilteredSorting } from '../../Redux/Slices/filteredSorting.slice';
 import { SetURLSearchParams } from 'react-router-dom';
-import { resetPaginationPage } from '../../Redux/Slices/paginationPage.slice';
+import { resetGamePaginationPage } from '../../Redux/Slices/paginationPage.slice';
 
 export const Sorting: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,7 +43,7 @@ export const Sorting: React.FC = () => {
   };
 
   const handleOptionClick = (option: string) => {
-    dispatch(resetPaginationPage());
+    dispatch(resetGamePaginationPage());
     dispatch(setFilteredSorting(option));
   };
 

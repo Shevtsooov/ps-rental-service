@@ -8,12 +8,12 @@ import { filterFilteredCategories,
 import { useAppDispatch, useAppSelector } from '../../Redux/store';
 import { resetFilteredPlayers, setFilteredPlayers } from '../../Redux/Slices/filteredPlayers.slice';
 import { resetFilteredYear, setFilteredYear } from '../../Redux/Slices/filteredYear.slice';
-import { resetPaginationPage } from '../../Redux/Slices/paginationPage.slice';
 import { defaultCategories, players, years } from '../../helpers/filterOptions';
 import { useFindGamesQuery } from '../../Redux/RTK_Query/games.service';
 import { setQuery } from '../../Redux/Slices/query.slice';
 import { FilterResults } from '../FilterResults/FilterResults';
 import { FilterByBlock } from '../FilterByBlock/FilterByBlock';
+import { resetGamePaginationPage } from '../../Redux/Slices/paginationPage.slice';
 
 export const FilterSelector: React.FC = () => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
@@ -67,12 +67,12 @@ export const FilterSelector: React.FC = () => {
   const handleCategoryFilter = (option: string) => {
     if (filteredCategories.includes(option)) {
       dispatch(filterFilteredCategories(option));
-      dispatch(resetPaginationPage());
+      dispatch(resetGamePaginationPage());
       
       return;
     }
     
-    dispatch(resetPaginationPage());
+    dispatch(resetGamePaginationPage());
     dispatch(setFilteredCategories(option));
   };
 
@@ -91,13 +91,13 @@ export const FilterSelector: React.FC = () => {
   const handleChosenYears = (option: string) => {
     if (filteredYear === option) {
       dispatch(resetFilteredYear());
-      dispatch(resetPaginationPage());
+      dispatch(resetGamePaginationPage());
 
       return;
     }
 
     dispatch(setFilteredYear(option));
-    dispatch(resetPaginationPage());
+    dispatch(resetGamePaginationPage());
   };
 
   const handleOpenFilter = () => {

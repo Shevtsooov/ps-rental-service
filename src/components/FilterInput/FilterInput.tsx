@@ -1,8 +1,8 @@
 import { SetURLSearchParams } from 'react-router-dom';
-import { resetPaginationPage } from '../../Redux/Slices/paginationPage.slice';
 import { setQuery } from '../../Redux/Slices/query.slice';
 import { useAppDispatch, useAppSelector } from '../../Redux/store';
 import './FilterInput.scss';
+import { resetGamePaginationPage } from '../../Redux/Slices/paginationPage.slice';
 
 export const FilterInput: React.FC = () => {
   const query = useAppSelector(state => state.query.value);
@@ -10,7 +10,7 @@ export const FilterInput: React.FC = () => {
 
   const handleSearch = (search: string) => {
     dispatch(setQuery(search));
-    dispatch(resetPaginationPage());
+    dispatch(resetGamePaginationPage());
   }
 
   const handleClearQuery = () => {

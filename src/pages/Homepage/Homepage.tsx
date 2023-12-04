@@ -20,11 +20,6 @@ export const Homepage: React.FC = () => {
 
   const sortedGames = games?.slice(0, 15);
 
-  // sort((gameA, gameB) => (
-  //   gameB.popularity - gameA.popularity
-  // ));
-  
-
   return (
     <div className="homepage">
       <Slider />

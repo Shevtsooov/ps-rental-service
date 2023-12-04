@@ -29,6 +29,8 @@ export const Homepage: React.FC = () => {
     <div className="homepage">
       <Slider />
 
+      {/* <Aaa /> */}
+
       <Calendar />
 
       <div className="homepage__seoBlock">
@@ -40,8 +42,6 @@ export const Homepage: React.FC = () => {
       </div>
 
       <BookPS />
-
-      {/* <Aaa /> */}
       
       {games 
         ? (

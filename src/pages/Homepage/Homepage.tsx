@@ -23,6 +23,7 @@ export const Homepage: React.FC = () => {
   // sort((gameA, gameB) => (
   //   gameB.popularity - gameA.popularity
   // ));
+  
 
   return (
     <div className="homepage">

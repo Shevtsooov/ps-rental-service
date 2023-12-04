@@ -7,6 +7,7 @@ import { Carousel } from '../../components/Carousel/Carousel';
 import { useGetAllGamesQuery } from '../../Redux/RTK_Query/games.service';
 import { Loader } from '../../components/Loader/Loader';
 import { Aaa } from '../../components/111/111';
+import { Calendar } from '../../components/Calendar/Calendar';
 
 export const Homepage: React.FC = () => {
   const { data: games } = useGetAllGamesQuery();
@@ -26,6 +27,8 @@ export const Homepage: React.FC = () => {
   return (
     <div className="homepage">
       <Slider />
+
+      <Calendar />
 
       <div className="homepage__seoBlock">
         <h1 className="homepage__seoBlock__title">Оренда PlayStation у Львові</h1>

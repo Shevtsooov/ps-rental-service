@@ -1,25 +1,25 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-export interface PaginationPageState {
+export interface GamePaginationPageState {
   value: number
 }
 
-const initialState: PaginationPageState = {
+const initialState: GamePaginationPageState = {
   value: 1,
 }
 
-export const paginationPageSlice = createSlice({
-  name: 'paginationPage',
+export const gamePaginationPageSlice = createSlice({
+  name: 'gamePaginationPage',
   initialState,
   reducers: {
-    setPaginationPage: (state, action) => {
+    setGamePaginationPage: (state, action) => {
       state.value = action.payload
     },
-    resetPaginationPage: (state) => {
+    resetGamePaginationPage: (state) => {
       state.value = 1
     },
   },
 })
 
-export const { setPaginationPage, resetPaginationPage } = paginationPageSlice.actions;
-export const paginationPageReducer = paginationPageSlice.reducer;
+export const { setGamePaginationPage, resetGamePaginationPage } = gamePaginationPageSlice.actions;
+export const gamePaginationPageReducer = gamePaginationPageSlice.reducer;

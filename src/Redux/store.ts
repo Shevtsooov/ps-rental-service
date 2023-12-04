@@ -14,7 +14,7 @@ import { filteredCategoriesReducer } from './Slices/filteredCategories.slice';
 import { filteredSortingReducer } from './Slices/filteredSorting.slice';
 import { filteredYearReducer } from './Slices/filteredYear.slice';
 import { filteredPlayersReducer } from './Slices/filteredPlayers.slice';
-import { paginationPageReducer } from './Slices/paginationPage.slice';
+
 import { UsersApi } from './RTK_Query/users.service';
 import { AuthApi } from './RTK_Query/authApi.service';
 import { userReducer } from './Slices/user.slice';
@@ -24,6 +24,7 @@ import { activeOrderReducer } from './Slices/activeOrder.slice';
 import { orderpaginationPageReducer } from './Slices/orderPaginationPage.slice';
 import { savedAddressReducer } from './Slices/savedAddress.slice';
 import { userCommentReducer } from './Slices/userComment.slice';
+import { gamePaginationPageReducer } from './Slices/paginationPage.slice';
 
 export const store = configureStore({
   reducer: {
@@ -46,7 +47,7 @@ export const store = configureStore({
     filteredYear: filteredYearReducer,
     filteredPlayers: filteredPlayersReducer,
 
-    paginationPage: paginationPageReducer,
+    gamePaginationPage: gamePaginationPageReducer,
     orderPaginationPage: orderpaginationPageReducer,
 
     activeClient: activeClientReducer,

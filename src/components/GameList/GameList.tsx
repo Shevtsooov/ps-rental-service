@@ -1,22 +1,21 @@
 import { useState } from 'react';
 import { Game } from '../../types/Game';
 import { GameInfo } from '../GameInfo/GameInfo';
-import { Pagination } from '../Pagination/Pagination';
 import './GameList.scss';
 import { useAppSelector } from '../../Redux/store';
+import { GamePagination } from '../GamePagination/GamePagination';
 
 type Props = {
   games: Game[];
 }
 
 export const GameList: React.FC<Props> = ({ games }) => {
-  // const paginationPage = useAppSelector(state => state.paginationPage.value);
+  const gamePaginationPage = useAppSelector(state => state.gamePaginationPage.value);
   const [perPage, setPerPage] = useState(16);
-  const [paginationPage, setPaginationPage] = useState(1);
 
-  const start = perPage * paginationPage - perPage;
-  const end = perPage * paginationPage <= games.length
-    ? perPage * paginationPage
+  const start = perPage * gamePaginationPage - perPage;
+  const end = perPage * gamePaginationPage <= games.length
+    ? perPage * gamePaginationPage
     : games.length;
 
   const gamesToShow = games.slice(start, end);
@@ -39,9 +38,7 @@ export const GameList: React.FC<Props> = ({ games }) => {
       )}
 
       {!showPagination && (
-        <Pagination
-          paginationPage={paginationPage}
-          setPaginationPage={setPaginationPage}
+        <GamePagination
           total={games.length}
           perPage={perPage}
         />

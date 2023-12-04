@@ -35,9 +35,9 @@ export const Header: React.FC = () => {
 
   return (
     <div className="header">
-      <div className='header__logo'>
+      {/* <div className='header__logo'>
         <Logo />
-      </div>
+      </div> */}
 
       <div className='header__navigation'>
         <Navigation />

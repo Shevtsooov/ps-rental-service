@@ -84,6 +84,8 @@ export const Agreement: React.FC = () => {
         <h2 className='agreement__statementTitle'>Підписання договору</h2>
 
         <p className="agreement__paragraph">Кожен клієнт, отримуючи приставку PlayStation напрокат, повинен мати при собі документи та здійснити підписання договору оренди. Це необхідно для належної ідентифікації та забезпечення вас надійною послугою.</p>
+
+        <p className="agreement__paragraph">Це необхідно для належної ідентифікації та забезпечення вас надійною послугою.</p>
       </div>
 
       <div className='agreement__statement' id="Депозит">

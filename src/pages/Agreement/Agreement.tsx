@@ -56,12 +56,6 @@ export const Agreement: React.FC = () => {
 
           <a 
           className='agreement__navItem'
-          href="#Умови Повернення">
-            <li>Умови Повернення</li>
-          </a>
-
-          <a 
-          className='agreement__navItem'
           href="#Відповідальність за пошкодження">
             <li>Відповідальність за пошкодження</li>
           </a>
@@ -145,12 +139,6 @@ export const Agreement: React.FC = () => {
 
         <p className="agreement__paragraph">Дякуємо за ваше розуміння та співпрацю!</p>
 
-      </div>
-
-      <div className='agreement__statement' id="Умови Повернення">
-        <h2 className='agreement__statementTitle'>Умови Повернення</h2>
-
-        <p className="agreement__paragraph">При поверненні обладнання у визначений строк, в повному обсязі та у непошкодженому стані, депозит повертається орендатору.</p>
       </div>
 
       <div className='agreement__statement' id="Відповідальність за пошкодження">

@@ -155,7 +155,7 @@ export const Agreement: React.FC = () => {
 
       <NavLink
         className='agreement__button2'
-        to="/contacts"
+        to="/shopping-cart"
       >
         Зрозуміло, забронювати!
       </NavLink>

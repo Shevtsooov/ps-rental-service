@@ -177,7 +177,7 @@ export const Agreement: React.FC = () => {
         className='agreement__button1'
         to="/contacts"
       >
-        Поставити питання менеджеру
+        Запитати у менеджера
       </NavLink>
 
       <NavLink

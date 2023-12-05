@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import './Agreement.scss';
 import { BookPS } from '../../components/BookPS/BookPS';
+import { NavLink } from 'react-router-dom';
 
 
 export const Agreement: React.FC = () => {
@@ -16,32 +17,46 @@ export const Agreement: React.FC = () => {
       <h1 className="agreement__title">Умови прокату</h1>
 
       <nav>
-        <ol>
-          <a href="#Депозит">
+        <ol className='agreement__navItems'>
+          <a 
+          className='agreement__navItem'
+          href="#Депозит">
             <li>Депозит</li>
           </a>
 
-          <a href="#Комплект PlayStation">
+          <a 
+          className='agreement__navItem'
+          href="#Комплект PlayStation">
             <li>Комплект PlayStation</li>
           </a>
 
-          <a href="#Тривалість Оренди">
+          <a 
+          className='agreement__navItem'
+          href="#Тривалість Оренди">
             <li>Тривалість Оренди</li>
           </a>
 
-          <a href="#Умови Повернення">
+          <a 
+          className='agreement__navItem'
+          href="#Умови Повернення">
             <li>Умови Повернення</li>
           </a>
 
-          <a href="#Відповідальність за пошкодження">
+          <a 
+          className='agreement__navItem'
+          href="#Відповідальність за пошкодження">
             <li>Відповідальність за пошкодження</li>
           </a>
 
-          <a href="#Платіжні Умови">
+          <a 
+          className='agreement__navItem'
+          href="#Платіжні Умови">
             <li>Платіжні Умови</li>
           </a>
 
-          <a href="#Заборгованість">
+          <a 
+          className='agreement__navItem'
+          href="#Заборгованість">
             <li>Заборгованість</li>
           </a>
         </ol>
@@ -129,7 +144,22 @@ export const Agreement: React.FC = () => {
         </p>
       </div>
 
-      <BookPS />
+      <h3 className='agreement__questions'>Залишились питання?</h3>
+
+      <NavLink
+        className='agreement__button1'
+        to="/contacts"
+      >
+        Поставити питання менеджеру
+      </NavLink>
+
+      <NavLink
+        className='agreement__button2'
+        to="/contacts"
+      >
+        Зрозуміло, забронювати!
+      </NavLink>
+
 
     </div>
   );

@@ -7,7 +7,24 @@
 
   &__title {
     font-size: 28px;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
+  }
+
+  &__navItems {
+    padding: 0 25px;
+
+    margin-bottom: 40px;
+  }
+
+  &__navItem {
+    display: block;
+    color: $main-blue;
+
+    margin-bottom: 10px;
+
+    &:hover {
+      color: $main-blue-hv;
+    }
   }
 
   &__statement {
@@ -16,6 +33,10 @@
 
     padding: 10px 15px;
     margin-bottom: 25px;
+
+    &:last-of-type {
+      margin-bottom: 40px;
+    }
   }
 
 
@@ -30,6 +51,50 @@
     
     &--warning {
       color: $main-warning-hv;
+    }
+  }
+
+  &__questions {
+    text-align: center;
+
+    margin-bottom: 10px;
+  }
+
+  &__button1 {
+    display: block;
+    margin: 0 auto;
+    width: 280px;
+    text-align: center;
+    padding: 10px 20px;
+    border: 1px solid $main-blue;
+    border-radius: 30px;
+    color: $main-blue;
+    background-color: #fff;
+
+    margin-bottom: 25px;
+
+    &:hover {
+    color: #fff;
+    background-color: $main-blue;
+    }
+  }
+
+  &__button2 {
+    display: block;
+    margin: 0 auto;
+    width: 280px;
+    text-align: center;
+    padding: 10px 20px;
+    border: 1px solid $main-blue;
+    border-radius: 30px;
+    background-color: $main-blue;
+    color: #fff;
+
+    margin-bottom: 40px;
+
+    &:hover {
+      color: $main-blue;
+      background-color: #fff;
     }
   }
 }

@@ -3,26 +3,26 @@ import './PlansAndDelivery.scss';
 import { PricingTable } from '../../components/PricingTable/PricingTable';
 import { PriceCalculator } from '../../components/PriceCalculator/PriceCalculator';
 
-import { Accordion } from '../../components/Accordion/Accordion';
+// import { Accordion } from '../../components/Accordion/Accordion';
 import { DeliveryDetails } from '../../components/DeliveryDetails/DeliveryDetails';
 
-const faq = [
-  {
-    header: 'По чьом ігри?',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae ut quasi ratione sunt magnam eveniet corporis qui cumque incidunt dolorum. Est itaque illum totam et quasi dignissimos pariatur corrupti dolore.',
-    id: 1
-  },
-  {
-    header: 'Де приставка?',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae ut quasi ratione sunt magnam eveniet corporis qui cumque incidunt dolorum. Est itaque illum totam et quasi dignissimos pariatur corrupti dolore.',
-    id: 2
-  },
-  {
-    header: 'Я мать трьох дітей, можна мені на тиждень безплатно?',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae ut quasi ratione sunt magnam eveniet corporis qui cumque incidunt dolorum. Est itaque illum totam et quasi dignissimos pariatur corrupti dolore.',
-    id: 3
-  }
-]
+// const faq = [
+//   {
+//     header: 'По чьом ігри?',
+//     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae ut quasi ratione sunt magnam eveniet corporis qui cumque incidunt dolorum. Est itaque illum totam et quasi dignissimos pariatur corrupti dolore.',
+//     id: 1
+//   },
+//   {
+//     header: 'Де приставка?',
+//     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae ut quasi ratione sunt magnam eveniet corporis qui cumque incidunt dolorum. Est itaque illum totam et quasi dignissimos pariatur corrupti dolore.',
+//     id: 2
+//   },
+//   {
+//     header: 'Я мать трьох дітей, можна мені на тиждень безплатно?',
+//     text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae ut quasi ratione sunt magnam eveniet corporis qui cumque incidunt dolorum. Est itaque illum totam et quasi dignissimos pariatur corrupti dolore.',
+//     id: 3
+//   }
+// ];
 
 export const PlansAndDelivery: React.FC = () => {
   const [chosenNumber, setChosenNumber] = useState<number>(1);
@@ -65,14 +65,14 @@ export const PlansAndDelivery: React.FC = () => {
 
       <DeliveryDetails />
 
-      <h2 className="plansPage__title">
+      {/* <h2 className="plansPage__title">
         Популярні питання
       </h2>
       <p className="plansPage__description">
         В цьому блоці ми відповідаємо на найпопулярніші запитання від наших клієнтів
       </p>
 
-      <Accordion faq={faq} />
+      <Accordion faq={faq} /> */}
     </div>
   );
 }

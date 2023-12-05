@@ -21,9 +21,25 @@
     margin-bottom: 25px;
   }
 
+  &__itemImg {
+    position: relative;
+  }
+
   &__img {
     border-radius: 50%;
     width: 50px;
+  }
+
+  &__telegram {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    bottom: 0;
+    right: -5px;
+
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('../../assets/images/telegram-icon.png');
   }
 
   &__info {

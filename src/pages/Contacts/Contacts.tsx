@@ -43,11 +43,17 @@ export const Contacts: React.FC = () => {
           className='contacts__item'
           key={contact.name}
         >
+        <div className='contacts__itemImg'>
           <img
             className='contacts__img'
             src={`${contact.img}`}
             alt={`${contact.name}`}
           />
+          <span
+            className='contacts__telegram'
+          />
+        </div>
+ 
   
           <div className='contacts__info'>
             <h2 className='contacts__name'>{contact.name}</h2>

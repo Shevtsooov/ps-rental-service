@@ -62,7 +62,7 @@ export const Contacts: React.FC = () => {
         </a>
       ))}
 
-      <p className='contacts__notice'>Наші менеджери раді допомогти вам з будь-якими питаннями.</p>
+      <p className='contacts__notice'>Наші менеджери раді допомогти вам з будь-якими питаннями відносно прокату.</p>
       <p className='contacts__notice'>Зверніть увагу, що ми доступні з 10:00 по 20:00.</p>
       <p className='contacts__notice'>Залишайте свої питання, і ми з радістю дамо на них відповіді протягом цього періоду.</p>
       <p className='contacts__notice'>Дякуємо за розуміння та чекаємо на ваші повідомлення!</p>

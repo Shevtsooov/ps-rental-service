@@ -2,6 +2,7 @@
 @import "../../styles/utils/colors.scss";
 
 .agreement {
+  user-select: none;
   padding: 20px;
   scroll-behavior: smooth;
 

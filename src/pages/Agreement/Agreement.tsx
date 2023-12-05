@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import './Agreement.scss';
-import { BookPS } from '../../components/BookPS/BookPS';
 import { NavLink } from 'react-router-dom';
 
 

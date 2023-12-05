@@ -20,8 +20,26 @@ export const Agreement: React.FC = () => {
         <ol className='agreement__navItems'>
           <a 
           className='agreement__navItem'
+          href="#Підписання договору">
+            <li>Підписання договору</li>
+          </a>
+
+          <a 
+          className='agreement__navItem'
           href="#Депозит">
             <li>Депозит</li>
+          </a>
+
+          <a 
+          className='agreement__navItem'
+          href="#Вік орендаря">
+            <li>Вік орендаря</li>
+          </a>
+          
+          <a 
+          className='agreement__navItem'
+          href="#GPS-відстеження">
+            <li>GPS-відстеження</li>
           </a>
 
           <a 
@@ -62,6 +80,12 @@ export const Agreement: React.FC = () => {
         </ol>
       </nav>
 
+      <div className='agreement__statement' id="Підписання договору">
+        <h2 className='agreement__statementTitle'>Підписання договору</h2>
+
+        <p className="agreement__paragraph">Кожен клієнт, отримуючи приставку PlayStation напрокат, повинен мати при собі документи та здійснити підписання договору оренди. Це необхідно для належної ідентифікації та забезпечення вас надійною послугою.</p>
+      </div>
+
       <div className='agreement__statement' id="Депозит">
         <h2 className='agreement__statementTitle'>Депозит</h2>
 
@@ -70,8 +94,22 @@ export const Agreement: React.FC = () => {
         <p className="agreement__paragraph">Депозит є заставою, взятою для забезпечення вартості пристрою та його аксесуарів.</p>
 
         <p className="agreement__paragraph">Депозит повертається в повному обсязі, якщо все обладнання відповідає належному(неушкодженому) стану.</p>
+      </div>
 
+      <div className='agreement__statement' id="Вік орендаря">
+        <h2 className='agreement__statementTitle'>Вік орендаря</h2>
 
+        <p className="agreement__paragraph">Орендувати PlayStation можуть тільки особи, які досягли 18-річного віку. Однак, якщо вам ще не виповнилося 18 років, ви можете попросити своїх батьків взяти консоль напрокат за вас.</p>
+
+        <p className="agreement__paragraph">Однак, якщо вам ще не виповнилося 18 років, ви можете попросити своїх батьків взяти консоль напрокат за вас.</p>
+      </div>
+
+      <div className='agreement__statement' id="GPS-відстеження">
+        <h2 className='agreement__statementTitle'>GPS-відстеження</h2>
+
+        <p className="agreement__paragraph">Наші приставки оснащені вбудованим GPS-трекером для забезпечення безпеки та контролю над їх місцезнаходженням. Якщо ви плануєте переміщення консолі з однієї адреси на іншу, будь ласка, повідомте нас заздалегідь.</p>
+
+        <p className="agreement__paragraph">Це допоможе уникнути будь-яких непорозумінь та забезпечить ваш комфорт.</p>
       </div>
 
       <div className='agreement__statement' id="Комплект PlayStation">

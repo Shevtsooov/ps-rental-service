@@ -39,7 +39,7 @@ export const Contacts: React.FC = () => {
 
       {contacts.map(contact => (
         <a
-          href="https://t.me/nazarii_branashko"
+          href={`${contact.link}`}
           className='contacts__item'
           key={contact.name}
         >

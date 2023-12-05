@@ -44,6 +44,13 @@ export const Footer: React.FC = () => {
               Умови прокату
             </NavLink>
           </li>
+          <li
+            className='footer__item'
+          >
+            <NavLink to="/contacts" className='footer__item_link'>
+              Контакти
+            </NavLink>
+          </li>
           {/* <li 
             className='footer__item'
           >

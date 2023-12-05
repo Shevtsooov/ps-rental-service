@@ -1,0 +1,43 @@
+@import "../../styles/utils/mixins.scss";
+@import "../../styles/utils/colors.scss";
+
+.contacts {
+  padding: 20px;
+
+  &__title {
+    font-size: 28px;
+    margin-bottom: 25px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 20px;
+    border-radius: 15px;
+
+    background-color: $main-grey;
+
+    margin-bottom: 25px;
+  }
+
+  &__img {
+    border-radius: 50%;
+    width: 50px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__name {
+    font-size: 20px;
+    color: #000;
+  }
+
+  &__nickname {
+    font-size: 16px;
+    color: $secondary-grey;
+  }
+}

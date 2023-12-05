@@ -96,6 +96,7 @@
       background-image: url('../../assets/icons/plans.svg');
     }
     &--agreement {
+      margin-left: 3px;
       background-image: url('../../assets/icons/agreement.svg');
     }
     &--about_ps5 {
@@ -112,6 +113,12 @@
     }
     &--orders {
       background-image: url('../../assets/icons/orders.svg');
+    }
+    &--contacts {
+      width: 25px;
+      height: 25px;
+      margin-left: 2px;
+      background-image: url('../../assets/icons/contacts.svg');
     }
 
     &--arrow {

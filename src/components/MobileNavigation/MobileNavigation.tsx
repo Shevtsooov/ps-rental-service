@@ -122,6 +122,22 @@ export const MobileNavigation = () => {
               </NavLink>
             </li>
 
+            <li>
+              <NavLink
+                className="mobileNav__link"
+                to="/contacts"
+                onClick={() => setIsMenuOpen(p => !p)}
+              >
+                <div className="mobileNav__link_text">
+                  <span className="mobileNav__link--icon mobileNav__link--contacts"></span>
+                  <p>Контакти</p>
+                </div>
+
+                  <span className="mobileNav__link--arrow"></span>
+
+              </NavLink>
+            </li>
+
             {/* <li>
               <NavLink
                 className="mobileNav__link"

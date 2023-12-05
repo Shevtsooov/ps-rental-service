@@ -12,7 +12,7 @@ export const Navigation = () => {
           className={({ isActive }) => cn(
             'nav__link', { 'is-active': isActive },
           )}
-          to="home"
+          to="/home"
         >
          Головна
         </NavLink>
@@ -23,7 +23,7 @@ export const Navigation = () => {
           className={({ isActive }) => cn(
             'nav__link', { 'is-active': isActive },
           )}
-          to="games"
+          to="/games"
         >
           Ігри
         </NavLink>
@@ -34,7 +34,7 @@ export const Navigation = () => {
           className={({ isActive }) => cn(
             'nav__link', { 'is-active': isActive },
           )}
-          to="pricing-and-delivery"
+          to="/pricing-and-delivery"
         >
           Тарифи і доставка
         </NavLink>
@@ -45,9 +45,20 @@ export const Navigation = () => {
           className={({ isActive }) => cn(
             'nav__link', { 'is-active': isActive },
           )}
-          to="agreement"
+          to="/agreement"
         >
           Умови прокату
+        </NavLink>
+      </li>
+
+      <li className="nav__item">
+        <NavLink
+          className={({ isActive }) => cn(
+            'nav__link', { 'is-active': isActive },
+          )}
+          to="/contacts"
+        >
+          Контакти
         </NavLink>
       </li>
 

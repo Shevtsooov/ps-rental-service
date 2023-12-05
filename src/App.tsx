@@ -30,6 +30,7 @@ import { ClientsPage } from './pages/ClientsPage/ClientsPage';
 import { Orders } from './pages/Orders/Orders';
 import { PasswordResetInitialization } from './pages/PasswordResetInitialization/PasswordResetInitialization';
 import { PasswordResetPage } from './pages/PasswordResetPage/PasswordResetPage';
+import { Contacts } from './pages/Contacts/Contacts';
 
 export const App: React.FC = () => {
   const user = useAppSelector(state => state.user.value);
@@ -98,7 +99,8 @@ export const App: React.FC = () => {
         <Route path="games/:gameIdLink" element={<GamePage />} />
         <Route path="pricing-and-delivery" element={<PlansAndDelivery />} />
         <Route path="agreement" element={<Agreement />} />
-        <Route path="about-ps5" element={<AboutPS5 />} />
+        <Route path="contacts" element={<Contacts />} />
+        {/* <Route path="about-ps5" element={<AboutPS5 />} /> */}
 
         <Route path="login" element={<LoginPage />} />
         <Route path="registration" element={<RegistrationPage />} />

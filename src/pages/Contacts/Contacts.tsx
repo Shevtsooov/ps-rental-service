@@ -61,6 +61,11 @@ export const Contacts: React.FC = () => {
           </div>
         </a>
       ))}
+
+      <p className='contacts__notice'>Наші менеджери раді вам допомогти з будь-якими питаннями.</p>
+      <p className='contacts__notice'>Зверніть увагу, що ми доступні для відповідей з 10:00 до 20:00. </p>
+      <p className='contacts__notice'>Залишайте свої питання, і ми з радістю дамо на них відповідь протягом цього часу.</p>
+      <p className='contacts__notice'>Дякуємо за розуміння та чекаємо на ваші повідомлення!</p>
  
     </div>
   );

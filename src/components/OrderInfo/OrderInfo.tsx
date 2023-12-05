@@ -104,7 +104,21 @@ useEffect(() => {
         )}
 
         <div className="orderInfo__firstBlock">
-          <p>{orderStatus}</p>
+          {orderStatus === 'Нове замовлення' && (
+            <p className='orderStatus orderStatus--justCreated'>{orderStatus}</p>
+          )}
+
+          {orderStatus === 'Прийняте' && (
+            <p className='orderStatus orderStatus--seen'>{orderStatus}</p>
+          )}
+
+          {orderStatus === 'У замовника' && (
+            <p className='orderStatus orderStatus--isPlaying'>{orderStatus}</p>
+          )}
+
+          {orderStatus === 'Завершене' && (
+            <p className='orderStatus orderStatus--completed'>{orderStatus}</p>
+          )}
 
           <span
             className={cn('orderInfo__arrow', {

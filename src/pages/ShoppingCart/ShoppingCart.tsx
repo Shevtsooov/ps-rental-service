@@ -181,7 +181,7 @@ export const ShoppingCart: React.FC = () => {
         deliveryOption: chosenDelivery,
         deliveryAddress: savedAddress || user?.address,
         userId: user?.id,
-        orderStatus: 'В обробці',
+        orderStatus: 'Нове замовлення',
         sumOfOrder: finalPrice,
         adminComment: '',
         userComment: userComment.trim(),

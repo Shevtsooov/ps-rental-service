@@ -9,6 +9,7 @@ import { User } from '../../types/User';
 import { Game } from '../../types/Game';
 import { useGetAllGamesQuery } from '../../Redux/RTK_Query/games.service';
 import { monthsSelected } from '../../helpers/CorrectDateNames';
+import { useEditOrderMutation, useGetAllOrdersQuery } from '../../Redux/RTK_Query/orders.service';
 
 type Props = {
   order: Order,
@@ -39,10 +40,13 @@ export const OrderInfo: React.FC<Props> = ({ order }) => {
   const [month, setMonth] = useState<number | null>(null);
   const [day, setDay] = useState<number | null>(null);
   const [amountOfDays, setAmountOfDays] = useState<string>('доба');
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const dispatch = useAppDispatch();
 
 const { data: users } = useGetAllUsersQuery();
 const { data: games } = useGetAllGamesQuery();
+const { data: allTheOrders, refetch } = useGetAllOrdersQuery();
+const [ editOrder, isSuccess ] = useEditOrderMutation();
 
 useEffect(() => {
   const orderUser = users?.find(user => user.id === userId);
@@ -90,10 +94,71 @@ useEffect(() => {
     } 
   }, [users, games]);
 
+  const handleToggleModal = () => {
+    setIsModalOpen(state => !state);
+  };
+
+  const handleUpdateStatus = async (status: string) => {
+    try {
+      await editOrder({
+        _id: _id,
+        orderStatus: status
+      })
+
+      if (isSuccess) {
+        setIsModalOpen(false);
+        refetch();
+      }
+    } catch (error) {
+      console.error(error)
+    }
+  };
+
   return (
-    <div className={cn("orderInfo", {
-      "orderInfo--active": activeOrder === _id
-    })}>
+    <div
+      className={cn("orderInfo", {
+        "orderInfo--active": activeOrder === _id,
+      })}
+    >
+
+      {isModalOpen && (
+        <div
+          className='orderInfo__modal'
+          onClick={handleToggleModal}
+        >
+
+        </div>
+      )}
+
+      {isModalOpen && (
+        <div className='orderInfo__modal__box'>
+          <p
+            className='orderStatusModal orderStatusModal--justCreated'
+            onClick={() => handleUpdateStatus('Нове замовлення')}
+          >Нове замовлення</p>
+
+          <p
+            className='orderStatusModal orderStatusModal--seen'
+            onClick={() => handleUpdateStatus('Прийняте')}
+          >Прийняте</p>
+
+          <p
+            className='orderStatusModal orderStatusModal--canceled'
+            onClick={() => handleUpdateStatus('Скасоване')}
+          >Скасоване</p>
+
+          <p
+            className='orderStatusModal orderStatusModal--isPlaying'
+            onClick={() => handleUpdateStatus('У замовника')}
+          >У замовника</p>
+
+          <p
+            className='orderStatusModal orderStatusModal--completed'
+            onClick={() => handleUpdateStatus('Завершене')}
+          >Завершене</p>
+        </div>
+      )}
+
       <div className="orderInfo__header">
         {year && month && day && (
          <h3 className="orderInfo__title">{`
@@ -104,22 +169,34 @@ useEffect(() => {
         )}
 
         <div className="orderInfo__firstBlock">
-          {orderStatus === 'Нове замовлення' && (
-            <p className='orderStatus orderStatus--justCreated'>{orderStatus}</p>
-          )}
-
-          {orderStatus === 'Прийняте' && (
-            <p className='orderStatus orderStatus--seen'>{orderStatus}</p>
-          )}
-
-          {orderStatus === 'У замовника' && (
-            <p className='orderStatus orderStatus--isPlaying'>{orderStatus}</p>
-          )}
-
-          {orderStatus === 'Завершене' && (
-            <p className='orderStatus orderStatus--completed'>{orderStatus}</p>
-          )}
-
+        {user?.role === 'admin'
+          ? (
+            <p
+              className={cn('orderStatus', {
+                'orderStatus--justCreated': orderStatus === 'Нове замовлення',
+                'orderStatus--seen': orderStatus === 'Прийняте',
+                'orderStatus--isPlaying': orderStatus === 'У замовника',
+                'orderStatus--completed': orderStatus === 'Завершене',
+                'orderStatus--canceled': orderStatus === 'Скасоване',
+              })}
+              onClick={handleToggleModal}
+            >
+              {orderStatus}
+            </p>
+          )
+          : (
+            <p
+              className={cn('orderStatus', {
+                'orderStatus--justCreated': orderStatus === 'Нове замовлення',
+                'orderStatus--seen': orderStatus === 'Прийняте',
+                'orderStatus--isPlaying': orderStatus === 'У замовника',
+                'orderStatus--completed': orderStatus === 'Завершене',
+              })}
+            >
+              {orderStatus}
+            </p>
+          )
+        }
           <span
             className={cn('orderInfo__arrow', {
               'orderInfo__arrow--active': activeOrder === _id

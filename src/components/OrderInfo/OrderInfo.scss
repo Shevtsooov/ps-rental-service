@@ -14,6 +14,28 @@
     border: 2px solid $main-blue;
   }
 
+  &__modal {
+    position: absolute;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    top: 60px;
+    left: 0;
+    height: calc(100vh - 60px);
+    width: 100%;
+    background-color: #36363695;
+
+    &__box {
+      position: absolute;
+      left: calc(50% - 85px);
+      z-index: 200;
+      padding: 10px;
+      width: 170px;
+      background-color: $main-grey;
+      border-radius: 15px;
+    }
+  }
+
   &__title {
     font-size: 22px;
   }
@@ -173,6 +195,11 @@
   border-radius: 30px;
   font-size: 12px;
   color: #fff;
+  width: 120px;
+
+  text-align: center;
+
+  cursor: pointer;
 
   &--justCreated {
     background-color: #ed733b;
@@ -188,5 +215,43 @@
 
   &--completed {
     background-color: #337df4;
+  }
+
+  &--canceled {
+    background-color: #f43333;
+  }
+}
+
+
+.orderStatusModal {
+  width: 150px;
+  padding: 10px;
+  border-radius: 30px;
+  font-size: 12px;
+  color: #fff;
+  text-align: center;
+
+  cursor: pointer;
+
+  margin-bottom: 10px;
+
+  &--justCreated {
+    background-color: #ed733b;
+  }
+
+  &--seen {
+    background-color: #ffbb0f;
+  }
+
+  &--isPlaying {
+    background-color: #008b19;
+  }
+
+  &--completed {
+    background-color: #337df4;
+  }
+  
+  &--canceled {
+    background-color: #f43333;
   }
 }

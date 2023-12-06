@@ -10,6 +10,7 @@ import { Game } from '../../types/Game';
 import { useGetAllGamesQuery } from '../../Redux/RTK_Query/games.service';
 import { monthsSelected } from '../../helpers/CorrectDateNames';
 import { useEditOrderMutation, useGetAllOrdersQuery } from '../../Redux/RTK_Query/orders.service';
+import { useLocation } from 'react-router-dom';
 
 type Props = {
   order: Order,
@@ -41,6 +42,7 @@ export const OrderInfo: React.FC<Props> = ({ order }) => {
   const [day, setDay] = useState<number | null>(null);
   const [amountOfDays, setAmountOfDays] = useState<string>('доба');
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const location = useLocation();
   const dispatch = useAppDispatch();
 
 const { data: users } = useGetAllUsersQuery();
@@ -169,7 +171,7 @@ useEffect(() => {
         )}
 
         <div className="orderInfo__firstBlock">
-        {user?.role === 'admin'
+        {location.pathname !== '/account/orders'
           ? (
             <p
               className={cn('orderStatus', {

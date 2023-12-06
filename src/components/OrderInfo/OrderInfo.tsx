@@ -43,6 +43,7 @@ export const OrderInfo: React.FC<Props> = ({ order }) => {
   const [amountOfDays, setAmountOfDays] = useState<string>('доба');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const location = useLocation();
+  const [isLoading, setIsLoading] = useState(false);
   const dispatch = useAppDispatch();
 
 const { data: users } = useGetAllUsersQuery();
@@ -79,6 +80,7 @@ useEffect(() => {
   const handleActiveOrder = (_id: string) => {
     if (activeOrder === _id) {
       dispatch(removeActiveOrder());
+      setIsModalOpen(false);
 
       return;
     }
@@ -96,11 +98,20 @@ useEffect(() => {
     } 
   }, [users, games]);
 
-  const handleToggleModal = () => {
+  const handleToggleModal = (_id: string) => {
+    if (activeOrder === _id) {
+      // dispatch(removeActiveOrder());
+      setIsModalOpen(state => !state);
+      
+      return;
+    }
     setIsModalOpen(state => !state);
+    dispatch(setActiveOrder(_id));
   };
 
   const handleUpdateStatus = async (status: string) => {
+    setIsLoading(true);
+
     try {
       await editOrder({
         _id: _id,
@@ -110,6 +121,7 @@ useEffect(() => {
       if (isSuccess) {
         setIsModalOpen(false);
         refetch();
+        setIsLoading(false);
       }
     } catch (error) {
       console.error(error)
@@ -126,36 +138,53 @@ useEffect(() => {
       {isModalOpen && (
         <div
           className='orderInfo__modal'
-          onClick={handleToggleModal}
+          onClick={() => handleToggleModal(_id)}
         >
 
         </div>
       )}
 
       {isModalOpen && (
-        <div className='orderInfo__modal__box'>
+        <div
+          className='orderInfo__modal__box'
+          // className={cn('orderInfo__modal__box', {
+          //   'orderStatusModal--isLoading': isLoading
+          // })}
+        >
           <p
-            className='orderStatusModal orderStatusModal--justCreated'
+            className={cn('orderStatusModal orderStatusModal--justCreated', {
+              'orderStatusModal--isLoading': isLoading
+            })}
             onClick={() => handleUpdateStatus('Нове замовлення')}
           >Нове замовлення</p>
 
           <p
-            className='orderStatusModal orderStatusModal--seen'
+            className={cn('orderStatusModal orderStatusModal--seen', {
+              'orderStatusModal--isLoading': isLoading
+
+            })}
             onClick={() => handleUpdateStatus('Прийняте')}
           >Прийняте</p>
 
           <p
-            className='orderStatusModal orderStatusModal--canceled'
+            className={cn('orderStatusModal orderStatusModal--canceled', {
+              'orderStatusModal--isLoading': isLoading
+
+            })}
             onClick={() => handleUpdateStatus('Скасоване')}
           >Скасоване</p>
 
           <p
-            className='orderStatusModal orderStatusModal--isPlaying'
+            className={cn('orderStatusModal orderStatusModal--isPlaying', {
+              'orderStatusModal--isLoading': isLoading
+              })}
             onClick={() => handleUpdateStatus('У замовника')}
           >У замовника</p>
 
           <p
-            className='orderStatusModal orderStatusModal--completed'
+            className={cn('orderStatusModal orderStatusModal--completed', {
+              'orderStatusModal--isLoading': isLoading
+            })}
             onClick={() => handleUpdateStatus('Завершене')}
           >Завершене</p>
         </div>
@@ -180,8 +209,9 @@ useEffect(() => {
                 'orderStatus--isPlaying': orderStatus === 'У замовника',
                 'orderStatus--completed': orderStatus === 'Завершене',
                 'orderStatus--canceled': orderStatus === 'Скасоване',
+                'orderStatus--isLoading': isLoading,
               })}
-              onClick={handleToggleModal}
+              onClick={() => handleToggleModal(_id)}
             >
               {orderStatus}
             </p>
@@ -194,6 +224,7 @@ useEffect(() => {
                 'orderStatus--isPlaying': orderStatus === 'У замовника',
                 'orderStatus--completed': orderStatus === 'Завершене',
                 'orderStatus--canceled': orderStatus === 'Скасоване',
+                'orderStatus--isLoading': isLoading,
               })}
             >
               {orderStatus}

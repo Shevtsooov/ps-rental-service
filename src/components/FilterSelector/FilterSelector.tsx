@@ -191,7 +191,7 @@ export const FilterSelector: React.FC = () => {
               </p>
 
               <p className='filterSelector__howBlock'>
-                Насолоджуйтеся точністю вибору на нашому веб-сайті!
+                Насолоджуйтеся точністю вибору!
               </p>
 
               <h3 className='filterSelector__how__questions'>Залишились питання?</h3>

@@ -234,6 +234,7 @@
   color: #fff;
   text-align: center;
 
+  user-select: none;
   cursor: pointer;
 
   margin-bottom: 10px;
@@ -258,7 +259,7 @@
     background-color: #f43333;
   }
 
-  &--isLoading {
+  &--isInactive {
     pointer-events: none;
     background-color: #979797cd;
   }

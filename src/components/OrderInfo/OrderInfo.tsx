@@ -153,14 +153,14 @@ useEffect(() => {
         >
           <p
             className={cn('orderStatusModal orderStatusModal--justCreated', {
-              'orderStatusModal--isLoading': isLoading
+              'orderStatusModal--isInactive': isLoading || orderStatus === 'Нове замовлення'
             })}
             onClick={() => handleUpdateStatus('Нове замовлення')}
           >Нове замовлення</p>
 
           <p
             className={cn('orderStatusModal orderStatusModal--seen', {
-              'orderStatusModal--isLoading': isLoading
+              'orderStatusModal--isInactive': isLoading || orderStatus === 'Прийняте'
 
             })}
             onClick={() => handleUpdateStatus('Прийняте')}
@@ -168,7 +168,7 @@ useEffect(() => {
 
           <p
             className={cn('orderStatusModal orderStatusModal--canceled', {
-              'orderStatusModal--isLoading': isLoading
+              'orderStatusModal--isInactive': isLoading || orderStatus === 'Скасоване'
 
             })}
             onClick={() => handleUpdateStatus('Скасоване')}
@@ -176,14 +176,14 @@ useEffect(() => {
 
           <p
             className={cn('orderStatusModal orderStatusModal--isPlaying', {
-              'orderStatusModal--isLoading': isLoading
+              'orderStatusModal--isInactive': isLoading || orderStatus === 'У замовника'
               })}
             onClick={() => handleUpdateStatus('У замовника')}
           >У замовника</p>
 
           <p
             className={cn('orderStatusModal orderStatusModal--completed', {
-              'orderStatusModal--isLoading': isLoading
+              'orderStatusModal--isInactive': isLoading || orderStatus === 'Завершене'
             })}
             onClick={() => handleUpdateStatus('Завершене')}
           >Завершене</p>

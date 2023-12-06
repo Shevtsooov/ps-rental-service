@@ -5,6 +5,7 @@ import { PriceCalculator } from '../../components/PriceCalculator/PriceCalculato
 
 // import { Accordion } from '../../components/Accordion/Accordion';
 import { DeliveryDetails } from '../../components/DeliveryDetails/DeliveryDetails';
+import { NavLink } from 'react-router-dom';
 
 // const faq = [
 //   {
@@ -64,6 +65,17 @@ export const PlansAndDelivery: React.FC = () => {
       </p>
 
       <DeliveryDetails />
+
+      <h3 className='plansPage__questions'>
+        Залишились питання?
+      </h3>
+
+      <NavLink
+        className='plansPage__button1'
+        to="/contacts"
+      >
+        Запитати у менеджера
+      </NavLink>
 
       {/* <h2 className="plansPage__title">
         Популярні питання

@@ -14,9 +14,11 @@ import { setQuery } from '../../Redux/Slices/query.slice';
 import { FilterResults } from '../FilterResults/FilterResults';
 import { FilterByBlock } from '../FilterByBlock/FilterByBlock';
 import { resetGamePaginationPage } from '../../Redux/Slices/paginationPage.slice';
+import { NavLink } from 'react-router-dom';
 
 export const FilterSelector: React.FC = () => {
-  const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [isFilterOpen, setIsFilterOpen] = useState(true);
+  const [howItWorks, setHowItWorks] = useState(true);
   // const [showDescription, setShowDescription] = useState(false);
   // const [descriptionCategory, setDescriptionCategory] = useState('');
 
@@ -43,7 +45,7 @@ export const FilterSelector: React.FC = () => {
 
   useEffect(() => {
     return () => {
-      setIsFilterOpen(false);
+      setIsFilterOpen(true);
     }
   }, [])
 
@@ -122,7 +124,6 @@ export const FilterSelector: React.FC = () => {
   //   setShowDescription(false);
   // }
 
-
   return (
     <>
       <div
@@ -158,6 +159,58 @@ export const FilterSelector: React.FC = () => {
               onClick={() => setIsFilterOpen(!isFilterOpen)}
             />
           </div>
+          
+          <p
+            className='filterSelector__howButton'
+            onClick={() => setHowItWorks(state => !state)}
+          >Як працює цей фільтр?</p>
+
+          {howItWorks && (
+            <div className='filterSelector__how'>
+              <h5 className='filterSelector__howTitle'>Як працює цей фільтр?</h5>
+              
+              <button
+                className="filterSelector__how__button"
+                onClick={() => setHowItWorks(state => !state)}
+              />
+
+              <p className='filterSelector__howBlock'>
+                Оберіть одну або декілька категорій і наш фільтр відфільтрує і покаже лише ті ігри, які включать усі обрані вами категорії.
+              </p>
+
+              <p className='filterSelector__howBlock'>
+                Це робить ваш вибір ще точнішим і дозволяє знаходити ігри, які ідеально відповідають вашим критеріям.
+              </p>
+
+              <p className='filterSelector__howBlock'>
+                Іншими словами, якщо ви оберете категорії "Дитячі" та "Жахи", наш фільтр нічого не поверне, бо ми не маємо жодної гри з жахами для дітей.
+              </p>
+
+              <p className='filterSelector__howBlock'>
+                Ще один приклад, це коли ви хочете підібрати ігри, щоб грати в компанії друзів. Ви можете вибрати "Кооперативні", що поверне вам більше 40 ігор. Щоб уточнити пошук, ви вказуєте ще одну категорію і список кооперативних ігор звужується, що спрощує пошуки.
+              </p>
+
+              <p className='filterSelector__howBlock'>
+                Насолоджуйтеся точністю вибору на нашому веб-сайті!
+              </p>
+
+              <h3 className='filterSelector__how__questions'>Залишились питання?</h3>
+
+              <NavLink
+                className='filterSelector__how__button1'
+                to="/contacts"
+              >
+                Запитати у менеджера
+              </NavLink>
+
+              <button
+                className='filterSelector__how__button2'
+                onClick={() => setHowItWorks(state => !state)}
+              >
+                Зрозуміло
+              </button>
+            </div>
+          )}
 
           <FilterByBlock
             title="Оберіть катерорії:"

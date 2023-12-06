@@ -193,6 +193,7 @@ useEffect(() => {
                 'orderStatus--seen': orderStatus === 'Прийняте',
                 'orderStatus--isPlaying': orderStatus === 'У замовника',
                 'orderStatus--completed': orderStatus === 'Завершене',
+                'orderStatus--canceled': orderStatus === 'Скасоване',
               })}
             >
               {orderStatus}

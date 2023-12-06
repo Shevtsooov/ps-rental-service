@@ -17,8 +17,8 @@ import { resetGamePaginationPage } from '../../Redux/Slices/paginationPage.slice
 import { NavLink } from 'react-router-dom';
 
 export const FilterSelector: React.FC = () => {
-  const [isFilterOpen, setIsFilterOpen] = useState(true);
-  const [howItWorks, setHowItWorks] = useState(true);
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [howItWorks, setHowItWorks] = useState(false);
   // const [showDescription, setShowDescription] = useState(false);
   // const [descriptionCategory, setDescriptionCategory] = useState('');
 
@@ -45,7 +45,7 @@ export const FilterSelector: React.FC = () => {
 
   useEffect(() => {
     return () => {
-      setIsFilterOpen(true);
+      setIsFilterOpen(false);
     }
   }, [])
 

@@ -199,6 +199,7 @@ export const FilterSelector: React.FC = () => {
               <NavLink
                 className='filterSelector__how__button1'
                 to="/contacts"
+                onClick={() => setHowItWorks(state => !state)}
               >
                 Запитати у менеджера
               </NavLink>

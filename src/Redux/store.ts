@@ -25,6 +25,8 @@ import { orderpaginationPageReducer } from './Slices/orderPaginationPage.slice';
 import { savedAddressReducer } from './Slices/savedAddress.slice';
 import { userCommentReducer } from './Slices/userComment.slice';
 import { gamePaginationPageReducer } from './Slices/paginationPage.slice';
+import { ReviewsApi } from './RTK_Query/reviews.service';
+import { activeReviewReducer } from './Slices/activeReview.slice';
 
 export const store = configureStore({
   reducer: {
@@ -52,12 +54,13 @@ export const store = configureStore({
 
     activeClient: activeClientReducer,
     activeOrder: activeOrderReducer,
+    activeReview: activeReviewReducer,
 
     [GamesApi.reducerPath]: GamesApi.reducer,
     [UsersApi.reducerPath]: UsersApi.reducer,
     [AuthApi.reducerPath]: AuthApi.reducer,
     [OrdersApi.reducerPath]: OrdersApi.reducer,
-    // [UserApi.reducerPath]: UserApi.reducer,
+    [ReviewsApi.reducerPath]: ReviewsApi.reducer,
   },
   middleware: (getDefaultMiddleware) => (
     getDefaultMiddleware().concat([
@@ -65,6 +68,7 @@ export const store = configureStore({
         UsersApi.middleware,
         AuthApi.middleware,
         OrdersApi.middleware,
+        ReviewsApi.middleware,
       ])
   )
 })

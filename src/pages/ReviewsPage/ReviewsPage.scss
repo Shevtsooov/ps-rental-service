@@ -1,0 +1,19 @@
+@import "../../styles/utils/mixins.scss";
+@import "../../styles/utils/colors.scss";
+
+.reviewsPage {
+  padding: 20px;
+
+  &__title {
+    font-size: 28px;
+    margin-bottom: 5px;
+  }
+
+  &__amount {
+    margin-bottom: 25px;
+  }
+
+  &__list {
+    margin-bottom: 40px;
+  }
+}

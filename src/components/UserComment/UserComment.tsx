@@ -38,12 +38,12 @@ export const UserComment: React.FC = () => {
                 onChange={(e) => handleAddComment(e.target.value)}
               />
 
-            {userComment !== '' && (
-              <button
-                className='comment__comment--clear'
-                onClick={handleClearComment}
-              />
-            )}
+              {userComment !== '' && (
+                <button
+                  className='comment__comment--clear'
+                  onClick={handleClearComment}
+                />
+              )}
 
               <button
                 className='comment__comment--hide'

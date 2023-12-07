@@ -1,4 +1,3 @@
-import { SetURLSearchParams } from 'react-router-dom';
 import { setQuery } from '../../Redux/Slices/query.slice';
 import { useAppDispatch, useAppSelector } from '../../Redux/store';
 import './FilterInput.scss';

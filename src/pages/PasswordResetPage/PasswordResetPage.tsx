@@ -13,7 +13,6 @@ const noErrors = {
 };
 
 export const PasswordResetPage = () => {
-  const [done, setDone] = useState(false);
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
@@ -28,9 +27,6 @@ export const PasswordResetPage = () => {
   const { resetToken } = useParams<{ resetToken: string }>();
 
   const [error, setError] = useState(noErrors);
-  const [isSuchUser, setIsSuchUser] = useState(true);
-
-  console.log('isSuchUser - ', isSuchUser);
 
   const changeInputType = () => {
     if (fieldType === 'password') {
@@ -48,7 +44,7 @@ export const PasswordResetPage = () => {
       ));
   
       if (isSuchUser) {
-        setIsSuchUser(isSuchUser);
+        return;
       } else {
         navigate('/');
       }
@@ -132,7 +128,6 @@ export const PasswordResetPage = () => {
             className="pRp__modal__img"
           />
           <h4>Ваш пароль успішно змінено</h4>
-          <p>Зараз вас буде перенаправлено на сторінку входу</p>
 
           <button
             className="pRp__modal__button"

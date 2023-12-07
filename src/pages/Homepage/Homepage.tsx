@@ -8,9 +8,12 @@ import { useGetAllGamesQuery } from '../../Redux/RTK_Query/games.service';
 import { Loader } from '../../components/Loader/Loader';
 import { Aaa } from '../../components/111/111';
 import { Calendar } from '../../components/Calendar/Calendar';
+import { PublishedReviews } from '../../components/PublishedReviews/PublishedReviews';
+import { useGetAllReviewsQuery } from '../../Redux/RTK_Query/reviews.service';
 
 export const Homepage: React.FC = () => {
   const { data: games } = useGetAllGamesQuery();
+  const { data: reviews } = useGetAllReviewsQuery();
 
   useEffect(() => {
     window.scrollTo({
@@ -47,7 +50,12 @@ export const Homepage: React.FC = () => {
             games={sortedGames}
           />)
         : <Loader />
-      } 
+      }
+
+      {reviews && reviews?.length > 0 && (
+        <PublishedReviews />
+      )}
+      
 
       {/* <AboutPS5 /> */}
     </div>

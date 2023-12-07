@@ -31,6 +31,8 @@ import { Orders } from './pages/Orders/Orders';
 import { PasswordResetInitialization } from './pages/PasswordResetInitialization/PasswordResetInitialization';
 import { PasswordResetPage } from './pages/PasswordResetPage/PasswordResetPage';
 import { Contacts } from './pages/Contacts/Contacts';
+import { FeedbackPage } from './pages/FeedbackPage/FeedbackPage';
+import { ReviewsPage } from './pages/ReviewsPage/ReviewsPage';
 
 export const App: React.FC = () => {
   const user = useAppSelector(state => state.user.value);
@@ -106,6 +108,8 @@ export const App: React.FC = () => {
         <Route path="registration" element={<RegistrationPage />} />
         <Route path="reset-password" element={<PasswordResetInitialization />} />
         <Route path="reset-password/:resetToken" element={<PasswordResetPage />} />
+
+        <Route path="feedback/:reviewLink" element={<FeedbackPage />} />
         
         <Route path="account" element={<AccountPage />} />
         <Route path="account/orders" element={<AccountOrders />} />
@@ -114,9 +118,9 @@ export const App: React.FC = () => {
         <Route path="shopping-cart" element={<ShoppingCart />} />
         <Route path="activate/:activationToken" element={<AccountActivationPage />} />
 
-        <Route path="administration" element={<AdminPage />} />
         <Route path="clients" element={<ClientsPage />} />
         <Route path="orders" element={<Orders />} />
+        <Route path="reviews" element={<ReviewsPage />} />
 
         <Route path="*" element={<PageNotFound />} />
       </Routes>

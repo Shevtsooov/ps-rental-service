@@ -10,7 +10,7 @@ export interface User {
   cartGames: string[];
   orders: string[];
   completedOrders: number;
-  shouldLeaveReview: boolean;
+  reviewLink: string,
   userReviews: string[];
   isArchived: boolean;
   isBanned: boolean;

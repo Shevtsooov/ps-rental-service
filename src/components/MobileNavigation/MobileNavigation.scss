@@ -99,6 +99,12 @@
       margin-left: 3px;
       background-image: url('../../assets/icons/agreement.svg');
     }
+    &--contacts {
+      width: 25px;
+      height: 25px;
+      margin-left: 2px;
+      background-image: url('../../assets/icons/contacts.svg');
+    }
     &--about_ps5 {
       background-image: url('../../assets/icons/about_ps5.svg');
     }
@@ -114,11 +120,8 @@
     &--orders {
       background-image: url('../../assets/icons/orders.svg');
     }
-    &--contacts {
-      width: 25px;
-      height: 25px;
-      margin-left: 2px;
-      background-image: url('../../assets/icons/contacts.svg');
+    &--reviews {
+      background-image: url('../../assets/icons/reviews.svg');
     }
 
     &--arrow {

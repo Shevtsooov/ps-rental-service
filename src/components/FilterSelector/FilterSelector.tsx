@@ -50,14 +50,14 @@ export const FilterSelector: React.FC = () => {
   }, [])
 
   useEffect(() => {
-    if (isFilterOpen) {
+    if (isFilterOpen || howItWorks) {
       document.body.style.overflow = 'hidden';
 
       return;
     }
 
     document.body.style.overflow = 'auto'
-  }, [isFilterOpen]);
+  }, [isFilterOpen, howItWorks]);
 
   const handleClearFilters = () => {
     dispatch(setQuery(''));

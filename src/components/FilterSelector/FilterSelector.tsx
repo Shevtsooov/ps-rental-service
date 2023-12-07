@@ -46,18 +46,19 @@ export const FilterSelector: React.FC = () => {
   useEffect(() => {
     return () => {
       setIsFilterOpen(false);
+      document.body.style.overflow = 'auto'
     }
   }, [])
 
   useEffect(() => {
-    if (isFilterOpen || howItWorks) {
+    if (isFilterOpen) {
       document.body.style.overflow = 'hidden';
 
       return;
     }
 
     document.body.style.overflow = 'auto'
-  }, [isFilterOpen, howItWorks]);
+  }, [isFilterOpen]);
 
   const handleClearFilters = () => {
     dispatch(setQuery(''));
@@ -199,7 +200,6 @@ export const FilterSelector: React.FC = () => {
               <NavLink
                 className='filterSelector__how__button1'
                 to="/contacts"
-                onClick={() => setHowItWorks(state => !state)}
               >
                 Запитати у менеджера
               </NavLink>

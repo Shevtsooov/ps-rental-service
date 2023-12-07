@@ -15,6 +15,10 @@ export const Homepage: React.FC = () => {
   const { data: games } = useGetAllGamesQuery();
   const { data: reviews } = useGetAllReviewsQuery();
 
+  const publishedReviews = reviews?.filter(review => (
+    review.status === 'Опублікований'
+  ));
+
   useEffect(() => {
     window.scrollTo({
       top: 0, left: 0,
@@ -52,7 +56,7 @@ export const Homepage: React.FC = () => {
         : <Loader />
       }
 
-      {reviews && reviews?.length > 0 && (
+      {publishedReviews && publishedReviews?.length > 0 && (
         <PublishedReviews />
       )}
       

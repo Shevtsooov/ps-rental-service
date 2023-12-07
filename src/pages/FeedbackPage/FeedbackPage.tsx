@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import './FeedbackPage.scss';
-import { useGetAllUsersQuery } from '../../Redux/RTK_Query/users.service';
+import { useEditUserMutation, useGetAllUsersQuery } from '../../Redux/RTK_Query/users.service';
 import { Loader } from '../../components/Loader/Loader';
 import thankYou from '../../assets/gifs/thankYou.gif'
 import { FeedbackBlock } from '../../components/FeedbackBlock/FeedbackBlock';
@@ -34,6 +34,7 @@ export const FeedbackPage = () => {
 
   const { data: users } = useGetAllUsersQuery();
   const [ addReview, isSuccess ] = useAddReviewMutation();
+  const [ editUser ] = useEditUserMutation();
 
   const { reviewLink } = useParams<{ reviewLink: string }>();
 
@@ -55,24 +56,6 @@ export const FeedbackPage = () => {
       }
     }
   }, [reviewLink, users]);
-
-if (process && delivery && quality && catalog && comfort && communication) {
-  const average = (process + delivery + quality + catalog + comfort + communication) / 6;
-
-    const customRound = (number: number) => {
-      let decimalPart = number - Math.floor(number);
-  
-      if (decimalPart >= 0.5) {
-          return Math.ceil(number);
-      } else {
-          return Math.floor(number);
-      }
-  }
-
-    console.log('average - ', customRound(average))
-}
-
-
 
   const handlePostFeedback = async () => {
 
@@ -154,6 +137,11 @@ if (process && delivery && quality && catalog && comfort && communication) {
           stars: customRound(average),
           comment,
         });
+
+        await editUser({
+          id: currentUserId,
+          reviewLink: ''
+        })
       }
 
       if (isSuccess) {

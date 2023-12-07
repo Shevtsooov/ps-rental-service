@@ -21,7 +21,7 @@ export const FilterSelector: React.FC = () => {
   const [howItWorks, setHowItWorks] = useState(false);
   // const [showDescription, setShowDescription] = useState(false);
   // const [descriptionCategory, setDescriptionCategory] = useState('');
-
+  
   const query = useAppSelector(state => state.query.value);
   const filteredSorting = useAppSelector(state => state.filteredSorting.value);
   const filteredCategories = useAppSelector(state => state.filteredCategories.value);

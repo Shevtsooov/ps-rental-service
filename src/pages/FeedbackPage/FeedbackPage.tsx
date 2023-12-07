@@ -131,6 +131,10 @@ export const FeedbackPage = () => {
     try {
       setIsLoading(true);
 
+      window.scrollTo({
+        top: 0, left: 0,
+      });
+      
       if (currentUserId) {
         await addReview({
           userId: currentUserId,
@@ -146,9 +150,6 @@ export const FeedbackPage = () => {
 
       if (isSuccess) {
         setIsLoading(false);
-        window.scrollTo({
-          top: 0, left: 0,
-        });
         document.body.style.overflow = 'hidden';
 
         setIsResult(true);

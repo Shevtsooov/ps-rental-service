@@ -34,10 +34,6 @@ export const DeliveryDetails: React.FC = () => {
           <p className="deliveryDetails__info_heading">
             Самовивіз
           </p>
-
-          <p className="deliveryDetails__info_desc">
-            Сихівський район
-          </p>
         </div>
 
         <button
@@ -48,7 +44,7 @@ export const DeliveryDetails: React.FC = () => {
 
         {openDelivery === 'Самовивіз' && (
           <p className="deliveryDetails__description">
-            {`Частіше за все, приставки знаходиться у Сихівському районі Львова, тому забрати одну з них можна там.\n\nЯкщо обираєте саме цей спосіб доставки - менеджер зв'яжеться з вами після замовлення для уточнення всіх деталей.`}
+            {`Якщо обираєте саме цей спосіб доставки - менеджер зв'яжеться з вами після замовлення для уточнення всіх деталей.`}
           </p>
         )}
 

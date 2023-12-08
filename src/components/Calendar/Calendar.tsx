@@ -138,9 +138,11 @@ const handleDayClick = (date: Date) => {
   useEffect(() => {
     let arr: string[] = [];
 
-    const serverBookedDays = allTheOrders?.map(order => (
-      arr = [ ...arr, ...order.bookedDays ]
-    ));
+    const serverBookedDays = allTheOrders?.forEach(order => {
+      if (order.orderStatus !== 'Скасоване' ) {
+        arr = [ ...arr, ...order.bookedDays ];
+      }
+    });
 
     setServerBookedDays(arr);
   }, [selectedStart, selectedEnd, allTheOrders]);

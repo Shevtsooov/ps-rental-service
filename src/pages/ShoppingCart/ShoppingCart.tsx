@@ -89,11 +89,11 @@ export const ShoppingCart: React.FC = () => {
       let psPricePerDay = 450;
     
       if (bookedDays.length > 2) {
-        psPricePerDay = 350; 
+        psPricePerDay = 400; 
       }
     
       if (bookedDays.length > 6) {
-        psPricePerDay = 300; 
+        psPricePerDay = 350; 
       }
     
       const deliveryPrice = chosenDelivery === 'Доставка'

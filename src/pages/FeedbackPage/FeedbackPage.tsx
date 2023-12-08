@@ -64,7 +64,7 @@ export const FeedbackPage = () => {
     if (!generalPoint) {
       setError(error => ({
         ...error,
-        noCommunication: true
+        isGeneralPoint: true
       }));
 
       setTimeout(() => {

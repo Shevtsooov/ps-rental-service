@@ -1,7 +1,7 @@
 import './Logo.scss';
 import { Link } from 'react-router-dom';
 
-import logo from '../../assets/images/logo.png'
+import logo from '../../assets/icons/playathome-logo.svg'
 
 export const Logo: React.FC = () => {
 

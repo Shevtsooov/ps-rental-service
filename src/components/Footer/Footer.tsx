@@ -77,9 +77,27 @@ export const Footer: React.FC = () => {
               </NavLink>
             </li>
           )}
+
+         
           
         </ul>
+
+
       </div>
+      <p className='footer__years'>2022 - 2023</p>
+      <div className='footer__dev'>
+        <p className='footer__dev__question'>Потрібно розробити сайт?</p>
+
+        <a
+          href="https://shevtsov.online/"
+          target='_blank'
+          rel="noreferrer"
+          className='footer__dev__link'
+        >
+          Замовити!
+        </a>
+      </div>
+ 
     </div>
   );
 }

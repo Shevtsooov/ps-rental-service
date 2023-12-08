@@ -9,22 +9,24 @@ import { useAddReviewMutation } from '../../Redux/RTK_Query/reviews.service';
 import { customRound } from '../../helpers/customRound';
 
 const noErrors = {
-  isAnyError: false,
-  noProcess: false,
-  noDelivery: false,
-  noQuality: false,
-  noCatalog: false,
-  noComfort: false,
-  noCommunication: false,
+  isGeneralPoint: false
+  // isAnyError: false,
+  // noProcess: false,
+  // noDelivery: false,
+  // noQuality: false,
+  // noCatalog: false,
+  // noComfort: false,
+  // noCommunication: false,
 };
 
 export const FeedbackPage = () => {
-  const [process, setProcess] = useState<number | null>(null);
-  const [delivery, setDelivery] = useState<number | null>(null);
-  const [quality, setQuality] = useState<number | null>(null);
-  const [catalog, setCatalog] = useState<number | null>(null);
-  const [comfort, setComfort] = useState<number | null>(null);
-  const [communication, setCommunication] = useState<number | null>(null);
+  const [generalPoint, setGeneralPoint] = useState<number | null>(null);
+
+  // const [delivery, setDelivery] = useState<number | null>(null);
+  // const [quality, setQuality] = useState<number | null>(null);
+  // const [catalog, setCatalog] = useState<number | null>(null);
+  // const [comfort, setComfort] = useState<number | null>(null);
+  // const [communication, setCommunication] = useState<number | null>(null);
   const [comment, setComment] = useState('');
 
   const navigate = useNavigate();
@@ -59,65 +61,11 @@ export const FeedbackPage = () => {
 
   const handlePostFeedback = async () => {
 
-    const anyError = !process
-      || !delivery
-      || !quality
-      || !catalog
-      || !comfort
-      || !communication;
-
-    if (anyError) {
-
-
-
-      if (anyError) {
-        setError(error => ({
-          ...error,
-          isAnyError: true
-        }));
-      }
-
-      if (!process) {
-        setError(error => ({
-          ...error,
-          noProcess: true
-        }));
-      }
-
-      if (!delivery) {
-        setError(error => ({
-          ...error,
-          noDelivery: true
-        }));
-      }
-
-      if (!quality) {
-        setError(error => ({
-          ...error,
-          noQuality: true
-        }));
-      }
-
-      if (!catalog) {
-        setError(error => ({
-          ...error,
-          noCatalog: true
-        }));
-      }
-
-      if (!comfort) {
-        setError(error => ({
-          ...error,
-          noComfort: true
-        }));
-      }
-
-      if (!communication) {
-        setError(error => ({
-          ...error,
-          noCommunication: true
-        }));
-      }
+    if (!generalPoint) {
+      setError(error => ({
+        ...error,
+        noCommunication: true
+      }));
 
       setTimeout(() => {
         setError(noErrors);
@@ -126,7 +74,74 @@ export const FeedbackPage = () => {
       return;
     }
 
-  const average = (process + delivery + quality + catalog + comfort + communication) / 6;
+    // const anyError = !process
+    //   || !delivery
+    //   || !quality
+    //   || !catalog
+    //   || !comfort
+    //   || !communication;
+
+    // if (anyError) {
+
+
+
+    //   if (anyError) {
+    //     setError(error => ({
+    //       ...error,
+    //       isAnyError: true
+    //     }));
+    //   }
+
+    //   if (!process) {
+    //     setError(error => ({
+    //       ...error,
+    //       noProcess: true
+    //     }));
+    //   }
+
+    //   if (!delivery) {
+    //     setError(error => ({
+    //       ...error,
+    //       noDelivery: true
+    //     }));
+    //   }
+
+    //   if (!quality) {
+    //     setError(error => ({
+    //       ...error,
+    //       noQuality: true
+    //     }));
+    //   }
+
+    //   if (!catalog) {
+    //     setError(error => ({
+    //       ...error,
+    //       noCatalog: true
+    //     }));
+    //   }
+
+    //   if (!comfort) {
+    //     setError(error => ({
+    //       ...error,
+    //       noComfort: true
+    //     }));
+    //   }
+
+    //   if (!communication) {
+    //     setError(error => ({
+    //       ...error,
+    //       noCommunication: true
+    //     }));
+    //   }
+
+    //   setTimeout(() => {
+    //     setError(noErrors);
+    //   }, 3000);
+
+    //   return;
+    // }
+
+  // const average = (process + delivery + quality + catalog + comfort + communication) / 6;
 
     try {
       setIsLoading(true);
@@ -138,7 +153,8 @@ export const FeedbackPage = () => {
       if (currentUserId) {
         await addReview({
           userId: currentUserId,
-          stars: customRound(average),
+          // stars: customRound(average),
+          stars: generalPoint,
           comment,
         });
 
@@ -199,16 +215,24 @@ export const FeedbackPage = () => {
           ? <Loader />
           : (
             <>
+
               <FeedbackBlock
+                title="Загальне враження"
+                description="Наскільки легким був процес оренди?"
+                value={generalPoint}
+                setValue={setGeneralPoint}
+                isError={error.isGeneralPoint}
+              />
+              {/* <FeedbackBlock
                 title="Процес оренди"
                 description="Наскільки легким був процес оренди?"
                 value={process}
                 setValue={setProcess}
                 isError={error.noProcess}
 
-              />
+              /> */}
 
-              <FeedbackBlock
+              {/* <FeedbackBlock
                 title="Доставка та налаштування"
                 description="Оцініть процес доставки та налаштування PlayStation."
                 value={delivery}
@@ -249,7 +273,7 @@ export const FeedbackPage = () => {
                 value={communication}
                 setValue={setCommunication}
                 isError={error.noCommunication}
-              />
+              /> */}
 
               <div className='feedback__comment'>
                 <h3 className='feedback__comment__title'>
@@ -275,8 +299,8 @@ export const FeedbackPage = () => {
               </div>
 
               <div className="feedback__actions">
-                {error.isAnyError && (
-                  <p className="feedback__actions__error">Будь ласка, оцініть всі пункти</p>
+                {error.isGeneralPoint && (
+                  <p className="feedback__actions__error">Будь ласка, оцініть нас</p>
                 )}
                 <button
                   className="feedback__actions_button"

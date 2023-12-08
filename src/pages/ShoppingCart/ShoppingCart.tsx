@@ -20,6 +20,7 @@ import orderSuccessful from '../../assets/gifs/orderSuccessful.gif'
 import { UserComment } from '../../components/UserComment/UserComment';
 import cn from 'classnames';
 import { resetUserComment } from '../../Redux/Slices/userComment.slice';
+import { FullPrice } from '../../components/FullPrice/FullPrice';
 
 const noErrors = {
   noDaysSelected: false,
@@ -292,7 +293,15 @@ export const ShoppingCart: React.FC = () => {
           
           <Delivery error={error} />
 
+
+          {user && (bookedDays.length > 0 || user?.cartGames?.length > 1) && (
+            <FullPrice
+              finalPrice={finalPrice}
+            />
+          )}
+
           <UserComment />
+
 
           <div className='shoppingCart__conditions'>
               <label
@@ -318,17 +327,6 @@ export const ShoppingCart: React.FC = () => {
                 </NavLink>
               </label>
           </div>
-
-          {user && (bookedDays.length > 0 || user?.cartGames?.length > 1) && (
-            <div className="shoppingCart__finalPrice">
-              <h5 className="shoppingCart__finalPrice_title">
-                Загальна вартість:
-              </h5>
-              <p className="shoppingCart__finalPrice_amount">
-                {`${finalPrice}₴`}
-              </p>
-            </div>
-          )}
 
           <div className="shoppingCart__checkout">
             <button

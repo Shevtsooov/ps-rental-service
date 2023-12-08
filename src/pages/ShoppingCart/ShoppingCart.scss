@@ -102,22 +102,6 @@
     }
   }
 
-  &__finalPrice {
-    display: flex;
-    gap: 15px;
-    color: $secondary-grey;
-    
-    margin-bottom: 25px;
-
-    &_title {
-      font-size: 22px;
-    }
-
-    &_amount {
-      font-size: 24px;
-    }
-  }
-
   &__checkout {
     display: flex;
     justify-content: center;

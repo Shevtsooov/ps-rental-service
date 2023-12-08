@@ -94,7 +94,7 @@ export const Footer: React.FC = () => {
           rel="noreferrer"
           className='footer__dev__link'
         >
-          Замовити!
+          Замов розробку тут
         </a>
       </div>
  

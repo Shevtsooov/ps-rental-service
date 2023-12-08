@@ -67,11 +67,11 @@ export const PSShoppingCartInfo: React.FC<Props> = ({ error }) => {
   let psPrice = 450;
 
   if (bookedDays.length > 2) {
-    psPrice = 350; 
+    psPrice = 400; 
   }
 
   if (bookedDays.length > 6) {
-    psPrice = 300; 
+    psPrice = 350; 
   }
 
    let amountOfDays = 'доба';

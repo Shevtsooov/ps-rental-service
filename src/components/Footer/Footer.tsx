@@ -86,7 +86,7 @@ export const Footer: React.FC = () => {
       </div>
       <p className='footer__years'>2022 - 2023</p>
       <div className='footer__dev'>
-        <p className='footer__dev__question'>Потрібно розробити сайт?</p>
+        <p className='footer__dev__question'>Потрібно створити сайт?</p>
 
         <a
           href="https://shevtsov.online/"

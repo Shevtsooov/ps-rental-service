@@ -8,6 +8,7 @@ export const Logo: React.FC = () => {
   return (
     <div className="logo">
       <Link
+        className="logo__link"
         to="home"
       >
         <img

@@ -85,7 +85,7 @@ export const DeliveryModal: React.FC<Props> = ({
           />
         <div className="deliveryModal__info">
           <p className="deliveryModal__info_heading">Самовивіз</p>
-          <p className="deliveryModal__info_desc">Сихівський район</p>
+          {/* <p className="deliveryModal__info_desc">Сихівський район</p> */}
         </div>
       </div>
     </div>

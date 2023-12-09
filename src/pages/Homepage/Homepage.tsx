@@ -10,6 +10,7 @@ import { Aaa } from '../../components/111/111';
 import { Calendar } from '../../components/Calendar/Calendar';
 import { PublishedReviews } from '../../components/PublishedReviews/PublishedReviews';
 import { useGetAllReviewsQuery } from '../../Redux/RTK_Query/reviews.service';
+import { Slider1 } from '../../components/Slider1/Slider1';
 
 export const Homepage: React.FC = () => {
   const { data: games } = useGetAllGamesQuery();
@@ -29,9 +30,14 @@ export const Homepage: React.FC = () => {
 
   return (
     <div className="homepage">
+
+      {/* <Slider1 /> */}
+
       <Slider />
 
       {/* <Aaa /> */}
+
+      <h2 className="homepage__title">Перевір свої дати</h2>
 
       <Calendar />
 

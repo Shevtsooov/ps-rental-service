@@ -6,6 +6,7 @@ import { Navigation } from '../Navigation/Navigation';
 import { ShoppingCartLink } from '../ShoppingCartLink/ShoppingCartLink';
 import './Header.scss';
 import { useAppSelector } from '../../Redux/store';
+import { ProfileLink } from '../ProfileLink/ProfileLink';
 
 export const Header: React.FC = () => {
   const user = useAppSelector(state => state.user?.value);
@@ -52,6 +53,7 @@ export const Header: React.FC = () => {
         <div className='header__actions'>
           <SavedGamesLink />
           <ShoppingCartLink />
+          <ProfileLink />
         </div>
       )}
       </div>

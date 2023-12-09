@@ -1,2 +1,29 @@
-<?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-<svg width="800px" height="800px" viewBox="0 0 24 24" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-1{fill:none;stroke:#020202;stroke-miterlimit:10;stroke-width:1.91px;}</style></defs><circle class="cls-1" cx="12" cy="7.25" r="5.73"/><path class="cls-1" d="M1.5,23.48l.37-2.05A10.3,10.3,0,0,1,12,13h0a10.3,10.3,0,0,1,10.13,8.45l.37,2.05"/></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Шар_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 800 800" style="enable-background:new 0 0 800 800;" xml:space="preserve">
+<style type="text/css">
+	.st0{clip-path:url(#SVGID_2_);}
+</style>
+<g>
+	<defs>
+		<rect id="SVGID_1_" width="800" height="800"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+	</clipPath>
+	<g class="st0">
+		<g>
+			<path d="M477.9,411.6l-8.7-14.2c-5.6,3.4-8.7,9.8-7.9,16.3c0.8,6.5,5.4,11.9,11.7,13.9L477.9,411.6z M322.1,411.6l4.9,15.9
+				c6.3-1.9,10.9-7.3,11.7-13.9c0.8-6.5-2.3-12.9-7.9-16.3L322.1,411.6z M135.4,633.4l-16.5-2.1L135.4,633.4z M664.6,633.4l16.5-2.1
+				L664.6,633.4z M533.3,283.3c0,48.3-25.6,90.6-64.1,114l17.3,28.5c48-29.2,80.1-82.1,80.1-142.5H533.3z M400,150
+				c73.6,0,133.3,59.7,133.3,133.3h33.3c0-92-74.6-166.7-166.7-166.7V150z M266.7,283.3c0-73.6,59.7-133.3,133.3-133.3v-33.3
+				c-92,0-166.7,74.6-166.7,166.7H266.7z M330.8,397.3c-38.5-23.4-64.1-65.7-64.1-114h-33.3c0,60.4,32.1,113.2,80.1,142.5
+				L330.8,397.3z M317.3,395.6C212,427.7,132.8,519.3,118.8,631.3l33.1,4.1c12.3-98.7,82.2-179.6,175-208L317.3,395.6z M118.8,631.3
+				c-3.7,29.6,20.8,52,47.8,52V650c-9.8,0-15.6-7.6-14.7-14.5L118.8,631.3z M166.7,683.3h466.7V650H166.7V683.3z M633.3,683.3
+				c27,0,51.5-22.4,47.8-52l-33.1,4.1c0.9,6.9-4.9,14.5-14.7,14.5V683.3z M681.1,631.3c-13.9-112-93.2-203.6-198.4-235.7l-9.7,31.9
+				c92.8,28.3,162.8,109.2,175,208L681.1,631.3z"/>
+		</g>
+	</g>
+</g>
+</svg>

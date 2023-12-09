@@ -1,0 +1,14 @@
+@import "../../styles/utils/mixins.scss";
+@import "../../styles/utils/colors.scss";
+
+.profileLink {
+  position: relative;
+
+  @include onMobile {
+    display: none;
+  }
+
+  &__img {
+    width: 33px;
+  }
+}

@@ -2,6 +2,8 @@
 @import "../../styles/utils/colors.scss";
 
 .homepage {
+  max-width: 1000px;
+
   &__title {
     padding: 20px 0 0 20px;
   }

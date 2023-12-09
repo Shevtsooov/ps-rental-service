@@ -98,7 +98,7 @@ export const ShoppingCart: React.FC = () => {
       }
     
       const deliveryPrice = chosenDelivery === 'Доставка'
-        ? 100
+        ? 200
         : 0;
   
       const finalPriceCalc = user?.cartGames.length

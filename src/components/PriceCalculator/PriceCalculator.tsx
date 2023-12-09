@@ -51,7 +51,8 @@ export const PriceCalculator: React.FC<Props> = ({
 
   useEffect(() => {
     if (chosenDelivery === 'Доставка') {
-      setDeliveryPrice(100);
+      setDeliveryPrice(200);
+      
       return;
     }
 

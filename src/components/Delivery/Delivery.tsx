@@ -88,8 +88,8 @@ export const Delivery: React.FC<Props> = ({ error }) => {
         {chosenDelivery === 'Доставка' && (
           <p className="delivery__info_price">
             {savedAddress
-              ? `100₴ - ${savedAddress}`
-              : "100₴ - будь ласка, вкажіть адресу"}
+              ? `200₴ - ${savedAddress}`
+              : "200₴ - будь ласка, вкажіть адресу"}
           </p>
         )}
 

@@ -1,4 +1,11 @@
-.app {
+@import "./styles/utils/colors.scss";
+@import "./styles/utils/colors.scss";
+
+.App {
+display: flex;
+justify-content: center;
+// background-color: $main-grey;
+
   &__title {
     display: none;
   }

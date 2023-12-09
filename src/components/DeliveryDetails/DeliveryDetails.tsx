@@ -67,7 +67,7 @@ export const DeliveryDetails: React.FC = () => {
           </p>
 
           <p className="deliveryDetails__info_desc">
-            100₴
+            200₴
           </p>
         </div>
 

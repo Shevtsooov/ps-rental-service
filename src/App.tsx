@@ -85,47 +85,49 @@ export const App: React.FC = () => {
 
 
   return (
-    <>
+    <div>
       <Header  />
-
       <div ref={headerRef} />
 
-      {showCartBubble && <ShoppingCartBubble />}
+      <div className='App'>
 
-      <h1 className='app__title'>Оренда Playstation у Львові</h1>
+        {showCartBubble && <ShoppingCartBubble />}
 
-      <Routes>
-        <Route path="home" element={<Homepage />} />
-        <Route path="/" element={<Navigate to="home" />} />
-        <Route path="games" element={<GamesListPage />} />
-        <Route path="games/:gameIdLink" element={<GamePage />} />
-        <Route path="pricing-and-delivery" element={<PlansAndDelivery />} />
-        <Route path="agreement" element={<Agreement />} />
-        <Route path="contacts" element={<Contacts />} />
-        {/* <Route path="about-ps5" element={<AboutPS5 />} /> */}
+        {/* <h1 className='app__title'>Оренда Playstation у Львові</h1> */}
 
-        <Route path="login" element={<LoginPage />} />
-        <Route path="registration" element={<RegistrationPage />} />
-        <Route path="reset-password" element={<PasswordResetInitialization />} />
-        <Route path="reset-password/:resetToken" element={<PasswordResetPage />} />
+        <Routes>
+          <Route path="home" element={<Homepage />} />
+          <Route path="/" element={<Navigate to="home" />} />
+          <Route path="games" element={<GamesListPage />} />
+          <Route path="games/:gameIdLink" element={<GamePage />} />
+          <Route path="pricing-and-delivery" element={<PlansAndDelivery />} />
+          <Route path="agreement" element={<Agreement />} />
+          <Route path="contacts" element={<Contacts />} />
+          {/* <Route path="about-ps5" element={<AboutPS5 />} /> */}
 
-        <Route path="feedback/:reviewLink" element={<FeedbackPage />} />
-        
-        <Route path="account" element={<AccountPage />} />
-        <Route path="account/orders" element={<AccountOrders />} />
+          <Route path="login" element={<LoginPage />} />
+          <Route path="registration" element={<RegistrationPage />} />
+          <Route path="reset-password" element={<PasswordResetInitialization />} />
+          <Route path="reset-password/:resetToken" element={<PasswordResetPage />} />
 
-        <Route path="saved-games" element={<SavedGames />} />
-        <Route path="shopping-cart" element={<ShoppingCart />} />
-        <Route path="activate/:activationToken" element={<AccountActivationPage />} />
+          <Route path="feedback/:reviewLink" element={<FeedbackPage />} />
+          
+          <Route path="account" element={<AccountPage />} />
+          <Route path="account/orders" element={<AccountOrders />} />
 
-        <Route path="clients" element={<ClientsPage />} />
-        <Route path="orders" element={<Orders />} />
-        <Route path="reviews" element={<ReviewsPage />} />
+          <Route path="saved-games" element={<SavedGames />} />
+          <Route path="shopping-cart" element={<ShoppingCart />} />
+          <Route path="activate/:activationToken" element={<AccountActivationPage />} />
 
-        <Route path="*" element={<PageNotFound />} />
-      </Routes>
+          <Route path="clients" element={<ClientsPage />} />
+          <Route path="orders" element={<Orders />} />
+          <Route path="reviews" element={<ReviewsPage />} />
+
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+      </div>
 
       <Footer />
-    </>  
+    </div>  
   );
 };

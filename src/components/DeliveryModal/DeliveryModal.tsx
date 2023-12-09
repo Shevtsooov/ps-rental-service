@@ -49,7 +49,7 @@ export const DeliveryModal: React.FC<Props> = ({
             Доставка по Львову
           </p>
 
-          <p className="deliveryModal__info_desc">100₴</p>
+          <p className="deliveryModal__info_desc">200₴</p>
 
           <div
             className={cn('deliveryModal__option_address', {

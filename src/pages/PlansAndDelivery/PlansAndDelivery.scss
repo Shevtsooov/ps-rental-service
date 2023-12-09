@@ -5,6 +5,10 @@
   max-width: 1200px;
   padding: 20px;
 
+  @include onMobile {
+    width: 390px;
+  }
+
   &__title {
     font-size: 28px;
     margin-bottom: 10px;

@@ -4,6 +4,10 @@
 .savedGames {
   padding: 20px;
 
+  @include onMobile {
+    width: 400px;
+  }
+
   &__title {
     font-size: 28px;
     margin-bottom: 10px;

@@ -8,6 +8,10 @@
   flex-direction: column;
   justify-content: center;
 
+  @include onMobile {
+    width: 400px;
+  }
+
   &__header {
     display: flex;
     justify-content: space-between;

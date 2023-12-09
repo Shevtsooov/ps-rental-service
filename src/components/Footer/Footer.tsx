@@ -8,6 +8,7 @@ export const Footer: React.FC = () => {
 
   return (
     <div className="footer">
+      <div className="footer__block">
       <img
         src={`${footerLogo}`}
         alt="Playstation logo"
@@ -97,7 +98,7 @@ export const Footer: React.FC = () => {
           Замов розробку тут
         </a>
       </div>
- 
+      </div>
     </div>
   );
 }

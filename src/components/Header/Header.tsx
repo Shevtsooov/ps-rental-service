@@ -36,26 +36,27 @@ export const Header: React.FC = () => {
 
   return (
     <div className="header">
-      <div className='header__logo'>
-        <Logo />
-      </div>
-
-      <div className='header__navigation'>
-        <Navigation />
-        <MobileNavigation />
-      </div>
-
-      <div className='header__login'>
-
-      {!user && <Login />}
-      
-      {user !== null && (
-        <div className='header__actions'>
-          <SavedGamesLink />
-          <ShoppingCartLink />
-          <ProfileLink />
+      <div className="header__block">
+        <div className='header__logo'>
+          <Logo />
         </div>
-      )}
+
+        <div className='header__navigation'>
+          <Navigation />
+          <MobileNavigation />
+        </div>
+
+        <div className='header__login'>
+          {!user && <Login />}
+          
+          {user !== null && (
+            <div className='header__actions'>
+              <ProfileLink />
+              <SavedGamesLink />
+              <ShoppingCartLink />
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

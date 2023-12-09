@@ -4,6 +4,9 @@
 .shoppingCart {
   padding: 20px;
 
+  @include onMobile {
+    width: 400px;
+  }
 
   &__loader {
     display: flex;

@@ -5,6 +5,10 @@
 .game_page {
   position: relative;
 
+  @include onMobile {
+    width: 400px;
+  }
+
   &__loader {
     height: 90vh;
     padding-top: 150px;

@@ -3,4 +3,8 @@
 
 .loginPage {
   padding: 20px;
+
+  @include onMobile {
+    width: 400px;
+  }
 }

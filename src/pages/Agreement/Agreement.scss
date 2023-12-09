@@ -7,6 +7,10 @@
   padding: 20px;
   scroll-behavior: smooth;
 
+  @include onMobile {
+    width: 400px;
+  }
+
   &__title {
     font-size: 28px;
     margin-bottom: 25px;

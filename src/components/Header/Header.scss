@@ -8,15 +8,26 @@
   background-color: $main-grey;
 
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 
-  @include onMobile {
+
+  
+  &__block {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
     justify-content: space-between;
+
+    @include onMobile {
+      justify-content: space-between;
+    }
+  
+    @include mediumDesktop {
+      padding: 0 60px;
+    }
   }
 
-  @include mediumDesktop {
-    padding: 0 60px;
-  }
+
   &__logo {
     display: flex;
     margin-left: 15px;

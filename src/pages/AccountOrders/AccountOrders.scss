@@ -4,6 +4,10 @@
 .accountOrders {
   padding: 20px;
   min-height: 50vh;
+  
+  @include onMobile {
+    width: 400px;
+  }
 
   &__title {
     font-size: 28px;

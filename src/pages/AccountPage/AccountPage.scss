@@ -4,7 +4,9 @@
 .accountPage {
   padding: 20px;
 
-  // height: 300px;
+  @include onMobile {
+    width: 400px;
+  }
 
   &__block {
     font-size: 14px;

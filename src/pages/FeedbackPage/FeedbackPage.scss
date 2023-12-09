@@ -5,6 +5,10 @@
   padding: 20px;
   // height: 50vh;
 
+  @include onMobile {
+    width: 400px;
+  }
+
   &__modal {
     display: flex;
     flex-direction: column;

@@ -2,13 +2,20 @@
 @import "../../styles/utils/colors.scss";
 
 .agreement {
-  max-width: 800px;
+  max-width: 1200px;
   user-select: none;
   padding: 20px;
   scroll-behavior: smooth;
 
-  @include onMobile {
-    width: 400px;
+  background-color: #fff;
+  width: 100%;
+
+  @include onTablet {
+    padding: 20px 250px;
+  }
+
+  @include mediumDesktop {
+    padding: 20px 300px;
   }
 
   &__title {

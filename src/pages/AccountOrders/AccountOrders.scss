@@ -3,10 +3,17 @@
 
 .accountOrders {
   padding: 20px;
+  background-color: #fff;
+  width: 100%;
+  max-width: 1200px;
   min-height: 50vh;
-  
-  @include onMobile {
-    width: 400px;
+
+  @include onTablet {
+    padding: 20px 200px;
+  }
+
+  @include mediumDesktop {
+    padding: 20px 200px;
   }
 
   &__title {

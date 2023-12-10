@@ -25,9 +25,9 @@
     display: flex;
     gap: 16px;
 
-    @include onMobile {
-      display: none;
-    }
+    // @include onMobile {
+    //   display: none;
+    // }
   }
 
   &__button {
@@ -38,13 +38,12 @@
     border: 1px solid $secondary-grey;
 
     &:hover {
-      border-color: $main-grey;
+      border-color: $main-blue;
       cursor: pointer;
     }
 
     &:active {
-      transform: translateY(2px);
-      box-shadow: 0px 2px 4px $secondary-grey;
+      background-color: $main-blue;
     }
   }
 

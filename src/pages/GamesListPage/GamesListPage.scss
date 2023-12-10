@@ -8,9 +8,9 @@
   flex-direction: column;
   justify-content: center;
 
-  @include onMobile {
-    width: 400px;
-  }
+  background-color: #fff;
+  width: 100%;
+  max-width: 1200px;
 
   &__header {
     display: flex;

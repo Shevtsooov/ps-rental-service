@@ -2,9 +2,9 @@
 @import "./styles/utils/colors.scss";
 
 .App {
-display: flex;
-justify-content: center;
-// background-color: $main-grey;
+  display: flex;
+  justify-content: center;
+  background-color: #262626;
 
   &__title {
     display: none;

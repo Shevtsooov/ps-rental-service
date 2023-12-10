@@ -3,9 +3,11 @@
 
 .homepage {
   max-width: 1200px;
+  width: 100%;
+  background-color: #fff;
 
   @include onMobile {
-    width: 400px;
+    // width: 400px;
   }
 
   &__title {

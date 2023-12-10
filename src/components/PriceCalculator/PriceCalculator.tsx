@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import cn from 'classnames';
 import './PriceCalculator.scss';
 import { useNavigate } from 'react-router-dom';
@@ -22,6 +22,7 @@ export const PriceCalculator: React.FC<Props> = ({
   const [chosenDelivery, setChosenDelivery] = useState<string>('Самовивіз');
   const [deliveryPrice, setDeliveryPrice] = useState<number>(0);
   const navigate = useNavigate();
+  const windowSize = useRef([window.innerWidth]);
 
   useEffect(() => {
     if (chosenNumber > 1) {
@@ -77,7 +78,13 @@ export const PriceCalculator: React.FC<Props> = ({
 
   const goToShoppingCart = () => {
     navigate("/shopping-cart");
-  }
+  };
+
+  useEffect(() => {
+    if (+windowSize.current >= 770) {
+      setIsCalculatorOpen(true);
+    };
+  }, [windowSize.current]);
 
   return (
     <div className="priceCalculator">
@@ -92,8 +99,11 @@ export const PriceCalculator: React.FC<Props> = ({
           })}
         />
       </div>
-      {isCalculatorOpen && (
-        <>
+        <div
+          className={cn('priceCalculator__dropDown', {
+            'priceCalculator__dropDown--active': isCalculatorOpen
+          })}
+        >
           <p
             className="priceCalculator__description"
           >
@@ -150,8 +160,7 @@ export const PriceCalculator: React.FC<Props> = ({
               Доставка
             </div>
           </div>
-        </>
-      )}
+        </div>
     </div>
   );
 }

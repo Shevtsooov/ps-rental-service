@@ -45,17 +45,20 @@ export const PlansAndDelivery: React.FC = () => {
         <p className="plansPage__description">{`Одна гра - безкоштовно. \nКожна наступна - +100₴ до суми замовлення.`}</p>
       </div>
 
-      <PricingTable 
-        chosenNumber={chosenNumber}
-        isCalculatorOpen={isCalculatorOpen}
-      />
+      <div className="plansPage__plans">
+        <PricingTable 
+            chosenNumber={chosenNumber}
+            isCalculatorOpen={isCalculatorOpen}
+          />
 
-      <PriceCalculator
-        chosenNumber={chosenNumber}
-        setChosenNumber={setChosenNumber}
-        isCalculatorOpen={isCalculatorOpen}
-        setIsCalculatorOpen={setIsCalculatorOpen}
-      />
+          <PriceCalculator
+            chosenNumber={chosenNumber}
+            setChosenNumber={setChosenNumber}
+            isCalculatorOpen={isCalculatorOpen}
+            setIsCalculatorOpen={setIsCalculatorOpen}
+          />
+      </div>
+      
       
       <h2 className="plansPage__title">
         Доставка

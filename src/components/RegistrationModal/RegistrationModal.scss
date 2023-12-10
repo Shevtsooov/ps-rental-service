@@ -10,13 +10,17 @@
   left: 0;
 
   width: 100%;
+  max-width: 1200px;
   height: calc(100vh - 60px);
 
   padding: 40px 20px;
   z-index: 100;
   overflow-y: scroll;
-  
   background-color: $main-grey;
+
+  @include mediumDesktop {
+    left: calc(50% - 600px);
+  }
 
   &__title {
     font-size: 28px;
@@ -46,7 +50,14 @@
     background-color: #fff;
     word-wrap: break-word;
     font-size: 20px;
+
+    max-width: 500px;
+    margin: 0 auto;
+
     margin-bottom: 50px;
+
+    @include mediumDesktop {
+    }
   }
 
   &__button {
@@ -57,6 +68,8 @@
     border-radius: 10px;
     padding: 10px 15px;
     width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
     cursor: pointer;
   }
 }

@@ -2,19 +2,54 @@
 @import "../../styles/utils/colors.scss";
 
 .priceCalculator {
+  flex-basis: 60%;
   font-size: 24px;
   background-color: $main-grey;
   padding: 5px;
   border-radius: 10px;
   user-select: none;
-  
+  width: 100%;
+  max-width: 560px;
   margin-bottom: 40px;
+
+  @include onTablet {
+    margin: 0;
+  }
+
+  @include mediumDesktop {
+    margin: 0;
+  }
+
+  &__dropDown {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include mediumDesktop {
+      display: block;
+    }
+
+    &--active {
+      display: block;
+    }
+  }
 
   &__title {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 5px;
+
+    
+    @include onTablet {
+      pointer-events: none;
+    }
+
+    @include mediumDesktop {
+      pointer-events: none;
+    }
 
     &--text{
       font-size: 20px;
@@ -30,6 +65,14 @@
       background-image: url('../../assets/icons/arrow.svg');
       transition: transform 0.5s;
 
+      @include onTablet {
+        display: none;
+      }
+
+      @include mediumDesktop {
+        display: none;
+      }
+
       &--active {
         transform: rotate(180deg);
       }
@@ -40,6 +83,7 @@
     font-size: 14px;
     padding: 5px;
     margin-bottom: 15px;
+    
   }
 
   &__link {

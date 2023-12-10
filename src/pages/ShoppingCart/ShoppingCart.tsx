@@ -126,12 +126,6 @@ export const ShoppingCart: React.FC = () => {
       window.scrollTo({
         top: 0, left: 0,
       });
-
-      setTimeout(() => (
-        document.body.style.overflow = 'auto'
-      ), 4000);
-
-      return;
     }
   }, [isLoading, isResult]);
 
@@ -231,7 +225,13 @@ export const ShoppingCart: React.FC = () => {
   const closeModal = () => {
     setIsResult(false);
     navigate('/');
-  }
+  };
+
+  useEffect(() => {
+    return () => {
+      document.body.style.overflow = 'auto'
+    }
+  }, []);
 
   return (
     <>

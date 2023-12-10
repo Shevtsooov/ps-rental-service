@@ -4,10 +4,11 @@
 .plansPage {
   max-width: 1200px;
   padding: 20px;
-
-  @include onMobile {
-    width: 390px;
-  }
+  background-color: #fff;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   &__title {
     font-size: 28px;
@@ -19,6 +20,21 @@
     white-space: pre-wrap;
 
     margin-bottom: 20px;
+  }
+
+  &__plans {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      display: flex;
+      gap: 40px;
+      justify-content: space-between;
+    }
+
+    @include mediumDesktop {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 
   &__questions {

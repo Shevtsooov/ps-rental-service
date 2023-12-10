@@ -3,9 +3,16 @@
 
 .accountPage {
   padding: 20px;
+  background-color: #fff;
+  width: 100%;
+  max-width: 1200px;
 
-  @include onMobile {
-    width: 400px;
+  @include onTablet {
+    padding: 20px 200px;
+  }
+
+  @include mediumDesktop {
+    padding: 20px 200px;
   }
 
   &__block {
@@ -41,6 +48,7 @@
   
   &__logOut {
     display: block;
+    max-width: 400px;
     width: 100%;
 
     font-size: 24px;
@@ -49,7 +57,7 @@
     padding: 10px 15px;
     cursor: pointer;
     text-align: center;
-
+    margin: 0 auto;
     color: $main-warning;
     background-color: #fff;
 

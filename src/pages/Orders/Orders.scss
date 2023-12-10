@@ -4,8 +4,16 @@
 .orders {
   padding: 20px;
 
-  @include onMobile {
-    width: 400px;
+  background-color: #fff;
+  width: 100%;
+  max-width: 1200px;
+
+  @include onTablet {
+    padding: 20px 200px;
+  }
+
+  @include mediumDesktop {
+    padding: 20px 200px;
   }
 
   &__title {

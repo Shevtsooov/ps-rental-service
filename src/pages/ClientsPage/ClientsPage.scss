@@ -3,10 +3,10 @@
 
 .clientsPage {
   padding: 20px;
+  background-color: #fff;
 
-  @include onMobile {
-    width: 400px;
-  }
+  width: 100%;
+  max-width: 1200px;
 
   &__title {
     font-size: 28px;

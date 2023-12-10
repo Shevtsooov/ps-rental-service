@@ -3,6 +3,16 @@
 
 .deliveryDetailsBlock {
   margin-bottom: 40px;
+
+  @include onTablet {
+    display: flex;
+    gap: 40px;
+  }
+
+  @include mediumDesktop {
+    display: flex;
+    gap: 40px;
+  }
 }
 
 .deliveryDetails {
@@ -12,13 +22,17 @@
   
   padding: 10px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
   gap: 15px;
   background-color: $main-grey;
 
   border-radius: 10px;
   margin-bottom: 15px;
+
+  // @include mediumDesktop {
+  //   pointer-events: none;
+  // }
 
   &__arrow {
     position: absolute;
@@ -37,21 +51,18 @@
     &--active {
       transform: rotate(180deg);
     }
+
+    @include onTablet {
+      display: none;
+    }
+
+    @include mediumDesktop {
+      display: none;
+    }
   }
 
   &__title {
     font-size: 18px;
-  }
-
-  &__option {
-    display: flex;
-    align-items: center;
-    padding: 5px;
-    display: flex;
-    gap: 10px;
-    transition: background-color 0.4s;
-    cursor: pointer;
-
   }
 
   &__icon {
@@ -61,11 +72,20 @@
   }
 
   &__info {
-    display: flex;
-    flex-direction: column;
+    // display: flex;
+    // align-items: flex-start;
+    // flex-direction: column;
 
     &_heading {
       margin-bottom: 5px;
+
+      @include onTablet {
+        font-size: 20px;
+      }
+
+      @include mediumDesktop {
+        font-size: 24px;
+      }
     }
 
     &_desc {
@@ -74,8 +94,35 @@
   }
 
   &__description {
-    font-size: 14px;
-    white-space: pre-wrap;
-    margin-bottom: 15px;
+    display: none;
+
+    
+
+    @include onTablet {
+      display: flex;
+      align-items: flex-start;
+      font-size: 16px;
+      white-space: pre-wrap;
+
+      margin-bottom: 15px;
+    }
+
+    @include mediumDesktop {
+      display: flex;
+      align-items: flex-start;
+      font-size: 18px;
+      white-space: pre-wrap;
+
+      margin-bottom: 15px;
+    }
+
+    &--active {
+      display: inline;
+      font-size: 14px;
+      white-space: pre-wrap;
+      margin-bottom: 15px;
+
+      
+    }
   }
 }

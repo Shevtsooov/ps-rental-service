@@ -3,8 +3,12 @@
 
 .loginPage {
   padding: 20px;
+  display: flex;
+  height: 80vh;
+  justify-content: center;
+  // align-items: center;
+  background-color: #fff;
+  width: 100%;
+  max-width: 1200px;
 
-  @include onMobile {
-    width: 400px;
-  }
 }

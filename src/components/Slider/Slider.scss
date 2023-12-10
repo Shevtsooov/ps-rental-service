@@ -40,7 +40,6 @@
     opacity: 1;
 
     &-hidden {
-      // opacity: 0;
       display: none;
     }
 
@@ -54,11 +53,19 @@
     &_info {
       position: absolute;
       bottom: 0;
-      min-height: 200px;
+      min-height: 300px;
       width: 100%;
 
-      padding: 60px 20px 20px;
-      background: linear-gradient(360deg, #262626, rgba(10, 10, 10, 0.647), transparent)
+      padding: 120px 40px 20px;
+      background: linear-gradient(360deg, #262626, rgba(10, 10, 10, 0.647), transparent);
+
+      @include onTablet {
+        padding: 120px 120px 40px;
+      }
+
+      @include mediumDesktop {
+        padding: 120px 120px 40px;
+      }
     }
 
     &_heading {
@@ -66,6 +73,14 @@
       color: #fff;
       font-size: 24px;
       font-weight: 600;
+
+      @include onTablet {
+        font-size: 28px;
+      }
+
+      @include mediumDesktop {
+        font-size: 32px;
+      }
     }
 
     &_description {
@@ -74,6 +89,20 @@
       max-width: 300px;
 
       margin-bottom: 15px;
+
+      @include onTablet {
+        max-width: 500px;
+        font-size: 24px;
+        
+        margin-bottom: 18px;
+      }
+
+      @include mediumDesktop {
+        max-width: 500px;
+        font-size: 26px;
+
+        margin-bottom: 22px;
+      }
     }
 
     &_button {

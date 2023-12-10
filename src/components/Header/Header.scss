@@ -4,8 +4,7 @@
 .header {
   height: 60px;
 
-  padding: 0 20px;
-  background-color: $main-grey;
+  background-color: #262626;
 
   display: flex;
   justify-content: center;
@@ -17,11 +16,19 @@
     max-width: 1200px;
     display: flex;
     justify-content: space-between;
+    padding: 0 20px;
+
+    background-color: $main-grey;
+
 
     @include onMobile {
       justify-content: space-between;
     }
-  
+
+    @include onTablet {
+      padding: 0 20px;
+    }
+
     @include mediumDesktop {
       padding: 0 20px;
     }

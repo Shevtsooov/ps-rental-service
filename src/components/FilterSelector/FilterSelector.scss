@@ -20,6 +20,7 @@
     left: 0;
 
     width: 100%;
+    max-width: 1200px;
     height: calc(100vh - 60px);
 
     padding: 20px;
@@ -27,6 +28,10 @@
     overflow-y: scroll;
     
     background-color: $main-grey;
+    
+    @include mediumDesktop {
+      left: calc(50% - 600px)
+    }
   }
 
   &__head {

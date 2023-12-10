@@ -30,6 +30,12 @@ export const GamePage: React.FC = () => {
 
   const dispatch = useAppDispatch();
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 60, left: 0,
+    });
+  }, []);
+
   const handleSaveGame = async (gameId: string) => {
     try {
       if (user?.likedGames.includes(gameId)) {
@@ -107,12 +113,6 @@ export const GamePage: React.FC = () => {
     }
   }, [games]);
 
-  // THIS BLOCK ENSURES THE PAGE OPENS FROM THE TOP
-  const topContainer = useRef<null | HTMLDivElement>(null); 
-
-  useEffect(() => {
-    topContainer.current?.scrollIntoView({ block: "start" });
-    }, []);
   
   const videoReviev = parse(`${game?.videoReview}`);
   const videoGameplay = parse(`${game?.videoGameplay}`);
@@ -121,7 +121,7 @@ export const GamePage: React.FC = () => {
     <>
       {game
         ? (
-          <div className="game_page" ref={topContainer}>
+          <div className="game_page">
             <div className="game_page__images">
               <img
                 src={`${game?.poster}`}

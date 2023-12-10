@@ -11,6 +11,13 @@
   &__loader {
     height: 90vh;
     padding-top: 150px;
+    background-color: #fff;
+    width: 100%;
+    max-width: 1200px;
+
+    @include mediumDesktop {
+      padding-top: 250px;
+    }
   }
 
   &--unavailable {

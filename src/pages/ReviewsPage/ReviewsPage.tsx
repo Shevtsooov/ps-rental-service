@@ -69,7 +69,11 @@ export const ReviewsPage: React.FC = () => {
                   </div>
                 </>
               )
-              : <Loader />
+              : (
+                <div className="reviewsPage__loader">
+                  <Loader />
+                </div>
+              )
             }
             
       

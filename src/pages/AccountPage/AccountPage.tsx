@@ -111,7 +111,7 @@ export const AccountPage: React.FC = () => {
         </div>
       )
       : (
-        <div className="acAcPage__loader">
+        <div className="accountPage__loader">
           <Loader />
         </div>
       )

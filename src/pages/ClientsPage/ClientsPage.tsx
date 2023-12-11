@@ -65,7 +65,11 @@ export const ClientsPage: React.FC = () => {
                 </>
 
               )
-              : <Loader />
+              : (
+                <div className="clientsPage__loader">
+                  <Loader />
+                </div>
+              )
             }
 
             {!showPagination && allTheClients && (

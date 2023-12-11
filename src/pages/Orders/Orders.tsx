@@ -69,7 +69,11 @@ export const Orders: React.FC = () => {
                   </div>
                 </>
               )
-              : <Loader />
+              : (
+                <div className="orders__loader">
+                  <Loader />
+                </div>
+              )
             }
             
       

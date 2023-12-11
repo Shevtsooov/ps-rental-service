@@ -34,6 +34,10 @@ import { Contacts } from './pages/Contacts/Contacts';
 import { FeedbackPage } from './pages/FeedbackPage/FeedbackPage';
 import { ReviewsPage } from './pages/ReviewsPage/ReviewsPage';
 
+import ReactGA from 'react-ga';
+// Initialize React Ga with your tracking ID
+ReactGA.initialize('G-CNN8VPH0WD');
+
 export const App: React.FC = () => {
   const user = useAppSelector(state => state.user.value);
   const [refreshUser] = useRefreshUserMutation();
@@ -44,6 +48,10 @@ export const App: React.FC = () => {
   const headerRef = useRef<HTMLDivElement | null>(null);
   const [isVisible] = useInViewport(headerRef);
   const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    ReactGA.pageview(location.pathname + location.search);
+  }, [location]);
 
   useEffect(() => {
     window.scrollTo({

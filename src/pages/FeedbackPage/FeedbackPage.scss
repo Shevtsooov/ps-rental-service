@@ -9,11 +9,11 @@
   min-height: 50vh;
 
   @include onTablet {
-    padding: 40px 200px;
+    padding: 40px 300px;
   }
 
   @include mediumDesktop {
-    padding: 60px 200px;
+    padding: 60px 400px;
   }
 
   &__modal {
@@ -28,12 +28,17 @@
     left: 0;
 
     width: 100%;
+    max-width: 1200px;
     height: calc(100vh - 60px);
 
     padding: 60px 20px 20px;
     overflow-y: scroll;
     
     background-color: $main-grey;
+
+    @include mediumDesktop {
+      left: calc(50% - 600px);
+    }
 
     &__img {
       margin: 0 auto;
@@ -50,6 +55,8 @@
       border-radius: 10px;
       padding: 10px 15px;
       width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
       cursor: pointer;
     }
   }

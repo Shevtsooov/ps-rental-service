@@ -6,10 +6,10 @@ import igor from '../../assets/images/igor.png'
 
 const contacts = [
   {
-    link: "https://t.me/nazarii_branashko",
+    link: "https://t.me/nazar_ua_ua",
     img: nazar,
     name: "Назарій",
-    nickname: "@nazarii_branashko"
+    nickname: "@nazar_ua_ua"
   },
   {
     link: "https://t.me/SseevaA",

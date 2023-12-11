@@ -31,7 +31,7 @@ try {
   setTimeout((_: any) => {
     const ga4react = new GA4React("G-CNN8VPH0WD");
     ga4react.initialize().catch(err => console.error(err));
-  }, 4000);
+  }, 2000);
 } catch (err) {
       console.error(err);
 }

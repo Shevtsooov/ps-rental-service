@@ -29,7 +29,7 @@ if (rootElement) {
 
 try {
   setTimeout((_: any) => {
-    const ga4react = new GA4React("G-XXXXXXXXXX");
+    const ga4react = new GA4React("G-CNN8VPH0WD");
     ga4react.initialize().catch(err => console.error(err));
   }, 4000);
 } catch (err) {

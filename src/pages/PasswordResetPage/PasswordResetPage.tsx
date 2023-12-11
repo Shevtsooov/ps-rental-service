@@ -38,11 +38,19 @@ export const PasswordResetPage = () => {
     setFieldType('password');
   };
   useEffect(() => {
+
     if (users) {
+    console.log('here')
+    console.log(users)
+    console.log(resetToken)
+
       const isSuchUser = users?.some(user => (
-        user.activationToken === resetToken
+        user.resetToken === resetToken
       ));
   
+    console.log(isSuchUser)
+
+      
       if (isSuchUser) {
         return;
       } else {

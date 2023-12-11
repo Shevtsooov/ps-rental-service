@@ -16,7 +16,11 @@ export const RegistrationModal: React.FC<Props> = ({
 
   return (
     <div className="registrationModal">
-      {isLoading && <Loader />}
+      {isLoading && (
+        <div className="registrationModal__loader">
+          <Loader />
+        </div>
+      ) }
 
       {!isLoading && (
         <>

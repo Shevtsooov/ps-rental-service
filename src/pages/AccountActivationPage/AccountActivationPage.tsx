@@ -35,7 +35,11 @@ export const AccountActivationPage = () => {
   }, [activateData, isSuccess, isError, dispatch]);
 
   if (!done) {
-    return <Loader />;
+    return (
+      <div className="acAcPage__loader">
+        <Loader />
+      </div>
+    )
   }
 
   return (

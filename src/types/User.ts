@@ -14,6 +14,7 @@ export interface User {
   userReviews: string[];
   isArchived: boolean;
   isBanned: boolean;
+  resetToken: string;
   activationToken: string;
   createdAt: Date,
   updatedAt: Date,

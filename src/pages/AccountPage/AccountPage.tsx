@@ -110,7 +110,11 @@ export const AccountPage: React.FC = () => {
           </NavLink>
         </div>
       )
-      : <Loader />
+      : (
+        <div className="acAcPage__loader">
+          <Loader />
+        </div>
+      )
       }
     </>
   );

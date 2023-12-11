@@ -88,7 +88,11 @@ export const ReviewsPage: React.FC = () => {
               
           </div>
         )
-      : <Loader />
+      : (
+        <div className="orders__loader">
+          <Loader />
+        </div>
+      )
       }
     </>
     

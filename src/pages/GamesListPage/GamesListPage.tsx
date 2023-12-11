@@ -10,6 +10,7 @@ import { resetFilteredSorting } from '../../Redux/Slices/filteredSorting.slice';
 import { resetFilteredYear } from '../../Redux/Slices/filteredYear.slice';
 import { setQuery } from '../../Redux/Slices/query.slice';
 import { resetFilteredPlayers } from '../../Redux/Slices/filteredPlayers.slice';
+import ReactGA from 'react-ga';
 
 export const GamesListPage: React.FC = () => {
   const query = useAppSelector(state => state.query.value);
@@ -34,6 +35,12 @@ export const GamesListPage: React.FC = () => {
     window.scrollTo({
       top: 0, left: 0,
     });
+  }, []);
+
+  ReactGA.initialize('G-CNN8VPH0WD');
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
 
   const isFiltering = query !== ''

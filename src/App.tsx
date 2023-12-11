@@ -33,6 +33,7 @@ import { PasswordResetPage } from './pages/PasswordResetPage/PasswordResetPage';
 import { Contacts } from './pages/Contacts/Contacts';
 import { FeedbackPage } from './pages/FeedbackPage/FeedbackPage';
 import { ReviewsPage } from './pages/ReviewsPage/ReviewsPage';
+import ReactGA from 'react-ga';
 
 export const App: React.FC = () => {
   const user = useAppSelector(state => state.user.value);
@@ -49,6 +50,12 @@ export const App: React.FC = () => {
     window.scrollTo({
       top: 0, left: 0,
     });
+  }, []);
+
+  ReactGA.initialize('G-CNN8VPH0WD');
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
 
   useEffect(() => {

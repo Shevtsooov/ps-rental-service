@@ -6,11 +6,11 @@ import './styles/normilize.scss'
 import { store } from './Redux/store';
 import { Provider } from 'react-redux';
 import { CookiesProvider } from "react-cookie";
-import ReactGA from 'react-ga4';
+// import ReactGA from 'react-ga4';
 
 // ReactGA.initialize('G-CNN8VPH0WD');
 
-// const rootElement = document.getElementById('root');
+const rootElement = document.getElementById('root');
 
 if (rootElement) {
   const root = ReactDOM.createRoot(rootElement);

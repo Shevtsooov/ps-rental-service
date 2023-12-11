@@ -6,8 +6,9 @@ import './styles/normilize.scss'
 import { store } from './Redux/store';
 import { Provider } from 'react-redux';
 import { CookiesProvider } from "react-cookie";
-import GA4React from "ga-4-react";
+import ReactGA from 'react-ga4';
 
+ReactGA.initialize('G-CNN8VPH0WD');
 
 const rootElement = document.getElementById('root');
 
@@ -25,13 +26,4 @@ if (rootElement) {
       </BrowserRouter>
     </Provider>
   );
-}
-
-try {
-  setTimeout(() => {
-    const ga4react = new GA4React("G-CNN8VPH0WD");
-    ga4react.initialize().catch(err => console.error(err));
-  }, 2000);
-} catch (err) {
-      console.error(err);
 }

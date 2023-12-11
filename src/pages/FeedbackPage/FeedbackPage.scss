@@ -3,10 +3,17 @@
 
 .feedback {
   padding: 20px;
-  // height: 50vh;
+  background-color: #fff;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 50vh;
 
-  @include onMobile {
-    width: 400px;
+  @include onTablet {
+    padding: 40px 200px;
+  }
+
+  @include mediumDesktop {
+    padding: 60px 200px;
   }
 
   &__modal {

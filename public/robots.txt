@@ -1,3 +1,4 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Disallow:
+Sitemap: https://temp.staticsave.com/65789edc1a25c.xml

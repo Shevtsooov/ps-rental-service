@@ -3,10 +3,19 @@
 
 .clientsPage {
   padding: 20px;
-  background-color: #fff;
 
+  background-color: #fff;
   width: 100%;
   max-width: 1200px;
+  height: 60vh;
+
+  @include onTablet {
+    padding: 20px 200px;
+  }
+
+  @include mediumDesktop {
+    padding: 20px 200px;
+  }
 
   &__loader {
     width: 100%;

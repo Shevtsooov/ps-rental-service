@@ -51,7 +51,7 @@ export const ClientsPage: React.FC = () => {
       {user
         ? (
           <div className="clientsPage">
-            <h1>Список клієнтів</h1>
+            <h1 className="clientsPage__title">Список клієнтів</h1>
 
 
             {allTheClients

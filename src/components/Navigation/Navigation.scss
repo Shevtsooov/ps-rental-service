@@ -2,6 +2,8 @@
 @import "../../styles/utils/colors.scss";
 
 .nav {
+  position: relative;
+  z-index: 200;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,6 +18,11 @@
   }
 
   &__item {
+    position: relative;
+    border: 0;
+    display: flex;
+
+    
   }
 
   &__link {
@@ -28,5 +35,41 @@
     &:hover {
       color: $main-blue-hv;
     }
+  }
+}
+
+.is-active {
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 17px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: $main-blue;
+  }
+}
+
+.admin {
+  position: relative;
+  border: 0;
+  font-size: 16px;
+  vertical-align: middle;
+  color: $secondary-grey;
+  background-color: unset;
+
+  &:hover {
+    color: $main-blue;
+    background-color: unset;
+    cursor: pointer;
+  }
+
+  &__links {
+    position: absolute;
+    padding: 5px;
+    bottom: -190px;
+    left: 0;
+    background-color: $main-grey;
+    border: 1px solid $secondary-grey
   }
 }

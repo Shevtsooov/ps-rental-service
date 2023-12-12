@@ -149,8 +149,9 @@
     background: $main-blue;
     color: #fff;
     text-align: center;
-
-    padding: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 10px 20px;
     border-radius: 30px;
     margin-top: -15px;
     font-size: 20px;

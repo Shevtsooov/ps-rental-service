@@ -23,6 +23,8 @@ export const Orders: React.FC = () => {
     window.scrollTo({
       top: 0, left: 0,
     });
+
+    document.title = 'Замовлення клієнтів';
   }, []);
 
   const ordersToShow = allTheOrders?.slice(start, end);

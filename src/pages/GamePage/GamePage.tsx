@@ -34,6 +34,8 @@ export const GamePage: React.FC = () => {
     window.scrollTo({
       top: 60, left: 0,
     });
+
+    document.title = `Ігри > ${game?.title}`;
   }, []);
 
   const handleSaveGame = async (gameId: string) => {

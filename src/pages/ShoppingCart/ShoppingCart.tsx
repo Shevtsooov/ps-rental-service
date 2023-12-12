@@ -58,6 +58,10 @@ export const ShoppingCart: React.FC = () => {
   }, []);
 
   useEffect(() => {
+    document.title = 'Кошик';
+  }, []);
+
+  useEffect(() => {
     if (user && savedAddress === '') {
       dispatch(setSavedAddress(user?.address));
     }

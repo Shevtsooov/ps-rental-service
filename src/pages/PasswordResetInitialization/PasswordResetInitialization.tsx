@@ -29,6 +29,11 @@ export const PasswordResetInitialization = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
+  useEffect(() => {
+    document.title = 'Запит на відновлення пароля';
+  }, []);
+
+
   const handleInitiateReset = async () => {
     const emailPattern = /^[\w.+-]+@([\w-]+\.){1,3}[\w-]{2,}$/;
     

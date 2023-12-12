@@ -31,6 +31,8 @@ export const Contacts: React.FC = () => {
     window.scrollTo({
       top: 0, left: 0,
     });
+
+    document.title = 'Контакти';
   }, []);
   
   return (

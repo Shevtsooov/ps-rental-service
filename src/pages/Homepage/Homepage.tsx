@@ -23,6 +23,8 @@ export const Homepage: React.FC = () => {
     window.scrollTo({
       top: 0, left: 0,
     });
+    document.title = 'Головна';
+
   }, []);
 
   const sortedGames = games?.slice(0, 15);

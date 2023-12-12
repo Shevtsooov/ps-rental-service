@@ -1,17 +1,18 @@
 @import "../../styles/utils/mixins.scss";
 @import "../../styles/utils/colors.scss";
 
-.registrationPage {
+.pageNotFound {
   padding: 20px;
+
   background-color: #fff;
   width: 100%;
   max-width: 1200px;
 
   @include onTablet {
-    padding: 20px 130px;
+    padding: 20px 200px;
   }
 
   @include mediumDesktop {
-    padding: 20px 300px;
+    padding: 20px 200px;
   }
 }

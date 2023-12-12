@@ -33,6 +33,8 @@ export const PlansAndDelivery: React.FC = () => {
     window.scrollTo({
       top: 0, left: 0,
     });
+
+    document.title = 'Тарифи та доставка';
   }, []);
 
   return (

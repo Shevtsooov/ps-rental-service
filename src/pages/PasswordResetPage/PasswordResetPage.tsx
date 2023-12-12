@@ -28,6 +28,10 @@ export const PasswordResetPage = () => {
 
   const [error, setError] = useState(noErrors);
 
+  useEffect(() => {
+    document.title = 'Відновлення пароля';
+  }, []);
+
   const changeInputType = () => {
     if (fieldType === 'password') {
       setFieldType('text');

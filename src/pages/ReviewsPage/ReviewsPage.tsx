@@ -23,6 +23,8 @@ export const ReviewsPage: React.FC = () => {
     window.scrollTo({
       top: 0, left: 0,
     });
+
+    document.title = 'Відгуки клієнтів';
   }, []);
 
   const reviewsToShow = allTheReviews?.slice(start, end);

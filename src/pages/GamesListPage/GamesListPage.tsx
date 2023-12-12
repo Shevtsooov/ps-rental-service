@@ -18,6 +18,10 @@ export const GamesListPage: React.FC = () => {
   const filteredYear = useAppSelector(state => state.filteredYear.value);
   const filteredPlayers = useAppSelector(state => state.filteredPlayers.value);
 
+  useEffect(() => {
+    document.title = 'Ігри';
+  }, []);
+
   const dispatch = useAppDispatch();
 
   const { data: games, refetch, isLoading, isSuccess } = useFindGamesQuery({

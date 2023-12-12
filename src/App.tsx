@@ -9,7 +9,6 @@ import { GamesListPage } from './pages/GamesListPage/GamesListPage';
 import { PlansAndDelivery } from './pages/PlansAndDelivery/PlansAndDelivery';
 import { Agreement } from './pages/Agreement/Agreement';
 import { AboutPS5 } from './pages/AboutPS5/AboutPS5';
-import { PageNotFound } from './pages/NotFoundPage/NotFoundPage';
 import { LoginPage } from './pages/LoginPage/LoginPage';
 import { Footer } from './components/Footer/Footer';
 import { SavedGames } from './pages/SavedGames/SavedGames';
@@ -34,6 +33,7 @@ import { Contacts } from './pages/Contacts/Contacts';
 import { FeedbackPage } from './pages/FeedbackPage/FeedbackPage';
 import { ReviewsPage } from './pages/ReviewsPage/ReviewsPage';
 import ReactGA from 'react-ga';
+import { PageNotFound } from './pages/PageNotFound/PageNotFound';
 
 export const App: React.FC = () => {
   const user = useAppSelector(state => state.user.value);
@@ -55,9 +55,9 @@ export const App: React.FC = () => {
   ReactGA.initialize('G-CNN8VPH0WD');
 
   useEffect(() => {
-    console.log(window.location.pathname, window.location.search)
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, [window.location.pathname]);
+
 
   useEffect(() => {
     const fetchData = async () => {

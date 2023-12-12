@@ -22,6 +22,10 @@ export const ClientsPage: React.FC = () => {
   const clientsToShow = allTheClients?.slice(start, end);
 
   useEffect(() => {
+    document.title = 'Клієнти';
+  }, []);
+
+  useEffect(() => {
     if (allTheClients) {
       setStart(perPage * paginationPage - perPage);
 

@@ -16,6 +16,10 @@ export const SavedGames: React.FC = () => {
   const { data: games } = useGetAllGamesQuery();
 
   useEffect(() => {
+    document.title = 'Збережені ігри';
+  }, []);
+
+  useEffect(() => {
     window.scrollTo({
       top: 0, left: 0,
     });

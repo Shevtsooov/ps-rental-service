@@ -44,6 +44,10 @@ export const FeedbackPage = () => {
   const [currentUserId, setCurrentUserId] = useState<string | null>(null);
 
   useEffect(() => {
+    document.title = 'Відгук';
+  }, []);
+
+  useEffect(() => {
     if (users) {
       const isSuchUser = users?.find(user => (
         user.reviewLink === reviewLink

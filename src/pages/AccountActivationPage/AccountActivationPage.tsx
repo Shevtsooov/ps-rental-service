@@ -13,6 +13,10 @@ export const AccountActivationPage = () => {
   const [done, setDone] = useState(false);
   const dispatch = useAppDispatch();
 
+  useEffect(() => {
+    document.title = 'Активація аккаунту';
+  }, []);
+
   const { activationToken } = useParams<{ activationToken: string }>();
 
   const { data: activateData, isSuccess, isError} = useActivateUserQuery(activationToken || '');

@@ -19,6 +19,10 @@ export const AccountOrders: React.FC = () => {
   const ordersToShow = userOrders?.slice(start, end);
 
   useEffect(() => {
+    document.title = 'Аккаунт > Замовлення';
+  }, []);
+
+  useEffect(() => {
     if (userOrders) {
       setStart(perPage * paginationPage - perPage);
 

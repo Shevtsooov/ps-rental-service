@@ -20,6 +20,10 @@ export const AccountPage: React.FC = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
+    document.title = 'Аккаунт PlayAtHome';
+  }, []);
+
+  useEffect(() => {
     window.scrollTo({
       top: 0, left: 0,
     });

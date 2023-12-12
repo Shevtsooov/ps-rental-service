@@ -9,6 +9,8 @@ export const Agreement: React.FC = () => {
     window.scrollTo({
       top: 0, left: 0,
     });
+
+    document.title = 'Умови прокату';
   }, []);
   
   return (

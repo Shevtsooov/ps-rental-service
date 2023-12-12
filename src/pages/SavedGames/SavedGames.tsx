@@ -52,7 +52,10 @@ export const SavedGames: React.FC = () => {
   }, []);
 
   if (!user) {
-    return <Loader />
+    return (
+      <div className="savedGames__loader">
+        <Loader />
+      </div>)
   }
 
   return (

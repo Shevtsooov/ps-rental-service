@@ -2,10 +2,18 @@
 @import "../../styles/utils/colors.scss";
 
 .shoppingCart {
-  padding: 20px 200px;
+  padding: 20px;
   background-color: #fff;
   width: 100%;
   max-width: 1200px;
+
+  @include onTablet {
+    padding: 20px 200px;
+  }
+
+  @include mediumDesktop {
+    padding: 20px 200px;
+  }
 
   &__loader {
     display: flex;

@@ -55,8 +55,9 @@ export const App: React.FC = () => {
   ReactGA.initialize('G-CNN8VPH0WD');
 
   useEffect(() => {
-    ReactGA.pageview(location.pathname + location.search);
-  }, []);
+    console.log(window.location.pathname, window.location.search)
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, [window.location.pathname]);
 
   useEffect(() => {
     const fetchData = async () => {

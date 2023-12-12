@@ -11,6 +11,7 @@ import { resetFilteredYear } from '../../Redux/Slices/filteredYear.slice';
 import { setQuery } from '../../Redux/Slices/query.slice';
 import { resetFilteredPlayers } from '../../Redux/Slices/filteredPlayers.slice';
 import ReactGA from 'react-ga';
+import { useLocation } from 'react-router-dom';
 
 export const GamesListPage: React.FC = () => {
   const query = useAppSelector(state => state.query.value);

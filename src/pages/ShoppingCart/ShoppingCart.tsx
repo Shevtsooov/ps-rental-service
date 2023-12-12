@@ -333,7 +333,10 @@ export const ShoppingCart: React.FC = () => {
               className="shoppingCart__checkout_button"
               onClick={handleSubmit}
             >
-              Оформити прокат
+            {user?.cartGames.length === 0
+              ? 'Замовити без ігор'
+              : 'Оформити прокат'
+            }  
             </button>
           </div>
         

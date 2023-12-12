@@ -4,8 +4,16 @@
 .loginForm {
   display: flex;
   flex-direction: column;
-  max-width: 500px;
-  margin-bottom: 40px;
+  width: 100%;
+  max-width: 450px;
+
+  @include onTablet {
+    max-width: 500px;
+  }
+
+  @include mediumDesktop {
+    max-width: 500px;
+  }
   
   &__title {
     font-size: 28px;

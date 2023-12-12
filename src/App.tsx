@@ -55,7 +55,7 @@ export const App: React.FC = () => {
   ReactGA.initialize('G-CNN8VPH0WD');
 
   useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    ReactGA.pageview(window.location.pathname);
   }, [window.location.pathname]);
 
 

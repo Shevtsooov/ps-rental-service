@@ -23,7 +23,7 @@ export const Homepage: React.FC = () => {
     window.scrollTo({
       top: 0, left: 0,
     });
-    document.title = 'Головна';
+    document.title = 'Оренда PlayStation 5 у Львові';
 
   }, []);
 

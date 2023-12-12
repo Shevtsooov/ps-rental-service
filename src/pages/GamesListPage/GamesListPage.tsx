@@ -18,6 +18,7 @@ export const GamesListPage: React.FC = () => {
   const filteredCategories = useAppSelector(state => state.filteredCategories.value);
   const filteredYear = useAppSelector(state => state.filteredYear.value);
   const filteredPlayers = useAppSelector(state => state.filteredPlayers.value);
+  const location = useLocation();
 
   const dispatch = useAppDispatch();
 
@@ -40,7 +41,7 @@ export const GamesListPage: React.FC = () => {
   ReactGA.initialize('G-CNN8VPH0WD');
 
   useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    ReactGA.pageview(location.pathname + location.search);
   }, []);
 
   const isFiltering = query !== ''

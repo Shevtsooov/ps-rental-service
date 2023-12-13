@@ -10,6 +10,12 @@
     // width: 400px;
   }
 
+  &__loader {
+    width: 100%;
+    height: 20vh;
+    background-color: #fff;
+  }
+
   &__calendar {
     display: flex;
     flex-direction: column;

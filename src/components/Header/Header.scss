@@ -3,14 +3,11 @@
 
 .header {
   height: 60px;
-
-  background-color: #262626;
+  background-color: unset;
 
   display: flex;
   justify-content: center;
 
-
-  
   &__block {
     width: 100%;
     max-width: 1200px;

@@ -4,9 +4,14 @@
 .App {
   display: flex;
   justify-content: center;
-  background-color: #262626;
-
+  
   &__title {
     display: none;
   }
+}
+
+.appBlock {
+  background-image: url('./assets/images/0tfa7gmrn2071.jpg');
+  background-size: cover;
+  background-attachment: fixed;
 }

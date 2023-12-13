@@ -93,7 +93,7 @@ export const App: React.FC = () => {
 
 
   return (
-    <div>
+    <div className='appBlock'>
       <Header  />
       <div ref={headerRef} />
 

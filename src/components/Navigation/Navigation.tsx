@@ -73,7 +73,7 @@ export const Navigation = () => {
             )}
             to="/admin-panel"
           >
-            Адмін-панель
+            Адмін
           </NavLink>
         </li>
       )}

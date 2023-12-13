@@ -34,7 +34,7 @@ export const AdminPage: React.FC = () => {
 
         <NavLink
           className='adminPage__item'
-          to="/ddd"
+          to="/clients"
         >
           <span className="adminPage__img adminPage__img--clients"></span>
           Клієнти
@@ -65,7 +65,7 @@ export const AdminPage: React.FC = () => {
 
         <NavLink
           className='adminPage__item'
-          to="/ddd"
+          to="/clients"
         >
           <span className="adminPage__img adminPage__img--clients"></span>
           Клієнти

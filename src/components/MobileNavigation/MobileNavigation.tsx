@@ -196,44 +196,12 @@ export const MobileNavigation = () => {
               <li>
                 <NavLink
                   className="mobileNav__link"
-                  to="/clients"
+                  to="/admin-panel"
                   onClick={() => setIsMenuOpen(p => !p)}
                 >
                   <div className="mobileNav__link_text">
-                    <span className="mobileNav__link--icon mobileNav__link--clients"></span>
-                    <p>Клієнти</p>
-                  </div>
-
-                  
-                  <span className="mobileNav__link--arrow"></span>
-                </NavLink>
-              </li>
-
-              <li>
-                <NavLink
-                  className="mobileNav__link"
-                  to="/orders"
-                  onClick={() => setIsMenuOpen(p => !p)}
-                >
-                  <div className="mobileNav__link_text">
-                    <span className="mobileNav__link--icon mobileNav__link--orders"></span>
-                    <p>Замовлення</p>
-                  </div>
-
-                  
-                  <span className="mobileNav__link--arrow"></span>
-                </NavLink>
-              </li>
-
-              <li>
-                <NavLink
-                  className="mobileNav__link"
-                  to="/reviews"
-                  onClick={() => setIsMenuOpen(p => !p)}
-                >
-                  <div className="mobileNav__link_text">
-                    <span className="mobileNav__link--icon mobileNav__link--reviews"></span>
-                    <p>Відгуки</p>
+                    <span className="mobileNav__link--icon mobileNav__link--admin"></span>
+                    <p>Адмін-панель</p>
                   </div>
 
                   

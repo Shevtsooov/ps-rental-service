@@ -6,6 +6,7 @@
   background-color: #fff;
   width: 100%;
   max-width: 1200px;
+  min-height: 50vh;
 
   @include onTablet {
     padding: 20px 250px;

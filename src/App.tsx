@@ -127,6 +127,7 @@ export const App: React.FC = () => {
           <Route path="shopping-cart" element={<ShoppingCart />} />
           <Route path="activate/:activationToken" element={<AccountActivationPage />} />
 
+          <Route path="admin-panel" element={<AdminPage />} />
           <Route path="clients" element={<ClientsPage />} />
           <Route path="orders" element={<Orders />} />
           <Route path="reviews" element={<ReviewsPage />} />

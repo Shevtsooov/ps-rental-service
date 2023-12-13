@@ -3,6 +3,7 @@
 
 .gameList {
   display: grid;
+  width: 100%;
   max-width: 1200px;
 
   grid-template-columns: repeat(1, minmax(250px, 1fr));
@@ -11,6 +12,7 @@
 
   padding: 20px;
   justify-content: center;
+  flex-direction: row;
   margin: 0 auto;
   margin-bottom: 30px;
 

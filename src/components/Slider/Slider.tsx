@@ -11,12 +11,19 @@ const posters = [
     link: '/games/fc-24'
   },
   {
-    title: 'Mortal Kombat 11',
+    title: 'Mortal Kombat X',
     description: 'Чи зможете ви стати справжнім майстром бойових мистецтв?',
-    image: 'https://images.hdqwalls.com/download/2020-mortal-kombat-11-4k-ag-1280x720.jpg',
+    image: 'https://oyster.ignimgs.com/wordpress/stg.ign.com/2015/04/MortalKombatX_1600.jpg',
     bgColor: '#c2c2c2',
-    link: '/games/mortal-kombat-11'
+    link: '/games/mortal-kombat-x'
   },
+  // {
+  //   title: 'Mortal Kombat 11',
+  //   description: 'Чи зможете ви стати справжнім майстром бойових мистецтв?',
+  //   image: 'https://images.hdqwalls.com/download/2020-mortal-kombat-11-4k-ag-1280x720.jpg',
+  //   bgColor: '#c2c2c2',
+  //   link: '/games/mortal-kombat-11'
+  // },
   {
     title: 'Spider-Man: Miles Morales',
     description: 'Станьте частиною Спайдервсесвіту у Marvel\'s Spider-Man: Miles Morales!',

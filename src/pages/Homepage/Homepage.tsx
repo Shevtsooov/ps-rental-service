@@ -37,10 +37,12 @@ export const Homepage: React.FC = () => {
       <Slider />
 
       {/* <Aaa /> */}
+      <div className='homepage__calendar'>
+        <h2 className="homepage__title">Перевір свої дати</h2>
 
-      <h2 className="homepage__title">Перевір свої дати</h2>
+        <Calendar />
+      </div>
 
-      <Calendar />
 
       <div className="homepage__seoBlock">
         <h1 className="homepage__seoBlock__title">Оренда PlayStation у Львові</h1>

@@ -23,8 +23,6 @@ export const Homepage: React.FC = () => {
     window.scrollTo({
       top: 0, left: 0,
     });
-    document.title = 'Оренда PlayStation 5 у Львові';
-
   }, []);
 
   const sortedGames = games?.slice(0, 15);

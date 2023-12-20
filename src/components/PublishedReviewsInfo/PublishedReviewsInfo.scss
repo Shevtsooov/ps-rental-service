@@ -6,6 +6,7 @@
 
   background-color: $main-grey;
   border-radius: 15px;
+  max-width: 320px;
 
   height: fit-content;
 
@@ -50,6 +51,7 @@
     }
 
     &--text {
+      // max-width: 100%;
       padding: 10px;
       border-radius: 10px;
       background-color: #fff;

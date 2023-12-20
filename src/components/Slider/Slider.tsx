@@ -15,7 +15,7 @@ const posters = [
     description: 'Зануртесь у реалістичний віртуальний світ з вражаючою графікою.',
     image: 'https://www.miastogier.pl/baza/Encyklopedia/gry/News/22.05.2022/nws_GTA5min1170x650.jpg',
     bgColor: '#c2c2c2',
-    link: '/games/mortal-kombat-x'
+    link: '/games/gta5'
   },
   // {
   //   title: 'Mortal Kombat X',

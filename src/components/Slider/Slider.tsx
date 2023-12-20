@@ -11,12 +11,19 @@ const posters = [
     link: '/games/fc-24'
   },
   {
-    title: 'Mortal Kombat X',
-    description: 'Чи зможете ви стати справжнім майстром бойових мистецтв?',
-    image: 'https://oyster.ignimgs.com/wordpress/stg.ign.com/2015/04/MortalKombatX_1600.jpg',
+    title: 'GTA V',
+    description: 'Зануртесь у реалістичний віртуальний світ з вражаючою графікою.',
+    image: 'https://www.miastogier.pl/baza/Encyklopedia/gry/News/22.05.2022/nws_GTA5min1170x650.jpg',
     bgColor: '#c2c2c2',
     link: '/games/mortal-kombat-x'
   },
+  // {
+  //   title: 'Mortal Kombat X',
+  //   description: 'Чи зможете ви стати справжнім майстром бойових мистецтв?',
+  //   image: 'https://oyster.ignimgs.com/wordpress/stg.ign.com/2015/04/MortalKombatX_1600.jpg',
+  //   bgColor: '#c2c2c2',
+  //   link: '/games/mortal-kombat-x'
+  // },
   // {
   //   title: 'Mortal Kombat 11',
   //   description: 'Чи зможете ви стати справжнім майстром бойових мистецтв?',

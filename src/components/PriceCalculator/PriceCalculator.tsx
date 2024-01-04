@@ -76,10 +76,6 @@ export const PriceCalculator: React.FC<Props> = ({
     setChosenNumber(number => number - 1);
   };
 
-  const goToShoppingCart = () => {
-    navigate("/shopping-cart");
-  };
-
   useEffect(() => {
     if (+windowSize.current >= 770) {
       setIsCalculatorOpen(true);
@@ -104,18 +100,6 @@ export const PriceCalculator: React.FC<Props> = ({
             'priceCalculator__dropDown--active': isCalculatorOpen
           })}
         >
-          <p
-            className="priceCalculator__description"
-          >
-            Загальну суму з іграми можна підрахувати
-            <span
-              className="priceCalculator__link"
-              onClick={goToShoppingCart}
-            >
-              тут
-            </span>
-          </p>
-          
           <div className="calculator">
             <p className="calculator__sum">{`${sum}₴`}</p>
 

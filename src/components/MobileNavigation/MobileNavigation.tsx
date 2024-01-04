@@ -3,10 +3,8 @@ import cn from 'classnames';
 import './MobileNavigation.scss';
 import { useEffect, useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { useAppSelector } from '../../Redux/store';
 
 export const MobileNavigation = () => {
-  const user = useAppSelector(state => state.user.value);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navBoxRef = useRef<HTMLDivElement>(null);
 
@@ -137,83 +135,9 @@ export const MobileNavigation = () => {
 
               </NavLink>
             </li>
-
-            {/* <li>
-              <NavLink
-                className="mobileNav__link"
-                to="/about-ps5"
-                onClick={() => setIsMenuOpen(p => !p)}
-              >
-                <div className="mobileNav__link_text">
-                  <span className="mobileNav__link--icon mobileNav__link--about_ps5"></span>
-                  <p>Про PS5</p>
-                </div>
-                  <span className="mobileNav__link--arrow"></span>
-
-              </NavLink>
-            </li> */}
-
-            {user
-              ? (
-              <li>
-                <NavLink
-                  className="mobileNav__link"
-                  to="/account"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <div className="mobileNav__link_text">
-                    <span className="mobileNav__link--icon mobileNav__link--account"></span>
-                    <p>Miй аккаунт</p>
-                  </div>
-                    <span className="mobileNav__link--arrow"></span>
-
-                </NavLink>
-              </li>
-              )
-              : (
-                <li>
-                  <NavLink
-                    className="mobileNav__link"
-                    to="/login"
-                    onClick={() => setIsMenuOpen(p => !p)}
-                  >
-                    <div className="mobileNav__link_text">
-                      <span className="mobileNav__link--icon mobileNav__link--login"></span>
-                      <p>Увійти</p>
-                    </div>
-                      <span className="mobileNav__link--arrow"></span>
-
-                  </NavLink>
-                </li>
-              )
-            }
-            
           </ul>
-
-          {user && user.role === 'admin' && (
-            <ul className="mobileNav__list">
-
-              <li>
-                <NavLink
-                  className="mobileNav__link"
-                  to="/admin-panel"
-                  onClick={() => setIsMenuOpen(p => !p)}
-                >
-                  <div className="mobileNav__link_text">
-                    <span className="mobileNav__link--icon mobileNav__link--admin"></span>
-                    <p>Адмін-панель</p>
-                  </div>
-
-                  
-                  <span className="mobileNav__link--arrow"></span>
-                </NavLink>
-              </li>
-            </ul>
-          )}
       </div>
       )}
-
-
   </nav>
   )
 }

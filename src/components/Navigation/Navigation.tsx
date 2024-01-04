@@ -1,12 +1,9 @@
 import { NavLink } from 'react-router-dom';
 import cn from 'classnames';
-
 import './Navigation.scss';
-import { useAppSelector } from '../../Redux/store';
 
 export const Navigation = () => {
-  const user = useAppSelector(state => state.user.value);
-  
+
   return (
     <nav className="nav">
     <ul className="nav__list">
@@ -63,21 +60,7 @@ export const Navigation = () => {
         >
           Контакти
         </NavLink>
-      </li>
-
-      {user?.role === 'admin' && (
-        <li className="nav__item">
-          <NavLink
-            className={({ isActive }) => cn(
-              'nav__link', { 'is-active': isActive },
-            )}
-            to="/admin-panel"
-          >
-            Адмін
-          </NavLink>
-        </li>
-      )}
-      
+      </li>     
     </ul>
   </nav>
   )

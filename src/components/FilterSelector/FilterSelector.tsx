@@ -2,21 +2,25 @@ import { useEffect, useState } from 'react';
 import cn from 'classnames';
 import './FilterSelector.scss';
 import { filterFilteredCategories,
-  resetFilteredCategoriess,
+  resetFilteredCategories,
   setFilteredCategories,
 } from '../../Redux/Slices/filteredCategories.slice';
 import { useAppDispatch, useAppSelector } from '../../Redux/store';
 import { resetFilteredPlayers, setFilteredPlayers } from '../../Redux/Slices/filteredPlayers.slice';
 import { resetFilteredYear, setFilteredYear } from '../../Redux/Slices/filteredYear.slice';
 import { defaultCategories, players, years } from '../../helpers/filterOptions';
-import { useFindGamesQuery } from '../../Redux/RTK_Query/games.service';
 import { setQuery } from '../../Redux/Slices/query.slice';
 import { FilterResults } from '../FilterResults/FilterResults';
 import { FilterByBlock } from '../FilterByBlock/FilterByBlock';
 import { resetGamePaginationPage } from '../../Redux/Slices/paginationPage.slice';
 import { NavLink } from 'react-router-dom';
+import { Game } from '../../types/Game';
 
-export const FilterSelector: React.FC = () => {
+type Props = {
+  filteredGames: Game[];
+}
+
+export const FilterSelector: React.FC<Props> = ({ filteredGames }) => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [howItWorks, setHowItWorks] = useState(false);
   // const [showDescription, setShowDescription] = useState(false);
@@ -28,20 +32,6 @@ export const FilterSelector: React.FC = () => {
   const filteredYear = useAppSelector(state => state.filteredYear.value);
   const filteredPlayers = useAppSelector(state => state.filteredPlayers.value);
   const dispatch = useAppDispatch();
-
-  const { data: games, refetch, isFetching  } = useFindGamesQuery({
-    sortBy: filteredSorting === 'Найновіші'
-      ? 'DESC'
-      : 'ASC',
-    query: query,
-    categories: filteredCategories,
-    year: filteredYear,
-    players: filteredPlayers,
-  });
-
-  useEffect(() => {
-      refetch();
-  }, [games, refetch]);
 
   useEffect(() => {
     return () => {
@@ -62,7 +52,7 @@ export const FilterSelector: React.FC = () => {
 
   const handleClearFilters = () => {
     dispatch(setQuery(''));
-    dispatch(resetFilteredCategoriess());
+    dispatch(resetFilteredCategories());
     dispatch(resetFilteredPlayers());
     dispatch(resetFilteredYear());
   }
@@ -142,10 +132,9 @@ export const FilterSelector: React.FC = () => {
           )}
         >
           <div className="filterSelector__head">
-            {areResultsShown && games && (
+            {areResultsShown && filteredGames && (
               <FilterResults
-                games={games}
-                isFetching ={isFetching }
+                games={filteredGames}
                 setIsFilterOpen={setIsFilterOpen}
                 isFilterOpen={isFilterOpen}
                 handleClearFilters={handleClearFilters}

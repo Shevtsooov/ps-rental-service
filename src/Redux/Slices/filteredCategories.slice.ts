@@ -28,7 +28,7 @@ export const filteredCategoriesSlice = createSlice({
         value: state.value.filter((cat) => cat !== action.payload),
       };
     },
-    resetFilteredCategoriess: (state) => {
+    resetFilteredCategories: (state) => {
       state.value = []
     },
   },
@@ -38,6 +38,6 @@ export const {
   setFilteredCategories,
   hardSetFilteredCategories,
   filterFilteredCategories,
-  resetFilteredCategoriess,
+  resetFilteredCategories,
 } = filteredCategoriesSlice.actions;
 export const filteredCategoriesReducer = filteredCategoriesSlice.reducer;

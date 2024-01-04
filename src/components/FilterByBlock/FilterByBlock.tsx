@@ -27,13 +27,6 @@ export const FilterByBlock: React.FC<Props> = ({
           onClick={() => chooseFunction(option)}
         >
           {option}
-      {/* <span
-            className={cn('filterSelector__filterBlock_description',{
-              'filterSelector__filterBlock_description--active': showDescription && descriptionCategory === category.title
-            })}
-          >
-            {category.description}
-          </span> */}
         </button>
       ))}
     </div>

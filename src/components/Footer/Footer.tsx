@@ -1,11 +1,8 @@
 import './Footer.scss';
 import footerLogo from '../../assets/icons/PlayAtHome-grey.svg'
 import { NavLink } from 'react-router-dom';
-import { useAppSelector } from '../../Redux/store';
 
 export const Footer: React.FC = () => {
-  const user = useAppSelector(state => state.user.value);
-
   return (
     <div className="footer">
       <div className="footer__block">
@@ -52,40 +49,11 @@ export const Footer: React.FC = () => {
               Контакти
             </NavLink>
           </li>
-          {/* <li 
-            className='footer__item'
-          >
-            <NavLink to="about-ps5" className='footer__item_link'>
-              Про PS5
-            </NavLink>
-          </li> */}
-          {user
-            ? (
-              <li 
-                className='footer__item'
-              >
-                <NavLink to="/account" className='footer__item_link'>
-                  Мій аккаунт
-                </NavLink>
-              </li>
-            )
-          : (
-            <li 
-              className='footer__item'
-            >
-              <NavLink to="/login" className='footer__item_link'>
-                Увійти
-              </NavLink>
-            </li>
-          )}
-
-         
-          
         </ul>
 
 
       </div>
-      <p className='footer__years'>2022 - 2023</p>
+      <p className='footer__years'>2022 - 2024</p>
       <div className='footer__dev'>
         <p className='footer__dev__question'>Потрібно створити сайт?</p>
 

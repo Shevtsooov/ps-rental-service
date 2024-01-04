@@ -1,34 +1,17 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './GamePage.scss';
 import { useParams } from 'react-router-dom';
 import parse from 'html-react-parser';
-import cn from 'classnames';
-import { useAppSelector, useAppDispatch } from '../../Redux/store';
 import { Game } from '../../types/Game';
 import { Carousel } from '../../components/Carousel/Carousel';
-import { useEditUserMutation } from '../../Redux/RTK_Query/users.service';
-import { setUser } from '../../Redux/Slices/user.slice';
-import { useFindGamesQuery } from '../../Redux/RTK_Query/games.service';
 import { Loader } from '../../components/Loader/Loader';
+import games from '../../data/games.json';
 
 export const GamePage: React.FC = () => {
   const { gameIdLink } = useParams();
   const [collectionGames, setCollectionGames] = useState<Game[]>([])
-  
-  const { data: games } = useFindGamesQuery({
-    sortBy: 'DESC',
-    query: '',
-    categories: [],
-    year: '',
-    players: '',
-  });
 
   const game = games?.find(g => g.gameId === gameIdLink);
-  const [ editUser ] = useEditUserMutation();
-
-  const user = useAppSelector(state => state.user.value);
-
-  const dispatch = useAppDispatch();
 
   useEffect(() => {
     window.scrollTo({
@@ -37,75 +20,6 @@ export const GamePage: React.FC = () => {
 
     document.title = `Ігри > ${game?.title}`;
   }, []);
-
-  const handleSaveGame = async (gameId: string) => {
-    try {
-      if (user?.likedGames.includes(gameId)) {
-        const response = await editUser({
-          id: user?.id,
-          likedGames: user?.likedGames.filter(id => id !== gameId)
-        });
-  
-        if ('data' in response) {
-          const updatedUser = response.data;
-          dispatch(setUser(updatedUser));
-
-          return;
-        } else {
-          console.error('Error updating user:', response.error);
-        }
-      }
-
-      const response = await editUser({
-        id: user?.id,
-        likedGames: [ ...user!.likedGames, gameId ]
-      });
-
-      if ('data' in response) {
-        const updatedUser = response.data;
-        dispatch(setUser(updatedUser));
-
-        return;
-      } 
-    } catch (error) {
-      console.error('Error updating user:', error);
-    }
-  };
-
-  const handleAddToCartGame = async (gameId: string) => {
-    try {
-      if (user?.cartGames.includes(gameId)) {
-        const response = await editUser({
-          id: user?.id,
-          cartGames: user?.cartGames.filter(id => id !== gameId)
-        });
-  
-        if ('data' in response) {
-          const updatedUser = response.data;
-          dispatch(setUser(updatedUser));
-
-          return;
-        } else {
-          console.error('Error updating user:', response.error);
-        }
-      }
-
-      const response = await editUser({
-        id: user?.id,
-        cartGames: [ ...user!.cartGames, gameId ]
-      });
-
-      if ('data' in response) {
-        const updatedUser = response.data;
-        dispatch(setUser(updatedUser));
-
-        return;
-      } 
-    } catch (error) {
-      console.error('Error updating user:', error);
-    }
-  };
-
 
   useEffect(() => {
     if (games) {
@@ -160,53 +74,6 @@ export const GamePage: React.FC = () => {
                 {`Дата релізу: ${game?.releasedOn}`}
               </p>
             </div>
-      
-            {game && user && (
-              <>
-                <div className="game_page__price">
-                {user.cartGames.length === 0 || user.cartGames[0] === game.gameId
-                  ? (
-                    <p className='game_page__price_discountedPrice'>
-                      {game.isAvailable && 'Одна гра - безкоштовно'}
-                    </p>
-                  )
-                  : (
-                    <>
-                      <p 
-                      className={cn({
-                        'game_page__price_regularPrice': game.discountedPrice
-                      })}
-                      >
-                        {game.isAvailable && `${game.price}₴`}
-                      </p>
-                      {game.discountedPrice && (
-                        <p className="game_page__price_discountedPrice">{`${game.discountedPrice}₴`}</p>
-                      )}
-                    </>
-                  )}
-                </div>
-      
-                <div className="game_page_buttons">
-                  <button 
-                    className={cn('game_page_buttons_cart', {
-                      'game_page_buttons_cart--added': user.cartGames.includes(game.gameId),
-                      'game_page_buttons_cart--disabled': !game?.isAvailable,
-                    })}
-                    onClick={() => handleAddToCartGame(game.gameId)}
-                  >
-                    {user.cartGames.includes(game.gameId)
-                    ? 'видалити'
-                    : 'додати в кошик'}
-                  </button>
-                  <button
-                    className={cn('game_page_buttons_heart', {
-                      'game_page_buttons_heart--active': user.likedGames.includes(game.gameId)
-                    })}
-                    onClick={() => handleSaveGame(game.gameId)}
-                  />
-                </div>
-              </>
-            )}
       
             {game?.disclaimers && game.disclaimers.length > 0 && (
               <div className="game_page__disclaimers">

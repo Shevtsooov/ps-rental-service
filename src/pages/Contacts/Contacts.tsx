@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import './Contacts.scss';
 import nazar from '../../assets/images/nazar.png'
 import sergiy from '../../assets/images/sergiy.png'
-import igor from '../../assets/images/igor.png'
 
 const contacts = [
   {
@@ -16,13 +15,7 @@ const contacts = [
     img: sergiy,
     name: "Сергій",
     nickname: "@SseevaA"
-  },
-  {
-    link: "https://t.me/Shevtsooov",
-    img: igor,
-    name: "Ігор",
-    nickname: "@Shevtsooov"
-  },
+  }
 ]
 
 export const Contacts: React.FC = () => {

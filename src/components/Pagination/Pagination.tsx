@@ -4,7 +4,7 @@ import './Pagination.scss';
 import {
   generateVisiblePages,
 } from '../../helpers/generateVisiblePages';
-import { useAppDispatch, useAppSelector } from '../../Redux/store';
+import { useAppDispatch } from '../../Redux/store';
 
 /* eslint-disable */
 interface Props {

@@ -12,8 +12,13 @@ import { setFilteredPlayers } from '../../Redux/Slices/filteredPlayers.slice';
 import { hardSetFilteredCategories } from '../../Redux/Slices/filteredCategories.slice';
 import { setFilteredSorting } from '../../Redux/Slices/filteredSorting.slice';
 import { ParamsType } from '../../types/ParamsType';
+import { Game } from '../../types/Game';
 
-export const Filter: React.FC = () => {
+type Props = {
+  filteredGames: Game[];
+}
+
+export const Filter: React.FC<Props> = ({ filteredGames }) => {
   const filteredSorting = useAppSelector(state => state.filteredSorting.value);
   const query = useAppSelector(state => state.query.value);
   const filteredCategories = useAppSelector(state => state.filteredCategories.value);
@@ -60,11 +65,11 @@ export const Filter: React.FC = () => {
 
   return (
     <div className="filter">
-      <FilterInput  />
+      <FilterInput />
 
       <Sorting />
 
-      <FilterSelector />
+      <FilterSelector filteredGames={filteredGames} />
     </div>
   );
 }

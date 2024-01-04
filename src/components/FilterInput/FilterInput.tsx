@@ -21,7 +21,7 @@ export const FilterInput: React.FC = () => {
       <input
         type="text"
         className='filterInput__field'
-        placeholder='Почніть шукати гру'
+        placeholder='Почніть шукати ігри'
         value={query}
         onChange={(e) => handleSearch(e.target.value)}
       />
